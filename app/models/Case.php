@@ -2,7 +2,7 @@
 use LaravelBook\Ardent\Ardent;
 
 class trackedCase extends Ardent {
-	protected $table = 'cases'
+	protected $table = 'cases';
 	protected $fillable = ['note','caseOpened','DHRCase','custodyIssues','IOReport','domesticViolence',
 		'prosecution','abuseDate','abuseLocation','reportNature','DHRDetermination','forensicEvaluation',
 		'status','parentJurisdiction','chargesFiled','agencyReportedTo','talkedToChild','reportedDate'];
@@ -17,7 +17,7 @@ class trackedCase extends Ardent {
 		return  $this->hasOne('allegedAbuser');
 	}
 	public function county(){
-		return this->hasOne('county');
+		return $this->hasOne('county');
 	}
 	
 	public static $rules = array(
@@ -29,5 +29,5 @@ class trackedCase extends Ardent {
 	'abuseDate'=>'date',
 	'forensicEvaluation'=>'boolean',
 	'reportedDate'=>'date'
-	)
+	);
 }

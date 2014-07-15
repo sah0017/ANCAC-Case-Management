@@ -10,17 +10,24 @@ class trackedCase extends Ardent {
 	public function abusedChild(){
 		return $this->belongsTo('AbusedChild', 'abusedChild_id');
 	}
-	public function worker(){
-		return $this->hasOne('worker');
+	public function primaryWorker(){
+		return $this->hasOne('Worker');
 	}
 	public function allegedAbuser(){
-		return  $this->hasOne('allegedAbuser');
+		return  $this->hasOne('AllegedAbuser');
 	}
 	public function county(){
-		return $this->hasOne('county');
+		return $this->hasOne('County');
 	}
-	
-	public static $rules = array(
+        public function workers() {
+            return $this->hasMany('Worker');
+        }
+        public function abuseType() {
+            return $this->belongsTo('AbuseType');
+        }
+
+
+        public static $rules = array(
 	'caseOpened'=>'date',
 	'custodyIssues'=>'boolean',
 	'IOReport'=>'boolean',

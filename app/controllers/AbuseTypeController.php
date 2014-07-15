@@ -79,11 +79,11 @@ class AbuseTypeController extends \BaseController {
 	public function edit($id)
 	{
 		//
-            $abuseTypes = AbuseType::find($id);
+            $abuseType = AbuseType::find($id);
 
 		// show the edit form and pass the abuseType
 		return View::make('abuseTypes.edit')
-			->with('abuseTypes', $abuseTypes);
+			->with('abuseType', $abuseType);
 	}
 
 	/**

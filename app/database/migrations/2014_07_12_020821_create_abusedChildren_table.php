@@ -16,7 +16,6 @@ class CreateAbusedChildrenTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('person_id')->unsigned();
-			$table->foreign('person_id')->references('id')->on('persons');
 			$table->string('parentalHistory');
 			$table->string('parentStatus');
 			$table->boolean('medicalCompleted');

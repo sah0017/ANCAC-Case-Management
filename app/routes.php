@@ -32,3 +32,5 @@ Route::get('contact', function()
 Route::resource('abuseTypes', 'AbuseTypeController');
 
 Route::resource('cases', 'CaseController');
+
+Route::resource('children', 'AbusedChildController');

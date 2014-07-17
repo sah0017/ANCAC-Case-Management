@@ -11,7 +11,7 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('children') }}">Nerd Alert</a>
+		<a class="navbar-brand" href="{{ URL::to('children') }}">Child Entries</a>
 	</div>
 	<ul class="nav navbar-nav">
 		<li><a href="{{ URL::to('children') }}">View All children</a></li>

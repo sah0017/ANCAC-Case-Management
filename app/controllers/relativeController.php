@@ -38,7 +38,7 @@ class relativeController extends \BaseController {
 	 */
 	public function store()
 	{
-                        $realtive = new Relationship;
+                        $relative = new Relationship;
 			$relative->abusedChild_id    = Input::get('abusedChild_id');
 			$relative->type              = Input::get('type');
 			$relative->custodian         = Input::get('custodian');

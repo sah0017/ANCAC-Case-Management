@@ -25,22 +25,36 @@
 		
 		<div class="container">
 			<div class="column-center">
-			<strong>Case Info</strong><br>
+			<strong>Case Info <?php echo Form::submit('edit'); ?> </strong><br>
 			<strong>opened:</strong> {{ $case->caseOpened }}<br>
 			<strong>status:</strong> {{ $case->status }}
 			</div>
 			<div class="column-left">
-			<strong>Child info</strong>
+			<strong>Child info <?php echo Form::submit('edit'); ?> </strong>
 			
 			<br><br>
-			<strong>Accused info</strong>
+			<strong>Accused info <?php echo Form::submit('edit'); ?> </strong>
 			</div>
 			<div class="column-right">
-			<strong>Workers</strong>
+			<strong>Workers <?php echo Form::submit('edit'); ?> </strong>
 			<br><br>
-			<strong>Relations</strong>
+                            <div class= "column-left">
+                                <strong> Name </strong>
+                            </div>
+                            <div class= "column-right">
+                                <strong> Type </strong>
+                            </div>
+                        <br><br>
+			<strong>Relations <?php echo Form::submit('edit'); ?> </strong>
 			<br><br>
-			<strong>Services Provided</strong>
+                            <div class= "column-left">
+                                <strong> Name </strong>
+                            </div>
+                            <div class= "column-right">
+                                <strong> Type </strong>
+                            </div>
+                        <br><br>
+			<strong>Services Provided <?php echo Form::submit('edit'); ?> </strong>
 			</div>
 		</div>
 		<strong>Notes</strong><br>

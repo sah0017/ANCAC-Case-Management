@@ -42,6 +42,25 @@
 		<tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->abusedChild_id }}</td>
+                        @if ($value->type)
+                        <td>Mother</td>
+                        @elseif ($value->type)
+                        <td>Father</td>
+                        @elseif ($value->type)
+                        <td>Brother</td>
+                        @elseif ($value->type)
+                        <td>Sister</td>
+                        @elseif ($value->type)
+                        <td>Uncle</td>
+                        @elseif ($value->type)
+                        <td>Aunt</td>
+                        @elseif ($value->type)
+                        <td>Grand Mother<td>
+                        @elseif ($value->type)
+                        <td>Grand Father</td>
+                        @elseif ($value->type)
+                        <td>Other</td>
+                        @endif
                         <td>{{ $value->type }}</td>
                         @if ($value->custodian)
 			<td>yes</td>

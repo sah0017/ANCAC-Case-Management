@@ -33,7 +33,10 @@
 
 	<div class="form-group">
 		{{ Form::label('type', 'Type of Relationship') }}
-		{{ Form::text('type', Input::old('type'), array('class' => 'form-control')) }}
+		{{ Form::select('type', array('0' => 'Select type of Relationship', '1' => 'Mother',
+                            '2' => 'Father', '3' => 'Brother', '4' => 'Sister', '5' => 'Uncle', '6' => 'Aunt','7' => 'Grand Mother',
+                            '8' => 'Grand Father','9' => 'Other'), 
+                    Input::old('type'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">

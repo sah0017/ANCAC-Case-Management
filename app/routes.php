@@ -38,4 +38,3 @@ Route::resource('children', 'AbusedChildController');
 Route::resource('relatives','relativeController');
 
 Route::resource('people','PersonController');
-

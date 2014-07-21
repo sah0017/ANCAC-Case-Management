@@ -10,7 +10,11 @@ class CaseController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$case = TrackedCase::all();
+
+		// load the view and pass the casecntroller
+		return View::make('cases.index')
+			->with('case', $case);
 	}
 
 	/**
@@ -21,7 +25,7 @@ class CaseController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('cases.create');
 	}
 
 	/**
@@ -32,7 +36,36 @@ class CaseController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$case = new TrackedCase;
+                $case->abuse_id             = Input::get('abuse_id');
+                $case->worker_id            = Input::get('worker_id');
+		$case->abusedChild_id       = Input::get('abusedChild_id');
+		$case->allegedAbuser_id     = Input::get('allegedAbuser_id');
+		$case->note                 = Input::get('note');
+		$case->caseOpened           = Input::get('caseOpened');
+		$case->county_id            = Input::get('county_id');
+		$case->DHRCase              = Input::get('DHRCase');
+		$case->custodyIssues        = Input::get('custodyIssues');
+		$case->IOReport             = Input::get('IOReport');
+		$case->domesticViolence     = Input::get('domesticViolence');
+		$case->prosecution          = Input::get('prosecution');
+		$case->reporter             = Input::get('reporter');
+		$case->abuseDate            = Input::get('abuseDate');
+		$case->abuseLocation        = Input::get('abuseLocation');
+		$case->reportNature         = Input::get('reportNature');
+		$case->DHRDetermination     = Input::get('DHRDetermination');
+		$case->forensicEvaluation   = Input::get('forensicEvaluation');
+		$case->status               = Input::get('status');
+		$case->partentJurisdiction  = Input::get('parentJurisdiction');
+		$case->chargesFiled         = Input::get('chargesFiled');
+		$case->agencyReportedTo     = Input::get('agencyReportedTo');
+		$case->talkedToChild        = Input::get('talkedToChild');
+		$case->reportedDate         = Input::get('reportedDate');
+		$case->save();
+
+		// redirect
+		Session::flash('message', 'Successfully created case!');
+		return Redirect::to('case');
 	}
 
 	/**
@@ -62,7 +95,11 @@ class CaseController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$case = TrackedCase::find($id);
+
+		// show the edit form and pass the casecontroller
+		return View::make('cases.edit')
+			->with('case', $case);
 	}
 
 	/**
@@ -74,7 +111,37 @@ class CaseController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$case = TrackedCase::find($id);
+		$case->type                 = Input::get('type');
+                $case->abuse_id             = Input::get('abuse_id');
+                $case->worker_id            = Input::get('worker_id');
+		$case->abusedChild_id       = Input::get('abusedChild_id');
+		$case->allegedAbuser_id     = Input::get('allegedAbuser_id');
+		$case->note                 = Input::get('note');
+		$case->caseOpened           = Input::get('caseOpened');
+		$case->county_id            = Input::get('county_id');
+		$case->DHRCase              = Input::get('DHRCase');
+		$case->custodyIssues        = Input::get('custodyIssues');
+		$case->IOReport             = Input::get('IOReport');
+		$case->domesticViolence     = Input::get('domesticViolence');
+		$case->prosecution          = Input::get('prosecution');
+		$case->reporter             = Input::get('reporter');
+		$case->abuseDate            = Input::get('abuseDate');
+		$case->abuseLocation        = Input::get('abuseLocation');
+		$case->reportNature         = Input::get('reportNature');
+		$case->DHRDetermination     = Input::get('DHRDetermination');
+		$case->forensicEvaluation   = Input::get('forensicEvaluation');
+		$case->status               = Input::get('status');
+		$case->partentJurisdiction  = Input::get('parentJurisdiction');
+		$case->chargesFiled         = Input::get('chargesFiled');
+		$case->agencyReportedTo     = Input::get('agencyReportedTo');
+		$case->talkedToChild        = Input::get('talkedToChild');
+		$case->reportedDate         = Input::get('reportedDate');
+		$case->save();
+
+		// redirect
+		Session::flash('message', 'Successfully updated case info!');
+		return Redirect::to('case');
 	}
 
 	/**
@@ -86,7 +153,13 @@ class CaseController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$case = TrackedCase::find($id);
+		$case->delete();
+
+		// redirect
+		Session::flash('message', 'Successfully deleted the case entry!');
+		return Redirect::to('cases');
 	}
 
 }

@@ -31,6 +31,11 @@
 		{{ Form::text('abusedChild_id', Input::old('abusedChild_id'), array('class' => 'form-control')) }}
 	</div>
 
+        <div class="form-group">
+		{{ Form::label('person_id', 'person id') }}
+		{{ Form::text('person_id', Input::old('person_id'), array('class' => 'form-control')) }}
+	</div>
+
 	<div class="form-group">
 		{{ Form::label('type', 'Type of Relationship') }}
 		{{ Form::select('type', array('0' => 'Select type of Relationship', '1' => 'Mother',

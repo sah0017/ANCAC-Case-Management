@@ -32,7 +32,7 @@
 	</div>
         
         <div class="form-group">
-		{{ Form::label('dob', 'Date of birth (m-d-y)') }}
+		{{ Form::label('dob', 'Date of birth (YYYY-MM-DD)') }}
 		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 	</div>
 
@@ -89,13 +89,18 @@
         
         <div class="form-group">
 		{{ Form::label('maritalStatus', 'Marital status') }}
-		{{ Form::slect('maritalStatus', array(
+		{{ Form::select('maritalStatus', array(
                             'married' => 'married',
                             'single' => 'Single',
                             'divorced' => 'Divorced'),
                             Input::old('maritalStatus'), array('class' => 'form-control')) }}
 	</div>
         
+        <div class="form-group">
+		{{ Form::label('originCountry', 'originCountry') }}
+		{{ Form::text('originCountry', Input::old('originCountry'), array('class' => 'form-control')) }}
+        </div>
+
         <div class="form-group">
 		{{ Form::label('address_id', 'address_id') }}
 		{{ Form::text('address_id', Input::old('address_id'), array('class' => 'form-control')) }}

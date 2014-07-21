@@ -36,3 +36,6 @@ Route::resource('cases', 'CaseController');
 Route::resource('children', 'AbusedChildController');
 
 Route::resource('relatives','relativeController');
+
+Route::resource('people','PersonController');
+

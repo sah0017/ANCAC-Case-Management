@@ -18,7 +18,7 @@ class CreatePersonsTable extends Migration {
 			$table->string('name');
 			$table->date('dob');
 			$table->boolean('drugUse');
-			$table->boolean('physicalAubse');
+			$table->boolean('physicalAbuse');
 			$table->boolean('sexAbuse');
 			$table->boolean('mentalHealthTreatment');
 			$table->boolean('crimeConviction');

@@ -1,4 +1,4 @@
-<!-- app/views/children/create.blade.php -->
+<!-- app/views/relatives/create.blade.php -->
 
 <!DOCTYPE html>
 <html>

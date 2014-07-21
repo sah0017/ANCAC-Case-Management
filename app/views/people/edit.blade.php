@@ -80,6 +80,16 @@
 		{{ Form::label('sexAbuseSurvivor', 'Is a sexual abuse survivor') }}
 		{{ Form::checkbox('sexAbuseSurvivor', '1', Input::old('sexAbuseSurvivor'), array('class' => 'form-control')) }}
 	</div>
+
+	<div class="form-group">
+		{{ Form::label('specialNeeds', 'has special needs') }}
+		{{ Form::checkbox('specialNeeds', '1', Input::old('specialNeeds'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('disability', 'is disabled') }}
+		{{ Form::checkbox('disability', '1', Input::old('disability'), array('class' => 'form-control')) }}
+	</div>
         
         <div class="form-group">
 		{{ Form::label('language', 'Language') }}

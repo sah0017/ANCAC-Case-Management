@@ -19,12 +19,13 @@
 	</ul>
 </nav>
 
-<h1>Showing {{ $child->name }}</h1>
+<h1>Showing {{ $child->personalInfo->name }}</h1>
 
 	<div class="jumbotron text-left">
 		<h2>{{ $child->name }}</h2>
 		<p>
-			<strong>person_id:</strong> {{ $child->person_id }}<br>
+			<strong>Name:</strong> {{ $child->personalInfo->name }}<br>
+                        <strong>DOB:</strong> {{ $child->personalInfo->dob }}<br>
 			<strong>parentalHistory:</strong> {{ $child->parentalHistory }}<br>
                         <strong>parentStatus:</strong> {{ $child->parentStatus }}<br>
                         <strong>medicalCompleted:</strong>
@@ -36,6 +37,25 @@
                         <br>
 			<strong>schoolGrade:</strong> {{ $child->schoolGrade }}<br>
 			<strong>school:</strong> {{ $child->school }}<br>
+                        <strong>originCountry</strong> {{ $child->personalInfo->originCountry }}<br>
+                        <strong>specialNeeds:</strong>
+                        @if ($child->personalInfo->specialNeeds)
+                         yes
+                        @else
+                         no
+                        @endif
+                        <br>
+                        <strong>disability:</strong>
+                        @if ($child->personalInfo->disability)
+                         yes
+                        @else
+                         no
+                        @endif
+                        <br>
+			<strong>language:</strong> {{ $child->personalInfo->language }}<br>
+                        <strong>address_id</strong> {{ $child->personalInfo->address_id }}<br>
+                        <strong>household_id</strong> {{ $child->personalInfo->household_id }}<br>
+                        <strong>ethnicity_id</strong> {{ $child->personalInfo->ethnicity_id }}<br>
 
 		</p>
 	</div>

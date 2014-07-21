@@ -19,7 +19,7 @@
 	</ul>
 </nav>
 
-<h1>Edit {{ $child->name }}</h1>
+<h1>Edit {{ $child->personalInfo->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
@@ -27,8 +27,13 @@
 {{ Form::model($child, array('route' => array('children.update', $child->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
-		{{ Form::label('person_id', 'Personal info id') }}
-		{{ Form::text('person_id', Input::old('person_id'), array('class' => 'form-control')) }}
+		{{ Form::label('name', 'Name') }}
+		{{ Form::text('name', $child->personalInfo->name, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('dob', 'Date of birth (YYYY-MM-DD)') }}
+		{{ Form::text('dob', $child->personalInfo->dob, array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
@@ -60,6 +65,42 @@
 		{{ Form::label('school', 'school') }}
 		{{ Form::text('school', Input::old('school'), array('class' => 'form-control')) }}
 	</div>
+
+        <div class="form-group">
+		{{ Form::label('specialNeeds', 'has special needs') }}
+		{{ Form::checkbox('specialNeeds', '1', $child->personalInfo->specialNeeds, array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('disability', 'is disabled') }}
+		{{ Form::checkbox('disability', '1', $child->personalInfo->disability, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('language', 'Language') }}
+		{{ Form::text('language', $child->personalInfo->language, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('originCountry', 'originCountry') }}
+		{{ Form::text('originCountry', $child->personalInfo->originCountry, array('class' => 'form-control')) }}
+        </div>
+
+        <div class="form-group">
+		{{ Form::label('address_id', 'address_id') }}
+		{{ Form::text('address_id', $child->personalInfo->address_id, array('class' => 'form-control')) }}
+        </div>
+        
+        <div class="form-group">
+		{{ Form::label('household_id', 'household_id') }}
+		{{ Form::text('household_id', $child->personalInfo->household_id, array('class' => 'form-control')) }}
+	</div>
+        
+        <div class="form-group">
+		{{ Form::label('ethnicity_id', 'ethnicity_id') }}
+		{{ Form::text('ethnicity_id', $child->personalInfo->ethnicity_id, array('class' => 'form-control')) }}
+	</div>
+        <br>
 
 	{{ Form::submit('Edit the child entry', array('class' => 'btn btn-primary')) }}
 

@@ -26,9 +26,15 @@
 
 {{ Form::open(array('url' => 'children')) }}
 
+
 	<div class="form-group">
-		{{ Form::label('person_id', 'Personal info id') }}
-		{{ Form::text('person_id', Input::old('person_id'), array('class' => 'form-control')) }}
+		{{ Form::label('name', 'Name') }}
+		{{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+	</div>
+        
+        <div class="form-group">
+		{{ Form::label('dob', 'Date of birth (YYYY-MM-DD)') }}
+		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
@@ -59,6 +65,41 @@
 	<div class="form-group">
 		{{ Form::label('school', 'school') }}
 		{{ Form::text('school', Input::old('school'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('specialNeeds', 'has special needs') }}
+		{{ Form::checkbox('specialNeeds', '1', Input::old('specialNeeds'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('disability', 'is disabled') }}
+		{{ Form::checkbox('disability', '1', Input::old('disability'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('language', 'Language') }}
+		{{ Form::text('language', Input::old('language'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('originCountry', 'originCountry') }}
+		{{ Form::text('originCountry', Input::old('originCountry'), array('class' => 'form-control')) }}
+        </div>
+
+        <div class="form-group">
+		{{ Form::label('address_id', 'address_id') }}
+		{{ Form::text('address_id', Input::old('address_id'), array('class' => 'form-control')) }}
+	</div
+        
+        <div class="form-group">
+		{{ Form::label('household_id', 'household_id') }}
+		{{ Form::text('household_id', Input::old('household_id'), array('class' => 'form-control')) }}
+	</div>
+        
+        <div class="form-group">
+		{{ Form::label('ethnicity_id', 'ethnicity_id') }}
+		{{ Form::text('ethnicity_id', Input::old('ethnicity_id'), array('class' => 'form-control')) }}
 	</div>
 
 	{{ Form::submit('Create the child entry!', array('class' => 'btn btn-primary')) }}

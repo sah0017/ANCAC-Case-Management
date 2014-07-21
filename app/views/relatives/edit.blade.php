@@ -1,4 +1,4 @@
-<!-- app/views/children/create.blade.php -->
+<!-- app/views/relatives/create.blade.php -->
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 	</div>
 	<ul class="nav navbar-nav">
 		<li><a href="{{ URL::to('relatives') }}">View All relations</a></li>
-		<li><a href="{{ URL::to('relatives/create') }}">Create a relation entry</a>
+		<li><a href="{{ URL::to('relatives/create') }}">edit a relation entry</a>
 	</ul>
 </nav>
     

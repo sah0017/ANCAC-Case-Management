@@ -61,11 +61,11 @@ class relativeController extends \BaseController {
 	public function show($id)
 	{
                 // get the child
-		$child = AbusedChild::find($id);
+		$relative = Relationship::find($id);
 
 		// show the view and pass the nerd to it
-		return View::make('children.show')
-			->with('child', $child);
+		return View::make('relatives.show')
+			->with('relatives', $relative);
 	}
 
 	/**

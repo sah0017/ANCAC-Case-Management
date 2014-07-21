@@ -31,6 +31,7 @@
 		<tr>
                         <td>ID</td>
                         <td>Abuse Child ID</td>
+                        <td>Person ID</td>
 			<td>Type of relation</td>
 			<td>Custodian</td>
                         <td>Same House</td>
@@ -41,6 +42,7 @@
 	@foreach($relatives as $key => $value)
 		<tr>
                         <td>{{ $value->id }}</td>
+                        <td>{{ $value->person_id }}</td>
                         <td>{{ $value->abusedChild_id }}</td>
                         @if ($value->type)
                         <td>Mother</td>

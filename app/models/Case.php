@@ -1,11 +1,9 @@
 <?php
-use LaravelBook\Ardent\Ardent;
 
-class trackedCase extends Ardent {
+
+class trackedCase extends \Illuminate\Database\Eloquent {
 	protected $table = 'cases';
-	protected $fillable = ['note','caseOpened','DHRCase','custodyIssues','IOReport','domesticViolence',
-		'prosecution','abuseDate','abuseLocation','reportNature','DHRDetermination','forensicEvaluation',
-		'status','parentJurisdiction','chargesFiled','agencyReportedTo','talkedToChild','reportedDate'];
+
 	
 	public function abusedChild(){
 		return $this->belongsTo('AbusedChild', 'abusedChild_id');
@@ -26,15 +24,4 @@ class trackedCase extends Ardent {
             return $this->belongsTo('AbuseType');
         }
 
-
-        public static $rules = array(
-	'caseOpened'=>'date',
-	'custodyIssues'=>'boolean',
-	'IOReport'=>'boolean',
-	'domesticViolence'=>'boolean',
-	'prosecution'=>'boolean',
-	'abuseDate'=>'date',
-	'forensicEvaluation'=>'boolean',
-	'reportedDate'=>'date'
-	);
 }

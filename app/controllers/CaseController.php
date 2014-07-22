@@ -45,16 +45,16 @@ class CaseController extends \BaseController {
 		$case->caseOpened           = Input::get('caseOpened');
 		$case->county_id            = Input::get('county_id');
 		$case->DHRCase              = Input::get('DHRCase');
-		$case->custodyIssues        = Input::get('custodyIssues');
+		$case->custodyIssues        = Input::get('custodyIssues', false);
 		$case->IOReport             = Input::get('IOReport');
-		$case->domesticViolence     = Input::get('domesticViolence');
-		$case->prosecution          = Input::get('prosecution');
+		$case->domesticViolence     = Input::get('domesticViolence',false);
+		$case->prosecution          = Input::get('prosecution',false);
 		$case->reporter             = Input::get('reporter');
 		$case->abuseDate            = Input::get('abuseDate');
 		$case->abuseLocation        = Input::get('abuseLocation');
 		$case->reportNature         = Input::get('reportNature');
 		$case->DHRDetermination     = Input::get('DHRDetermination');
-		$case->forensicEvaluation   = Input::get('forensicEvaluation');
+		$case->forensicEvaluation   = Input::get('forensicEvaluation',false);
 		$case->status               = Input::get('status');
 		$case->partentJurisdiction  = Input::get('parentJurisdiction');
 		$case->chargesFiled         = Input::get('chargesFiled');
@@ -65,7 +65,7 @@ class CaseController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully created case!');
-		return Redirect::to('case');
+		return Redirect::to('cases');
 	}
 
 	/**
@@ -141,7 +141,7 @@ class CaseController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully updated case info!');
-		return Redirect::to('case');
+		return Redirect::to('cases');
 	}
 
 	/**

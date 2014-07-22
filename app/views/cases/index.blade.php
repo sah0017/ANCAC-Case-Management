@@ -85,7 +85,7 @@
                         <td>{{ $value->abuseDate }}</td>
                         <td>{{ $value->abuseLocation }}</td>
                         <td>{{ $value->reportedNature }}</td>
-                        <td>{{ DHRDetermination }}</td>
+                        <td>{{ $value->DHRDetermination }}</td>
                         <td>{{ $value->forensicEvaluation }}</td>
                         <td>{{ $value->status }}</td>
                         <td>{{ $value->parentJurisdiction }}</td>

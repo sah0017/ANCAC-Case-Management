@@ -30,10 +30,11 @@
 			<strong>status:</strong> {{ $case->status }}
 			</div>
 			<div class="column-left">
-			<strong>Child info <?php echo Form::submit('edit'); ?> </strong>
-			
+			<strong>Child info <a class="btn btn-small btn-info" href="{{ URL::to('children/' . $case->abusedChild_id . '/edit') }}">Edit this child</a> </strong><br>
+                        {{$case->abusedChild->personalInfo->name}}<br>
+                        {{$case->abusedChild->personalInfo->dob}}<br>
 			<br><br>
-			<strong>Accused info <?php echo Form::submit('edit'); ?> </strong>
+			<strong>Accused info <a class="btn btn-small btn-info" href="{{ URL::to('allegedAbusers/' . $case->allegedAbuser_id . '/edit') }}">Edit this abuser</a> </strong>
 			</div>
 			<div class="column-right">
 			<strong>Workers <?php echo Form::submit('edit'); ?> </strong>
@@ -45,7 +46,7 @@
                                 <strong> Type </strong>
                             </div>
                         <br><br>
-			<strong>Relations <?php echo Form::submit('edit'); ?> </strong>
+			<strong>Relations <a class="btn btn-small btn-info" href="{{ URL::to('relatives/' . $case->id . '/edit') }}">Edit this child</a> </strong>
 			<br><br>
                             <div class= "column-left">
                                 <strong> Name </strong>

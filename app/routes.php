@@ -40,3 +40,5 @@ Route::resource('relatives','relativeController');
 Route::resource('people','PersonController');
 
 Route::resource('workers','WorkersController');
+
+Route::resource('allegedAbusers','AllegedAbuserController');

@@ -38,8 +38,32 @@ class AllegedAbuserController extends \BaseController {
 	 */
 	public function store()
 	{
+            
+                        $person = new Person;
+			$person->name = Input::get('name');
+                        $person->dob = Input::get('dob');
+                        $person->drugUse = Input::get('drugUse',false);
+                        $person->physicalAbuse = Input::get('physicalAbuse',false);
+                        $person->sexAbuse = Input::get('sexAbuse',false);
+                        $person->mentalHealthTreatment = Input::get('mentalHealthTreatment',false);
+                        $person->crimeConviction = Input::get('crimeConviction',false);
+                        $person->employed = Input::get('employed',false);
+                        $person->fullTime = Input::get('fullTime',false);
+                        $person->activeMilitary = Input::get('activeMilitary',false);
+                        $person->sexAbuseSurvivor = Input::get('sexAbuseSurvivor',false);
+                        $person->originCountry = Input::get('originCountry');
+                        $person->specialNeeds = Input::get('specialNeeds',false);
+                        $person->disability = Input::get('disability',false);
+                        $person->language = Input::get('language');
+                        $person->maritalStatus = Input::get('maritalStatus','single');
+                        $person->address_id = Input::get('address_id');
+                        $person->household_id = Input::get('household_id');
+                        $person->ethnicity_id = Input::get('ethnicity_id');
+			$person->save();
+                        
+                        
                         $allegedAbuser = new AllegedAbuser;
-			$allegedAbuser->person_id        = Input::get('person_id');
+			$allegedAbuser->person_id        = $person->id;
                         $allegedAbuser->known            = Input::get('known',false);
                         $allegedAbuser->adult            = Input::get('adult',false);
 			$allegedAbuser->save();
@@ -93,7 +117,30 @@ class AllegedAbuserController extends \BaseController {
 	public function update($id)
 	{
                         $allegedAbuser = AllegedAbuser::find($id);
-			$allegedAbuser->person_id        = Input::get('person_id');
+                        $person = $allegedAbuser->personalInfo;
+                        $person->name = Input::get('name');
+                        $person->dob = Input::get('dob]');
+                        $person->drugUse = Input::get('drugUse',false);
+                        $person->physicalAbuse = Input::get('physicalAbuse',false);
+                        $person->sexAbuse = Input::get('sexAbuse',false);
+                        $person->mentalHealthTreatment = Input::get('mentalHealthTreatment',false);
+                        $person->crimeConviction = Input::get('crimeConviction',false);
+                        $person->employed = Input::get('employed',false);
+                        $person->fullTime = Input::get('fullTime',false);
+                        $person->activeMilitary = Input::get('activeMilitary',false);
+                        $person->sexAbuseSurvivor = Input::get('sexAbuseSurvivor',false);
+                        $person->originCountry = Input::get('originCountry');
+                        $person->specialNeeds = Input::get('specialNeeds',false);
+                        $person->disability = Input::get('disability',false);
+                        $person->language = Input::get('language');
+                        $person->maritalStatus = Input::get('maritalStatus','single');
+                        $person->address_id = Input::get('address_id');
+                        $person->household_id = Input::get('household_id');
+                        $person->ethnicity_id = Input::get('ethnicity_id');
+                        $person->save();
+                        
+                        
+			$allegedAbuser->person_id        = $person->id;
                         $allegedAbuser->known            = Input::get('known',false);
                         $allegedAbuser->adult            = Input::get('adult',false);
 			$allegedAbuser->save();

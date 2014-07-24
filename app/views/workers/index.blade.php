@@ -36,7 +36,7 @@
 		</tr>
 	</thead>
 	<tbody>
-	@foreach($relatives as $key => $value)
+	@foreach($workers as $key => $value)
 		<tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>

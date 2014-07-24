@@ -56,7 +56,7 @@ class CaseController extends \BaseController {
 		$case->DHRDetermination     = Input::get('DHRDetermination');
 		$case->forensicEvaluation   = Input::get('forensicEvaluation',false);
 		$case->status               = Input::get('status');
-		$case->partentJurisdiction  = Input::get('parentJurisdiction');
+		$case->parentJurisdiction  = Input::get('parentJurisdiction');
 		$case->chargesFiled         = Input::get('chargesFiled');
 		$case->agencyReportedTo     = Input::get('agencyReportedTo');
 		$case->talkedToChild        = Input::get('talkedToChild');

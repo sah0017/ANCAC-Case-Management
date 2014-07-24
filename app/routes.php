@@ -42,3 +42,10 @@ Route::resource('people','PersonController');
 Route::resource('workers','WorkersController');
 
 Route::resource('allegedAbusers','AllegedAbuserController');
+
+Route::get('cases/{id}/child', function($id)
+{
+    $child = TrackedCase::find($id)->abusedChild;
+    return View::make('cases.child')
+			->with('child', $child);
+});

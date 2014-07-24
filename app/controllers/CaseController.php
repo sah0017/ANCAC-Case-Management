@@ -112,7 +112,6 @@ class CaseController extends \BaseController {
 	public function update($id)
 	{
 		$case = TrackedCase::find($id);
-		$case->type                 = Input::get('type');
                 $case->abuse_id             = Input::get('abuse_id');
                 $case->worker_id            = Input::get('worker_id');
 		$case->abusedChild_id       = Input::get('abusedChild_id');

@@ -42,28 +42,27 @@
 	@foreach($relatives as $key => $value)
 		<tr>
                         <td>{{ $value->id }}</td>
-                        <td>{{ $value->person_id }}</td>
                         <td>{{ $value->abusedChild_id }}</td>
-                        @if ($value->type)
+                        <td>{{ $value->person_id }}</td>
+                        @if ($value->type ==1)
                         <td>Mother</td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==2)
                         <td>Father</td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==3)
                         <td>Brother</td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==4)
                         <td>Sister</td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==5)
                         <td>Uncle</td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==6)
                         <td>Aunt</td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==7)
                         <td>Grand Mother<td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==8)
                         <td>Grand Father</td>
-                        @elseif ($value->type)
+                        @elseif ($value->type==9)
                         <td>Other</td>
                         @endif
-                        <td>{{ $value->type }}</td>
                         @if ($value->custodian)
 			<td>yes</td>
                         @else

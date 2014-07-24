@@ -16,7 +16,7 @@
 	</ul>
 </nav>
 
-<h1>Edit {{ $caseDetails->name }}</h1>
+<h1>Edit {{ $case->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}

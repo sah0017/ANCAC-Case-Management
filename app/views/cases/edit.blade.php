@@ -25,7 +25,7 @@
 
 	<div class="form-group">
 		{{ Form::label('abuse_id', 'abuse_id') }}
-		{{ Form::text('abuse_id', Input::old('abuse_id'), array('class' => 'form-control')) }}
+		{{ Form::select('abuse_id', AbuseType::all()->lists('type','id'), Input::old('abuse_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

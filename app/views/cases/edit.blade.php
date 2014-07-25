@@ -32,16 +32,6 @@
 		{{ Form::label('worker_id', 'worker_id') }}
 		{{ Form::text('worker_id', Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>
-	
-        <div class="form-group">
-		{{ Form::label('abusedChild_id', 'abusedChild_id') }}
-		{{ Form::text('abusedChild_id', Input::old('abusedChild_id'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('allegedAbuser_id', 'allegedAbuser_id') }}
-		{{ Form::text('allegedAbuser_id', Input::old('allegedAbuser_id'), array('class' => 'form-control')) }}
-	</div>
 
         <div class="form-group">
 		{{ Form::label('note', 'note') }}

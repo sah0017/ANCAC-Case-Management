@@ -98,11 +98,9 @@ class CaseController extends \BaseController {
             
                 $case = new TrackedCase;
                 $case->abusedChild_id       = $child->id;
-                $case->allegedAbuser_id     =$allegedAbuser->id;
+                $case->allegedAbuser_id     = $allegedAbuser->id;
                 $case->abuse_id             = Input::get('abuse_id');
                 $case->worker_id            = Input::get('worker_id');
-		$case->abusedChild_id       = Input::get('abusedChild_id');
-		$case->allegedAbuser_id     = Input::get('allegedAbuser_id');
 		$case->note                 = Input::get('note');
 		$case->caseOpened           = Input::get('caseOpened');
 		$case->county_id            = Input::get('county_id');
@@ -176,8 +174,6 @@ class CaseController extends \BaseController {
 		$case = TrackedCase::find($id);
                 $case->abuse_id             = Input::get('abuse_id');
                 $case->worker_id            = Input::get('worker_id');
-		$case->abusedChild_id       = Input::get('abusedChild_id');
-		$case->allegedAbuser_id     = Input::get('allegedAbuser_id');
 		$case->note                 = Input::get('note');
 		$case->caseOpened           = Input::get('caseOpened');
 		$case->county_id            = Input::get('county_id');

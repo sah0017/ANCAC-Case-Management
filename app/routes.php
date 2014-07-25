@@ -45,6 +45,8 @@ Route::resource('allegedAbusers','AllegedAbuserController');
 
 Route::resource('serviceType','ServiceTypeController');
 
+Route::resource('session','SessionController');
+
 Route::get('cases/{id}/child', function($id)
 {
     $child = TrackedCase::find($id)->abusedChild;

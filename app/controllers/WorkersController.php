@@ -41,6 +41,7 @@ class WorkersController extends \BaseController {
                         $worker = new Worker;
 			$worker->id                  = Input::get('id');
 			$worker->name                = Input::get('name');
+                        $worker->workerType_id       = input::get('workerType_id');
 			$worker->save();
 			// redirect
 			Session::flash('message', 'Successfully stored Woker info!');
@@ -93,6 +94,7 @@ class WorkersController extends \BaseController {
                         $worker = Worker::find($id);
 			$worker->id                  = Input::get('id');
 			$worker->name                = Input::get('name');
+                        $worker->workerType_id       = input::get('workerType_id');
 			$worker->save();
 
 			// redirect

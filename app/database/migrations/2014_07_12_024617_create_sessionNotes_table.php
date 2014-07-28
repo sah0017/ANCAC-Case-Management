@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateAllegedAbusersTable extends Migration {
+class CreateNotesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,13 @@ class CreateAllegedAbusersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('allegedAbusers', function(Blueprint $table)
+		Schema::create('sessionNotes', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('person_id')->unsigned();
-			$table->boolean('known');
-			$table->boolean('adult');
+			$table->dateTime('dateTimeTaken');
+			$table->text('note');
+			$table->integer('worker_id')->unsigned();
+			$table->integer('session_id')->unsigned();
 			$table->timestamps();
 		});
 	}
@@ -30,7 +31,7 @@ class CreateAllegedAbusersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('allegedAbusers');
+		Schema::drop('notes');
 	}
 
 }

@@ -15,30 +15,26 @@ class CreateCasesTable extends Migration {
 		Schema::create('cases', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('abuse_id')->unsigned();
 			$table->integer('worker_id')->unsigned();
-			$table->integer('abusedChild_id')->unsigned();
-			$table->integer('allegedAbuser_id')->unsigned();
-			$table->text('note');
+			$table->text('note')->nullable();
 			$table->date('caseOpened');
 			$table->integer('county_id')->unsigned();
-			$table->string('DHRCase');
-			$table->boolean('custodyIssues');
-			$table->string('IOReport');
-			$table->boolean('domesticViolence');
-			$table->boolean('prosecution');
-			$table->integer('reporter')->unsigned();
-			$table->date('abuseDate');
-			$table->string('abuseLocation');
-			$table->string('reportNature');
-			$table->enum('DHRDetermination', array('valid','not valid','unknown'));
-			$table->boolean('forensicEvaluation');
-			$table->enum('status', array('open','closed'));
-			$table->string('parentJurisdiction');
-			$table->text('chargesFiled');
-			$table->string('agencyReportedTo');
-			$table->text('talkedToChild');
-			$table->date('reportedDate');
+			//$table->string('DHRCase')->nullable(); on household table?
+			$table->boolean('custodyIssues')->nullable();
+			$table->boolean('IOReport')->nullable();  // ?
+			$table->boolean('domesticViolence')->nullable();
+			$table->boolean('prosecution')->nullable();
+			$table->integer('reporter')->unsigned()->nullable();
+			$table->date('abuseDate')->nullable();
+			$table->string('abuseLocation')->nullable();
+			$table->string('referalReason')->nullable();
+			$table->enum('DHRDetermination', array('indicated','not indicated','unknown'))->defaault('unknown');
+			$table->boolean('forensicEvaluation')->default(false);
+			$table->enum('status', array('open','closed'))->default('open');
+			$table->text('chargesFiled')->nullable();
+			$table->string('agencyReportedTo')->nullable();
+			$table->text('talkedToChild')->nullable();
+			$table->date('reportedDate')->nullable();
 			$table->timestamps();
 		});
 	}

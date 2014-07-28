@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateNotesTable extends Migration {
+class CreateAbuseTypeCaseTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,11 @@ class CreateNotesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('notes', function(Blueprint $table)
+		Schema::create('abuses', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->dateTime('dateTimeTaken');
-			$table->text('note');
-			$table->integer('worker_id')->unsigned();
-			$table->integer('session_id')->unsigned();
+			$table->integer('abuseType_id')->unsigned()->index();
+			$table->integer('case_id')->unsigned()->index();
 			$table->timestamps();
 		});
 	}
@@ -31,7 +29,7 @@ class CreateNotesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('notes');
+		Schema::drop('abuseType_case');
 	}
 
 }

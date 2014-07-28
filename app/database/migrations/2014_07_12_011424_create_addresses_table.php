@@ -16,10 +16,11 @@ class CreateAddressesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('line1');
-			$table->string('line2');
+			$table->string('line2')->nullable();
 			$table->string('city');
-			$table->char('state',2);
+			$table->char('state',2)->default('AL');
 			$table->string('zip');
+                        $table->integer('county_id')->unsigned();
 			$table->timestamps();
 		});
 	}

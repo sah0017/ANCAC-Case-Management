@@ -15,25 +15,27 @@ class CreatePersonsTable extends Migration {
 		Schema::create('persons', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
-			$table->date('dob');
-			$table->boolean('drugUse');
-			$table->boolean('physicalAbuse');
-			$table->boolean('sexAbuse');
-			$table->boolean('mentalHealthTreatment');
-			$table->boolean('crimeConviction');
-			$table->boolean('employed');
-			$table->boolean('fullTime');
-			$table->boolean('activeMilitary');
-			$table->boolean('sexAbuseSurvivor');
-			$table->string('originCountry');
-			$table->boolean('specialNeeds');
-			$table->boolean('disability');
-			$table->string('language');
-			$table->enum('maritalStatus',array('married','single','divorced'));
-			$table->integer('address_id')->unsigned();
-                        $table->integer('household_id')->unsigned();
-			$table->integer('ethnicity_id')->unsigned();
+			$table->string('first');
+			$table->string('middle')->nullable();
+			$table->string('last')->nullable();
+			$table->date('dob')->nullable();
+                        $table->smallinteger('age')->nullable();
+			$table->boolean('drugUse')->nullable();
+			$table->boolean('physicalAbuse')->nullable();
+			$table->boolean('sexAbuse')->nullable();
+			$table->boolean('mentalHealthTreatment')->nullable();
+			$table->boolean('crimeConviction')->nullable();
+			$table->boolean('employed')->nullable();
+			$table->boolean('fullTime')->nullable();
+			$table->boolean('activeMilitary')->nullable();
+			$table->boolean('sexAbuseSurvivor')->nullable();
+			$table->string('originCountry')->nullable();
+			$table->string('specialNeeds')->nullable();
+			$table->string('language')->nullable();
+			$table->enum('maritalStatus',array('married','single','divorced'))->nullable();
+			$table->integer('address_id')->unsigned()->nullable();
+                        $table->integer('household_id')->unsigned()->nullable();
+			$table->integer('ethnicity_id')->unsigned()->nullable();
 			$table->timestamps();
 		});
 	}

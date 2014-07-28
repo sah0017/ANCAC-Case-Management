@@ -17,10 +17,11 @@ class CreateRelationshipsTable extends Migration {
 			$table->increments('id');
 			$table->integer('abusedChild_id')->unsigned();
                         $table->integer('person_id')->unsigned();
-			$table->string('type');
-			$table->boolean('custodian');
+			$table->string('relation');
+			$table->string('alias')->nullable();
+			$table->boolean('custodian')->default(false);
 			$table->boolean('sameHouse');
-			$table->string('nameCalled');
+                        $table->boolean('allegedOffender')->default(false);
 			$table->timestamps();
 		});
 	}

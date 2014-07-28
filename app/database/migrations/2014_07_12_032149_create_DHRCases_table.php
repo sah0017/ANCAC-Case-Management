@@ -20,7 +20,7 @@ class CreateDHRcasesTable extends Migration {
 			$table->enum('status',array('open','closed'));
 			$table->string('type');
 			$table->date('opened');
-			$table->date('closed');
+			$table->date('closed')->nullable();
 			$table->timestamps();
 		});
 	}

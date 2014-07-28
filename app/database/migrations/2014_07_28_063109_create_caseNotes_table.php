@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateHouseholdsTable extends Migration {
+class CreateCaseNotesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,12 @@ class CreateHouseholdsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('households', function(Blueprint $table)
+		Schema::create('caseNotes', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->text('pets')->nullable();
-			$table->boolean('medicare');
-			$table->boolean('allKids');
-			$table->boolean('freeOrReducedLunch');
-			$table->boolean('onBase');
+			$table->integer('case_id')->unsigned();
+                        $table->integer('worker_id')->unsigned();
+                        $table->text('note');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +30,7 @@ class CreateHouseholdsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('households');
+		Schema::drop('caseNotes');
 	}
 
 }

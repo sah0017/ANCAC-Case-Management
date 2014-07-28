@@ -16,12 +16,12 @@ class CreateAbusedChildrenTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('person_id')->unsigned();
-			$table->string('parentalHistory');
-			$table->string('parentStatus');
-			$table->boolean('medicalCompleted');
-			$table->string('medicalLocation');
-			$table->string('schoolGrade');
-                        $table->string('school');
+			$table->string('parentalHistory')->nullable();
+			$table->string('parentStatus')->nullable();
+			$table->boolean('medicalCompleted')->default(false);
+			$table->string('medicalLocation')->nullable();
+			$table->string('schoolGrade')->nullable();
+                        $table->integer('school')->unsigned()->nullable();
 			$table->timestamps();
 		});
 	}

@@ -16,7 +16,9 @@ class CreateSessionsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('serviceType_id')->unsigned();
-			$table->dateTime('dateAndTime');
+			$table->date('date');
+                        $table->time('timeStart');
+			$table->time('timeEnd')->nullable();
 			$table->integer('worker_id')->unsigned();
 			$table->timestamps();
 		});

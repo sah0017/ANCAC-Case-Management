@@ -28,7 +28,7 @@
 	<thead>
 		<tr>
                         <td>ID</td>
-                        <td>person info ID</td>
+                        <td>Name</td>
 			<td>medicalCompleted</td>
 			<td>schoolGrade</td>
                         <td>school</td>
@@ -39,7 +39,7 @@
 	@foreach($children as $key => $value)
 		<tr>
                         <td>{{ $value->id }}</td>
-                        <td>{{ $value->person_id }}</td>
+                        <td>{{ $value->personalInfo->name }}</td>
                         @if ($value->medicalCompleted)
 			<td>yes</td>
                         @else

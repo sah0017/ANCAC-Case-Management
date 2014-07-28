@@ -4,6 +4,11 @@ class Person extends \Eloquent {
 	protected $fillable = [];
 	protected $table = 'persons';
         
+        public  function getNameAttribute ()
+        {
+            return "$this->first $this->middle $this->last";
+        }
+        
         public function phone()
         {
             return $this->hasOne('Phone');

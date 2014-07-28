@@ -26,10 +26,7 @@
 
 {{ Form::model($relative, array('route' => array('relatives.update', $relative->id), 'method' => 'PUT')) }}
 
-	<div class="form-group">
-		{{ Form::label('abusedChild_id', 'Child related id') }}
-		{{ Form::text('abusedChild_id', Input::old('abusedChild_id'), array('class' => 'form-control')) }}
-	</div>
+
 
         <div class="form-group">
 		{{ Form::label('person_id', 'person id') }}
@@ -55,8 +52,13 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('nameCalled', 'Name of the person') }}
-		{{ Form::text('nameCalled', Input::old('nameCalled'), array('class' => 'form-control')) }}
+		{{ Form::label('alias', 'Name of the person') }}
+		{{ Form::text('alias', Input::old('alias'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('allegedOffender', 'Is he/she and alleged Offender') }}
+		{{ Form::checkbox('allegedOffender', '1', Input::old('allegedOffender'), array('class' => 'form-control')) }}
 	</div>
 
 

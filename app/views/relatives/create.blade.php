@@ -55,8 +55,13 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('nameCalled', 'Name of the person') }}
-		{{ Form::text('nameCalled', Input::old('nameCalled'), array('class' => 'form-control')) }}
+		{{ Form::label('alias', 'Name of the person') }}
+		{{ Form::text('alias', Input::old('alias'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('allegedOffender', 'Is he/she and alleged Offender') }}
+		{{ Form::checkbox('allegedOffender', '1', Input::old('allegedOffender'), array('class' => 'form-control')) }}
 	</div>
 
 

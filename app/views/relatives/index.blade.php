@@ -36,6 +36,7 @@
 			<td>Custodian</td>
                         <td>Same House</td>
 			<td>Name of related person</td>
+                        <td>Alleged offender</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -73,7 +74,12 @@
                         @else
                         <td>no</td>
                         @endif
-			<td>{{ $value->nameCalled }}</td>
+			<td>{{ $value->alias }}</td>
+                        @if ($value->allegedOffender)
+			<td>yes</td>
+                        @else
+                        <td>no</td>
+                        @endif
 
 			<!-- we will also add show, edit, and delete buttons -->
 			<td>

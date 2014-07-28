@@ -17,7 +17,7 @@ class CreateRelationshipsTable extends Migration {
 			$table->increments('id');
 			$table->integer('abusedChild_id')->unsigned();
                         $table->integer('person_id')->unsigned();
-			$table->string('relation');
+			$table->integer('relationType_id')->unsigned();
 			$table->string('alias')->nullable();
 			$table->boolean('custodian')->default(false);
 			$table->boolean('sameHouse');

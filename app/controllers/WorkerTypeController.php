@@ -1,6 +1,6 @@
 <?php
 
-class WorkersController extends \BaseController {
+class WorkerTypeController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -11,11 +11,11 @@ class WorkersController extends \BaseController {
 	public function index()
 	{
                 // get all the children
-		$worker = Worker::all();
+		$workerType = WorkerType::all();
 
 		// load the view and pass the children
-		return View::make('workers.index')
-			->with('workers', $worker);
+		return View::make('workerType.index')
+			->with('workerType', $workerType);
 	}
 
 	/**
@@ -27,7 +27,7 @@ class WorkersController extends \BaseController {
 	public function create()
 	{
                 // load the create form (app/views/children/create.blade.php)
-		return View::make('workers.create');
+		return View::make('workerType.create');
 	}
 
 	/**
@@ -38,13 +38,13 @@ class WorkersController extends \BaseController {
 	 */
 	public function store()
 	{
-                        $worker = new Worker;
-			$worker->name                = Input::get('name');
-                        $worker->workerType_id       = input::get('workerType_id');
-			$worker->save();
+                        $workerType = new WorkerType;
+			$workerType->id                  = Input::get('id');
+			$workerType->type                = Input::get('type');
+			$workerType->save();
 			// redirect
-			Session::flash('message', 'Successfully stored Woker info!');
-			return Redirect::to('workers');
+			Session::flash('message', 'Successfully stored Woker Type info!');
+			return Redirect::to('workerType');
 	}
 
 	/**
@@ -57,11 +57,11 @@ class WorkersController extends \BaseController {
 	public function show($id)
 	{
                 // get the child
-		$worker = Worker::find($id);
+		$workerType = WorkerType::find($id);
 
 		// show the view and pass the nerd to it
-		return View::make('workers.show')
-			->with('workers', $worker);
+		return View::make('workerType.show')
+			->with('workerTpe', $workerType);
 	}
 
 	/**
@@ -74,11 +74,11 @@ class WorkersController extends \BaseController {
 	public function edit($id)
 	{
                 // get the child
-		$worker = Worker::find($id);
+		$workerType = WorkerType::find($id);
 
 		// show the view and pass the nerd to it
-		return View::make('workers.edit')
-			->with('workers', $worker);
+		return View::make('workerType.edit')
+			->with('workerType', $workerType);
 	}
 
 	/**
@@ -90,14 +90,13 @@ class WorkersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-                        $worker = Worker::find($id);
-			$worker->name                = Input::get('name');
-                        $worker->workerType_id       = input::get('workerType_id');
-			$worker->save();
-
+                        $workerType = WorkerType::find($id);
+			$workerType->id                  = Input::get('id');
+			$workerType->type                = Input::get('type');
+			$workerType->save();
 			// redirect
-			Session::flash('message', 'Successfully updated Worker info!');
-			return Redirect::to('workers');
+			Session::flash('message', 'Successfully stored Woker Type info!');
+			return Redirect::to('workerType');
 	}
 
 	/**
@@ -110,12 +109,12 @@ class WorkersController extends \BaseController {
 	public function destroy($id)
 	{
 		// delete
-		$worker = Worker::find($id);
-		$worker->delete();
+		$workerType = WorkerType::find($id);
+		$workerType->delete();
 
 		// redirect
-		Session::flash('message', 'Successfully deleted the worker entry!');
-		return Redirect::to('workers');
+		Session::flash('message', 'Successfully deleted the worker Type entry!');
+		return Redirect::to('workerType');
 	}
 
 }

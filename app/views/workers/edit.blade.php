@@ -26,14 +26,15 @@
 
 {{ Form::model($relative, array('route' => array('relatives.update', $relative->id), 'method' => 'PUT')) }}
 
-	<div class="form-group">
-		{{ Form::label('id', 'id of the worker') }}
-		{{ Form::text('id', Input::old('id'), array('class' => 'form-control')) }}
-	</div>
 
 	<div class="form-group">
 		{{ Form::label('name', 'Name of the worker') }}
 		{{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('workerType_id', 'workerType_id') }}
+		{{ Form::select('workerType_id', WorkerType::all()->lists('type','id'), Input::old('abuse_id'), array('class' => 'form-control')) }}
 	</div>
 
 

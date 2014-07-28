@@ -44,6 +44,7 @@
 		<tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->abusedChild_id }}</td>
+                        <td>{{ $value->person_id }}</td>
                         <td>{{ $value->relationType->type }}</td>
                         @if ($value->custodian)
 			<td>yes</td>

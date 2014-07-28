@@ -8,4 +8,8 @@ class Relationship extends \Eloquent {
         public function child(){
             return $this->belongsTo('abusedChild','abusedChild_id');
 	}
+        
+        public function relationType(){
+            return $this->belongsTo('relationType', 'relationType_id');
+	}
 }

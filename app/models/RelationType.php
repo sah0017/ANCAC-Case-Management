@@ -2,5 +2,5 @@
 
 class RelationType extends \Eloquent {
 	protected $fillable = [];
-        protected $table = "relationTypes_table";
+        protected $table = "relationTypes";
 }

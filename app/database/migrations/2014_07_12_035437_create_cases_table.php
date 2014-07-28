@@ -15,11 +15,11 @@ class CreateCasesTable extends Migration {
 		Schema::create('cases', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('center_id')->unsigned();
 			$table->integer('worker_id')->unsigned();
 			$table->text('note')->nullable();
 			$table->date('caseOpened');
 			$table->integer('county_id')->unsigned();
-			//$table->string('DHRCase')->nullable(); on household table?
 			$table->boolean('custodyIssues')->nullable();
 			$table->boolean('IOReport')->nullable();  // ?
 			$table->boolean('domesticViolence')->nullable();
@@ -27,7 +27,7 @@ class CreateCasesTable extends Migration {
 			$table->integer('reporter')->unsigned()->nullable();
 			$table->date('abuseDate')->nullable();
 			$table->string('abuseLocation')->nullable();
-			$table->string('referalReason')->nullable();
+			$table->string('referralReason')->nullable();
 			$table->enum('DHRDetermination', array('indicated','not indicated','unknown'))->defaault('unknown');
 			$table->boolean('forensicEvaluation')->default(false);
 			$table->enum('status', array('open','closed'))->default('open');

@@ -27,8 +27,23 @@
 {{ Form::model($child, array('route' => array('children.update', $child->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
-		{{ Form::label('name', 'Name') }}
-		{{ Form::text('name', $child->personalInfo->name, array('class' => 'form-control')) }}
+		{{ Form::label('first', 'First Name') }}
+		{{ Form::text('first', Input::old('first'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('middle', 'Middle Name') }}
+		{{ Form::text('middle', Input::old('middle'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('last', 'Last Name') }}
+		{{ Form::text('last', Input::old('last'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('age', 'age') }}
+		{{ Form::text('age', Input::old('age'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -67,13 +82,8 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('specialNeeds', 'has special needs') }}
-		{{ Form::checkbox('specialNeeds', '1', $child->personalInfo->specialNeeds, array('class' => 'form-control')) }}
-	</div>
-
-	<div class="form-group">
-		{{ Form::label('disability', 'is disabled') }}
-		{{ Form::checkbox('disability', '1', $child->personalInfo->disability, array('class' => 'form-control')) }}
+		{{ Form::label('specialNeeds', 'special needs') }}
+		{{ Form::text('specialNeeds', $child->personalInfo->specialNeeds, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

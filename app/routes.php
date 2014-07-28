@@ -41,8 +41,6 @@ Route::resource('people','PersonController');
 
 Route::resource('workers','WorkersController');
 
-Route::resource('allegedAbusers','AllegedAbuserController');
-
 Route::resource('serviceType','ServiceTypeController');
 
 Route::resource('session','SessionController');

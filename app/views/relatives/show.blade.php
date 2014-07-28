@@ -41,12 +41,7 @@
                         <br>
 			<strong>Name of the relative:</strong> {{ $relative->alias }}<br>
                         <strong>Is he/she an alleged Offender</strong>
-                        @if ($relative->allegedOffender)
-                         yes
-                        @else
-                         no
-                        @endif
-                        <br>
+                        
 
 		</p>
 	</div>

@@ -57,11 +57,7 @@
                         <td>no</td>
                         @endif
 			<td>{{ $value->alias }}</td>
-                        @if ($value->allegedOffender)
-			<td>yes</td>
-                        @else
-                        <td>no</td>
-                        @endif
+                        
 
 			<!-- we will also add show, edit, and delete buttons -->
 			<td>

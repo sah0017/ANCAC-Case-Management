@@ -41,7 +41,7 @@ class relativeController extends \BaseController {
                         $relative = new Relationship;
 			$relative->abusedChild_id    = Input::get('abusedChild_id');
                         $relative->person_id         = Input::get('person_id');
-			$relative->type              = Input::get('type');
+			$relative->relationType_id   = Input::get('relationType_id');
 			$relative->custodian         = Input::get('custodian',false);
                         $relative->sameHouse         = Input::get('sameHouse',false);
                         $relative->alias             = Input::get('alias');
@@ -98,8 +98,8 @@ class relativeController extends \BaseController {
 	{
                         $relative = Relationship::find($id);
 			$relative->abusedChild_id    = Input::get('abusedChild_id');
-                        $relative->person_id    = Input::get('person_id');
-			$relative->type              = Input::get('type');
+                        $relative->person_id         = Input::get('person_id');
+			$relative->relationType_id   = Input::get('relationType_id');
 			$relative->custodian         = Input::get('custodian');
                         $relative->sameHouse         = Input::get('sameHouse');
                         $relative->alias             = Input::get('alias');

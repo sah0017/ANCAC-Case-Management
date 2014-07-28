@@ -25,26 +25,6 @@
 		<h2>{{ $relatives->name }}</h2>
 		<p>
 			<strong>Type of relation:</strong>
-                        @if ($relative->type)
-                        Mother
-                        @elseif ($relative->type)
-                        Father
-                        @elseif ($relative->type)
-                        Brother
-                        @elseif ($relative->type)
-                        Sister
-                        @elseif ($relative->type)
-                        Uncle
-                        @elseif ($relative->type)
-                        Aunt
-                        @elseif ($relative->type)
-                        Grand Mother
-                        @elseif ($relative->type)
-                        Grand Father
-                        @elseif ($relative->type)
-                        Other
-                        @endif
-                        <br>
                         <strong>Custodian:</strong>
                         @if ($relative->custodian)
                          yes

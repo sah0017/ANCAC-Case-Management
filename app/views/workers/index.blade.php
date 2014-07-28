@@ -40,7 +40,7 @@
 		<tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
-                        <td>{{ $value->job->type }}</td>
+                        <td>{{ $value->workerType->type }}</td>
 
 			<!-- we will also add show, edit, and delete buttons -->
 			<td>

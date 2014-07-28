@@ -27,8 +27,23 @@
 {{ Form::open(array('url' => 'people')) }}
 
 	<div class="form-group">
-		{{ Form::label('name', 'Name') }}
-		{{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+		{{ Form::label('first', 'First Name') }}
+		{{ Form::text('first', Input::old('first'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('middle', 'Middle Name') }}
+		{{ Form::text('middle', Input::old('middle'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('last', 'Last Name') }}
+		{{ Form::text('last', Input::old('last'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('age', 'age') }}
+		{{ Form::text('age', Input::old('age'), array('class' => 'form-control')) }}
 	</div>
         
         <div class="form-group">
@@ -83,13 +98,9 @@
 
 	<div class="form-group">
 		{{ Form::label('specialNeeds', 'has special needs') }}
-		{{ Form::checkbox('specialNeeds', '1', Input::old('specialNeeds'), array('class' => 'form-control')) }}
+		{{ Form::text('specialNeeds', Input::old('specialNeeds'), array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
-		{{ Form::label('disability', 'is disabled') }}
-		{{ Form::checkbox('disability', '1', Input::old('disability'), array('class' => 'form-control')) }}
-	</div>
         
         <div class="form-group">
 		{{ Form::label('language', 'Language') }}

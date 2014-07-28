@@ -21,10 +21,26 @@
 {{ HTML::ul($errors->all()) }}
 
 {{ Form::open(array('url' => 'cases')) }}
+        
 
-	<div class="form-group">
-		{{ Form::label('abuse_id', 'abuse_id') }}
-		{{ Form::select('abuse_id', AbuseType::all()->lists('type','id'), Input::old('abuse_id'), array('class' => 'form-control')) }}
+        <div class="form-group">
+		{{ Form::label('childFirst', 'child\'s first name') }}
+		{{ Form::text('childFirst', Input::old('childFirst'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('childMiddle', 'middle name') }}
+		{{ Form::text('childMiddle', Input::old('childMiddle'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('childLast', 'last name') }}
+		{{ Form::text('childLast', Input::old('childLast'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('childAge', 'child\'s age') }}
+		{{ Form::text('childFirst', Input::old('childFirst'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -39,17 +55,12 @@
 
         <div class="form-group">
 		{{ Form::label('caseOpened', 'caseOpened') }}
-		{{ Form::text('caseOpened', Input::old('caseOpened'), array('class' => 'form-control')) }}
+		{{ Form::text('caseOpened', date('Y-m-d'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('county_id', 'county_id') }}
 		{{ Form::text('county_id', Input::old('county_id'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('DHRCase', 'DHRCase') }}
-		{{ Form::text('DHRCase', Input::old('DHRCase'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -59,7 +70,7 @@
 
         <div class="form-group">
 		{{ Form::label('IOReport', 'IOReport') }}
-		{{ Form::text('IOReport', Input::old('IOReport'), array('class' => 'form-control')) }}
+		{{ Form::checkbox('IOReport', '1', Input::old('IOReport'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -88,14 +99,14 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('reportNature', 'reportNature') }}
-		{{ Form::text('reportNature', Input::old('reportNature'), array('class' => 'form-control')) }}
+		{{ Form::label('referralReason', 'Reason for Referral') }}
+		{{ Form::text('referralReason', Input::old('referralReason'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('DHRDetermination', 'DHRDetermination') }}
-		{{ Form::select('DHRDetermination', array('0' => 'Select a Determination', '1' => 'Valid',
-                            '2' => 'Not Valid', '3' => 'Unknown'), 
+		{{ Form::select('DHRDetermination', array('0' => 'Select a Determination', '1' => 'Indicated',
+                            '2' => 'Not Indicated', '3' => 'Unknown'), 
                     Input::old('DHRDetermination'), array('class' => 'form-control')) }}
 	</div>
 
@@ -109,11 +120,6 @@
 		{{ Form::select('status', array('0' => 'Select Status', '1' => 'Open',
                             '2' => 'Closed'), 
                     Input::old('status'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('parentJurisdiction', 'parentJurisdiction') }}
-		{{ Form::text('parentJurisdiction', Input::old('parentJurisdiction'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

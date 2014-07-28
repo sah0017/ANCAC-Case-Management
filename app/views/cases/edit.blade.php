@@ -23,11 +23,6 @@
 
 {{ Form::model($case, array('route' => array('cases.update', $case->id), 'method' => 'PUT')) }}
 
-	<div class="form-group">
-		{{ Form::label('abuse_id', 'abuse_id') }}
-		{{ Form::select('abuse_id', AbuseType::all()->lists('type','id'), Input::old('abuse_id'), array('class' => 'form-control')) }}
-	</div>
-
         <div class="form-group">
 		{{ Form::label('worker_id', 'worker_id') }}
 		{{ Form::text('worker_id', Input::old('worker_id'), array('class' => 'form-control')) }}
@@ -36,11 +31,6 @@
         <div class="form-group">
 		{{ Form::label('note', 'note') }}
 		{{ Form::text('note', Input::old('note'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('caseOpened', 'caseOpened') }}
-		{{ Form::text('caseOpened', Input::old('caseOpened'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -60,7 +50,7 @@
 
         <div class="form-group">
 		{{ Form::label('IOReport', 'IOReport') }}
-		{{ Form::text('IOReport', Input::old('IOReport'), array('class' => 'form-control')) }}
+		{{ Form::checkbox('IOReport', '1', Input::old('IOReport'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -89,14 +79,14 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('reportNature', 'reportNature') }}
-		{{ Form::text('reportNature', Input::old('reportNature'), array('class' => 'form-control')) }}
+		{{ Form::label('referralReason', 'Reason for Referral') }}
+		{{ Form::text('referralReason', Input::old('referralReason'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('DHRDetermination', 'DHRDetermination') }}
-		{{ Form::select('DHRDetermination', array('0' => 'Select a Determination', '1' => 'Valid',
-                            '2' => 'Not Valid', '3' => 'Unknown'), 
+		{{ Form::select('DHRDetermination', array('0' => 'Select a Determination', '1' => 'Indicated',
+                            '2' => 'Not Indicated', '3' => 'Unknown'), 
                     Input::old('DHRDetermination'), array('class' => 'form-control')) }}
 	</div>
 
@@ -110,11 +100,6 @@
 		{{ Form::select('status', array('0' => 'Select Status', '1' => 'Open',
                             '2' => 'Closed'), 
                     Input::old('status'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('parentJurisdiction', 'parentJurisdiction') }}
-		{{ Form::text('parentJurisdiction', Input::old('parentJurisdiction'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

@@ -19,7 +19,9 @@ class CreateSessionsTable extends Migration {
 			$table->date('date');
                         $table->time('timeStart');
 			$table->time('timeEnd')->nullable();
+                        $table->enum('status',array('scheduled','no-show','cancled','attended','rescheduled'))->nullable;
 			$table->integer('worker_id')->unsigned();
+                        $table->enum('discussedAbuse',array('yes','no','partial'))->nullable();
 			$table->timestamps();
 		});
 	}

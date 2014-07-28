@@ -21,7 +21,6 @@ class CreateRelationshipsTable extends Migration {
 			$table->string('alias')->nullable();
 			$table->boolean('custodian')->default(false);
 			$table->boolean('sameHouse');
-                        $table->boolean('allegedOffender')->default(false);
 			$table->timestamps();
 		});
 	}

@@ -20,6 +20,7 @@ class CreateCasesTable extends Migration {
 			$table->integer('worker_id')->unsigned();
 			$table->text('note')->nullable();
 			$table->date('caseOpened');
+                        $table->date('caseClosed')->nullable();
 			$table->integer('county_id')->unsigned();
 			$table->boolean('custodyIssues')->nullable();
 			$table->boolean('IOReport')->nullable();  // ?

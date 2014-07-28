@@ -18,8 +18,10 @@ class CreatePersonsTable extends Migration {
 			$table->string('first');
 			$table->string('middle')->nullable();
 			$table->string('last')->nullable();
+                        $table->string('alias')->nullable();
 			$table->date('dob')->nullable();
                         $table->smallinteger('age')->nullable();
+                        $table->enum('gender',array('male','female'));
 			$table->boolean('drugUse')->nullable();
 			$table->boolean('physicalAbuse')->nullable();
 			$table->boolean('sexAbuse')->nullable();

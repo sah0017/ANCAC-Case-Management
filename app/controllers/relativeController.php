@@ -45,7 +45,6 @@ class relativeController extends \BaseController {
 			$relative->custodian         = Input::get('custodian',false);
                         $relative->sameHouse         = Input::get('sameHouse',false);
                         $relative->alias             = Input::get('alias');
-                        $relative->allegedOffender   = Input::get('allegedOffender',false);
 			$relative->save();
 
 			// redirect
@@ -103,7 +102,6 @@ class relativeController extends \BaseController {
 			$relative->custodian         = Input::get('custodian');
                         $relative->sameHouse         = Input::get('sameHouse');
                         $relative->alias             = Input::get('alias');
-                        $relative->allegedOffender   = Input::get('allegedOffender');
 			$relative->save();
 
 			// redirect

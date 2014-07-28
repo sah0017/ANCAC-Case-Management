@@ -11,7 +11,7 @@
 		<a class="navbar-brand" href="{{ URL::to('relativeType') }}">Abuse Relative Alert</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('wrokerType') }}">View All Relative Types</a></li>
+		<li><a href="{{ URL::to('relativeType') }}">View All Relative Types</a></li>
 		<li><a href="{{ URL::to('relativeType/create') }}">Create a Relative Type</a>
 	</ul>
 </nav>

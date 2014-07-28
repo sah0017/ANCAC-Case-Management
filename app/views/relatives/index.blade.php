@@ -44,6 +44,7 @@
 		<tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->abusedChild_id }}</td>
+                        <td>{{ $value->person_id }}</td>
                         <td>{{ $value->relationType->type }}</td>
                         @if ($value->custodian)
 			<td>yes</td>
@@ -56,11 +57,7 @@
                         <td>no</td>
                         @endif
 			<td>{{ $value->alias }}</td>
-                        @if ($value->allegedOffender)
-			<td>yes</td>
-                        @else
-                        <td>no</td>
-                        @endif
+                        
 
 			<!-- we will also add show, edit, and delete buttons -->
 			<td>

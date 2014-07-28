@@ -47,7 +47,7 @@
 
 				<!-- delete the child (uses the destroy method DESTROY /children/{id} -->
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
-				{{ Form::open(array('url' => 'workers/' . $value->id, 'class' => 'pull-right')) }}
+				{{ Form::open(array('url' => 'workers/' . $value->id)) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this worker', array('class' => 'btn btn-warning')) }}
 				{{ Form::close() }}

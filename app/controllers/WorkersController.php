@@ -39,7 +39,6 @@ class WorkersController extends \BaseController {
 	public function store()
 	{
                         $worker = new Worker;
-			$worker->id                  = Input::get('id');
 			$worker->name                = Input::get('name');
                         $worker->workerType_id       = input::get('workerType_id');
 			$worker->save();
@@ -92,7 +91,6 @@ class WorkersController extends \BaseController {
 	public function update($id)
 	{
                         $worker = Worker::find($id);
-			$worker->id                  = Input::get('id');
 			$worker->name                = Input::get('name');
                         $worker->workerType_id       = input::get('workerType_id');
 			$worker->save();

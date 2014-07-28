@@ -53,3 +53,5 @@ Route::get('cases/{id}/child', function($id)
     return View::make('cases.child')
 			->with('child', $child);
 });
+
+Route::resource('workerType','WorkerTypeController');

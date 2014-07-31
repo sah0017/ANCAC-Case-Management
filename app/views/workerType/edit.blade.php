@@ -24,7 +24,7 @@
 {{ Form::model($workerType, array('route' => array('workerType.update', $workerType->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
-		{{ Form::label('type', 'Type') }}
+		{{ Form::label('type', 'type') }}
 		{{ Form::text('type', null, array('class' => 'form-control')) }}
 	</div>
 

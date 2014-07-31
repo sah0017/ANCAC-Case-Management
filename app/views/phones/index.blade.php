@@ -51,10 +51,10 @@
 					{{ Form::submit('Delete this phones', array('class' => 'btn btn-warning')) }}
 				{{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /phones/{id} -->
-				<a class="btn btn-small btn-success" href="{{ URL::to('phones/' . $value->id) }}">Show this Worker Type</a>
+				<a class="btn btn-small btn-success" href="{{ URL::to('phones/' . $value->id) }}">Show this Phone</a>
 
 				<!-- edit this nerd (uses the edit method found at GET /phones/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('phones/' . $value->id . '/edit') }}">Edit this Worker Type</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('phones/' . $value->id . '/edit') }}">Edit this Phone</a>
 
 			</td>
 		</tr>

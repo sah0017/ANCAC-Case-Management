@@ -57,3 +57,5 @@ Route::resource('workerType','WorkerTypeController');
 Route::resource('relativeType','RelativeTypeController');
 
 Route::resource('phones','PhonesController');
+
+Route::resource('ethnicity','EthnicityController');

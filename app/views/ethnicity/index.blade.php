@@ -32,7 +32,7 @@
 	<tbody>
 	@foreach($ethnicity as $key => $value)
 		<tr>
-			<td>{{ $value->type }}</td>
+			<td>{{ $value->ethnicity }}</td>
 
 
 			<!-- we will also add show, edit, and delete buttons -->

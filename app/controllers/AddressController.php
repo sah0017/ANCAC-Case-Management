@@ -40,8 +40,8 @@ class AddressController extends \BaseController {
 	{
                         $address = new Address;
 			$address->id                  = Input::get('id');
-			$address->line1               = Input::get('line1');
-                        $address->line2               = Input::get('line2');
+			$address->line1               = Input::get('address1');
+                        $address->line2               = Input::get('address2');
                         $address->city                = Input::get('city');
                         $address->state               = Input::get('state');
                         $address->zip                 = Input::get('zip');

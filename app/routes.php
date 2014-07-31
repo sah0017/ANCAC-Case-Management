@@ -63,3 +63,5 @@ Route::resource('ethnicity','EthnicityController');
 Route::resource('address','AddressController');
 
 Route::resource('allegedOffenders','AllegedOffenderController');
+
+Route::resource('county','CountyController');

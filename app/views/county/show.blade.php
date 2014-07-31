@@ -8,15 +8,15 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('workerType') }}">Worker Type Alert</a>
+		<a class="navbar-brand" href="{{ URL::to('county') }}">Caounty</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('workerType') }}">View All Worker Types</a></li>
-		<li><a href="{{ URL::to('workerType/create') }}">Create a Worker Type</a>
+		<li><a href="{{ URL::to('county') }}">View All County</a></li>
+		<li><a href="{{ URL::to('county/create') }}">Create a County</a>
 	</ul>
 </nav>
 
-<h1>Showing {{ $WorkerType->type }}</h1>
+<h1>Showing {{ $County->name }}</h1>
 
 
 </div>

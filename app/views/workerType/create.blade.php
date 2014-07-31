@@ -11,7 +11,7 @@
 		<a class="navbar-brand" href="{{ URL::to('workerType') }}">Abuse Worker Alert</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('wrokerType') }}">View All Worker Types</a></li>
+		<li><a href="{{ URL::to('workerType') }}">View All Worker Types</a></li>
 		<li><a href="{{ URL::to('workerType/create') }}">Create a Worker Type</a>
 	</ul>
 </nav>

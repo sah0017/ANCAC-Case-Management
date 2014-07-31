@@ -55,3 +55,5 @@ Route::get('cases/{id}/child', function($id)
 Route::resource('workerType','WorkerTypeController');
 
 Route::resource('relativeType','RelativeTypeController');
+
+Route::resource('phones','PhonesController');

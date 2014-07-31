@@ -61,3 +61,5 @@ Route::resource('phones','PhonesController');
 Route::resource('ethnicity','EthnicityController');
 
 Route::resource('address','AddressController');
+
+Route::resource('allegedOffenders','AllegedOffenderController');

@@ -39,8 +39,12 @@ class SessionController extends \BaseController {
 		$session = new Session;
                 $session->id                 =Input::get('id');
                 $session->serviceType_id     =Input::get('serviceType_id');
-		$session->dateAndTime        =Input::get('dateAndTime');
+		$session->date               =Input::get('date');
+                $session->timeStatrt         =Input::get('timeStart');
+                $session->timeEnd            =Input::get('timeEnd');
+                $session->status             =Input::get('status');
 		$session->worker_id          =Input::get('worker_id');
+                $session->discussedAbuse     =Input::get('discussedAbuse');
 		$session->save();
 
 		// redirect
@@ -92,8 +96,12 @@ class SessionController extends \BaseController {
 		$session = Session::find($id);
                 $session->id                 =Input::get('id');
                 $session->serviceType_id     =Input::get('serviceType_id');
-		$session->dateAndTime        =Input::get('dateAndTime');
+		$session->date               =Input::get('date');
+                $session->timeStatrt         =Input::get('timeStart');
+                $session->timeEnd            =Input::get('timeEnd');
+                $session->status             =Input::get('status');
 		$session->worker_id          =Input::get('worker_id');
+                $session->discussedAbuse     =Input::get('discussedAbuse');
 		$session->save();
 
 		// redirect

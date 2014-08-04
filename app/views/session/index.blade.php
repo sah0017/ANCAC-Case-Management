@@ -29,8 +29,12 @@
 		<tr>
                         <td>ID</td>
                         <td>session type ID</td>
-			<td>date and time</td>
+			<td>date</td>
+                        <td>Time Start</td>
+                        <td>Time End</td>
+                        <td>Status</td>
 			<td>worker ID</td>
+                        <td>Discussed Abuse</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -38,8 +42,12 @@
 		<tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->serviceType_id }}</td>
-			<td>{{ $value->dataAndTime }}</td>
+			<td>{{ $value->date }}</td>
+                        <td>{{ $value->timeStart }}</td>
+                        <td>{{ $value->timeEnd }}</td>
+                        <td>{{ $value->status }}</td>
 			<td>{{ $value->worker_id }}</td>
+                        <td>{{ $value->discussedAbuse }}</td>
 
 			<!-- we will also add show, edit, and delete buttons -->
 			<td>

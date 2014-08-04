@@ -29,11 +29,28 @@
 	<div class="form-group">
 		{{ Form::label('serviceType_id', 'serviceType_id') }}
 		{{ Form::select('serviceType_id', ServiceType::all()->lists('type','id'), Input::old('serviceType_id'), array('class' => 'form-control')) }}
-	</div>
-        
+        </div>
+
         <div class="form-group">
-		{{ Form::label('dateAndTime', 'dateAndTime') }}
-		{{ Form::text('dateAndTime', Input::old('dateAndTime'), array('class' => 'form-control')) }}
+		{{ Form::label('date', 'date') }}
+		{{ Form::text('date', Input::old('date'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('timeStart', 'timeStart') }}
+		{{ Form::text('timeStart', Input::old('timeStart'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('timeEnd', 'timeEnd') }}
+		{{ Form::text('timeEnd', Input::old('timeEnd'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('status', 'status') }}
+		{{ Form::select('status', array('0' => 'Select a status', '1' => 'scheduled',
+                            '2' => 'no-show', '3' => 'cancled', '4' => 'attended', '5' => 'rescheduled'), 
+                    Input::old('status'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
@@ -41,6 +58,12 @@
 		{{ Form::text('worker_id', Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>
 
+        <div class="form-group">
+		{{ Form::label('discussedAbuse', 'discussedAbuse') }}
+		{{ Form::select('discussedAbuse', array('0' => 'Select the one that aplies', '1' => 'yes',
+                            '2' => 'no', '3' => 'partial'), 
+                    Input::old('discussedAbuse'), array('class' => 'form-control')) }}
+	</div>
 
         <br>
 

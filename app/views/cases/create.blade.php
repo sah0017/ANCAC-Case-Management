@@ -64,7 +64,7 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('custodyIssues', 'Are There Custody Issues') }}
+		{{ Form::label('custodyIssues', 'Are There Custody Issues?') }}
 		{{ Form::checkbox('custodyIssues', '1', Input::old('custodyIssues'), array('class' => 'form-control')) }}
 	</div>
 
@@ -94,7 +94,7 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('abuseLocation', 'abuseLocation') }}
+		{{ Form::label('abuseLocation', 'Abuse Location') }}
 		{{ Form::text('abuseLocation', Input::old('abuseLocation'), array('class' => 'form-control')) }}
 	</div>
 
@@ -128,7 +128,7 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('agencyReportedTo', 'Reporting agency') }}
+		{{ Form::label('agencyReportedTo', 'Reporting Agency') }}
 		{{ Form::text('agencyReportedTo', Input::old('agencyReportedTo'), array('class' => 'form-control')) }}
 	</div>
 

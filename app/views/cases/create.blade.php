@@ -64,7 +64,7 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('custodyIssues', 'Are There Custody Issues?') }}
+		{{ Form::label('custodyIssues', 'Are there custody issues?') }}
 		{{ Form::checkbox('custodyIssues', '1', Input::old('custodyIssues'), array('class' => 'form-control')) }}
 	</div>
 

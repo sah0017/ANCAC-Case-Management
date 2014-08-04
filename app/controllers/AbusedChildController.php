@@ -63,7 +63,7 @@ class AbusedChildController extends \BaseController {
 
 			// redirect
 			Session::flash('message', 'Successfully stored child info!');
-			return Redirect::to('children');
+			return Redirect::to(Session::pull('from'));
 	}
 
 	/**
@@ -143,7 +143,7 @@ class AbusedChildController extends \BaseController {
 
 			// redirect
 			Session::flash('message', 'Successfully updated child info!');
-			return Redirect::to('children');
+			return Redirect::to(Session::pull('from'));
 	}
 
 	/**

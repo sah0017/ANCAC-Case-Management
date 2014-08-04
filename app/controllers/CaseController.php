@@ -86,11 +86,11 @@ class CaseController extends \BaseController {
 	{
 						// get the case
 		$case = TrackedCase::find($id);
-		$kid = AbusedChild::find($case->abusedChild_id);
+		//$kid = AbusedChild::find($case->abusedChild_id);
 		//$kidInfo = Person::find($kid->person_id);
 
 		// show the view and pass the abuseType to it
-		return View::make('cases.show', array('case'=>$case,'kid'=>$kid));
+		return View::make('cases.show', array('case'=>$case));
 	}
 
 	/**

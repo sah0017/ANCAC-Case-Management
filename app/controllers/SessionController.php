@@ -10,7 +10,7 @@ class SessionController extends \BaseController {
 	 */
 	public function index()
 	{
-		$session = Session::all();
+		$session = CaseSession::all();
 
 		// load the view and pass the sessioncontroller
 		return View::make('session.index')
@@ -36,7 +36,7 @@ class SessionController extends \BaseController {
 	 */
 	public function store()
 	{
-		$session = new Session;
+		$session = new CaseSession;
                 $session->id                 =Input::get('id');
                 $session->serviceType_id     =Input::get('serviceType_id');
 		$session->date               =Input::get('date');
@@ -62,7 +62,7 @@ class SessionController extends \BaseController {
 	public function show($id)
 	{
 						// get the case
-		$session = Session::find($id);
+		$session = CaseSession::find($id);
 
 		// show the view and pass the abuseType to it
 		return View::make('session.show', array('session'=>$session));
@@ -77,7 +77,7 @@ class SessionController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$session = Session::find($id);
+		$session = CaseSession::find($id);
 
 		// show the edit form and pass the sessioncontroller
 		return View::make('session.edit')
@@ -93,7 +93,7 @@ class SessionController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$session = Session::find($id);
+		$session = CaseSession::find($id);
                 $session->id                 =Input::get('id');
                 $session->serviceType_id     =Input::get('serviceType_id');
 		$session->date               =Input::get('date');
@@ -119,7 +119,7 @@ class SessionController extends \BaseController {
 	public function destroy($id)
 	{
 		// delete
-		$session = Session::find($id);
+		$session = CaseSession::find($id);
 		$session->delete();
 
 		// redirect

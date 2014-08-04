@@ -1,7 +1,9 @@
 <?php
 
-class Session extends \Eloquent {
+class CaseSession extends \Eloquent {
 	protected $fillable = [];
+        
+        protected $table = "sessions";
         
         public function type() {
             return $this->blongsTo('ServiceType');

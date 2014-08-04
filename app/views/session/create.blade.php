@@ -28,39 +28,39 @@
 
 
 	<div class="form-group">
-		{{ Form::label('serviceType_id', 'serviceType_id') }}
+		{{ Form::label('serviceType_id', 'Service Type') }}
 		{{ Form::select('serviceType_id', ServiceType::all()->lists('type','id'), Input::old('serviceType_id'), array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
-		{{ Form::label('date', 'date') }}
+		{{ Form::label('date', 'Date') }}
 		{{ Form::text('date', Input::old('date'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
-		{{ Form::label('timeStart', 'timeStart') }}
+		{{ Form::label('timeStart', 'Time Start') }}
 		{{ Form::text('timeStart', Input::old('timeStart'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
-		{{ Form::label('timeEnd', 'timeEnd') }}
+		{{ Form::label('timeEnd', 'Time End') }}
 		{{ Form::text('timeEnd', Input::old('timeEnd'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
-		{{ Form::label('status', 'status') }}
-		{{ Form::select('status', array('0' => 'Select a status', '1' => 'scheduled',
+		{{ Form::label('status', 'Status') }}
+		{{ Form::select('status', array('0' => 'Select a Status', '1' => 'scheduled',
                             '2' => 'no-show', '3' => 'cancled', '4' => 'attended', '5' => 'rescheduled'), 
                     Input::old('status'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('worker_id', 'worker_id') }}
-		{{ Form::text('worker_id', Input::old('worker_id'), array('class' => 'form-control')) }}
+		{{ Form::label('worker_id', 'MDT Workers') }}
+		{{ Form::select('worker_id', Worker::all()->lists('type','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
-		{{ Form::label('discussedAbuse', 'discussedAbuse') }}
+		{{ Form::label('discussedAbuse', 'Discussed Abuse') }}
 		{{ Form::select('discussedAbuse', array('0' => 'Select the one that aplies', '1' => 'yes',
                             '2' => 'no', '3' => 'partial'), 
                     Input::old('discussedAbuse'), array('class' => 'form-control')) }}

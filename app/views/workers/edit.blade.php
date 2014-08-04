@@ -24,7 +24,7 @@
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all() )}}
 
-{{ Form::model($relative, array('route' => array('relatives.update', $relative->id), 'method' => 'PUT')) }}
+{{ Form::model($worker, array('route' => array('worker.update', $worker->id), 'method' => 'PUT')) }}
 
 
 	<div class="form-group">
@@ -34,7 +34,7 @@
 
         <div class="form-group">
 		{{ Form::label('workerType_id', 'workerType_id') }}
-		{{ Form::select('workerType_id', WorkerType::all()->lists('type','id'), Input::old('abuse_id'), array('class' => 'form-control')) }}
+		{{ Form::select('workerType_id', WorkerType::all()->lists('type','id'), Input::old('workerType_id'), array('class' => 'form-control')) }}
 	</div>
 
 

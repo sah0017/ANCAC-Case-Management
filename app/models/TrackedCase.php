@@ -12,5 +12,11 @@ class TrackedCase extends \Eloquent {
 	public function county(){
 		return $this->hasOne('county');
 	}
+        public function allegedOffenders(){
+            return $this->hasMany('AllegedOffender','case_id');
+        }
+        public function workers(){
+            return $this->belongsToMany('Worker','case_worker','case_id','worker_id');
+        }
 	
 }

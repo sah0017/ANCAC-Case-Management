@@ -50,7 +50,8 @@
                                 <strong>Date of birth </strong>
                             </div>
                             <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('allegedAbusers/' . $case->allegedAbuser_id . '/edit') }}">Edit this abuser</a> 
+                                <a class="btn btn-small btn-info" href="{{ URL::to('allegedAbusers/' . $case->allegedAbuser_id . '/edit') }}">Edit</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('allegedAbusers/' . $case->allegedAbuser_id . '/create') }}">Create</a>
                             </div>
                         </div>
 

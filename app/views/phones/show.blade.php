@@ -8,11 +8,11 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('phones') }}">Abuse Type Alert</a>
+		<a class="navbar-brand" href="{{ URL::to('phones') }}">Phones</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('phones') }}">View All Abuse Types</a></li>
-		<li><a href="{{ URL::to('phones/create') }}">Create a Abuse Type</a>
+		<li><a href="{{ URL::to('phones') }}">View All Phones</a></li>
+		<li><a href="{{ URL::to('phones/create') }}">Create a Phone</a>
 	</ul>
 </nav>
 

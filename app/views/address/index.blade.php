@@ -11,7 +11,7 @@
 		<a class="navbar-brand" href="{{ URL::to('address') }}">Address</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('address') }}">View All Ethnicities</a></li>
+		<li><a href="{{ URL::to('address') }}">View All Address</a></li>
 		<li><a href="{{ URL::to('address/create') }}">Create a Address</a>
 	</ul>
 </nav>

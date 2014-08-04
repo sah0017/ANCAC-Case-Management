@@ -28,12 +28,12 @@
 	<thead>
 		<tr>
                         <td>ID</td>
-                        <td>session type ID</td>
-			<td>date</td>
+                        <td>Session Type</td>
+			<td>Date</td>
                         <td>Time Start</td>
                         <td>Time End</td>
                         <td>Status</td>
-			<td>worker ID</td>
+			<td>MDT Worker</td>
                         <td>Discussed Abuse</td>
 		</tr>
 	</thead>

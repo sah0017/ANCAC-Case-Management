@@ -40,7 +40,7 @@ class SessionController extends \BaseController {
                 $session->id                 =Input::get('id');
                 $session->serviceType_id     =Input::get('serviceType_id');
 		$session->date               =Input::get('date');
-                $session->timeStatrt         =Input::get('timeStart');
+                $session->timeStart         =Input::get('timeStart');
                 $session->timeEnd            =Input::get('timeEnd');
                 $session->status             =Input::get('status');
 		$session->worker_id          =Input::get('worker_id');
@@ -97,7 +97,7 @@ class SessionController extends \BaseController {
                 $session->id                 =Input::get('id');
                 $session->serviceType_id     =Input::get('serviceType_id');
 		$session->date               =Input::get('date');
-                $session->timeStatrt         =Input::get('timeStart');
+                $session->timeStart         =Input::get('timeStart');
                 $session->timeEnd            =Input::get('timeEnd');
                 $session->status             =Input::get('status');
 		$session->worker_id          =Input::get('worker_id');

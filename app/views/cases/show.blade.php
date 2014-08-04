@@ -37,7 +37,7 @@
                                 <strong>Date of birth </strong>{{$case->abusedChild->personalInfo->dob}}<br>
                             </div>
                             <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('children/' . $case->abusedChild_id . '/edit') }}">Edit this child</a> 
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/child') }}">Show Details</a> 
                             </div>
                         </div>
 

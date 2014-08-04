@@ -25,8 +25,12 @@
 		<h2>{{ $session->name }}</h2>
 		<p>
 			<strong>ServiceType_ID:</strong> {{ $session->personalInfo->serviceType_id }}<br>
-                        <strong>DateAndTIme:</strong> {{ $session->personalInfo->dateAndTime }}<br>
+                        <strong>Date:</strong> {{ $session->personalInfo->date }}<br>
+                        <strong>TimeStart:</strong> {{ $session->personalInfo->timeStart }}<br>
+                        <strong>TimeEnd:</strong> {{ $session->personalInfo->timeEnd }}<br>
+                        <strong>Status:</strong> {{ $session->personalInfo->status }}<br>
 			<strong>Worker_ID:</strong> {{ $session->parentalInfo->Worker_id }}<br>
+                        <strong>DiscussedAbuse:</strong> {{ $session->personalInfo->discussedAbuse }}<br>
                         
 		</p>
 	</div>

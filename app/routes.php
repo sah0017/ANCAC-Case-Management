@@ -69,3 +69,25 @@ Route::resource('allegedOffenders', 'AllegedOffenderController');
 Route::resource('county', 'CountyController');
 
 Route::resource('households','HouseholdController');
+
+Route::get('cases/{id}/allegedOffenders', function($id) {
+    $allegedOffender = TrackedCase::find($id)->allegedOffenders;
+    return View::make('allegedOffenders.index')
+                    ->with('allegedOffenders', $allegedOffender);
+});
+
+Route::get('cases/{id}/allegedOffenders/edit', function($id) {
+    $child = TrackedCase::find($id)->allegedOffenders;
+    Session::put('from','cases/'.$id);
+    return View::make('children.edit')
+                    ->with('child', $child);
+});
+
+Route::get('cases/{id}/workers', function($id) {
+    $workers = TrackedCase::find($id)->workers;
+    return View::make('workers.index')
+                    ->with('workers', $workers);
+});
+
+Route::post('cases/{id}/addWorker', 'CaseController@addWorker');
+Route::post('cases/{id}/removeWorker', 'CaseController@removeWorker');

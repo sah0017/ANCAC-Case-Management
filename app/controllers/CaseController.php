@@ -161,5 +161,19 @@ class CaseController extends \BaseController {
 		Session::flash('message', 'Successfully deleted the case entry!');
 		return Redirect::to('cases');
 	}
+        
+        public function addWorker($id) {
+            $worker = Input::get('worker_id');
+            DB::table('case_worker')->insert(array('case_id' => $id, 'worker_id' => $worker));
+            Session::flash('message', 'Successfully added worker!');
+            return Redirect::to('cases/'.$id);
+        }
+        
+        public function removeWorker($id) {
+            $worker = Input::get('worker_id');
+            DB::table('case_worker')->where('case_id', $id)->where('worker_id', $worker)->delete();
+            Session::flash('message', 'Successfully removed worker!');
+            return Redirect::to('cases/'.$id);
+        }
 
 }

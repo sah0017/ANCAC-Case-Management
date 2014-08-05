@@ -50,8 +50,8 @@
                                 <strong>Date of Birth </strong>
                             </div>
                             <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('allegedAbusers/' . $case->allegedAbuser_id . '/edit') }}">Edit</a>
-                                <a class="btn btn-small btn-info" href="{{ URL::to('allegedAbusers/' . $case->allegedAbuser_id . '/create') }}">Create</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/allegedOffenders') }}">Edit</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('allegedOffendes/' . $case->allegedAbuser_id . '/create') }}">Create</a>
                             </div>
                         </div>
 
@@ -76,14 +76,47 @@
                             <div class="panel-heading">
                                 <h4 class="panel-tittel">Workers</h4>
                             </div>
-                            <table class="table"> 
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                </tr>
-                            </table>
+                            <table class="table">
+	<thead>
+		<tr>
+                        <td>Name</td>
+			<td>Worker Type ID</td>
+			
+		</tr>
+	</thead>
+	<tbody>
+	@foreach($case->workers as $key => $value)
+		<tr>
+                        <td>{{ $value->name }}</td>
+                        <td>{{ $value->workerType->type }}</td>
+
+			<!-- we will also add show, edit, and delete buttons -->
+			<td>
+
+				<!-- delete the child (uses the destroy method DESTROY /children/{id} -->
+				<!-- we will add this later since its a little more complicated than the first two buttons -->
+				{{ Form::open(array('action' => array('CaseController@removeWorker', $case->id))) }}
+                                {{ Form::hidden('worker_id', $value->id) }}
+					{{ Form::submit('X', array('class' => 'btn btn-warning')) }}
+				{{ Form::close() }}
+			</td>
+		</tr>
+	@endforeach
+	</tbody>
+</table>
                             <div class="panel-footer">
-                                <?php echo Form::submit('edit'); ?>
+                                {{ Form::open(array('action' => array('CaseController@addWorker', $case->id), 'class' => 'form-inline')) }}
+
+
+
+                                {{ Form::select('worker_id', Worker::all()->lists('name','id'), null, array('class' => 'form-control')) }}
+
+
+
+                                {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+
+                                {{ Form::close() }}
+                                
                             </div>
                         </div>
 

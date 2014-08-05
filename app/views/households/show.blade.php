@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Households</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -20,29 +20,29 @@
 
 	<div class="jumbotron text-left">
 		<p>
-                    <strong>pets:</strong>{{ $household->pets }}<br>
-                    <strong>medicare:</strong>
+                    <strong>Pets:</strong>{{ $household->pets }}<br>
+                    <strong>Medicare:</strong>
                         @if ($household->medicare)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>allkids:</strong>
+                        <strong>All Kids:</strong>
                         @if ($household->allkids)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>free Or Reduced Lunch:</strong>
+                        <strong>Free or Reduced Lunch:</strong>
                         @if ($household->freeOrReducedLunch)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>on Base:</strong>
+                        <strong>On Base:</strong>
                         @if ($household->onBase)
                          yes
                         @else

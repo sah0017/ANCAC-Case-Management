@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Households</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -29,22 +29,22 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('medicare', 'medicare') }}
+		{{ Form::label('medicare', 'Medicare') }}
 		{{ Form::checkbox('medicare', '1', Input::old('medicare'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('allKids', 'allKids') }}
+		{{ Form::label('allKids', 'All Kids') }}
 		{{ Form::checkbox('allKids', '1', Input::old('allKids'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('freeOrReducedLunch', 'freeOrReducedLunch') }}
+		{{ Form::label('freeOrReducedLunch', 'Free or Reduced Lunch') }}
 		{{ Form::checkbox('freeOrReducedLunch', '1', Input::old('freeOrReducedLunch'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('onBase', 'onBase') }}
+		{{ Form::label('onBase', 'On Base') }}
 		{{ Form::checkbox('onBase', '1', Input::old('onBase'), array('class' => 'form-control')) }}
 	</div>
 

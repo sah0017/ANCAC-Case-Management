@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Households</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -32,7 +32,7 @@
 	<tbody>
 	@foreach($households as $key => $value)
 		<tr>
-			<td>{{ $value->id }}</td>
+			<td>{{ $value->ID }}</td>
 
 
 			<!-- we will also add show, edit, and delete buttons -->

@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC County</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,12 +11,12 @@
 		<a class="navbar-brand" href="{{ URL::to('county') }}">County</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('county') }}">View All County</a></li>
+		<li><a href="{{ URL::to('county') }}">View All Counties</a></li>
 		<li><a href="{{ URL::to('county/create') }}">Create a County</a>
 	</ul>
 </nav>
 
-<h1>All the Worker Types</h1>
+<h1>All the Counties</h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -26,7 +26,7 @@
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-			<td>Type</td>
+			<td>Name</td>
 		</tr>
 	</thead>
 	<tbody>

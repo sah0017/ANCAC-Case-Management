@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC People</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -9,15 +9,15 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('people') }}">People list</a>
+		<a class="navbar-brand" href="{{ URL::to('people') }}">People List</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('people') }}">View All people</a></li>
-		<li><a href="{{ URL::to('people/create') }}">Create a person entry</a>
+		<li><a href="{{ URL::to('people') }}">View All People</a></li>
+		<li><a href="{{ URL::to('people/create') }}">Create a Person Entry</a>
 	</ul>
 </nav>
 
-<h1>All the people</h1>
+<h1>All the People</h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -28,7 +28,7 @@
 	<thead>
 		<tr>
                         <td>ID</td>
-                        <td>name</td>
+                        <td>Name</td>
 			<td>DOB</td>
 			<td>Actions</td>
 		</tr>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC People</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,11 +11,11 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('people') }}">People list</a>
+		<a class="navbar-brand" href="{{ URL::to('people') }}">People List</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('people') }}">View All people</a></li>
-		<li><a href="{{ URL::to('people/create') }}">Create a person entry</a>
+		<li><a href="{{ URL::to('people') }}">View All People</a></li>
+		<li><a href="{{ URL::to('people/create') }}">Create a Person Entry</a>
 	</ul>
 </nav>
 
@@ -24,31 +24,31 @@
 	<div class="jumbotron text-left">
 		<h2>{{ $person->name }}</h2>
 		<p>
-			<strong>person_id:</strong> {{ $person->person_id }}<br>
+			<strong>Person:</strong> {{ $person->person_id }}<br>
 			<strong>Name:</strong> {{ $person->name }}<br>
                         <strong>DOB:</strong> {{ $person->dob }}<br>
-                        <strong>drugUse:</strong>
+                        <strong>Drug Use:</strong>
                         @if ($person->drugUse)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>physicalAbuse:</strong>
+                        <strong>Physical Abuse:</strong>
                         @if ($person->physicalAbuse)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>sexAbuse:</strong>
+                        <strong>Sex Abuse:</strong>
                         @if ($person->sexAbuse)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>mentalHealthTreatment:</strong>
+                        <strong>Mental Health Treatment:</strong>
                         @if ($person->mentalHealthTreatment)
                          yes
                         @else
@@ -62,35 +62,35 @@
                          no
                         @endif
                         <br>
-                        <strong>employed:</strong>
+                        <strong>Employed:</strong>
                         @if ($person->employed)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>fullTime:</strong>
+                        <strong>Full Time:</strong>
                         @if ($person->fullTime)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>activeMilitary:</strong>
+                        <strong>Active Military:</strong>
                         @if ($person->activeMilitary)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>sexAbuseSurvivor:</strong>
+                        <strong>Sex Abuse Survivor:</strong>
                         @if ($person->sexAbuseSurvivor)
                          yes
                         @else
                          no
                         @endif
                         <br>
-                        <strong>originCountry</strong> {{ $person->originCountry }}<br>
+                        <strong>Origin Country</strong> {{ $person->originCountry }}<br>
                         <strong>specialNeeds:</strong>
                         @if ($person->specialNeeds)
                          yes
@@ -98,18 +98,18 @@
                          no
                         @endif
                         <br>
-                        <strong>disability:</strong>
+                        <strong>Disability:</strong>
                         @if ($person->disability)
                          yes
                         @else
                          no
                         @endif
                         <br>
-			<strong>language:</strong> {{ $person->language }}<br>
-                        <strong>maritalStatus:</strong> {{ $person->maritalStatus }}<br>
-                        <strong>address_id</strong> {{ $person->address_id }}<br>
-                        <strong>household_id</strong> {{ $person->household_id }}<br>
-                        <strong>ethnicity_id</strong> {{ $person->ethnicity_id }}<br>
+			<strong>Language:</strong> {{ $person->language }}<br>
+                        <strong>Marital Status:</strong> {{ $person->maritalStatus }}<br>
+                        <strong>Address</strong> {{ $person->address_id }}<br>
+                        <strong>Household</strong> {{ $person->household_id }}<br>
+                        <strong>Ethnicity</strong> {{ $person->ethnicity_id }}<br>
 
 		</p>
 	</div>

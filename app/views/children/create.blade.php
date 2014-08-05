@@ -105,12 +105,12 @@
         
         <div class="form-group">
 		{{ Form::label('household_id', 'Household') }}
-		{{ Form::select('household_id', Address::all()->lists('household','id'), Input::old('household_id'), array('class' => 'form-control')) }}
+		{{ Form::select('household_id', Household::all()->lists('household','id'), Input::old('household_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('ethnicity_id', 'Ethnicity') }}
-		{{ Form::select('ethnicity_id', Address::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
+		{{ Form::select('ethnicity_id', Ethnicity::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
 	</div>
 
 

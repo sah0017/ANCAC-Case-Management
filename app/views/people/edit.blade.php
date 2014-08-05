@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC People</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
 		<a class="navbar-brand" href="{{ URL::to('people') }}">Edit Person Entry</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('people') }}">View All people</a></li>
-		<li><a href="{{ URL::to('people/create') }}">Create a Person entry</a>
+		<li><a href="{{ URL::to('people') }}">View All People</a></li>
+		<li><a href="{{ URL::to('people/create') }}">Create a Person Entry</a>
 	</ul>
 </nav>
 
@@ -42,64 +42,65 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('age', 'age') }}
+		{{ Form::label('age', 'Age') }}
 		{{ Form::text('age', Input::old('age'), array('class' => 'form-control')) }}
 	</div>
         
         <div class="form-group">
-		{{ Form::label('dob', 'Date of birth (YYYY-MM-DD)') }}
+		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
 		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('drugUse', 'History of drug use') }}
+		{{ Form::label('drugUse', 'History of Drug Use') }}
 		{{ Form::checkbox('drugUse', '1', Input::old('drugUse'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('physicalAbuse', 'History of physical abuse') }}
+		{{ Form::label('physicalAbuse', 'History of Physical Abuse') }}
 		{{ Form::checkbox('physicalAbuse', '1', Input::old('physicalAbuse'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('sexAbuse', 'History of sexual abuse') }}
+		{{ Form::label('sexAbuse', 'History of Sexual Abuse') }}
 		{{ Form::checkbox('sexAbuse', '1', Input::old('sexAbuse'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('mentalHealthTreatment', 'Has had mental health treatment') }}
+		{{ Form::label('mentalHealthTreatment', 'Has had Mental Health Treatment') }}
 		{{ Form::checkbox('mentalHealthTreatment', '1', Input::old('mentalHealthTreatmet'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('crimeConviction', 'Has been convicted of a crime') }}
+		{{ Form::label('crimeConviction', 'Has been Convicted of a Crime') }}
 		{{ Form::checkbox('cromeConviction', '1', Input::old('crimeConviction'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('employed', 'Is employed') }}
+		{{ Form::label('employed', 'Is Employed') }}
 		{{ Form::checkbox('employed', '1', Input::old('employed'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('fullTime', 'Full-time employment') }}
+		{{ Form::label('fullTime', 'Full-time Employment') }}
 		{{ Form::checkbox('fullTime', '1', Input::old('fullTime'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('activeMilitary', 'Is active military') }}
+		{{ Form::label('activeMilitary', 'Is Active Military') }}
 		{{ Form::checkbox('activeMilitary', '1', Input::old('activeMilitary'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('sexAbuseSurvivor', 'Is a sexual abuse survivor') }}
+		{{ Form::label('sexAbuseSurvivor', 'Is a Sexual Abuse Survivor') }}
 		{{ Form::checkbox('sexAbuseSurvivor', '1', Input::old('sexAbuseSurvivor'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('specialNeeds', 'has special needs') }}
+		{{ Form::label('specialNeeds', 'Has Special Needs') }}
 		{{ Form::text('specialNeeds', Input::old('specialNeeds'), array('class' => 'form-control')) }}
 	</div>
+
         
         <div class="form-group">
 		{{ Form::label('language', 'Language') }}
@@ -108,32 +109,32 @@
         
         
         <div class="form-group">
-		{{ Form::label('maritalStatus', 'Marital status') }}
+		{{ Form::label('maritalStatus', 'Marital Status') }}
 		{{ Form::select('maritalStatus', array(
                             'married' => 'married',
                             'single' => 'Single',
                             'divorced' => 'Divorced'),
                             Input::old('maritalStatus'), array('class' => 'form-control')) }}
 	</div>
-
+        
         <div class="form-group">
-		{{ Form::label('originCountry', 'originCountry') }}
+		{{ Form::label('originCountry', 'Origin Country') }}
 		{{ Form::text('originCountry', Input::old('originCountry'), array('class' => 'form-control')) }}
         </div>
-        
-        <div class="form-group">
-		{{ Form::label('address_id', 'address_id') }}
-		{{ Form::text('address_id', Input::old('address_id'), array('class' => 'form-control')) }}
-	</div
-        
-        <div class="form-group">
-		{{ Form::label('household_id', 'household_id') }}
-		{{ Form::text('household_id', Input::old('household_id'), array('class' => 'form-control')) }}
+
+       <div class="form-group">
+		{{ Form::label('address_id', 'Address') }}
+		{{ Form::select('address_id', Address::all()->lists('adress','id'), Input::old('address_id'), array('class' => 'form-control')) }}
 	</div>
         
         <div class="form-group">
-		{{ Form::label('ethnicity_id', 'ethnicity_id') }}
-		{{ Form::text('ethnicity_id', Input::old('ethnicity_id'), array('class' => 'form-control')) }}
+		{{ Form::label('household_id', 'Household') }}
+		{{ Form::select('household_id', Household::all()->lists('household','id'), Input::old('household_id'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('ethnicity_id', 'Ethnicity') }}
+		{{ Form::select('ethnicity_id', Ethnicity::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
 	</div>
 
 	{{ Form::submit('Edit the person entry', array('class' => 'btn btn-primary')) }}

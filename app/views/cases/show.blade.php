@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Look! I'm CRUDding</title>
+        <title>ANCAC Cases</title>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="/show.css">
     </head>
@@ -13,7 +13,7 @@
 
             <nav class="navbar navbar-inverse">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ URL::to('cases') }}">Case info</a>
+                    <a class="navbar-brand" href="{{ URL::to('cases') }}">Case Info</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="{{ URL::to('cases') }}">View All Cases</a></li>
@@ -21,7 +21,7 @@
                 </ul>
             </nav>
 
-            <h1>Showing case {{ $case->id }}</h1>
+            <h1>Showing Case {{ $case->id }}</h1>
 
             <div>
                 
@@ -34,7 +34,7 @@
                             </div>
                             <div class="panel-body">
                                 <strong>Name </strong>{{$case->abusedChild->personalInfo->name}}<br>
-                                <strong>Date of birth </strong>{{$case->abusedChild->personalInfo->dob}}<br>
+                                <strong>Date of Birth </strong>{{$case->abusedChild->personalInfo->dob}}<br>
                             </div>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/child') }}">Show Details</a> 
@@ -47,7 +47,7 @@
                             </div>
                             <div class="panel-body">
                                 <strong>Name </strong><br>
-                                <strong>Date of birth </strong>
+                                <strong>Date of Birth </strong>
                             </div>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('allegedAbusers/' . $case->allegedAbuser_id . '/edit') }}">Edit</a>
@@ -62,8 +62,8 @@
                                 <h4 class="panel-tittel">Case Info</h4>
                             </div>
                             <div class="panel-body">
-                                <strong>opened:</strong> {{ $case->caseOpened }}<br>
-                                <strong>status:</strong> {{ $case->status }}
+                                <strong>Opened:</strong> {{ $case->caseOpened }}<br>
+                                <strong>Status:</strong> {{ $case->status }}
                             </div>
                             <div class="panel-footer">
                                 <?php echo Form::submit('edit'); ?>
@@ -98,7 +98,7 @@
                                 </tr>
                             </table>
                             <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('relatives/' . $case->id . '/edit') }}">Edit this relations</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('relatives/' . $case->id . '/edit') }}">Edit this Relations</a>
                             </div>
                         </div>
 

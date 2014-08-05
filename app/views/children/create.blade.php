@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Children</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,15 +11,15 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('children') }}">Child entries</a>
+		<a class="navbar-brand" href="{{ URL::to('children') }}">Child Entries</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('children') }}">View All children</a></li>
-		<li><a href="{{ URL::to('children/create') }}">Create a child entry</a>
+		<li><a href="{{ URL::to('children') }}">View All Children</a></li>
+		<li><a href="{{ URL::to('children/create') }}">Create a Child Entry</a>
 	</ul>
 </nav>
 
-<h1>Create a child</h1>
+<h1>Create a Child</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all() )}}
@@ -43,12 +43,12 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('age', 'age') }}
+		{{ Form::label('age', 'Age') }}
 		{{ Form::text('age', Input::old('age'), array('class' => 'form-control')) }}
 	</div>
         
         <div class="form-group">
-		{{ Form::label('dob', 'Date of birth (YYYY-MM-DD)') }}
+		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
 		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 	</div>
 
@@ -78,12 +78,12 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('school', 'school') }}
+		{{ Form::label('school', 'School') }}
 		{{ Form::text('school', Input::old('school'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('specialNeeds', 'special needs') }}
+		{{ Form::label('specialNeeds', 'Special Needs') }}
 		{{ Form::text('specialNeeds', Input::old('specialNeeds'), array('class' => 'form-control')) }}
 	</div>
 
@@ -94,26 +94,27 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('originCountry', 'originCountry') }}
+		{{ Form::label('originCountry', 'Origin Country') }}
 		{{ Form::text('originCountry', Input::old('originCountry'), array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
-		{{ Form::label('address_id', 'address_id') }}
-		{{ Form::text('address_id', Input::old('address_id'), array('class' => 'form-control')) }}
-	</div
-        
-        <div class="form-group">
-		{{ Form::label('household_id', 'household_id') }}
-		{{ Form::text('household_id', Input::old('household_id'), array('class' => 'form-control')) }}
+		{{ Form::label('address_id', 'Address') }}
+		{{ Form::select('address_id', Address::all()->lists('adress','id'), Input::old('address_id'), array('class' => 'form-control')) }}
 	</div>
         
         <div class="form-group">
-		{{ Form::label('ethnicity_id', 'ethnicity_id') }}
-		{{ Form::text('ethnicity_id', Input::old('ethnicity_id'), array('class' => 'form-control')) }}
+		{{ Form::label('household_id', 'Household') }}
+		{{ Form::select('household_id', Address::all()->lists('household','id'), Input::old('household_id'), array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Create the child entry!', array('class' => 'btn btn-primary')) }}
+        <div class="form-group">
+		{{ Form::label('ethnicity_id', 'Ethnicity') }}
+		{{ Form::select('ethnicity_id', Address::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
+	</div>
+
+
+	{{ Form::submit('Create the Child Entry!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

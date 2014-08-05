@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Abuse Types</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
 {{ Form::open(array('url' => 'abuseTypes')) }}
 
 	<div class="form-group">
-		{{ Form::label('type', 'type') }}
+		{{ Form::label('type', 'Type') }}
 		{{ Form::text('type', Input::old('type'), array('class' => 'form-control')) }}
 	</div>
 

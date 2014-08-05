@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Address</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -49,7 +49,7 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('county_id', 'county_id') }}
+		{{ Form::label('county_id', 'County') }}
 		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
 	</div>
         

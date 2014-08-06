@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Workers</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,11 +11,11 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('workers') }}">workers</a>
+		<a class="navbar-brand" href="{{ URL::to('workers') }}">Workers</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('workers') }}">View All workers for the Case</a></li>
-		<li><a href="{{ URL::to('workers/create') }}">Create a worker entry</a>
+		<li><a href="{{ URL::to('workers') }}">View All Workers for the Case</a></li>
+		<li><a href="{{ URL::to('workers/create') }}">Create a Worker Entry</a>
 	</ul>
 </nav>
     

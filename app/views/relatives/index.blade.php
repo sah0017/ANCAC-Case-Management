@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Relatives</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -11,15 +11,15 @@
 
 <nav class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('relatives') }}">relations</a>
+		<a class="navbar-brand" href="{{ URL::to('relatives') }}">Relations</a>
 	</div>
 	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('relatives') }}">View All relations</a></li>
-		<li><a href="{{ URL::to('relatives/create') }}">Create a relation entry</a>
+		<li><a href="{{ URL::to('relatives') }}">View All Relations</a></li>
+		<li><a href="{{ URL::to('relatives/create') }}">Create a Relation Entry</a>
 	</ul>
 </nav>
 
-<h1>all the relations</h1>
+<h1>All the Relations</h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -35,8 +35,8 @@
 			<td>Type of relation</td>
 			<td>Custodian</td>
                         <td>Same House</td>
-			<td>Name of related person</td>
-                        <td>Alleged offender</td>
+			<td>Name of Related Person</td>
+                        <td>Alleged Offender</td>
 		</tr>
 	</thead>
 	<tbody>

@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC phones</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -24,11 +24,11 @@
 {{ Form::model($phones, array('route' => array('phones.update', $phones->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
-		{{ Form::label('number', 'number') }}
+		{{ Form::label('number', 'Number') }}
 		{{ Form::text('number', Input::old('number'), array('class' => 'form-control')) }}
 	</div>
         <div class="form-group">
-		{{ Form::label('type', 'type') }}
+		{{ Form::label('type', 'Type') }}
 		{{ Form::select('type', array('0' => 'Select a Phones', '1' => 'Home',
                             '2' => 'Work', '3' => 'Cell'), 
                     Input::old('type'), array('class' => 'form-control')) }}

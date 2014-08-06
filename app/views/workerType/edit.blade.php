@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Look! I'm CRUDding</title>
+	<title>ANCAC Worker Type</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -24,13 +24,13 @@
 {{ Form::model($workerType, array('route' => array('workerType.update', $workerType->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
-		{{ Form::label('type', 'type') }}
+		{{ Form::label('type', 'Type') }}
 		{{ Form::text('type', null, array('class' => 'form-control')) }}
 	</div>
 
 
 
-	{{ Form::submit('Edit the Worker Type!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Edit the worker type!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

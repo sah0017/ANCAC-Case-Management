@@ -49,7 +49,7 @@ class relativeController extends \BaseController {
 
 			// redirect
 			Session::flash('message', 'Successfully stored Relationship info!');
-			return Redirect::to('relatives');
+			return Redirect::to(Session::get('from'));
 	}
 
 	/**
@@ -124,7 +124,7 @@ class relativeController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully deleted the Relationship entry!');
-		return Redirect::to('relatives');
+		return Redirect::back();
 	}
         
 

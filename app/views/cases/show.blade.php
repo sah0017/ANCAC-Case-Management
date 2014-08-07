@@ -156,6 +156,7 @@
                             </table>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/relations') }}">List Relations</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/relations/create') }}">Add Relation</a>
                             </div>
                         </div>
 

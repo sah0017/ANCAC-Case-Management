@@ -113,5 +113,6 @@ Route::get('cases/{id}/child/relations', function($id) {
 
 Route::get('cases/{id}/child/relations/create', function($id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
+    Session::put('from','cases/'.$id);
 		return View::make('relatives.create')->with('id', $child_id);
 });

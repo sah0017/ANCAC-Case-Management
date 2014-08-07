@@ -88,3 +88,12 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+
+Route::filter('level', function($route, $request, $value)
+{
+        if (intval(Auth::User()->level)<$value){
+                return Response::make('Unauthorized', 401);
+        }
+});

@@ -30,7 +30,7 @@
 
         <div class="form-group">
 		{{ Form::label('abusedChild_id', 'Abused Child') }}
-		{{ Form::select('abusedChild_id', AbusedChild::all()->lasts('name','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
+		{{ Form::select('abusedChild_id', AbusedChild::all()->lists('id','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

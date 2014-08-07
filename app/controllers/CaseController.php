@@ -175,5 +175,6 @@ class CaseController extends \BaseController {
             Session::flash('message', 'Successfully removed worker!');
             return Redirect::to('cases/'.$id);
         }
-
+        
+     
 }

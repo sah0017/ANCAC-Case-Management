@@ -76,34 +76,36 @@
                             <div class="panel-heading">
                                 <h4 class="panel-tittel">Workers</h4>
                             </div>
+                            <p style ="width: 100%; height: 200px; overflow: scroll">
                             <table class="table">
-	<thead>
-		<tr>
-                        <td>Name</td>
-			<td>Worker Type ID</td>
-			
-		</tr>
-	</thead>
-	<tbody>
-	@foreach($case->workers as $key => $value)
-		<tr>
-                        <td>{{ $value->name }}</td>
-                        <td>{{ $value->workerType->type }}</td>
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Worker Type</td>
 
-			<!-- we will also add show, edit, and delete buttons -->
-			<td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($case->workers as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->workerType->type }}</td>
 
-				<!-- delete the child (uses the destroy method DESTROY /children/{id} -->
-				<!-- we will add this later since its a little more complicated than the first two buttons -->
-				{{ Form::open(array('action' => array('CaseController@removeWorker', $case->id))) }}
-                                {{ Form::hidden('worker_id', $value->id) }}
-					{{ Form::submit('X', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
-			</td>
-		</tr>
-	@endforeach
-	</tbody>
-</table>
+                                        <!-- we will also add show, edit, and delete buttons -->
+                                        <td>
+
+                                            <!-- delete the child (uses the destroy method DESTROY /children/{id} -->
+                                            <!-- we will add this later since its a little more complicated than the first two buttons -->
+                                            {{ Form::open(array('action' => array('CaseController@removeWorker', $case->id))) }}
+                                            {{ Form::hidden('worker_id', $value->id) }}
+                                            {{ Form::submit('X', array('class' => 'btn btn-warning')) }}
+                                            {{ Form::close() }}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </p>
                             <div class="panel-footer">
                                 {{ Form::open(array('action' => array('CaseController@addWorker', $case->id), 'class' => 'form-inline')) }}
 
@@ -124,14 +126,36 @@
                             <div class="panel-heading">
                                 <h4 class="panel-tittel">Relations</h4>
                             </div>
-                            <table class="table"> 
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                </tr>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Relationship Type</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($case->abusedChild->relations as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->alias }}</td>
+                                        <td>{{ $value->relationType->type }}</td>
+
+                                        <!-- we will also add show, edit, and delete buttons -->
+                                        <td>
+
+                                            <!-- delete the child (uses the destroy method DESTROY /children/{id} -->
+                                            <!-- we will add this later since its a little more complicated than the first two buttons -->
+                                        {{ Form::open(array('url' => 'relatives/' . $value->id, 'class' => 'pull-right')) }}
+					{{ Form::hidden('_method', 'DELETE') }}
+					{{ Form::submit('X', array('class' => 'btn btn-warning')) }}
+                                        {{ Form::close() }}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                             <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('relatives/' . $case->id . '/edit') }}">Edit this Relations</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/relations') }}">Edit this Relations</a>
                             </div>
                         </div>
 

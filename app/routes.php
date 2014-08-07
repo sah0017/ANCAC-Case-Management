@@ -104,3 +104,14 @@ Route::group(array('before' => 'auth'), function()
 
     
 });
+
+Route::get('cases/{id}/child/relations', function($id) {
+    $relation = TrackedCase::find($id)->abusedChild->relations;
+    return View::make('relatives.index')
+                    ->with('relatives', $relation);
+});
+
+Route::get('cases/{id}/child/relations/create', function($id) {
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+		return View::make('relatives.create')->with('id', $child_id);
+});

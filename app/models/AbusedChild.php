@@ -8,8 +8,8 @@ class AbusedChild extends \Eloquent {
             return $this->belongsTo('person', 'person_id');
 	}
         
-        public function relation() {
-            return $this->hasMany('Relationship');
+        public function relations() {
+            return $this->hasMany('Relationship','abusedChild_id');
         }
         
         public function sessions() {

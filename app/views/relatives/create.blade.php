@@ -26,10 +26,15 @@
 
 {{ Form::open(array('url' => 'relatives')) }}
 
-	<div class="form-group">
+        @if (intval($id) > 0)
+           {{ Form::hidden('abusedChild_id',$id)}}
+        @else
+           <div class="form-group">
 		{{ Form::label('abusedChild_id', 'Abused Child') }}
-		{{ Form::select('abusedChild_id', AbusedChild::all()->lasts('name','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
+		{{ Form::select('abusedChild_id', AbusedChild::all()->lists('id','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
 	</div>
+        @endif
+	
         
         <div class="form-group">
 		{{ Form::label('person_id', 'Person') }}

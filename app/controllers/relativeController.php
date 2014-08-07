@@ -27,7 +27,7 @@ class relativeController extends \BaseController {
 	public function create()
 	{
                 // load the create form (app/views/children/create.blade.php)
-		return View::make('relatives.create');
+		return View::make('relatives.create')->with('id',0);
 	}
 
 	/**
@@ -126,6 +126,8 @@ class relativeController extends \BaseController {
 		Session::flash('message', 'Successfully deleted the Relationship entry!');
 		return Redirect::to('relatives');
 	}
+        
+
 
 }
 

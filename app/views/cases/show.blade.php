@@ -80,7 +80,7 @@
 	<thead>
 		<tr>
                         <td>Name</td>
-			<td>Worker Type ID</td>
+			<td>Worker Type</td>
 			
 		</tr>
 	</thead>

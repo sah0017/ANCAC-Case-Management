@@ -51,7 +51,7 @@
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'cases/' . $value->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this child', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete this case', array('class' => 'btn btn-warning')) }}
 				{{ Form::close() }}
                                 
 				<!-- show the cases (uses the show method found at GET /case/{id} -->

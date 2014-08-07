@@ -126,13 +126,13 @@
                             <div class="panel-heading">
                                 <h4 class="panel-tittel">Relations</h4>
                             </div>
-                            <table class="table">
+                            <table class="table"> 
                                 <thead>
-                                    <tr>
-                                        <td>Name</td>
+                                <tr>
+                                    <td>Name</td>
                                         <td>Relationship Type</td>
 
-                                    </tr>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($case->abusedChild->relations as $key => $value)
@@ -155,7 +155,7 @@
                                 </tbody>
                             </table>
                             <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/relations') }}">Edit this Relations</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/relations') }}">List Relations</a>
                             </div>
                         </div>
 

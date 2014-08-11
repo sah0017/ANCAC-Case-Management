@@ -1,20 +1,11 @@
-<html>
-<head>
-	<title>ANCAC DHR Cases</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('DHRCases.master')
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('DHRCases') }}">DHRCases</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('DHRCases') }}">View All DHRCases</a></li>
-		<li><a href="{{ URL::to('DHRCases/create') }}">Create a DHRCases</a>
-	</ul>
-</nav>
+@section('title')
+@parent
+:: Create DHR Cases
+@stop
+
+@section('content')
 
 <h1>Create a DHRCases</h1>
 
@@ -25,7 +16,7 @@
 
 
         <div class="form-group">
-		{{ Form::label('household_id', 'Household id') }}
+		{{ Form::label('household_id', 'Household') }}
 		{{ Form::select('household_id', Household::all()->lists('id','id'),Input::old('household_id'), array('class' => 'form-control')) }}
 	</div>
 
@@ -52,12 +43,12 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('closed', 'Case closed Date') }}
+		{{ Form::label('closed', 'Case Closed Date') }}
 		{{ Form::text('closed', date('Y-m-d'), array('class' => 'form-control')) }}
 	</div>
 
 
-	{{ Form::submit('Create the DHRCases!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Create the DHR cases!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

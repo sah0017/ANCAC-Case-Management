@@ -1,20 +1,12 @@
-<html>
-<head>
-	<title>ANCAC DHR Cases</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('DHRCases.master')
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('DHRCases') }}">DHRCases</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('DHRCases') }}">View All DHRCases</a></li>
-		<li><a href="{{ URL::to('DHRCases/create') }}">Create a DHRCases</a>
-	</ul>
-</nav>
+@section('title')
+@parent
+::  DHR Cases
+@stop
+
+@section('content')
+
     
     <h1>Showing {{ $DHRCases->id }}</h1>
 

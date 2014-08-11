@@ -1,23 +1,11 @@
-<!-- app/views/session/create.blade.php -->
+@extends('session.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ANCAC Session</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@section('title')
+@parent
+:: Create Session
+@stop
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('session') }}">Session Entries</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('session') }}">View All Sessions</a></li>
-		<li><a href="{{ URL::to('session/create') }}">Create a Session Entry</a>
-	</ul>
-</nav>
+@section('content')
 
 <h1>Create a Session</h1>
 

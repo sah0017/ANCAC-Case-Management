@@ -111,8 +111,10 @@ class PersonController extends \BaseController {
 	public function update($id)
 	{
                         $person = Person::find($id);
-			$person->name = Input::get('name');
-                        $person->dob = Input::get('dob');
+			$person->first = Input::get('first');
+                        $person->middle = Input::get('middle');
+                        $person->last = Input::get('last');
+                        $person->age = Input::get('age');                        $person->dob = Input::get('dob');
                         $person->drugUse = Input::get('drugUse',false);
                         $person->physicalAbuse = Input::get('physicalAbuse',false);
                         $person->sexAbuse = Input::get('sexAbuse',false);
@@ -123,8 +125,7 @@ class PersonController extends \BaseController {
                         $person->activeMilitary = Input::get('activeMilitary',false);
                         $person->sexAbuseSurvivor = Input::get('sexAbuseSurvivor',false);
                         $person->originCountry = Input::get('originCountry');
-                        $person->specialNeeds = Input::get('specialNeeds',false);
-                        $person->disability = Input::get('disability',false);
+                        $person->specialNeeds = Input::get('specialNeeds',"");
                         $person->language = Input::get('language');
                         $person->maritalStatus = Input::get('maritalStatus');
                         $person->address_id = Input::get('address_id');
@@ -154,5 +155,12 @@ class PersonController extends \BaseController {
 		Session::flash('message', 'Successfully deleted the person entry!');
 		return Redirect::to('people');
 	}
+        
+        public function search() {
+            $people = Response::json(Person::where('last', 'LIKE', '%'.Input::get('last').'%')->get());
+            
+            return $people;
+            //return Person::all();
+        }
 
 }

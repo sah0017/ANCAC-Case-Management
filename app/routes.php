@@ -116,3 +116,6 @@ Route::get('cases/{id}/child/relations/create', function($id) {
     Session::put('from','cases/'.$id);
 		return View::make('relatives.create')->with('id', $child_id);
 });
+
+
+Route::post('people/search', 'PersonController@search');

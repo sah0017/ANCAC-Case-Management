@@ -5,6 +5,8 @@
 <head>
 	<title>ANCAC People</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        {{ HTML::script('js/jquery.min.js') }}
+
 </head>
 <body>
 <div class="container">
@@ -20,6 +22,33 @@
 </nav>
 
 <h1>Create a Person</h1>
+
+<div id="people">
+    <!-- For results -->
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('input#last').keyup(function() {
+        $.ajax({ // ajax call starts
+            url: 'search', // JQuery loads serverside.php
+            type: "POST",
+            data: 'last=' + $(this).val(), // Send value of the text
+            dataType: 'json', // Choosing a JSON datatype
+            success: function(data) // Variable data contains the data we get from serverside
+            {
+                $('#people').html(''); // Clear div
+
+                    for (var i in data) {
+                        $('#people').append(data[i].first + ' ' + data[i].last + '<br/>');
+                    }
+            }
+        })
+    });
+    return false; // keeps the page from not refreshing 
+});
+</script>
+
+
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all() )}}

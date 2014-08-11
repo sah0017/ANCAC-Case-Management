@@ -121,3 +121,4 @@ Route::get('cases/{id}/child/relations/create', function($id) {
 Route::post('people/search', 'PersonController@search');
 
 Route::resource('DHRCases', 'DHRCasesController');
+

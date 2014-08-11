@@ -52,7 +52,7 @@
                                 <strong>Status:</strong> {{ $case->status }}
                             </div>
                             <div class="panel-footer">
-                                <?php echo Form::submit('edit'); ?>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/edit') }}">Edit</a> 
                             </div>
                         </div>
 

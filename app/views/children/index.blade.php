@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ANCAC Children</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('children.master')
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('children') }}">Child Entries</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('children') }}">View All Children</a></li>
-		<li><a href="{{ URL::to('children/create') }}">Create a Child Entry</a>
-	</ul>
-</nav>
+@section('title')
+@parent
+:: Children
+@stop
+
+@section('content')
 
 <h1>All the Children</h1>
 

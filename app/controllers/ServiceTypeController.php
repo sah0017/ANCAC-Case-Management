@@ -114,7 +114,12 @@ class ServiceTypeController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$serviceType = ServiceType::find($id);
+		$serviceType->delete();
+
+		// redirect
+		Session::flash('message', 'Successfully deleted the service Type entry!');
+		return Redirect::to('serviceType');
 	}
 
 }

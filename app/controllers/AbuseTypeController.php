@@ -95,7 +95,14 @@ class AbuseTypeController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$abuseType = AbuseType::find($id);
+			$abuseType->type = Input::get('type');
+
+			$abuseType->save();
+
+			// redirect
+			Session::flash('message', 'Successfully created abuseType!');
+			return Redirect::to('abuseTypes');
 	}
 
 	/**

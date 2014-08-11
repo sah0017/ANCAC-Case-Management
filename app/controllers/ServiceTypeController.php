@@ -95,7 +95,14 @@ class ServiceTypeController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$serviceType = ServiceType::find($id);
+			$serviceType->type = Input::get('type');
+
+			$serviceType->save();
+
+			// redirect
+			Session::flash('message', 'Successfully created serviceType!');
+			return Redirect::to('serviceType');
 	}
 
 	/**

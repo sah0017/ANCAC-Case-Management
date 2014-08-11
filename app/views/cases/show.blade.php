@@ -1,25 +1,11 @@
-<html>
-    <head>
-        <title>ANCAC Cases</title>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/show.css">
-    </head>
-    <style>
+@extends('cases.master')
 
-    </style>
-    <body>
+@section('title')
+@parent
+:: Case
+@stop
 
-        <div class="container">
-
-            <nav class="navbar navbar-inverse">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ URL::to('cases') }}">Case Info</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ URL::to('cases') }}">View All Cases</a></li>
-                    <li><a href="{{ URL::to('cases/create') }}">Create a Case Type</a>
-                </ul>
-            </nav>
+@section('content')
 
             <h1>Showing Case {{ $case->id }}</h1>
 

@@ -1,23 +1,11 @@
-<!-- app/views/relatives/create.blade.php -->
+@extends('relatives.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ANCAC Relatives</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@section('title')
+@parent
+:: Create Relative
+@stop
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('relatives') }}">Relations</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('relatives') }}">View All Relations</a></li>
-		<li><a href="{{ URL::to('relatives/create') }}">Create a Relation Entry</a>
-	</ul>
-</nav>
+@section('content')
 
 <h1>Create a Relation</h1>
 

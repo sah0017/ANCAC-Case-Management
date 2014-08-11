@@ -1,25 +1,11 @@
-<html>
-    <head>
-        <title>ANCAC Cases</title>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/show.css">
-    </head>
-    <style>
+@extends('cases.master')
 
-    </style>
-    <body>
+@section('title')
+@parent
+:: Case
+@stop
 
-        <div class="container">
-
-            <nav class="navbar navbar-inverse">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ URL::to('cases') }}">Case Info</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ URL::to('cases') }}">View All Cases</a></li>
-                    <li><a href="{{ URL::to('cases/create') }}">Create a Case Type</a>
-                </ul>
-            </nav>
+@section('content')
 
             <h1>Showing Case {{ $case->id }}</h1>
 
@@ -66,7 +52,7 @@
                                 <strong>Status:</strong> {{ $case->status }}
                             </div>
                             <div class="panel-footer">
-                                <?php echo Form::submit('edit'); ?>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/edit') }}">Edit</a> 
                             </div>
                         </div>
 
@@ -165,12 +151,27 @@
                                 <h4 class="panel-tittel">Services Provided</h4>
                             </div>
                             <table class="table"> 
-                                <tr>
+                                <tbody>
+                                    @foreach($case->abusedChild->sessions as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->serviceType_id }}</td>
 
-                                </tr>
+                                        <!-- we will also add show, edit, and delete buttons -->
+                                        <td>
+
+                                            <!-- delete the child (uses the destroy method DESTROY /children/{id} -->
+                                            <!-- we will add this later since its a little more complicated than the first two buttons -->
+                                        {{ Form::open(array('url' => 'session/' . $value->id, 'class' => 'pull-right')) }}
+					{{ Form::hidden('_method', 'DELETE') }}
+					{{ Form::submit('X', array('class' => 'btn btn-warning')) }}
+                                        {{ Form::close() }}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                             <div class="panel-footer">
-                                <?php echo Form::submit('edit'); ?>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/session') }}">List Relations</a>
                             </div>
                         </div>
 

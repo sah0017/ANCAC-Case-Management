@@ -95,7 +95,14 @@ class AbuseTypeController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$abuseType = AbuseType::find($id);
+			$abuseType->type = Input::get('type');
+
+			$abuseType->save();
+
+			// redirect
+			Session::flash('message', 'Successfully created abuseType!');
+			return Redirect::to('abuseTypes');
 	}
 
 	/**
@@ -107,7 +114,12 @@ class AbuseTypeController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$abuseType = AbuseType::find($id);
+		$abuseType->delete();
+
+		// redirect
+		Session::flash('message', 'Successfully deleted the abuse Type entry!');
+		return Redirect::to('abuseType');
 	}
 
 }

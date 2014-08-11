@@ -1,20 +1,11 @@
-<html>
-<head>
-	<title>ANCAC Service Type</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('serviceType.master')
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('serviceType') }}">Service Type</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('serviceType') }}">View All Service Type</a></li>
-		<li><a href="{{ URL::to('serviceType/create') }}">Create a Service Type</a>
-	</ul>
-</nav>
+@section('title')
+@parent
+:: Service Type
+@stop
+
+@section('content')
 
 <h1>All the Service Type</h1>
 
@@ -40,7 +31,10 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /serviceType/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-
+                                {{ Form::open(array('url' => 'serviceType/' . $value->id)) }}
+					{{ Form::hidden('_method', 'DELETE') }}
+					{{ Form::submit('Delete this service type.', array('class' => 'btn btn-warning')) }}
+				{{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /serviceType/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('serviceType/' . $value->id) }}">Show this Service Type</a>
 

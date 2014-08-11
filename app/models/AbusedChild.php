@@ -13,7 +13,7 @@ class AbusedChild extends \Eloquent {
         }
         
         public function sessions() {
-            return $this->belongsToMany('Session');
+            return $this->belongsToMany('CaseSession','abusedchild_session','abusedChild_id','session_id');
         }
         
         

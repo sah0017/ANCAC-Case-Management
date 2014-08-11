@@ -1,20 +1,11 @@
-<html>
-<head>
-	<title>ANCAC Abuse Types</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('abuseTypes.master')
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('abuseTypes') }}">Abuse Types</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('abuseTypes') }}">View All Abuse Types</a></li>
-		<li><a href="{{ URL::to('abuseTypes/create') }}">Create a Abuse Type</a>
-	</ul>
-</nav>
+@section('title')
+@parent
+:: Abuse Type
+@stop
+
+@section('content')
 
 <h1>All the Abuse Types</h1>
 
@@ -40,7 +31,10 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /abuseTypes/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-
+                                {{ Form::open(array('url' => 'abuseType/' . $value->id)) }}
+					{{ Form::hidden('_method', 'DELETE') }}
+					{{ Form::submit('Delete this abuse type.', array('class' => 'btn btn-warning')) }}
+				{{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /abuseTypes/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('abuseTypes/' . $value->id) }}">Show this Abuse Type</a>
 

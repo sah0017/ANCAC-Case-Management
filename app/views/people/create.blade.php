@@ -23,11 +23,12 @@
 
 <h1>Create a Person</h1>
 
-<div id="people">
+<div id="people" class="alert alert-warning" role="alert" style="display: none;">
     <!-- For results -->
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
+    var people;
     $('input#last').keyup(function() {
         $.ajax({ // ajax call starts
             url: 'search', // JQuery loads serverside.php
@@ -36,16 +37,30 @@ $(document).ready(function(){
             dataType: 'json', // Choosing a JSON datatype
             success: function(data) // Variable data contains the data we get from serverside
             {
+                people = data;
                 $('#people').html(''); // Clear div
-
+                if (jQuery.isEmptyObject(data)){
+                    document.getElementById('people').style.display = 'none';
+                }
+                else{
+                    document.getElementById('people').style.display = 'block';
+                    $('#people').append('<strong>Possible Matches:</strong><br/>');
                     for (var i in data) {
-                        $('#people').append(data[i].first + ' ' + data[i].last + '<br/>');
+                        $('#people').append(data[i].first + ' ' + data[i].last);
+                        $('#people').append('<button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button><br>');
+
                     }
+                }
             }
-        })
+        });
+        return false; // keeps the page from not refreshing 
     });
-    return false; // keeps the page from not refreshing 
 });
+
+function use(i) {
+        //var button = parseInt($(this).val());
+        document.getElementById("first").value=people[i].first;
+    }
 </script>
 
 

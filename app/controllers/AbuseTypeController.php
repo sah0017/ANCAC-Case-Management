@@ -114,7 +114,12 @@ class AbuseTypeController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$abuseType = AbuseType::find($id);
+		$abuseType->delete();
+
+		// redirect
+		Session::flash('message', 'Successfully deleted the abuse Type entry!');
+		return Redirect::to('abuseType');
 	}
 
 }

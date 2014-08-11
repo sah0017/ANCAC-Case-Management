@@ -121,3 +121,10 @@ Route::get('cases/{id}/child/relations/create', function($id) {
 Route::post('people/search', 'PersonController@search');
 
 Route::resource('DHRCases', 'DHRCasesController');
+
+Route::get('cases/{id}/child/session', function($id) {
+    $session = TrackedCase::find($id)->abusedChild->sessions;
+    return View::make('session.index')
+                    ->with('session', $session);
+});
+

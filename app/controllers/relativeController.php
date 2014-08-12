@@ -40,16 +40,16 @@ class relativeController extends \BaseController {
 	{
                         $relative = new Relationship;
 			$relative->abusedChild_id    = Input::get('abusedChild_id');
-                        if (Input::get('person_id') == 0){
+                        if (intval(Input::get('person_id')) == 0){
                             $person = new Person;
-                            $person->first = Input::get(first);
-                            $person->middle = Input::get(middle);
-                            $person->last = Input::get(last);
-                            $person->dob = Input::get(dob);
+                            $person->first = Input::get('first');
+                            $person->middle = Input::get('middle');
+                            $person->last = Input::get('last');
+                            $person->dob = Input::get('dob');
                             $person->save();
                             $relative->person_id = $person->id;
                         }else {
-                            $relative->person_id = Input::get(person_id);
+                            $relative->person_id = Input::get('person_id');
                         }
 			$relative->relationType_id   = Input::get('relationType_id');
 			$relative->custodian         = Input::get('custodian',false);

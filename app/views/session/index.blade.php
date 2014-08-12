@@ -44,10 +44,11 @@
 
 				<!-- delete the session (uses the destroy method DESTROY /session/{id} -->
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
-				{{ Form::open(array('url' => 'session/' . $value->id, 'class' => 'pull-right')) }}
+				<a{{ Form::open(array('url' => 'session/' . $value->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this session', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
+                                        {{ Form::close() }}
+                                   </a>
 
 				<!-- show the session (uses the show method found at GET /session/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('session/' . $value->id) }}">Show this session</a>

@@ -61,7 +61,7 @@ class PhonesController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('phones.show')
-			->with('workerTpe', $phones);
+			->with('Phones', $phones);
 	}
 
 	/**

@@ -1,26 +1,21 @@
-<!-- app/views/people/edit.blade.php -->
+@extends('people.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ANCAC People</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@section('title')
+@parent
+:: Edit Person
+@stop
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('people') }}">Edit Person Entry</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('people') }}">View All People</a></li>
-		<li><a href="{{ URL::to('people/create') }}">Create a Person Entry</a>
-	</ul>
-</nav>
+@section('content')
 
 <h1>Edit {{ $person->name }}</h1>
-
+{{ HTML::script('js/jquery-ui/jquery-ui.js') }}
+{{ HTML::style('js/jquery-ui/jquery-ui.css') }}
+<script> 
+    $(function() {
+    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
+  
+  </script>
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
@@ -141,6 +136,4 @@
 
 {{ Form::close() }}
 
-</div>
-</body>
-</html>
+@stop

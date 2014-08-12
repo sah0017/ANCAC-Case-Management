@@ -61,7 +61,7 @@ class RelativeTypeController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('relativeType.show')
-			->with('relativeTpe', $relativeType);
+			->with('RelativeType', $relativeType);
 	}
 
 	/**

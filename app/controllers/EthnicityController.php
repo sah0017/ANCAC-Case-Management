@@ -61,7 +61,7 @@ class EthnicityController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('ethnicity.show')
-			->with('workerTpe', $ethnicity);
+			->with('Ethnicity', $ethnicity);
 	}
 
 	/**

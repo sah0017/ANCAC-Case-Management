@@ -8,7 +8,17 @@
 @section('content')
 
 <h1>Create a DHRCases</h1>
-
+{{ HTML::script('js/jquery-ui/jquery-ui.js') }}
+{{ HTML::style('js/jquery-ui/jquery-ui.css') }}
+<script> 
+    $(function() {
+    $( "#opened" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
+  $(function() {
+    $( "#closed" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
+  
+  </script>
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 
@@ -52,6 +62,4 @@
 
 {{ Form::close() }}
 
-</div>
-</body>
-</html>
+@stop

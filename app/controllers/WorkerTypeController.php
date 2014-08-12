@@ -61,7 +61,7 @@ class WorkerTypeController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('workerType.show')
-			->with('workerTpe', $workerType);
+			->with('WorkerType', $workerType);
 	}
 
 	/**

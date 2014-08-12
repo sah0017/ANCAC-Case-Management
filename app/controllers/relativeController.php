@@ -76,7 +76,7 @@ class relativeController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('relatives.show')
-			->with('relatives', $relative);
+			->with('relative', $relative);
 	}
 
 	/**

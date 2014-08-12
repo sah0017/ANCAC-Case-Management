@@ -61,7 +61,7 @@ class CountyController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('county.show')
-			->with('workerTpe', $county);
+			->with('County', $county);
 	}
 
 	/**

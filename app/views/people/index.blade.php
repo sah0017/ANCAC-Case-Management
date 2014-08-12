@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ANCAC People</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('people.master')
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('people') }}">People List</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('people') }}">View All People</a></li>
-		<li><a href="{{ URL::to('people/create') }}">Create a Person Entry</a>
-	</ul>
-</nav>
+@section('title')
+@parent
+:: Person
+@stop
+
+@section('content')
 
 <h1>All the People</h1>
 
@@ -63,6 +53,4 @@
 </table>
 
 
-</div>
-</body>
-</html>
+@stop

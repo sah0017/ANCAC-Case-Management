@@ -42,8 +42,4 @@
 	{{ Form::submit('Create the relatives entry!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
-
-</div>
-</body>
-</html>
-
+@stop

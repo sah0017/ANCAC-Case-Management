@@ -8,7 +8,8 @@
 @section('content')
 
 <h1>Create a Person</h1>
-
+{{ HTML::script('js/jquery-ui/jquery-ui.js') }}
+{{ HTML::style('js/jquery-ui/jquery-ui.css') }}
 <div id="people" class="alert alert-warning" role="alert" style="display: none;">
     <!-- For results -->
 </div>
@@ -42,7 +43,12 @@ $(document).ready(function(){
         return false; // keeps the page from not refreshing 
     });
 });
-</script>
+
+  $(function() {
+    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
+  
+  </script>
 
 
 
@@ -72,8 +78,10 @@ $(document).ready(function(){
 	</div>
         
         <div class="form-group">
-		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
+            
+		{{ Form::label('dob', 'Date of Birth ') }}
 		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
+
 	</div>
 
 	<div class="form-group">

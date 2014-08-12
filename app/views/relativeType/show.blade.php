@@ -8,9 +8,7 @@
 @section('content')
 
 
-<h1>Showing {{ $RelativeType->type }}</h1>
+<h1>Showing: {{ $RelativeType->type }}</h1>
 
 
-</div>
-</body>
-</html>
+@stop

@@ -45,6 +45,4 @@
 		</p>
 	</div>
 
-</div>
-</body>
-</html>
+@stop

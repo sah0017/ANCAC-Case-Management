@@ -11,7 +11,27 @@
   |
  */
 
+Route::get('login', 'AuthController@showLogin');
+Route::post('login', 'AuthController@postLogin');
+Route::get('logout', 'AuthController@getLogout');
 
+
+// Secure-Routes
+Route::group(array('before' => 'auth'), function()
+{
+    Route::get('/', function() {
+        return View::make('home');
+    });
+    
+    Route::resource('users', 'UserController');
+    
+    Route::group(array('before' => 'level:3'), function()
+    {
+        Route::get('/admin', function() {
+            return View::make('admin');
+        });
+
+    });
 
 
 Route::resource('abuseTypes', 'AbuseTypeController');
@@ -81,29 +101,11 @@ Route::get('cases/{id}/workers', function($id) {
 Route::post('cases/{id}/addWorker', 'CaseController@addWorker');
 Route::post('cases/{id}/removeWorker', 'CaseController@removeWorker');
 
-Route::get('login', 'AuthController@showLogin');
-Route::post('login', 'AuthController@postLogin');
-Route::get('logout', 'AuthController@getLogout');
 
-// Secure-Routes
-Route::group(array('before' => 'auth'), function()
-{
-    Route::get('/', function() {
-        return View::make('home');
-    });
-    
-    Route::resource('users', 'UserController');
-    
-    Route::group(array('before' => 'level:3'), function()
-    {
-        Route::get('/admin', function() {
-            return View::make('admin');
-        });
 
-    });
 
     
-});
+
 
 Route::get('cases/{id}/child/relations', function($id) {
     $relation = TrackedCase::find($id)->abusedChild->relations;
@@ -128,3 +130,4 @@ Route::get('cases/{id}/child/session', function($id) {
                     ->with('session', $session);
 });
 
+});

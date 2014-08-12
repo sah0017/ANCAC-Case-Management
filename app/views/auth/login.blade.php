@@ -8,7 +8,7 @@
 {{-- Content --}}
 @section('content')
 <div class="page-header">
-    <h2>Login into your account</h2>
+    <h2>Login</h2>
 </div>
 
 {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal')) }}

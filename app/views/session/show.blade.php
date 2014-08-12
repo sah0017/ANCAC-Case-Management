@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Showing {{ $session->personalInfo->name }}</h1>
+<h1>Showing {{ $session->name }}</h1>
 
 	<div class="jumbotron text-left">
 		<h2>{{ $session->name }}</h2>

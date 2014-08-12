@@ -48,17 +48,34 @@ $(document).ready(function(){
 });
 
 function use(i) {
-        //var button = parseInt($(this).val());
+        document.getElementById('people').style.display = 'none'
         document.getElementById("person_id").value=people[i].id;
         document.getElementById("first").value=people[i].first;
+        document.getElementById("first").disabled=true;
         document.getElementById("middle").value=people[i].middle;
+        document.getElementById("middle").disabled=true;
         document.getElementById("last").value=people[i].last;
+        document.getElementById("last").disabled=true;
         document.getElementById("dob").value=people[i].dob;
-
+        document.getElementById("dob").disabled=true
+        document.getElementById("age").value=people[i].age;
+        document.getElementById("age").disabled=true;
+        
+    }
+function clearForm(){
+    document.getElementById("first").disabled=false;
+    document.getElementById("middle").disabled=false;
+    document.getElementById("last").disabled=false;
+    document.getElementById("dob").disabled=false;
+    document.getElementById("age").disabled=false;
+    document.getElementById("form").reset();
+    document.getElementById("person_id").value=0;
     }
 </script>
+<button onclick="clearForm()" class="btn btn-default">Clear Form</button><br>
 
-{{ Form::open(array('url' => 'relatives')) }}
+
+{{ Form::open(array('url' => 'relatives', 'id' => 'form')) }}
 
         @if (intval($id) > 0)
            {{ Form::hidden('abusedChild_id',$id,array('id' => 'abusedChild_id')) }}

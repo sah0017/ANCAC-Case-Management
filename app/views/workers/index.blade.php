@@ -35,10 +35,10 @@
 
 				<!-- delete the child (uses the destroy method DESTROY /children/{id} -->
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
-				{{ Form::open(array('url' => 'workers/' . $value->id)) }}
+				<a{{ Form::open(array('url' => 'workers/' . $value->id)) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this worker', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
+                                        {{ Form::close() }}</a>
 
 				<!-- show the child (uses the show method found at GET /children/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('workers/' . $value->id) }}">Show this Relation</a>

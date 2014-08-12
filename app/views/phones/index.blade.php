@@ -37,10 +37,10 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /phones/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                {{ Form::open(array('url' => 'phones/' . $value->id)) }}
+                                <a{{ Form::open(array('url' => 'phones/' . $value->id)) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this phones', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
+                                        {{ Form::close() }}</a>
 				<!-- show the nerd (uses the show method found at GET /phones/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('phones/' . $value->id) }}">Show this Phone</a>
 

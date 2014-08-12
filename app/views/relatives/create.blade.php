@@ -34,12 +34,16 @@ $(document).ready(function(){
                 }
                 else{
                     document.getElementById('people').style.display = 'block';
-                    $('#people').append('<strong>Possible Matches:</strong><br/>');
+                    results = '<strong>Possible Matches:</strong><br/><table class="table" width=100%>'+
+                        '<colgroup>'+
+                        '<col class="col-xs-1">'+
+                        '<col class="col-xs-7">'+
+                        '</colgroup>';
                     for (var i in data) {
-                        $('#people').append(data[i].first + ' ' + data[i].last);
-                        $('#people').append('<button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button><br>');
-
+                        results += '<tr><td>'+data[i].first + ' ' + data[i].last+'</td>';
+                        results += '<td><button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button></td></tr>';
                     }
+                    $('#people').append(results+'</table>');
                 }
             }
         });

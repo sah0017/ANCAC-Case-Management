@@ -7,24 +7,15 @@
 
 @section('content')
     
-<h1>Edit {{ $relative->name }}</h1>
+<h1>Edit {{ $relative->personalInfo->name }}'s relation to {{ $relative->child->personalInfo->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all() )}}
 
+
+
 {{ Form::model($relative, array('route' => array('relatives.update', $relative->id), 'method' => 'PUT')) }}
 
-
-
-        <div class="form-group">
-		{{ Form::label('abusedChild_id', 'Abused Child') }}
-		{{ Form::select('abusedChild_id', AbusedChild::all()->lists('id','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('person_id', 'Person') }}
-		{{ Form::select('person_id', Person::all()->lists('name','id'), Input::old('person_id'), array('class' => 'form-control')) }}
-	</div>
 
          <div class="form-group">
 		{{ Form::label('relationType_id', 'Relation Type') }}

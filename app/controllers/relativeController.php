@@ -106,8 +106,8 @@ class relativeController extends \BaseController {
 	public function update($id)
 	{
                         $relative = Relationship::find($id);
-			$relative->abusedChild_id    = Input::get('abusedChild_id');
-                        $relative->person_id         = Input::get('person_id');
+			//$relative->abusedChild_id    = Input::get('abusedChild_id');
+                        //$relative->person_id         = Input::get('person_id');
 			$relative->relationType_id   = Input::get('relationType_id');
 			$relative->custodian         = Input::get('custodian');
                         $relative->sameHouse         = Input::get('sameHouse');

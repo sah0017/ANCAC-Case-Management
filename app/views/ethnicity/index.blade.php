@@ -31,10 +31,10 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /ethnicity/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                {{ Form::open(array('url' => 'ethnicity/' . $value->id)) }}
+                                <a{{ Form::open(array('url' => 'ethnicity/' . $value->id)) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this ethnicity', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
+                                        {{ Form::close() }}</a>
 				<!-- show the nerd (uses the show method found at GET /ethnicity/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('ethnicity/' . $value->id) }}">Show this Ethnicity</a>
 

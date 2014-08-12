@@ -8,6 +8,12 @@
 @section('content')
 
 <h1>Edit {{ $session->name }}</h1>
+{{ HTML::script('js/jquery-ui/jquery-ui.js') }}
+{{ HTML::style('js/jquery-ui/jquery-ui.css') }}
+<script> 
+    $(function() {
+    $( "#date" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}

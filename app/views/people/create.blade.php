@@ -45,7 +45,7 @@ $(document).ready(function(){
 });
 
   $(function() {
-    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d" });
+    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
   });
   
   </script>
@@ -79,7 +79,7 @@ $(document).ready(function(){
         
         <div class="form-group">
             
-		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
+		{{ Form::label('dob', 'Date of Birth ') }}
 		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 
 	</div>

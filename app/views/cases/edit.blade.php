@@ -8,7 +8,12 @@
 @section('content')
 
 <h1>Edit {{ $case->name }}</h1>
-
+{{ HTML::script('js/jquery-ui/jquery-ui.js') }}
+{{ HTML::style('js/jquery-ui/jquery-ui.css') }}
+<script> 
+    $(function() {
+    $( "#caseOpened" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
 

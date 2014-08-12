@@ -66,7 +66,7 @@ class DHRCasesController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('DHRCases.show')
-			->with('workerTpe', $dHRCases);
+			->with('DHRCases', $dHRCases);
 	}
 
 	/**

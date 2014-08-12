@@ -10,7 +10,9 @@
 
         <!-- CSS are placed here -->
         {{ HTML::style('css/bootstrap.min.css') }}
-        
+        <!-- Scripts are placed here -->
+        {{ HTML::script('js/jquery.min.js') }}
+        {{ HTML::script('js/bootstrap.min.js') }}
         <style>
         @section('styles')
             body {
@@ -67,9 +69,7 @@
 
         </div>
 
-        <!-- Scripts are placed here -->
-        {{ HTML::script('js/jquery.min.js') }}
-        {{ HTML::script('js/bootstrap.min.js') }}
+
 
     </body>
 </html>

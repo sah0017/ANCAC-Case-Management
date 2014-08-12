@@ -1,25 +1,11 @@
-<!-- app/views/people/create.blade.php -->
+@extends('people.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ANCAC People</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        {{ HTML::script('js/jquery.min.js') }}
+@section('title')
+@parent
+:: Create Person
+@stop
 
-</head>
-<body>
-<div class="container">
-
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('people') }}">Person Entries</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('people') }}">View All People</a></li>
-		<li><a href="{{ URL::to('people/create') }}">Create a Person Entry</a>
-	</ul>
-</nav>
+@section('content')
 
 <h1>Create a Person</h1>
 
@@ -27,8 +13,9 @@
     <!-- For results -->
 </div>
 <script type="text/javascript">
+var people;
 $(document).ready(function(){
-    var people;
+    
     $('input#last').keyup(function() {
         $.ajax({ // ajax call starts
             url: 'search', // JQuery loads serverside.php
@@ -44,10 +31,9 @@ $(document).ready(function(){
                 }
                 else{
                     document.getElementById('people').style.display = 'block';
-                    $('#people').append('<strong>Possible Matches:</strong><br/>');
+                    $('#people').append('<strong>Possible Duplicates:</strong><br/>');
                     for (var i in data) {
-                        $('#people').append(data[i].first + ' ' + data[i].last);
-                        $('#people').append('<button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button><br>');
+                        $('#people').append(data[i].first + ' ' + data[i].last+' '+ data[i].dob+'<br>');
 
                     }
                 }
@@ -56,11 +42,6 @@ $(document).ready(function(){
         return false; // keeps the page from not refreshing 
     });
 });
-
-function use(i) {
-        //var button = parseInt($(this).val());
-        document.getElementById("first").value=people[i].first;
-    }
 </script>
 
 
@@ -186,6 +167,4 @@ function use(i) {
 
 {{ Form::close() }}
 
-</div>
-</body>
-</html>
+@stop

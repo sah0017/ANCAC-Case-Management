@@ -12,10 +12,56 @@
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all() )}}
 
+<div id="people" class="alert alert-info" role="alert" style="display: none;">
+    <!-- For results -->
+</div>
+<script type="text/javascript">
+var people;
+$(document).ready(function(){
+    
+    $('input#last').keyup(function() {
+        $.ajax({ // ajax call starts
+            url: '/people/search', // JQuery loads serverside.php
+            type: "POST",
+            data: 'last=' + $(this).val(), // Send value of the text
+            dataType: 'json', // Choosing a JSON datatype
+            success: function(data) // Variable data contains the data we get from serverside
+            {
+                people = data;
+                $('#people').html(''); // Clear div
+                if (jQuery.isEmptyObject(data)){
+                    document.getElementById('people').style.display = 'none';
+                }
+                else{
+                    document.getElementById('people').style.display = 'block';
+                    $('#people').append('<strong>Possible Matches:</strong><br/>');
+                    for (var i in data) {
+                        $('#people').append(data[i].first + ' ' + data[i].last);
+                        $('#people').append('<button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button><br>');
+
+                    }
+                }
+            }
+        });
+        return false; // keeps the page from not refreshing 
+    });
+});
+
+function use(i) {
+        //var button = parseInt($(this).val());
+        document.getElementById("person_id").value=people[i].id;
+        document.getElementById("first").value=people[i].first;
+        document.getElementById("middle").value=people[i].middle;
+        document.getElementById("last").value=people[i].last;
+        document.getElementById("dob").value=people[i].dob;
+
+    }
+</script>
+
 {{ Form::open(array('url' => 'relatives')) }}
 
         @if (intval($id) > 0)
-           {{ Form::hidden('abusedChild_id',$id)}}
+           {{ Form::hidden('abusedChild_id',$id,array('id' => 'abusedChild_id')) }}
         @else
            <div class="form-group">
 		{{ Form::label('abusedChild_id', 'Abused Child') }}
@@ -25,8 +71,32 @@
 	
         
         <div class="form-group">
-		{{ Form::label('person_id', 'Person') }}
-		{{ Form::select('person_id', Person::all()->lists('name','id'), Input::old('person_id'), array('class' => 'form-control')) }}
+		{{ Form::hidden('person_id' , 0, array('id' => 'person_id')) }}
+	</div>
+        
+        	<div class="form-group">
+		{{ Form::label('first', 'First Name') }}
+		{{ Form::text('first', Input::old('first'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('middle', 'Middle Name') }}
+		{{ Form::text('middle', Input::old('middle'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('last', 'Last Name') }}
+		{{ Form::text('last', Input::old('last'), array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('age', 'Age') }}
+		{{ Form::text('age', Input::old('age'), array('class' => 'form-control')) }}
+	</div>
+        
+        <div class="form-group">
+		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
+		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 	</div>
 
          <div class="form-group">
@@ -53,8 +123,5 @@
 	{{ Form::submit('Create the relatives entry!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
-
-</div>
-</body>
-</html>
+@stop
 

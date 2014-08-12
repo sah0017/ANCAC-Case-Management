@@ -56,7 +56,7 @@ class AbusedChildController extends \BaseController {
 			$child->person_id        = $person->id;
 			$child->parentalHistory  = Input::get('parentalHistory');
 			$child->parentStatus     = Input::get('parentStatus');
-                        $child->medicalCompleted = Input::get('medicalCompleted');
+                        $child->medicalCompleted = Input::get('medicalCompleted', false);
                         $child->schoolGrade      = Input::get('schoolGrade');
                         $child->school           = Input::get('school');
 			$child->save();

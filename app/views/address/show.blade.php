@@ -10,6 +10,4 @@
 <h1>Showing {{ $Address->address }}</h1>
 
 
-</div>
-</body>
-</html>
+@stop

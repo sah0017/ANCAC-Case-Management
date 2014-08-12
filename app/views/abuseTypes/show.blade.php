@@ -10,6 +10,4 @@
 <h1>Showing {{ $abuseType->type }}</h1>
 
 
-</div>
-</body>
-</html>
+@stop

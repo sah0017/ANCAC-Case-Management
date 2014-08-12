@@ -10,7 +10,4 @@
 <h1>Showing {{ $WorkerType->type }}</h1>
 
 
-</div>
-</body>
-</html>
-
+@stop

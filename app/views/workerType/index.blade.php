@@ -1,8 +1,8 @@
-@extends('session.master')
+@extends('workerType.master')
 
 @section('title')
 @parent
-:: Session
+:: Worker Type
 @stop
 
 @section('content')

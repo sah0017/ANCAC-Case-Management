@@ -10,7 +10,7 @@
     <h1>Showing {{ $relative->name }}</h1>
 
 	<div class="jumbotron text-left">
-		<h2>{{ $relatives->name }}</h2>
+		<h2>{{ $relative->name }}</h2>
 		<p>
 			<strong>Type of Relation:</strong>
                         <strong>Custodian:</strong>

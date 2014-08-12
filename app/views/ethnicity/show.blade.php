@@ -10,7 +10,4 @@
 <h1>Showing {{ $Ethnicity->ethnicity }}</h1>
 
 
-</div>
-</body>
-</html>
-
+@stop

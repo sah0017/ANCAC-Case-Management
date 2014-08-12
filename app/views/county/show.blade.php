@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Showing {{ $County->name }}</h1>
+<h1>Showing: {{ $County->name }}</h1>
 
 
 @stop

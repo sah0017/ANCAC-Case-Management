@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Showing {{ $WorkerType->type }}</h1>
+<h1>Showing: {{ $WorkerType->type }}</h1>
 
 
 @stop

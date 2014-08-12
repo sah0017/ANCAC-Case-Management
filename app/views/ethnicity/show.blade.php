@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Showing {{ $Ethnicity->ethnicity }}</h1>
+<h1>Showing: {{ $Ethnicity->ethnicity }}</h1>
 
 
 @stop

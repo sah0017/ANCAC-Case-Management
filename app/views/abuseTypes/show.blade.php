@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Showing {{ $abuseType->type }}</h1>
+<h1>Showing: {{ $abuseType->type }}</h1>
 
 
 @stop

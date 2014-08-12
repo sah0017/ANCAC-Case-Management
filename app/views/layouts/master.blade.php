@@ -52,6 +52,8 @@
                                     <li><a href="{{ URL::to('serviceType') }}">Service Type</a></li>
                                     <li class="divider"></li>
                                     <li><a href="{{ URL::to('workerType') }}">Worker Type</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="{{ URL::to('workers') }}">Workers</a></li>
                                     
                                 </ul>
                             </li>

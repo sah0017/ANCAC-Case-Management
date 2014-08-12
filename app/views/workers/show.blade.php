@@ -13,6 +13,7 @@
 		<h2>{{ $worker->name }}</h2>
 		<p>
 			<strong>Name of Worker:</strong> {{ $worker->name }}<br>
+                        <strong>Worker Type:</strong> {{ $worker->workerType_id }}<br>
                         
 
 		</p>

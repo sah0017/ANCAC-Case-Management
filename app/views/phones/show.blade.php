@@ -12,7 +12,4 @@
 <h1>Type:{{ $Phones->type }}</h1>
 
 
-</div>
-</body>
-</html>
-
+@stop

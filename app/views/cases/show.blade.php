@@ -29,7 +29,7 @@
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-tittel">Alleged Abuser Info</h4>
+                                <h4 class="panel-tittel">Alleged Offender Info</h4>
                             </div>
                             <div class="panel-body">
                                 <strong>Name </strong><br>
@@ -60,7 +60,7 @@
                     <div class="col-md-4">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-tittel">Workers</h4>
+                                <h4 class="panel-tittel">MDT Workers</h4>
                             </div>
                             <p style ="width: 100%; height: 200px; overflow: scroll">
                             <table class="table">
@@ -171,7 +171,7 @@
                                 </tbody>
                             </table>
                             <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/session') }}">List Relations</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/session') }}">List Sessions</a>
                             </div>
                         </div>
 

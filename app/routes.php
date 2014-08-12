@@ -11,6 +11,11 @@
   |
  */
 
+Route::get('login', 'AuthController@showLogin');
+Route::post('login', 'AuthController@postLogin');
+Route::get('logout', 'AuthController@getLogout');
+
+
 // Secure-Routes
 Route::group(array('before' => 'auth'), function()
 {
@@ -96,9 +101,6 @@ Route::get('cases/{id}/workers', function($id) {
 Route::post('cases/{id}/addWorker', 'CaseController@addWorker');
 Route::post('cases/{id}/removeWorker', 'CaseController@removeWorker');
 
-Route::get('login', 'AuthController@showLogin');
-Route::post('login', 'AuthController@postLogin');
-Route::get('logout', 'AuthController@getLogout');
 
 
 

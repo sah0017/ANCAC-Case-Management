@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Edit {{ $session->personalInfo->name }}</h1>
+<h1>Edit {{ $session->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
@@ -42,8 +42,8 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('worker_id', 'MDT Workers') }}
-		{{ Form::select('worker_id', Worker::all()->lists('type','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
+		{{ Form::label('worker_id', 'Interviewer') }}
+		{{ Form::select('worker_id', Worker::all()->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -53,7 +53,6 @@
                     Input::old('discussedAbuse'), array('class' => 'form-control')) }}
 	</div>
 
-        <br>
 
 	{{ Form::submit('Edit the session entry!', array('class' => 'btn btn-primary')) }}
 

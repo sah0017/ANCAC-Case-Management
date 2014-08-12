@@ -31,7 +31,10 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /households/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-
+                                 <a{{ Form::open(array('url' => 'households/' . $value->id)) }}
+					{{ Form::hidden('_method', 'DELETE') }}
+					{{ Form::submit('Delete this household', array('class' => 'btn btn-warning')) }}
+                                        {{ Form::close() }}</a>
 				<!-- show the nerd (uses the show method found at GET /households/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('households/' . $value->id) }}">Show this Household</a>
 

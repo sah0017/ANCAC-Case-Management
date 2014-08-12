@@ -1,8 +1,6 @@
-<?php
+@extends('layouts.master')
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+@section('nav')
+<li><a href="{{{ URL::to('workers') }}}">List Workers</a></li>
+<li><a href="{{{ URL::to('workers/create') }}}">Create Worker</a></li>
+@stop

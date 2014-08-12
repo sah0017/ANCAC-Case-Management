@@ -1,23 +1,11 @@
-<!-- app/views/workers/create.blade.php -->
+@extends('workers.master')
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ANCAC Workers</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@section('title')
+@parent
+:: Worker
+@stop
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('workers') }}">Workers</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('workers') }}">View All Workers for the Case</a></li>
-		<li><a href="{{ URL::to('workers/create') }}">Create a Worker Entry</a>
-	</ul>
-</nav>
+@section('content')
     
     <h1>all the Workers</h1>
 
@@ -47,10 +35,10 @@
 
 				<!-- delete the child (uses the destroy method DESTROY /children/{id} -->
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
-				{{ Form::open(array('url' => 'workers/' . $value->id)) }}
+				<a{{ Form::open(array('url' => 'workers/' . $value->id)) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this worker', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
+                                        {{ Form::close() }}</a>
 
 				<!-- show the child (uses the show method found at GET /children/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('workers/' . $value->id) }}">Show this Relation</a>

@@ -43,10 +43,10 @@
 
 				<!-- delete the child (uses the destroy method DESTROY /children/{id} -->
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
-				{{ Form::open(array('url' => 'children/' . $value->id, 'class' => 'pull-right')) }}
+				<a{{ Form::open(array('url' => 'children/' . $value->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this child', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
+                                        {{ Form::close() }}</a>
 
 				<!-- show the child (uses the show method found at GET /children/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('children/' . $value->id) }}">Show this child</a>

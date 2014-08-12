@@ -36,10 +36,10 @@
 
 				<!-- delete the allegedOffender (uses the destroy method DESTROY /allegedOffenders/{id} -->
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
-				{{ Form::open(array('url' => 'allegedOffenders/' . $value->id, 'class' => 'pull-right')) }}
+				<a{{ Form::open(array('url' => 'allegedOffenders/' . $value->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this allegedOffender', array('class' => 'btn btn-warning')) }}
-				{{ Form::close() }}
+                                        {{ Form::close() }}</a>
 
 				<!-- show the allegedOffender (uses the show method found at GET /allegedOffenders/{id} -->
 				<a class="btn btn-small btn-success" href="{{ URL::to('allegedOffenders/' . $value->id) }}">Show this allegedOffender</a>

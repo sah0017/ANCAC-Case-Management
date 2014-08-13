@@ -62,7 +62,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-tittel">MDT Workers</h4>
                             </div>
-                            <p style ="width: 100%; height: 200px; overflow: scroll">
+                            <div style ="width: 100%; height: 200px; overflow: scroll">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -91,7 +91,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                        </p>
+                        </div>
                             <div class="panel-footer">
                                 {{ Form::open(array('action' => array('CaseController@addWorker', $case->id), 'class' => 'form-inline')) }}
 

@@ -44,12 +44,12 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /address/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                <a{{ Form::open(array('url' => 'DHRCases/' . $value->id)) }}
+                                {{ Form::open(array('url' => 'DHRCases/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this DHR Case', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}</a>
+                                        {{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /address/{id} -->
-				<a class="btn btn-small btn-success" href="{{ URL::to('DHRCases/' . $value->id) }}">Show this DHR Case</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('DHRCases/' . $value->id) }}">Show this DHR Case</a>
 
 				<!-- edit this nerd (uses the edit method found at GET /address/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('DHRCases/' . $value->id . '/edit') }}">Edit this DHR Case</a>

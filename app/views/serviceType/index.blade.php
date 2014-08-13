@@ -31,12 +31,12 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /serviceType/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                <a{{ Form::open(array('url' => 'serviceType/' . $value->id)) }}
+                                {{ Form::open(array('url' => 'serviceType/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this service type.', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}</a>
+                                        {{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /serviceType/{id} -->
-				<a class="btn btn-small btn-success" href="{{ URL::to('serviceType/' . $value->id) }}">Show this Service Type</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('serviceType/' . $value->id) }}">Show this Service Type</a>
 
 				<!-- edit this nerd (uses the edit method found at GET /serviceType/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('serviceType/' . $value->id . '/edit') }}">Edit this Service Type</a>

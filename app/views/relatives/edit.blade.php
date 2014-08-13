@@ -33,7 +33,7 @@
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('alias', 'Name of the person.') }}
+		{{ Form::label('alias', 'Nickname of the person.') }}
 		{{ Form::text('alias', Input::old('alias'), array('class' => 'form-control')) }}
 	</div>
 

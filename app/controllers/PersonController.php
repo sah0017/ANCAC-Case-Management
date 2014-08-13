@@ -57,10 +57,22 @@ class PersonController extends \BaseController {
                         $person->specialNeeds = Input::get('specialNeeds',"");
                         $person->language = Input::get('language');
                         $person->maritalStatus = Input::get('maritalStatus');
-                        $person->address_id = Input::get('address_id');
                         $person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
-			$person->save();
+			
+                        $address = new Address;
+                        $address->line1               = Input::get('address1');
+                        $address->line2               = Input::get('address2');
+                        $address->city                = Input::get('city');
+                        $address->state               = Input::get('state');
+                        $address->zip                 = Input::get('zip');
+                        $address->county_id           = Input::get('county_id');
+			$address->save();
+                        
+                        $person->address_id           = $address->id;
+                        $person->save();
+                        
+                        
 
 			// redirect
 			Session::flash('message', 'Successfully stored person info!');
@@ -128,10 +140,18 @@ class PersonController extends \BaseController {
                         $person->specialNeeds = Input::get('specialNeeds',"");
                         $person->language = Input::get('language');
                         $person->maritalStatus = Input::get('maritalStatus');
-                        $person->address_id = Input::get('address_id');
                         $person->household_id = Input::get('househole_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
-			$person->save();
+			
+                        $address = Address::find($person->address_id);
+                        $address->line1               = Input::get('address1');
+                        $address->line2               = Input::get('address2');
+                        $address->city                = Input::get('city');
+                        $address->state               = Input::get('state');
+                        $address->zip                 = Input::get('zip');
+                        $address->county_id           = Input::get('county_id');
+			$address->save();
+                        $person->save();
 
 			// redirect
 			Session::flash('message', 'Successfully updated person info!');

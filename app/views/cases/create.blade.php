@@ -39,7 +39,7 @@
 
         <div class="form-group">
 		{{ Form::label('childAge', 'Child\'s Age') }}
-		{{ Form::text('childFirst', Input::old('childFirst'), array('class' => 'form-control')) }}
+		{{ Form::text('childAge', Input::old('childAge'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -132,7 +132,7 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abused.') }}
+		{{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuses.') }}
 		{{ Form::text('talkedToChild', Input::old('talkedToChild'), array('class' => 'form-control')) }}
 	</div>
 

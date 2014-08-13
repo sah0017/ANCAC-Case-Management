@@ -12,8 +12,9 @@
 {{ HTML::style('js/jquery-ui/jquery-ui.css') }}
 <script> 
     $(function() {
-    $( "#date" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+    $( "#date" ).datepicker({dateFormat: "yy-mm-dd" });
   });
+  </script>
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all() )}}
 
@@ -53,8 +54,8 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('discussedAbuse', 'Discussed Abuse') }}
-		{{ Form::select('discussedAbuse', array('0' => 'Select the one that aplies', '1' => 'yes',
+		{{ Form::label('discussedAbuse', 'Disclosed Abuse') }}
+		{{ Form::select('discussedAbuse', array('0' => 'Select the one that applies', '1' => 'yes',
                             '2' => 'no', '3' => 'partial'), 
                     Input::old('discussedAbuse'), array('class' => 'form-control')) }}
 	</div>

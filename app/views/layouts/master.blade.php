@@ -39,7 +39,7 @@
                             <li><a href="{{{ URL::to('') }}}">Home</a></li>
                             @section('nav')
                             @show
-                            @if(Auth::check())
+                            @if(Auth::check())                           
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Preset Type <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">

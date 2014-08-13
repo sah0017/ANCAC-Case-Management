@@ -46,10 +46,10 @@
                                         {{ Form::close() }}</a>
                                 
 				<!-- show the cases (uses the show method found at GET /case/{id} -->
-				<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $value->id) }}">Show this Case</a>
+				<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $value->id) }}">Case Details</a>
 
 				<!-- edit this cases (uses the edit method found at GET /case/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $value->id . '/edit') }}">Edit this Case</a>
+				
 
 			</td>
 		</tr>

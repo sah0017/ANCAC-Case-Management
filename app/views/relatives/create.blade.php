@@ -139,6 +139,17 @@ function clearForm(){
 		{{ Form::label('alias', 'Nikename of the person.') }}
 		{{ Form::text('alias', Input::old('alias'), array('class' => 'form-control')) }}
 	</div>
+        
+        @if( isset($case_id) )
+        
+        <div class="form-group">
+		{{ Form::label('allegedOffender', 'Is this person an alleged offender in this case?') }}
+		{{ Form::checkbox('allegedOffender', '1', Input::old('allegedOffender'), array('class' => 'form-control')) }}
+                {{ Form::hidden('case_id', $case_id) }}
+                {{ Form::hidden('county_id', $county_id) }}
+	</div>
+        
+        @endif
 
 
 	{{ Form::submit('Create the relatives entry!', array('class' => 'btn btn-primary')) }}

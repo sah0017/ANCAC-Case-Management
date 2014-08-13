@@ -31,10 +31,29 @@
                             <div class="panel-heading">
                                 <h4 class="panel-tittel">Alleged Offender Info</h4>
                             </div>
-                            <div class="panel-body">
-                                <strong>Name </strong><br>
-                                <strong>Date of Birth </strong>
-                            </div>
+                            <div style ="width: 100%; height: 150px; overflow: scroll">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($case->allegedOffenders as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->personalInfo->name }}</td>
+
+                                        <!-- we will also add show, edit, and delete buttons -->
+                                        <td>
+
+                                           
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/allegedOffenders') }}">Edit</a>
                                 <a class="btn btn-small btn-info" href="{{ URL::to('allegedOffendes/' . $case->allegedAbuser_id . '/create') }}">Create</a>
@@ -123,7 +142,7 @@
                                 <tbody>
                                     @foreach($case->abusedChild->relations as $key => $value)
                                     <tr>
-                                        <td>{{ $value->alias }}</td>
+                                        <td>{{ $value->personalInfo->name }}</td>
                                         <td>{{ $value->relationType->type }}</td>
 
                                         <!-- we will also add show, edit, and delete buttons -->

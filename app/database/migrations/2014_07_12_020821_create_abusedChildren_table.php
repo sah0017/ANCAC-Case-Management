@@ -22,6 +22,7 @@ class CreateAbusedChildrenTable extends Migration {
 			$table->string('medicalLocation')->nullable();
 			$table->string('schoolGrade')->nullable();
                         $table->integer('school')->unsigned()->nullable();
+                        $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});
 	}

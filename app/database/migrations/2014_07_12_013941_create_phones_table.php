@@ -17,7 +17,7 @@ class CreatePhonesTable extends Migration {
 			$table->increments('id');
                         $table->integer('person_id')->unsigned();
 			$table->string('number');
-			$table->enum('type', array('home','work','cell'));
+			$table->enum('type', array('work','cell'));
 			$table->timestamps();
 		});
 	}

@@ -20,7 +20,9 @@ class CreateAddressesTable extends Migration {
 			$table->string('city');
 			$table->char('state',2)->default('AL');
 			$table->string('zip');
+                        $table->string('phone');
                         $table->integer('county_id')->unsigned();
+                        
 			$table->timestamps();
 		});
 	}

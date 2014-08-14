@@ -7,12 +7,13 @@
 
 @section('content')
 
-    <h1>Showing {{ $relative->name }}</h1>
+    <h1>Showing {{ $relative->name }}</h1><a class="btn btn-small btn-info" href="{{$_SERVER['REQUEST_URI']}}/edit">Edit</a> 
 
 	<div class="jumbotron text-left">
 		<h2>{{ $relative->name }}</h2>
 		<p>
-			<strong>Type of Relation:</strong>
+                        <strong>Name:</strong>{{$relative->personalInfo->name}}  <br>
+                        <strong>Type of Relation:</strong>{{$relative->relationType->type}}<br>
                         <strong>Custodian:</strong>
                         @if ($relative->custodian)
                          yes
@@ -27,8 +28,13 @@
                          no
                         @endif
                         <br>
-			<strong>Name of the Relative:</strong> {{ $relative->alias }}<br>
-                        <strong>Is He/She an Alleged Offender</strong>
+			<strong>Name associated with Relative:</strong> {{ $relative->alias }}<br>
+                        <strong>Is He/She an Alleged Offender:</strong> 
+                        @if ($relative->allegedOffender)
+                        Yes
+                        @else
+                        No
+                        @endif
                         
 
 		</p>

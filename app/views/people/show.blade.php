@@ -7,13 +7,11 @@
 
 @section('content')
 
-<h1>Showing {{ $person->name }}</h1>
+<h1>Showing: {{ $person->name }}</h1>
 
 	<div class="jumbotron text-left">
-		<h2>{{ $person->name }}</h2>
 		<p>
-			<strong>Person:</strong> {{ $person->person_id }}<br>
-			<strong>Name:</strong> {{ $person->name }}<br>
+			
                         <strong>DOB:</strong> {{ $person->dob }}<br>
                         <strong>Drug Use:</strong>
                         @if ($person->drugUse)
@@ -42,8 +40,8 @@
                         @else
                          no
                         @endif
-                        <br
-                        <strong>crimeConviction:</strong>
+                        <br>
+                        <strong>Crime Conviction:</strong>
                         @if ($person->crimeConviction)
                          yes
                         @else

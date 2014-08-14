@@ -10,6 +10,11 @@ class CountyTableSeeder extends Seeder {
             'id'=>1,
             'name' => 'Montgomery'
         ));
+        
+        County::create(array(
+            'id'=>0,
+            'name' => 'Unknown'
+        ));
        
     }
 }

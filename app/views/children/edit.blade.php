@@ -86,18 +86,45 @@
         </div>
 
         <div class="form-group">
-		{{ Form::label('address_id', 'Address') }}
-		{{ Form::select('address_id', Address::all()->lists('adress','id'), Input::old('address_id'), array('class' => 'form-control')) }}
+            
+		{{ Form::label('phone', 'Home Phone ') }}
+		{{ Form::text('phone', $child->personalInfo->address->phone, array('class' => 'form-control')) }}
+
 	</div>
-        
+
         <div class="form-group">
-		{{ Form::label('household_id', 'Household') }}
-		{{ Form::select('household_id', Address::all()->lists('household','id'), Input::old('household_id'), array('class' => 'form-control')) }}
+		{{ Form::label('address1', 'Address Line 1') }}
+		{{ Form::text('address1', $child->personalInfo->address->line1, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('address2', 'Address Line 2') }}
+		{{ Form::text('address2', $child->personalInfo->address->line2, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('city', 'City') }}
+		{{ Form::text('city', $child->personalInfo->address->city, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('state', 'State') }}
+		{{ Form::text('state', $child->personalInfo->address->state, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('zip', 'Zip Code') }}
+		{{ Form::text('zip', $child->personalInfo->address->zip, array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('county_id', 'County') }}
+		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('ethnicity_id', 'Ethnicity') }}
-		{{ Form::select('ethnicity_id', Address::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
+		{{ Form::select('ethnicity_id', Ethnicity::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
 	</div>
         <br>
 

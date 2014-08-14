@@ -21,6 +21,7 @@ class CreateRelationshipsTable extends Migration {
 			$table->string('alias')->nullable();
 			$table->boolean('custodian')->default(false);
 			$table->boolean('sameHouse');
+                        $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});
 	}

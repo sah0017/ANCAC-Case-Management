@@ -17,6 +17,7 @@ class CreateWorkersTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->integer('workerType_id')->unsigned();
+                        $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});
 	}

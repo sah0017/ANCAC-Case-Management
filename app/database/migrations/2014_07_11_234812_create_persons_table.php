@@ -38,6 +38,7 @@ class CreatePersonsTable extends Migration {
 			$table->integer('address_id')->unsigned()->nullable();
                         $table->integer('household_id')->unsigned()->nullable();
 			$table->integer('ethnicity_id')->unsigned()->nullable();
+                        $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});
 	}

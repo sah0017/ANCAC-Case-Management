@@ -22,6 +22,7 @@ class CreateSessionsTable extends Migration {
                         $table->enum('status',array('scheduled','no-show','cancled','attended','rescheduled'))->nullable;
 			$table->integer('worker_id')->unsigned();
                         $table->enum('discussedAbuse',array('yes','no','partial'))->nullable();
+                        $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});
 	}

@@ -15,6 +15,7 @@ class CreateCasesTable extends Migration {
 		Schema::create('cases', function(Blueprint $table)
 		{
 			$table->increments('id');
+                        $table->string('caseNumber');
 			$table->integer('abusedChild_id')->unsigned();
 			$table->integer('center_id')->unsigned();
 			$table->integer('worker_id')->unsigned();

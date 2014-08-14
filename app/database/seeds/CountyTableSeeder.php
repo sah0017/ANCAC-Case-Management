@@ -7,6 +7,7 @@ class CountyTableSeeder extends Seeder {
         DB::table('counties')->delete();
 
         County::create(array(
+            'id'=>1,
             'name' => 'Montgomery'
         ));
        

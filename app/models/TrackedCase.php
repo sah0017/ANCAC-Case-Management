@@ -10,7 +10,7 @@ class TrackedCase extends \Eloquent {
 		return $this->hasOne('worker');
 	}
 	public function county(){
-		return $this->hasOne('county');
+		return $this->belongsTo('county');
 	}
         public function allegedOffenders(){
             return $this->hasMany('AllegedOffender','case_id');

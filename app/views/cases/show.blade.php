@@ -117,7 +117,7 @@
                             <div class="panel-body">
                                 <strong>Opened:</strong> {{ $case->caseOpened }}<br>
                                 <strong>Status:</strong> {{ $case->status }}<br>
-                                <strong>County:</strong> {{ $case->county_id }}<br>
+                                <strong>County:</strong> {{ $case->county->name }}<br>
                                 <strong>Custody Issues:</strong>
                                 @if ($case->custodyIssues)
                                 Yes

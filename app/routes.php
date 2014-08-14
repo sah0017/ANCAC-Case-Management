@@ -100,11 +100,9 @@ Route::get('cases/{id}/workers', function($id) {
 
 Route::post('cases/{id}/addWorker', 'CaseController@addWorker');
 Route::post('cases/{id}/removeWorker', 'CaseController@removeWorker');
+Route::post('cases/{id}/addAbuseType', 'CaseController@addAbuseType');
+Route::post('cases/{id}/removeAbuseType', 'CaseController@removeAbuseType');
 
-
-
-
-    
 
 
 Route::get('cases/{id}/child/relations', function($id) {

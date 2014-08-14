@@ -118,16 +118,41 @@
                                 <strong>Opened:</strong> {{ $case->caseOpened }}<br>
                                 <strong>Status:</strong> {{ $case->status }}<br>
                                 <strong>County:</strong> {{ $case->county_id }}<br>
-                                <strong>Custody Issues:</strong> {{ $case->custodyIssues }}<br>
-                                <strong>IOReport:</strong> {{ $case->IOReport }}<br>
-                                <strong>Domestic Violence:</strong> {{ $case->domesticViolence }}<br>
-                                <strong>Prosecution:</strong> {{ $case->prosecution }}<br>
+                                <strong>Custody Issues:</strong>
+                                @if ($case->custodyIssues)
+                                Yes
+                                @else
+                                No
+                                @endif<br>
+                                <strong>IOReport:</strong>
+                                @if ($case->IOReport)
+                                Yes
+                                @else
+                                No
+                                @endif<br>
+                                <strong>Domestic Violence:</strong>
+                                @if ($case->domesticViolence)
+                                Yes
+                                @else
+                                No
+                                @endif<br>
+                                <strong>DV Prosecution:</strong>
+                                @if ($case->prosecution)
+                                Yes
+                                @else
+                                No
+                                @endif<br>
                                 <strong>Reporter:</strong> {{ $case->reporter }}<br>
                                 <strong>Date of abuse:</strong> {{ $case->abuseDate }}<br>
                                 <strong>Abuse Location:</strong> {{ $case->abuseLocation }}<br>
                                 <strong>Reason for referral:</strong> {{ $case->referralReason }}<br>
                                 <strong>DHR Determination:</strong> {{ $case->DHRDetermination }}<br>
-                                <strong>Forensic Evaluation:</strong> {{ $case->forensicEvaluation }}<br>
+                                <strong>Forensic Evaluation:</strong>
+                                @if ($case->forensicEvaluation)
+                                Yes
+                                @else
+                                No
+                                @endif<br>
                                 <strong>Charges filed:</strong> {{ $case->chargesFiled }}<br>
                                 <strong>Agency reported to:</strong> {{ $case->agencyReportedTo }}<br>
                                 <strong>Who spoke to the child:</strong> {{ $case->talkedToChild }}<br>

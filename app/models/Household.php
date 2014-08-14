@@ -4,7 +4,7 @@ class Household extends \Eloquent {
 	protected $fillable = [];
 
         public function persons() {
-            return $this->hasMany('Persons');
+            return $this->hasMany('Person');
         }
         
         public function DHRCases() {

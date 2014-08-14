@@ -16,10 +16,10 @@ class CreateHouseholdsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('pets')->nullable();
-			$table->boolean('medicare');
-			$table->boolean('allKids');
-			$table->boolean('freeOrReducedLunch');
-			$table->boolean('onBase');
+			$table->boolean('medicare')->default(false);
+			$table->boolean('allKids')->default(false);
+			$table->boolean('freeOrReducedLunch')->default(false);
+			$table->boolean('onBase')->default(false);
 			$table->timestamps();
 		});
 	}

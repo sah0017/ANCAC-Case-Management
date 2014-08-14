@@ -36,11 +36,15 @@ class CaseController extends \BaseController {
 	 */
 	public function store()
 	{
-		$person = new Person;
+		$household = new Household;
+                $household->save();
+                
+                $person = new Person;
 		$person->first = Input::get('childFirst',"");
                 $person->middle = Input::get('childMiddle',"");
 		$person->last = Input::get('childLast',"");
                 $person->age = Input::get('childAge',"");
+                $preson->household_id = $household->id;
                 $person->save();
             
                 $child = new AbusedChild;

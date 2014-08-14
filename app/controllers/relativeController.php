@@ -65,6 +65,10 @@ class relativeController extends \BaseController {
                             $allegedOffender->county_id = Input::get('county_id');
                             $allegedOffender->save();
                         }
+                        if ($relative->sameHouse){
+                            $person->household_id = $relative->child->personalInfo->household_id;
+                            $person->save();
+                        }
 
 			// redirect
 			Session::flash('message', 'Successfully stored Relationship info!');
@@ -122,6 +126,15 @@ class relativeController extends \BaseController {
                         $relative->sameHouse         = Input::get('sameHouse');
                         $relative->alias             = Input::get('alias');
 			$relative->save();
+                        
+                        $person = Person::find($relative->person_id);
+                        if ($relative->sameHouse){
+                            $person->household_id = $relative->child->personalInfo->household_id;
+                            $person->save();
+                        } else {
+                            $person->household_id = null;
+                            $person->save();
+                        }
 
 			// redirect
 			Session::flash('message', 'Successfully updated Relationship info!');

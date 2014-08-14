@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Showing {{ $household->id }}</h1><a class="btn btn-small btn-info" href="household/edit">Edit</a>
+<h1>Household info</h1><a class="btn btn-small btn-info" href="household/edit">Edit</a>
 
 	<div class="jumbotron text-left">
 		<p>
@@ -40,6 +40,26 @@
                          no
                         @endif
                         <br>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-tittel">Members</h4>
+                            </div>
+                            <div class="panel-body">
+                        <table class="table">
+                                    @foreach($household->persons as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->name }}</td>
+
+                                        <!-- we will also add show, edit, and delete buttons -->
+                                        <td>
+
+                                           
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                            </table>
+                            </div>
+                        </div>
 
 
 		</p>

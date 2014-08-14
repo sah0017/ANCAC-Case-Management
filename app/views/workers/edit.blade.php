@@ -7,12 +7,12 @@
 
 @section('content')
     
-    <h1>Edit {{ $relative->name }}</h1>
+    <h1>Edit {{ $worker->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all() )}}
 
-{{ Form::model($worker, array('route' => array('worker.update', $worker->id), 'method' => 'PUT')) }}
+{{ Form::model($worker, array('route' => array('workers.update', $worker->id), 'method' => 'PUT')) }}
 
 
 	<div class="form-group">
@@ -26,7 +26,7 @@
 	</div>
 
 
-	{{ Form::submit('Create the relatives entry!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Editing the worker entry!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

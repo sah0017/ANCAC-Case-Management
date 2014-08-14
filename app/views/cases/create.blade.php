@@ -27,7 +27,12 @@
 {{ HTML::ul($errors->all()) }}
 
 {{ Form::open(array('url' => 'cases')) }}
-        
+
+
+        <div class="form-group">
+		{{ Form::label('caseNumber', 'Case Number') }}
+		{{ Form::text('caseNumber', Input::old('caseNumber'), array('class' => 'form-control')) }}
+	</div>
 
         <div class="form-group">
 		{{ Form::label('childFirst', 'Child\'s First Name') }}

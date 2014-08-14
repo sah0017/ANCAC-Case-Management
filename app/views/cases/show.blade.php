@@ -7,7 +7,7 @@
 
 @section('content')
 
-            <h1>Showing Case {{ $case->id }}</h1>
+            <h1>Showing Case {{ $case->caseNumber }}</h1>
 
             <div>
                 

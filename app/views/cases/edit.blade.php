@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Edit {{ $case->name }}</h1>
+<h1>Edit {{ $case->caseNumber }}</h1>
 {{ HTML::script('js/jquery-ui/jquery-ui.js') }}
 {{ HTML::style('js/jquery-ui/jquery-ui.css') }}
 <script> 

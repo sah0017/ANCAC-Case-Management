@@ -17,18 +17,16 @@
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-                <td>ID</td>
-                <td>Abused Child ID</td>
-                <td>Alleged Abuser ID</td>
+                <td>Number</td>
+                <td>Abused Child</td>
                 <td>Case Opened</td>
                 </tr>
 	</thead>
 	<tbody>
 	@foreach($case as $key => $value)
 		<tr>
-                        <td>{{ $value->id }}</td>
-                        <td>{{ $value->abusedChild_id }}</td>
-                        <td>{{ $value->allegedAbuser_id }}</td>
+                        <td>{{ $value->caseNumber }}</td>
+                        <td>{{ $value->abusedChild->personalInfo->name }}</td>
                         <td>{{ $value->caseOpened }}</td>
 
 

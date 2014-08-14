@@ -22,22 +22,22 @@
 
          <div class="form-group">
 		{{ Form::label('childFirst', 'Child\'s First Name') }}
-		{{ Form::text('childFirst', Input::old('childFirst'), array('class' => 'form-control')) }}
+		{{ Form::text('childFirst', $case->abusedChild->personalInfo->first, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('childMiddle', 'Middle Name') }}
-		{{ Form::text('childMiddle', Input::old('childMiddle'), array('class' => 'form-control')) }}
+		{{ Form::text('childMiddle', $case->abusedChild->personalInfo->middle, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('childLast', 'Last Name') }}
-		{{ Form::text('childLast', Input::old('childLast'), array('class' => 'form-control')) }}
+		{{ Form::text('childLast', $case->abusedChild->personalInfo->last, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('childAge', 'Child\'s Age') }}
-		{{ Form::text('childAge', Input::old('childAge'), array('class' => 'form-control')) }}
+		{{ Form::text('childAge', $case->abusedChild->personalInfo->age, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

@@ -20,6 +20,9 @@
 
 {{ Form::open(array('url' => 'session')) }}
 
+        		{{ Form::hinden('child_id', $child_id)}}
+
+
 
 	<div class="form-group">
 		{{ Form::label('serviceType_id', 'Service Type') }}

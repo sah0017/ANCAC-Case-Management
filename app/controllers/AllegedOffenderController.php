@@ -43,7 +43,7 @@ class AllegedOffenderController extends \BaseController {
 			$allegedOffender->person_id = Input::get('person_id');
                         $allegedOffender->case_id = Input::get('case_id');
                         $allegedOffender->county_id = Input::get('county_id');
-                        $allegedOffender->center_id         = Auth::User()->center;
+                        $allegedOffender->center_id         = Auth::User()->center_id;
 			$allegedOffender->save();
 
 			// redirect

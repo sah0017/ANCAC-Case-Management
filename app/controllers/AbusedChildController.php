@@ -50,7 +50,7 @@ class AbusedChildController extends \BaseController {
                         $person->address_id = Input::get('address_id');
                         $person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
-                        $person->center_id         = Auth::User()->center;
+                        $person->center_id         = Auth::User()->_id;
 			$person->save();
             
                         $child = new AbusedChild;

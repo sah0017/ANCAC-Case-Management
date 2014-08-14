@@ -25,6 +25,7 @@ class SessionController extends \BaseController {
 	 */
 	public function create()
 	{
+               Session::put('from','session');
 		return View::make('session.create')->with('child_id',0);
 	}
 
@@ -44,15 +45,15 @@ class SessionController extends \BaseController {
                 $session->status             =Input::get('status');
 		$session->worker_id          =Input::get('worker_id');
                 $session->discussedAbuse     =Input::get('discussedAbuse');
-                $session->center_id         = Auth::User()->center;
+                $session->center_id         = Auth::User()->center_id;
 		$session->save();
                 
                 $child_id = Input::get('child_id');
                 if($child_id > 0)
-                DB::table('abusedChild_session')->insert(array('abusedChild_id' => $child_id, 'session_id' => $session->id));
+                DB::table('abusedchild_session')->insert(array('abusedChild_id' => $child_id, 'session_id' => $session->id));
 		// redirect
 		Session::flash('message', 'Successfully created session!');
-		return Redirect::to('session');
+		return Redirect::to(Session::get('from'));
 	}
 
 	/**

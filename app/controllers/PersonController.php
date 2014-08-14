@@ -59,7 +59,7 @@ class PersonController extends \BaseController {
                         $person->maritalStatus = Input::get('maritalStatus');
                         $person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
-                        $person->center_id         = Auth::User()->center;
+                        $person->center_id         = Auth::User()->center_id;
                         
                         $cellPhone = new Phone;
                         $cellPhone->number            = Input::get('cellPhone');

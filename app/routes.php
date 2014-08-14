@@ -130,4 +130,10 @@ Route::get('cases/{id}/child/session', function($id) {
                     ->with('session', $session);
 });
 
+Route::get('cases/{id}/child/session/create', function($id) {
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+    Session::put('from','cases/'.$id);
+		return View::make('session.create')->with('child_id', $child_id);
+});
+
 });

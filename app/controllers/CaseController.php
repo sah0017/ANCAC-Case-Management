@@ -48,6 +48,7 @@ class CaseController extends \BaseController {
                 $child->save();
                         
                 $case = new TrackedCase;
+                $case->caseNumber           = input::get('caseNumber');
                 $case->abusedChild_id       = $child->id;
                 $case->worker_id            = Input::get('worker_id');
 		$case->note                 = Input::get('note');

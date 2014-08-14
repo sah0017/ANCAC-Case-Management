@@ -67,8 +67,6 @@ Route::resource('workerType', 'WorkerTypeController');
 
 Route::resource('relativeType', 'RelativeTypeController');
 
-Route::resource('phones', 'PhonesController');
-
 Route::resource('ethnicity', 'EthnicityController');
 
 Route::resource('address', 'AddressController');
@@ -148,4 +146,31 @@ Route::get('cases/{id}/child/household/edit', function($id) {
                     ->with('household', $house);
 });
 
+Route::get('cases/{id}/child/relations/{realtion_id}/person',function($id, $relation_id){
+   $person = Relationship::find($relation_id)->personalInfo;
+           return View::make('people.show')
+                   ->with('person',$person);
 });
+
+Route::get('cases/{id}/child/relations/{realtion_id}/person/edit',function($id, $relation_id){
+   $person = Relationship::find($relation_id)->personalInfo;
+    Session::put('from','cases/'.$id);
+           return View::make('people.edit')
+                   ->with('person',$person);
+    
+});
+
+Route::get('cases/{id}/child/relations/{realtion_id}/edit',function($id, $relation_id){
+    $person = Relationship::find($relation_id);
+    Session::put('from','cases/'.$id);
+           return View::make('relatives.edit')
+                   ->with('relative',$person);
+});
+
+Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id){
+    $person = Relationship::find($relation_id);
+    Session::put('from','cases/'.$id);
+           return View::make('relatives.show')
+                   ->with('relative',$person);
+});
+});//end of users

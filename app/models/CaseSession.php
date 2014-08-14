@@ -6,7 +6,8 @@ class CaseSession extends \Eloquent {
         protected $table = "sessions";
         
         public function type() {
-            return $this->blongsTo('ServiceType');
+           return $this->belongsTo('ServiceType','serviceType_id');
+            
         }
 
         public function primaryWorker() {

@@ -153,17 +153,8 @@ class PersonController extends \BaseController {
                         $person->maritalStatus = Input::get('maritalStatus');
                         $person->household_id = Input::get('househole_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
-                        
-                        $cellPhone = Phone::find($person->phone->where('type','cell'));
-                        $cellPhone->number            = Input::get('cellPhone');
-                        $cellPhone->type='cell';
-                        $cellPhone->save();
-                        
-                        $workPhone = Phone::find($person->phone->where('type','work'));
-                        $workPhone->number              = Input::get('workPhone');
-                        $workPhone->type='work';
-                        $workPhone->save();
-			
+                        $person->cellPhone = Input::get('cellPhone');
+			$person->workPhone = Input::get('workPhone');
                         $address = Address::find($person->address_id);
                         $address->line1               = Input::get('address1');
                         $address->line2               = Input::get('address2');
@@ -176,7 +167,7 @@ class PersonController extends \BaseController {
 
 			// redirect
 			Session::flash('message', 'Successfully updated person info!');
-			return Redirect::to('people');
+			return Redirect::to(Session::get('from'));
 	}
 
 	/**

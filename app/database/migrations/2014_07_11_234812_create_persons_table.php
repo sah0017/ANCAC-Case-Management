@@ -35,6 +35,8 @@ class CreatePersonsTable extends Migration {
 			$table->string('specialNeeds')->nullable();
 			$table->string('language')->nullable();
 			$table->enum('maritalStatus',array('married','single','divorced'))->nullable();
+                        $table->string('cellPhone')->nullable();
+                        $table->string('workPhone')->nullable();
 			$table->integer('address_id')->unsigned()->nullable();
                         $table->integer('household_id')->unsigned()->nullable();
 			$table->integer('ethnicity_id')->unsigned()->nullable();

@@ -58,14 +58,14 @@
         <div class="form-group">
             
 		{{ Form::label('cellPhone', 'Cell Phone ') }}
-		{{ Form::text('cellPhone', $person->phone->where('type','cell'), array('class' => 'form-control')) }}
+		{{ Form::text('cellPhone', Input::old('cellPhone'), array('class' => 'form-control')) }}
 
 	</div>
 
         <div class="form-group">
             
 		{{ Form::label('workPhone', 'Work Phone ') }}
-		{{ Form::text('workPhone', $person->phone->where('type','work'), array('class' => 'form-control')) }}
+		{{ Form::text('workPhone', Input::old('workPhone'), array('class' => 'form-control')) }}
 
 	</div>
 

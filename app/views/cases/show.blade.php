@@ -231,7 +231,7 @@
                                 <tbody>
                                     @foreach($case->abusedChild->relations as $key => $value)
                                     <tr>
-                                        <td>{{ $value->personalInfo->name }}</td>
+                                        <td><a href="{{ URL::to('cases/'.$case->id.'/child/relations/'.$value->id.'/person')}}">{{ $value->personalInfo->name }}</a></td>
                                         <td>{{ $value->relationType->type }}</td>
 
                                         <!-- we will also add show, edit, and delete buttons -->
@@ -243,6 +243,7 @@
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('X', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
+                                        <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/relations/'.$value->id) }}">Show</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -262,7 +263,7 @@
                                 <tbody>
                                     @foreach($case->abusedChild->sessions as $key => $value)
                                     <tr>
-                                        <td>{{ $value->serviceType_id }}</td>
+                                        <td>{{ $value->type->type }}</td>
 
                                         <!-- we will also add show, edit, and delete buttons -->
                                         <td>

@@ -128,7 +128,7 @@ class SessionController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully deleted the session entry!');
-		return Redirect::to('session');
+		return Redirect::back();
 	}
 
 }

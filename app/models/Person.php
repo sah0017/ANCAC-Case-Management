@@ -8,11 +8,7 @@ class Person extends \Eloquent {
         {
             return "$this->first $this->middle $this->last";
         }
-        
-        public function phone()
-        {
-            return $this->hasOne('Phone');
-        }
+
         
         public function relation() {
             return $this->hasMany('Relationship');

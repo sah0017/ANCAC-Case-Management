@@ -6,7 +6,7 @@ class WorkerTypeTableSeeder extends Seeder {
         // !!! All existing users are deleted !!!
         DB::table('workerTypes')->delete();
 
-        User::create(array(
+        WorkerType::create(array(
             'id' => 1,
             'type' => 'Case Worker',
             'center_id' => 99

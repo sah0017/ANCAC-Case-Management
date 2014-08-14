@@ -6,7 +6,7 @@ class CountyTableSeeder extends Seeder {
         // !!! All existing users are deleted !!!
         DB::table('counties')->delete();
 
-        User::create(array(
+        County::create(array(
             'name' => 'Montgomery'
         ));
        

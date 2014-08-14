@@ -16,27 +16,27 @@
 
 	<div class="form-group">
 		{{ Form::label('first', 'First Name') }}
-		{{ Form::text('first', Input::old('first'), array('class' => 'form-control')) }}
+		{{ Form::text('first', $child->personalInfo->first, array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
 		{{ Form::label('middle', 'Middle Name') }}
-		{{ Form::text('middle', Input::old('middle'), array('class' => 'form-control')) }}
+		{{ Form::text('middle', $child->personalInfo->middle, array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
 		{{ Form::label('last', 'Last Name') }}
-		{{ Form::text('last', Input::old('last'), array('class' => 'form-control')) }}
+		{{ Form::text('last', $child->personalInfo->last, array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
 		{{ Form::label('age', 'Age') }}
-		{{ Form::text('age', Input::old('age'), array('class' => 'form-control')) }}
+		{{ Form::text('age', $child->personalInfo->age, array('class' => 'form-control')) }}
 	</div>
         
         <div class="form-group">
 		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
-		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
+		{{ Form::text('dob',$child->personalInfo->dob, array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">

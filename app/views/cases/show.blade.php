@@ -12,7 +12,7 @@
             <div>
                 
 
-                <div class="row">
+                
                     <div class="col-md-4">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -59,7 +59,54 @@
                                 <a class="btn btn-small btn-info" href="{{ URL::to('allegedOffendes/' . $case->allegedAbuser_id . '/create') }}">Create</a>
                             </div>
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-tittel">Abuses</h4>
+                            </div>
+                            <div style ="width: 100%; height: 200px; overflow: scroll">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>Abuses Type</td>
 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($case->abuses as $key => $value)
+                                        <tr>
+                                            <td>{{ $value->type }}</td>
+
+                                            <!-- we will also add show, edit, and delete buttons -->
+                                            <td>
+
+                                                <!-- delete the child (uses the destroy method DESTROY /children/{id} -->
+                                                <!-- we will add this later since its a little more complicated than the first two buttons -->
+                                                {{ Form::open(array('action' => array('CaseController@removeAbuseType', $case->id))) }}
+                                                {{ Form::hidden('abuseType_id', $value->id) }}
+                                                {{ Form::submit('X', array('class' => 'btn btn-warning')) }}
+                                                {{ Form::close() }}
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                {{ Form::open(array('action' => array('CaseController@addAbuseType', $case->id), 'class' => 'form-inline')) }}
+
+
+
+                                {{ Form::select('abuseType_id', AbuseType::all()->lists('type','id'), null, array('class' => 'form-control')) }}
+
+
+
+                                {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+
+                                {{ Form::close() }}
+
+                            </div>
+                        </div>
+                  
                     </div>
                     <div class="col-md-4">
                         <div class="panel panel-default">
@@ -68,7 +115,16 @@
                             </div>
                             <div class="panel-body">
                                 <strong>Opened:</strong> {{ $case->caseOpened }}<br>
-                                <strong>Status:</strong> {{ $case->status }}
+                                <strong>Status:</strong> {{ $case->status }}<br>
+                                <strong>County:</strong> {{ $case->county_id }}<br>
+                                <strong>Custody Issues:</strong> {{ $case->custodyIssues }}<br>
+                                <strong>IOReport:</strong> {{ $case->IOReport }}<br>
+                                <strong>Domestic Violence:</strong> {{ $case->domesticViolence }}<br>
+                                <strong>Prosecution:</strong> {{ $case->prosecution }}<br>
+                                <strong>Reporter:</strong> {{ $case->reporter }}<br>
+                                <strong>Date of abuse:</strong> {{ $case->abuseDate }}<br>
+                                <strong>Abuse Location:</strong> {{ $case->abuseLocation }}<br>
+                                
                             </div>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/edit') }}">Edit</a> 

@@ -18,5 +18,8 @@ class TrackedCase extends \Eloquent {
         public function workers(){
             return $this->belongsToMany('Worker','case_worker','case_id','worker_id');
         }
+        public function abuses(){
+            return $this->belongsToMany('AbuseType','abuses','case_id','abuseType_id');
+        }
 	
 }

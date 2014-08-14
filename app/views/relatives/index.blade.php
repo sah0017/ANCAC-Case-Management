@@ -54,7 +54,7 @@
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
 				{{ Form::open(array('url' => 'relatives/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this relatives', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete this Relatives', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
 
 				<!-- show the child (uses the show method found at GET /children/{id} -->

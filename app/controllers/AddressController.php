@@ -46,6 +46,7 @@ class AddressController extends \BaseController {
                         $address->state               = Input::get('state');
                         $address->zip                 = Input::get('zip');
                         $address->county_id           = Input::get('county_id');
+                        $address->phone               = Input::get('phone');
 			$address->save();
 			// redirect
 			Session::flash('message', 'Successfully stored Address info!');
@@ -103,6 +104,7 @@ class AddressController extends \BaseController {
                         $address->state               = Input::get('state');
                         $address->zip                 = Input::get('zip');
                         $address->county_id           = Input::get('county_id');
+                        $address->phone               = Input::get('phone');
 			$address->save();
 			// redirect
 			Session::flash('message', 'Successfully stored Address info!');

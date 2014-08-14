@@ -11,7 +11,8 @@ class ServiceTypeController extends \BaseController {
 	public function index()
 	{
 		//
-            $serviceType = ServiceType::all();
+            $serviceType = ServiceType::where('center_id', Auth::User()->center_id)
+                        ->orWhere('center_id', 99)->get();
 
 		// load the view and pass the serviceType
 		return View::make('serviceType.index')

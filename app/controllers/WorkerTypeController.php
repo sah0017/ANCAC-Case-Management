@@ -11,11 +11,13 @@ class WorkerTypeController extends \BaseController {
 	public function index()
 	{
                 // get all the children
-		$workerType = WorkerType::all();
-
+		$workerType = WorkerType::where('center_id', Auth::User()->center_id)
+                        ->orWhere('center_id', 99)->get();
 		// load the view and pass the children
 		return View::make('workerType.index')
 			->with('workerType', $workerType);
+                
+                
 	}
 
 	/**

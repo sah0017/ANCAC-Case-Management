@@ -11,7 +11,7 @@ class AbusedChildController extends \BaseController {
 	public function index()
 	{
                 // get all the children
-		$children = AbusedChild::all();
+		$children = AbusedChild::where('center_id', Auth::User()->center_id)->get();
 
 		// load the view and pass the children
 		return View::make('children.index')

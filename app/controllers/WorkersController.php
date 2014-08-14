@@ -11,11 +11,14 @@ class WorkersController extends \BaseController {
 	public function index()
 	{
                 // get all the children
-		$worker = Worker::all();
+		//$worker = Worker::all();
+                
+                $workers = Worker::where('center_id', Auth::User()->center_id)->get();
+                
 
 		// load the view and pass the children
 		return View::make('workers.index')
-			->with('workers', $worker);
+			->with('workers', $workers);
 	}
 
 	/**

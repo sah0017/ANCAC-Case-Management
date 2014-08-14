@@ -11,7 +11,7 @@ class PersonController extends \BaseController {
 	public function index()
 	{
                 // get all the people
-		$people = Person::all();
+		$people = Person::where('center_id', Auth::User()->center_id)->get();
 
 		// load the view and pass the people
 		return View::make('people.index')
@@ -198,7 +198,8 @@ class PersonController extends \BaseController {
 	}
         
         public function search() {
-            $people = Response::json(Person::where('last', 'LIKE', '%'.Input::get('last').'%')->get());
+            $people = Response::json(Person::where('last', 'LIKE', '%'.Input::get('last').'%')
+                    ->where('center_id', Auth::User()->center_id)->get());
             
             return $people;
             //return Person::all();

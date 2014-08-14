@@ -10,7 +10,7 @@ class SessionController extends \BaseController {
 	 */
 	public function index()
 	{
-		$session = CaseSession::all();
+		$session = CaseSession::where('center_id', Auth::User()->center_id)->get();
 
 		// load the view and pass the sessioncontroller
 		return View::make('session.index')

@@ -11,7 +11,7 @@ class relativeController extends \BaseController {
 	public function index()
 	{
                 // get all the children
-		$relative = Relationship::all();
+		$relative = Relationship::where('center_id', Auth::User()->center_id)->get();
 
 		// load the view and pass the children
 		return View::make('relatives.index')

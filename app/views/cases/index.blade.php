@@ -40,13 +40,13 @@
 
 				<!-- delete the cases (uses the destroy method DESTROY /case/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                <a{{ Form::open(array('url' => 'cases/' . $value->id, 'class' => 'pull-right')) }}
+                                {{ Form::open(array('url' => 'cases/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this Case', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}</a>
+                                        {{ Form::close() }}
                                 
 				<!-- show the cases (uses the show method found at GET /case/{id} -->
-				<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $value->id) }}">Case Details</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $value->id) }}">Case Details</a>
 
 				<!-- edit this cases (uses the edit method found at GET /case/{id}/edit -->
 				

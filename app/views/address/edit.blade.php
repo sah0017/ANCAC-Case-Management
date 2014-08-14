@@ -44,7 +44,10 @@
 		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
 	</div>
         
-
+        <div class="form-group">
+		{{ Form::label('phone', 'Phone') }}
+		{{ Form::text('phone', Input::old('phone'), array('class' => 'form-control')) }}
+	</div>
 
 	{{ Form::submit('Edit the Address!', array('class' => 'btn btn-primary')) }}
 

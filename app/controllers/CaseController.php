@@ -176,5 +176,17 @@ class CaseController extends \BaseController {
             return Redirect::to('cases/'.$id);
         }
         
+        public function addAbuseType($id) {
+            $abuses = Input::get('abuseType_id');
+            DB::table('abuses')->insert(array('case_id' => $id, 'abuseType_id' => $abuses));
+            Session::flash('message', 'Successfully added abuse Type!');
+            return Redirect::to('cases/'.$id);
+        }
      
+        public function removeAbuseType($id) {
+             $abuses = Input::get('abuseType_id');
+            DB::table('abuses')->where('case_id', $id)->where('abuseType_id', $abuses)->delete();
+            Session::flash('message', 'Successfully removed Abuse Type!');
+            return Redirect::to('cases/'.$id);
+        }
 }

@@ -100,11 +100,9 @@ Route::get('cases/{id}/workers', function($id) {
 
 Route::post('cases/{id}/addWorker', 'CaseController@addWorker');
 Route::post('cases/{id}/removeWorker', 'CaseController@removeWorker');
+Route::post('cases/{id}/addAbuseType', 'CaseController@addAbuseType');
+Route::post('cases/{id}/removeAbuseType', 'CaseController@removeAbuseType');
 
-
-
-
-    
 
 
 Route::get('cases/{id}/child/relations', function($id) {
@@ -130,6 +128,12 @@ Route::get('cases/{id}/child/session', function($id) {
     $session = TrackedCase::find($id)->abusedChild->sessions;
     return View::make('session.index')
                     ->with('session', $session);
+});
+
+Route::get('cases/{id}/child/session/create', function($id) {
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+    Session::put('from','cases/'.$id);
+		return View::make('session.create')->with('child_id', $child_id);
 });
 
 });

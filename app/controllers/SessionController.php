@@ -25,7 +25,7 @@ class SessionController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('session.create');
+		return View::make('session.create')->with('child_id',0);
 	}
 
 	/**

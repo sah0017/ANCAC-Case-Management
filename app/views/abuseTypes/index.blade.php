@@ -31,12 +31,12 @@
 
 				<!-- delete the nerd (uses the destroy method DESTROY /abuseTypes/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                <a{{ Form::open(array('url' => 'abuseType/' . $value->id)) }}
+                                {{ Form::open(array('url' => 'abuseType/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete this abuse type.', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}</a>
+                                        {{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /abuseTypes/{id} -->
-				<a class="btn btn-small btn-success" href="{{ URL::to('abuseTypes/' . $value->id) }}">Show this Abuse Type</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('abuseTypes/' . $value->id) }}">Show this Abuse Type</a>
 
 				<!-- edit this nerd (uses the edit method found at GET /abuseTypes/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('abuseTypes/' . $value->id . '/edit') }}">Edit this Abuse Type</a>

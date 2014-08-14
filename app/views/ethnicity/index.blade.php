@@ -33,7 +33,7 @@
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'ethnicity/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this ethnicity', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete this Ethnicity', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /ethnicity/{id} -->
                                 &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('ethnicity/' . $value->id) }}">Show this Ethnicity</a>

@@ -33,7 +33,7 @@
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'workerType/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this workerType', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete this Worker Type', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /workerType/{id} -->
                                 &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('workerType/' . $value->id) }}">Show this Worker Type</a>

@@ -48,6 +48,27 @@
 
 	</div>
 
+        <div class="form-group">
+            
+		{{ Form::label('phone', 'Home Phone ') }}
+		{{ Form::text('phone', $person->address->phone, array('class' => 'form-control')) }}
+
+	</div>
+
+        <div class="form-group">
+            
+		{{ Form::label('cellPhone', 'Cell Phone ') }}
+		{{ Form::text('cellPhone', $person->phone->where('type','cell'), array('class' => 'form-control')) }}
+
+	</div>
+
+        <div class="form-group">
+            
+		{{ Form::label('workPhone', 'Work Phone ') }}
+		{{ Form::text('workPhone', $person->phone->where('type','work'), array('class' => 'form-control')) }}
+
+	</div>
+
 	<div class="form-group">
 		{{ Form::label('drugUse', 'History of Drug Use') }}
 		{{ Form::checkbox('drugUse', '1', Input::old('drugUse'), array('class' => 'form-control')) }}

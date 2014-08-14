@@ -86,14 +86,42 @@
 		{{ Form::text('originCountry', Input::old('originCountry'), array('class' => 'form-control')) }}
         </div>
 
+         
         <div class="form-group">
-		{{ Form::label('address_id', 'Address') }}
-		{{ Form::select('address_id', Address::all()->lists('adress','id'), Input::old('address_id'), array('class' => 'form-control')) }}
+            
+		{{ Form::label('phone', 'Home Phone ') }}
+		{{ Form::text('phone', Input::old('phone'), array('class' => 'form-control')) }}
+
 	</div>
-        
+
         <div class="form-group">
-		{{ Form::label('household_id', 'Household') }}
-		{{ Form::select('household_id', Household::all()->lists('household','id'), Input::old('household_id'), array('class' => 'form-control')) }}
+		{{ Form::label('address1', 'Address Line 1') }}
+		{{ Form::text('address1', Input::old('address1'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('address2', 'Address Line 2') }}
+		{{ Form::text('address2', Input::old('address2'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('city', 'City') }}
+		{{ Form::text('city', Input::old('city'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('state', 'State') }}
+		{{ Form::text('state', Input::old('state'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('zip', 'Zip Code') }}
+		{{ Form::text('zip', Input::old('zip'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
+		{{ Form::label('county_id', 'County') }}
+		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

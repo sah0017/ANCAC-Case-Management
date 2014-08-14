@@ -38,14 +38,14 @@
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
 				{{ Form::open(array('url' => 'allegedOffenders/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this allegedOffender', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete this Alleged Offender', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
 
 				<!-- show the allegedOffender (uses the show method found at GET /allegedOffenders/{id} -->
-                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('allegedOffenders/' . $value->id) }}">Show this allegedOffender</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('allegedOffenders/' . $value->id) }}">Show this Alleged Offender</a>
 
 				<!-- edit this allegedOffender (uses the edit method found at GET /allegedOffenders/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('allegedOffenders/' . $value->id . '/edit') }}">Edit this allegedOffender</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('allegedOffenders/' . $value->id . '/edit') }}">Edit this Alleged Offender</a>
 
 			</td>
 		</tr>

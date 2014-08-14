@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Showing {{ $household->id }}</h1><a class="btn btn-small btn-info" href="households/edit">Edit</a>
+<h1>Showing {{ $household->id }}</h1><a class="btn btn-small btn-info" href="household/edit">Edit</a>
 
 	<div class="jumbotron text-left">
 		<p>

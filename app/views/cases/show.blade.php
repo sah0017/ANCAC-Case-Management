@@ -24,7 +24,7 @@
                             </div>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/child') }}">Show Details</a> 
-                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/child/households/show') }}">Show Household</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/child/household') }}">Show Household</a>
                             </div>
                         </div>
 

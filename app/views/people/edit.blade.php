@@ -70,7 +70,7 @@
 
 	<div class="form-group">
 		{{ Form::label('crimeConviction', 'Has been Convicted of a Crime') }}
-		{{ Form::checkbox('cromeConviction', '1', Input::old('crimeConviction'), array('class' => 'form-control')) }}
+		{{ Form::checkbox('crimeConviction', '1', Input::old('crimeConviction'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
@@ -126,27 +126,27 @@
 
         <div class="form-group">
 		{{ Form::label('address1', 'Address Line 1') }}
-		{{ Form::text('address1', Input::old('address1'), array('class' => 'form-control')) }}
+		{{ Form::text('address1', $person->address->line1, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('address2', 'Address Line 2') }}
-		{{ Form::text('address2', Input::old('address2'), array('class' => 'form-control')) }}
+		{{ Form::text('address2', $person->address->line2, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('city', 'City') }}
-		{{ Form::text('city', Input::old('city'), array('class' => 'form-control')) }}
+		{{ Form::text('city', $person->address->city, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('state', 'State') }}
-		{{ Form::text('state', Input::old('state'), array('class' => 'form-control')) }}
+		{{ Form::text('state', $person->address->state, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('zip', 'Zip Code') }}
-		{{ Form::text('zip', Input::old('zip'), array('class' => 'form-control')) }}
+		{{ Form::text('zip', $person->address->zip, array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

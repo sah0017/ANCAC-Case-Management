@@ -84,6 +84,27 @@ $(document).ready(function(){
 
 	</div>
 
+        <div class="form-group">
+            
+		{{ Form::label('phone', 'Home Phone ') }}
+		{{ Form::text('phone', Input::old('phone'), array('class' => 'form-control')) }}
+
+	</div>
+
+        <div class="form-group">
+            
+		{{ Form::label('cellPhone', 'Cell Phone ') }}
+		{{ Form::text('cellPhone', Input::old('cellPhone'), array('class' => 'form-control')) }}
+
+	</div>
+
+        <div class="form-group">
+            
+		{{ Form::label('workPhone', 'Work Phone ') }}
+		{{ Form::text('workPhone', Input::old('workPhone'), array('class' => 'form-control')) }}
+
+	</div>
+
 	<div class="form-group">
 		{{ Form::label('drugUse', 'History of Drug Use') }}
 		{{ Form::checkbox('drugUse', '1', Input::old('drugUse'), array('class' => 'form-control')) }}

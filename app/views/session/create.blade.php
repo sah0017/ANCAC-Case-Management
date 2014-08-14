@@ -20,7 +20,7 @@
 
 {{ Form::open(array('url' => 'session')) }}
 
-        		{{ Form::hinden('child_id', $child_id)}}
+        		{{ Form::hidden('child_id', $child_id)}}
 
 
 

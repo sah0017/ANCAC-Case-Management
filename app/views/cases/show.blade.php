@@ -280,6 +280,7 @@
                             </table>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/session') }}">List Sessions</a>
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/session/create') }}">Create Sessions</a>
                             </div>
                         </div>
 

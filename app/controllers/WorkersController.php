@@ -82,7 +82,7 @@ class WorkersController extends \BaseController {
 
 		// show the view and pass the nerd to it
 		return View::make('workers.edit')
-			->with('workers', $worker);
+			->with('worker', $worker);
 	}
 
 	/**

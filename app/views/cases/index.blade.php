@@ -18,8 +18,7 @@
 	<thead>
 		<tr>
                 <td>Number</td>
-                <td>Abused Child ID</td>
-                <td>Alleged Abuser ID</td>
+                <td>Abused Child</td>
                 <td>Case Opened</td>
                 </tr>
 	</thead>
@@ -27,8 +26,7 @@
 	@foreach($case as $key => $value)
 		<tr>
                         <td>{{ $value->caseNumber }}</td>
-                        <td>{{ $value->abusedChild_id }}</td>
-                        <td>{{ $value->allegedAbuser_id }}</td>
+                        <td>{{ $value->abusedChild->personalInfo->name }}</td>
                         <td>{{ $value->caseOpened }}</td>
 
 

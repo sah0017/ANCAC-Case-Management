@@ -37,14 +37,14 @@
 				<!-- we will add this later since its a little more complicated than the first two buttons -->
 				{{ Form::open(array('url' => 'workers/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this worker', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete this Worker', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
 
 				<!-- show the child (uses the show method found at GET /children/{id} -->
-                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('workers/' . $value->id) }}">Show this Relation</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('workers/' . $value->id) }}">Show this Worker</a>
 
 				<!-- edit this child (uses the edit method found at GET /children/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('workers/' . $value->id . '/edit') }}">Edit this Relation</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('workers/' . $value->id . '/edit') }}">Edit this Worker</a>
 
 			</td>
 		</tr>

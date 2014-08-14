@@ -41,6 +41,7 @@ class WorkersController extends \BaseController {
                         $worker = new Worker;
 			$worker->name                = Input::get('name');
                         $worker->workerType_id       = input::get('workerType_id');
+                        $worker->center_id         = Auth::User()->center;
 			$worker->save();
 			// redirect
 			Session::flash('message', 'Successfully stored Woker info!');

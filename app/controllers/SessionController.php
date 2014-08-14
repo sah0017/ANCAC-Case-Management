@@ -44,6 +44,7 @@ class SessionController extends \BaseController {
                 $session->status             =Input::get('status');
 		$session->worker_id          =Input::get('worker_id');
                 $session->discussedAbuse     =Input::get('discussedAbuse');
+                $session->center_id         = Auth::User()->center;
 		$session->save();
                 
                 $child_id = Input::get('child_id');

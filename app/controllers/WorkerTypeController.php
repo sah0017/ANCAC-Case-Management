@@ -41,6 +41,7 @@ class WorkerTypeController extends \BaseController {
                         $workerType = new WorkerType;
 			$workerType->id                  = Input::get('id');
 			$workerType->type                = Input::get('type');
+                        $workerType->center_id         = Auth::User()->center;
 			$workerType->save();
 			// redirect
 			Session::flash('message', 'Successfully stored Woker Type info!');

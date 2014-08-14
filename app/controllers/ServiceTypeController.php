@@ -43,6 +43,7 @@ class ServiceTypeController extends \BaseController {
 					// store
 			$serviceType = new ServiceType;
 			$serviceType->type = Input::get('type');
+                        $serviceType->center_id         = Auth::User()->center;
 
 			$serviceType->save();
 

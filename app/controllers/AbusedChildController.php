@@ -37,7 +37,10 @@ class AbusedChildController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
+        {
+                        $household = new Household;
+                        $household->save();
+                        
                         $person = new Person;
 			$person->first = Input::get('first');
                         $person->middle = Input::get('middle');
@@ -48,7 +51,7 @@ class AbusedChildController extends \BaseController {
                         $person->specialNeeds = Input::get('specialNeeds',"");
                         $person->language = Input::get('language');
                         $person->address_id = Input::get('address_id');
-                        $person->household_id = Input::get('household_id');
+                        $person->household_id = $household->id;
                         $person->ethnicity_id = Input::get('ethnicity_id');
                         $person->center_id         = Auth::User()->_id;
 			$person->save();

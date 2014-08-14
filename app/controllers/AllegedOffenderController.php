@@ -11,7 +11,7 @@ class AllegedOffenderController extends \BaseController {
 	public function index()
 	{
                 // get all the allegedOffender
-		$allegedOffenders = AllegedOffender::all();
+		$allegedOffenders = AllegedOffender::where('center_id', Auth::User()->center_id)->get();
 
 		// load the view and pass the allegedOffender
 		return View::make('allegedOffenders.index')

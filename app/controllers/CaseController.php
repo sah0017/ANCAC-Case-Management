@@ -10,7 +10,7 @@ class CaseController extends \BaseController {
 	 */
 	public function index()
 	{
-		$case = TrackedCase::all();
+		$case = TrackedCase::where('center_id', Auth::User()->center_id)->get();
 
 		// load the view and pass the casecntroller
 		return View::make('cases.index')

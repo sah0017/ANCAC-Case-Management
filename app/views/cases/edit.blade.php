@@ -14,6 +14,12 @@
     $(function() {
     $( "#caseOpened" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
   });
+  $(function() {
+    $( "#abuseDate" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
+  $(function() {
+    $( "#reportedDate" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+  });
   </script>
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}

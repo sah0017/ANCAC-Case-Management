@@ -136,4 +136,10 @@ Route::get('cases/{id}/child/session/create', function($id) {
 		return View::make('session.create')->with('child_id', $child_id);
 });
 
+Route::get('cases/{id}/child/households/show', function($id) {
+    $house = TrackedCase::find($id)->abusedChild->personalInfo->household;
+    return View::make('households.show')
+                    ->with('household', $house);
+});
+
 });

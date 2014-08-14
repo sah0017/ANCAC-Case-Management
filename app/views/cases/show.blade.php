@@ -24,6 +24,7 @@
                             </div>
                             <div class="panel-footer">
                                 <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/child') }}">Show Details</a> 
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/child/households/show') }}">Show Household</a>
                             </div>
                         </div>
 
@@ -124,6 +125,13 @@
                                 <strong>Reporter:</strong> {{ $case->reporter }}<br>
                                 <strong>Date of abuse:</strong> {{ $case->abuseDate }}<br>
                                 <strong>Abuse Location:</strong> {{ $case->abuseLocation }}<br>
+                                <strong>Reason for referral:</strong> {{ $case->referralReason }}<br>
+                                <strong>DHR Determination:</strong> {{ $case->DHRDetermination }}<br>
+                                <strong>Forensic Evaluation:</strong> {{ $case->forensicEvaluation }}<br>
+                                <strong>Charges filed:</strong> {{ $case->chargesFiled }}<br>
+                                <strong>Agency reported to:</strong> {{ $case->agencyReportedTo }}<br>
+                                <strong>Who spoke to the child:</strong> {{ $case->talkedToChild }}<br>
+                                <strong>Reported Date:</strong> {{ $case->reportedDate }}<br>
                                 
                             </div>
                             <div class="panel-footer">

@@ -26,7 +26,7 @@ class CreateCasesTable extends Migration {
 			$table->boolean('IOReport')->nullable();  // ?
 			$table->boolean('domesticViolence')->nullable();
 			$table->boolean('prosecution')->nullable();
-			$table->integer('reporter')->unsigned()->nullable();
+			$table->string('reporter')->nullable();
 			$table->date('abuseDate')->nullable();
 			$table->string('abuseLocation')->nullable();
 			$table->string('referralReason')->nullable();

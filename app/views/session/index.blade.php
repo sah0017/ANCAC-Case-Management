@@ -52,6 +52,9 @@
 
 				<!-- edit this session (uses the edit method found at GET /session/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('session/' . $value->id . '/edit') }}">Edit this Session</a>
+                                
+                                <!-- create this session notes (uses the create method found at GET /sessionNotes/{id}/create -->
+				<a class="btn btn-small btn-info" href="{{ URL::to('sessionNotes/' . $value->id . '/create') }}">Create a Session Note</a>
 
 			</td>
 		</tr>

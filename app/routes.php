@@ -173,4 +173,6 @@ Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id
            return View::make('relatives.show')
                    ->with('relative',$person);
 });
+
+
 });//end of users

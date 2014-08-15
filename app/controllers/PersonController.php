@@ -60,17 +60,9 @@ class PersonController extends \BaseController {
                         $person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
                         $person->center_id         = Auth::User()->center_id;
+                        $person->cellPhone  =Input::get('cellPhone');
+                        $person->workPhone = input::get('workPhone');
                         
-                        $cellPhone = new Phone;
-                        $cellPhone->number            = Input::get('cellPhone');
-                        $cellPhone->type='cell';
-                        $cellPhone->save();
-                        
-                        $workPhone = new Phone;
-                        $workPhone->number              = Input::get('workPhone');
-                        $workPhone->type='work';
-                        $workPhone->save();
-			
                         $address = new Address;
                         $address->line1               = Input::get('address1');
                         $address->line2               = Input::get('address2');
@@ -78,6 +70,7 @@ class PersonController extends \BaseController {
                         $address->state               = Input::get('state');
                         $address->zip                 = Input::get('zip');
                         $address->county_id           = Input::get('county_id');
+                        $address->phone               =Input::get('phone');
 			$address->save();
                         
                         $person->address_id           = $address->id;

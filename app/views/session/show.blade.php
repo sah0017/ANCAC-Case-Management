@@ -12,7 +12,7 @@
 	<div class="jumbotron text-left">
 		<h2>{{ $session->name }}</h2>
 		<p>
-			<strong>Service Type:</strong> {{ $session->serviceType_id }}<br>
+			<strong>Service Type:</strong> {{ $session->type->type }}<br>
                         <strong>Date:</strong> {{ $session->date }}<br>
                         <strong>Time Start:</strong> {{ $session->timeStart }}<br>
                         <strong>Time End:</strong> {{ $session->timeEnd }}<br>

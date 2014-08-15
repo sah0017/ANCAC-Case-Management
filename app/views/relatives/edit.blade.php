@@ -23,6 +23,11 @@
 {{ Form::model($relative, array('route' => array('relatives.update', $relative->id), 'method' => 'PUT')) }}
 
 
+        <div class="form-group">
+		{{ Form::label('gender', 'Gender') }}
+		{{ Form::select('gender', array('0' => 'Male', '1' => 'Female',), 
+                    Input::old('gender'), array('class' => 'form-control')) }}
+	</div>
          <div class="form-group">
 		{{ Form::label('relationType_id', 'Relation Type') }}
 		{{ Form::select('relationType_id', RelationType::all()->lists('type','id'), Input::old('relationType_id'), array('class' => 'form-control')) }}

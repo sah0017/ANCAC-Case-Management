@@ -123,6 +123,12 @@ $(function() {
 	</div>
 
         <div class="form-group">
+		{{ Form::label('gender', 'Gender') }}
+		{{ Form::select('gender', array('0' => 'Male', '1' => 'Female',), 
+                    Input::old('gender'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
             
 		{{ Form::label('phone', 'Home Phone ') }}
 		{{ Form::text('phone', $person->address->phone, array('class' => 'form-control')) }}

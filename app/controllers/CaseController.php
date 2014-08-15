@@ -44,6 +44,7 @@ class CaseController extends \BaseController {
                 $person->middle = Input::get('childMiddle',"");
 		$person->last = Input::get('childLast',"");
                 $person->age = Input::get('childAge',"");
+                $person->gender = Input::get('gender');
                 $preson->household_id = $household->id;
                 $person->save();
             
@@ -143,6 +144,7 @@ class CaseController extends \BaseController {
 		$case->agencyReportedTo     = Input::get('agencyReportedTo');
 		$case->talkedToChild        = Input::get('talkedToChild');
 		$case->reportedDate         = Input::get('reportedDate');
+                $person->gender = Input::get('gender');
 		$case->save();
 
 		// redirect

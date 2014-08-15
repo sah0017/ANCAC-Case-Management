@@ -46,6 +46,7 @@ class relativeController extends \BaseController {
                             $person->middle = Input::get('middle');
                             $person->last = Input::get('last');
                             $person->dob = Input::get('dob');
+                            $person->gender = Input::get('gender');
                             $person->save();
                             $relative->person_id = $person->id;
                         }else {

@@ -50,10 +50,10 @@
 
                                 @if (Auth::User()->level == 3)
 				<!-- edit this user (uses the edit method found at GET /user/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/edit') }}">Edit this User</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/edit') }}">Edit</a>
                                 {{ Form::open(array('url' => 'users/' . $value->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this User', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
 				{{ Form::close() }}
                                 @endif
 			</td>

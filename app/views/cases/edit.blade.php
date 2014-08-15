@@ -151,7 +151,7 @@
 		{{ Form::text('reportedDate', Input::old('reportedDate'), array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Edit the Case!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

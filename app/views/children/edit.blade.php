@@ -224,7 +224,7 @@ $(function() {
 	</div>
         <br>
 
-	{{ Form::submit('Edit the Child Entry', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

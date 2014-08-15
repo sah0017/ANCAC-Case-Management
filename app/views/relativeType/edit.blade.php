@@ -21,7 +21,7 @@
 
 
 
-	{{ Form::submit('Edit the Relative Type!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

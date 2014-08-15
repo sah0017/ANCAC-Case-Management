@@ -58,7 +58,7 @@
 	</div>
 
 
-	{{ Form::submit('Edit the DHR cases!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

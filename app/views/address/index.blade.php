@@ -45,13 +45,13 @@
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'address/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this Address', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
 				<!-- show the nerd (uses the show method found at GET /address/{id} -->
-                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('address/' . $value->id) }}">Show this Address</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('address/' . $value->id) }}">Show</a>
 
 				<!-- edit this nerd (uses the edit method found at GET /address/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('address/' . $value->id . '/edit') }}">Edit this Address</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('address/' . $value->id . '/edit') }}">Edit</a>
 
 			</td>
 		</tr>

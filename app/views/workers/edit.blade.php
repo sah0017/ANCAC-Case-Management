@@ -26,7 +26,7 @@
 	</div>
 
 
-	{{ Form::submit('Editing the worker entry!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

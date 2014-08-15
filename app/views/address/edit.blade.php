@@ -49,7 +49,7 @@
 		{{ Form::text('phone', Input::old('phone'), array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Edit the Address!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

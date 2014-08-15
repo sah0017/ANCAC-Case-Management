@@ -21,7 +21,7 @@
 
 
 
-	{{ Form::submit('Edit the Abuse Type!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

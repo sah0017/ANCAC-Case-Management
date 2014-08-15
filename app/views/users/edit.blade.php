@@ -52,7 +52,7 @@
 	</div>
 
 
-	{{ Form::submit('Submit Edit!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

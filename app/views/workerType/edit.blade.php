@@ -21,7 +21,7 @@
 
 
 
-	{{ Form::submit('Edit the worker type!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

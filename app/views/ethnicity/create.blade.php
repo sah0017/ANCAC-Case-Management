@@ -20,7 +20,7 @@
 	</div>
 
 
-	{{ Form::submit('Create a Ethnicity!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

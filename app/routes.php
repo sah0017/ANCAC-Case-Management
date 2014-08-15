@@ -50,6 +50,8 @@ Route::resource('serviceType', 'ServiceTypeController');
 
 Route::resource('session', 'SessionController');
 
+Route::resource('sessionNotes', 'SessionNotesController');
+
 Route::get('cases/{id}/child', function($id) {
     $child = TrackedCase::find($id)->abusedChild;
     return View::make('children.show')

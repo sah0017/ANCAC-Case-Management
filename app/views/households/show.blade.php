@@ -8,6 +8,7 @@
 @section('content')
 
 <h1>Household info</h1><a class="btn btn-small btn-info" href="household/edit">Edit</a>
+<a class="btn btn-small btn-success" href="..">Back to Dashboard</a>
 
 	<div class="jumbotron text-left">
 		<p>

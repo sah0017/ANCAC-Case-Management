@@ -62,6 +62,7 @@ class PersonController extends \BaseController {
                         $person->center_id         = Auth::User()->center_id;
                         $person->cellPhone  =Input::get('cellPhone');
                         $person->workPhone = input::get('workPhone');
+                        $person->gender = input::get('gender');
                         
                         if( Input::get('address_id') == 0 && Input::get('address1') != 'unknown'){
                             $address = new Address;
@@ -152,6 +153,7 @@ class PersonController extends \BaseController {
                         $person->ethnicity_id = Input::get('ethnicity_id');
                         $person->cellPhone = Input::get('cellPhone');
 			$person->workPhone = Input::get('workPhone');
+                        $person->gender = input::get('gender');
                         if( Input::get('address_id') == 1 && Input::get('address1') != 'unknown'){
                             $address = new Address;
                             $address->line1               = Input::get('address1');

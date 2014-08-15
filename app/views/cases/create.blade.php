@@ -55,6 +55,12 @@
 	</div>
 
         <div class="form-group">
+		{{ Form::label('gender', 'Gender') }}
+		{{ Form::select('gender', array('0' => 'Male', '1' => 'Female',), 
+                    Input::old('gender'), array('class' => 'form-control')) }}
+	</div>
+
+        <div class="form-group">
 		{{ Form::label('worker_id', 'MDT Workers') }}
 		{{ Form::select('worker_id', Worker::all()->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>

@@ -1,6 +1,6 @@
 <?php
 
-class Note extends \Eloquent {
+class SessionNote extends \Eloquent {
 	protected $fillable = [];
         
         public function worker() {

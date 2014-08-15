@@ -120,7 +120,7 @@ function clearForm(){
 		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 	</div>
 
-         <div class="form-group">
+        <div class="form-group">
 		{{ Form::label('relationType_id', 'Relation Type') }}
 		{{ Form::select('relationType_id', RelationType::all()->lists('type','id'), Input::old('relationType_id'), array('class' => 'form-control')) }}
 	</div>

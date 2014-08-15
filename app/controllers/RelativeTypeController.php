@@ -43,7 +43,7 @@ class RelativeTypeController extends \BaseController {
 			$relativeType->type                = Input::get('type');
 			$relativeType->save();
 			// redirect
-			Session::flash('message', 'Successfully stored Woker Type info!');
+			Session::flash('message', 'Successfully stored relation type info!');
 			return Redirect::to('relativeType');
 	}
 
@@ -95,7 +95,7 @@ class RelativeTypeController extends \BaseController {
 			$relativeType->type                = Input::get('type');
 			$relativeType->save();
 			// redirect
-			Session::flash('message', 'Successfully stored Woker Type info!');
+			Session::flash('message', 'Successfully stored relative type info!');
 			return Redirect::to('relativeType');
 	}
 
@@ -113,7 +113,7 @@ class RelativeTypeController extends \BaseController {
 		$relativeType->delete();
 
 		// redirect
-		Session::flash('message', 'Successfully deleted the relative Type entry!');
+		Session::flash('message', 'Successfully deleted the relative type entry!');
 		return Redirect::to('relativeType');
 	}
 

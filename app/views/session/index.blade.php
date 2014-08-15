@@ -8,6 +8,7 @@
 @section('content')
 
 <h1>All the Session</h1>
+<a class="btn btn-small btn-success" href="..">Back to Dashboard</a>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))

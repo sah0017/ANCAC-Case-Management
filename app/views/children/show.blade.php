@@ -8,6 +8,7 @@
 @section('content')
 
 <h1>Showing {{ $child->personalInfo->name }}</h1><a class="btn btn-small btn-info" href="child/edit">Edit</a> 
+<a class="btn btn-small btn-success" href=".">Back to Dashboard</a>
 
 	<div class="jumbotron text-left">
 		<h2>{{ $child->name }}</h2>

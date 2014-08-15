@@ -128,5 +128,16 @@ class AddressController extends \BaseController {
 		Session::flash('message', 'Successfully deleted the Address entry!');
 		return Redirect::to('address');
 	}
+        
+        public function search() {
+            $line1= Input::get('line1');
+            if(strlen($line1) > 2){
+                $addresses = Response::json(Address::where('line1', 'LIKE', '%'.$line1.'%')->get());
+                return $addresses;
+            }
+            else{
+            return $line1;}
+        }
+
 
 }

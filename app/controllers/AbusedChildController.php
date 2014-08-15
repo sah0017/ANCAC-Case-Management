@@ -50,11 +50,25 @@ class AbusedChildController extends \BaseController {
                         $person->originCountry = Input::get('originCountry');
                         $person->specialNeeds = Input::get('specialNeeds',"");
                         $person->language = Input::get('language');
-                        $person->address_id = Input::get('address_id');
                         $person->household_id = $household->id;
                         $person->ethnicity_id = Input::get('ethnicity_id');
                         $person->center_id         = Auth::User()->_id;
-			$person->save();
+			if( Input::get('address_id') == 0 && Input::get('address1') != 'unknown'){
+                            $address = new Address;
+                            $address->line1               = Input::get('address1');
+                            $address->line2               = Input::get('address2');
+                            $address->city                = Input::get('city');
+                            $address->state               = Input::get('state');
+                            $address->zip                 = Input::get('zip');
+                            $address->county_id           = Input::get('county_id');
+                            $address->save();
+                            $person->address_id           = $address->id;
+                        } elseif( Input::get('address_id') != 0 ){
+                            $person->address_id = Input::get('address_id',0);
+                        } else {
+                            $person->address_id = 0;
+                        }
+                        $person->save();
             
                         $child = new AbusedChild;
 			$child->person_id        = $person->id;
@@ -134,9 +148,23 @@ class AbusedChildController extends \BaseController {
                         $person->specialNeeds = Input::get('specialNeeds');
                         $person->language = Input::get('language');
                         $person->maritalStatus = Input::get('maritalStatus','single');
-                        $person->address_id = Input::get('address_id');
                         $person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
+                        if( Input::get('address_id') == 1 && Input::get('address1') != 'unknown'){
+                            $address = new Address;
+                            $address->line1               = Input::get('address1');
+                            $address->line2               = Input::get('address2');
+                            $address->city                = Input::get('city');
+                            $address->state               = Input::get('state');
+                            $address->zip                 = Input::get('zip');
+                            $address->county_id           = Input::get('county_id');
+                            $address->save();
+                            $person->address_id           = $address->id;
+                        } elseif( Input::get('address_id') != 1 ){
+                            $person->address_id = Input::get('address_id',1);
+                        } else {
+                            $person->address_id = 1;
+                        }
                         $person->save();
                         
                         

@@ -11,7 +11,7 @@ class CaseSession extends \Eloquent {
         }
 
         public function primaryWorker() {
-            return $this->belongsTo('Worker');
+            return $this->belongsTo('Worker','worker_id');
         }
         public function workers() {
             return $this->belongsToMany('Worker','session_worker','session_id','worker_id');

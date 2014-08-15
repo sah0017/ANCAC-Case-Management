@@ -39,7 +39,7 @@
 		{{ Form::checkbox('onBase', '1', Input::old('onBase'), array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Edit the Household!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

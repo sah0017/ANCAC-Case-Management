@@ -40,7 +40,7 @@
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'cases/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete this Case', array('class' => 'btn btn-warning')) }}
+					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
                                         {{ Form::close() }}
                                 
 				<!-- show the cases (uses the show method found at GET /case/{id} -->

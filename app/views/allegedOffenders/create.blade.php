@@ -31,7 +31,7 @@
 
 
 
-	{{ Form::submit('Create the Alleged Offender Entry!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

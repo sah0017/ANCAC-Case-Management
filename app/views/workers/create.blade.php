@@ -28,7 +28,7 @@
 	
 
 
-	{{ Form::submit('Create the workers entry!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

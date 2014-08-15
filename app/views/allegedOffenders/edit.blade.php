@@ -30,7 +30,7 @@
 	</div>
         <br>
 
-	{{ Form::submit('Edit the Alleged Offender Entry', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

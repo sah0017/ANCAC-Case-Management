@@ -60,7 +60,7 @@
 	</div>
 
 
-	{{ Form::submit('Edit the session entry!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

@@ -20,7 +20,7 @@
 
 
 
-	{{ Form::submit('Edit the School!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

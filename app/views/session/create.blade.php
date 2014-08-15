@@ -63,7 +63,7 @@
                     Input::old('discussedAbuse'), array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Create the session entry!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

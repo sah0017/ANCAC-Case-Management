@@ -298,7 +298,7 @@ function clearAddressForm(){
 	</div>
 
 
-	{{ Form::submit('Create the person entry!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

@@ -30,7 +30,7 @@
 	</div>
 
 
-	{{ Form::submit('Edit the session note!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

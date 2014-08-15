@@ -261,7 +261,7 @@ $(function() {
 		{{ Form::select('county_id', County::all()->lists('name','id'), $person->address->county_id, array('class' => 'form-control')) }}
 	</div>
 
-	{{ Form::submit('Edit the person entry', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

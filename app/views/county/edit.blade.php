@@ -21,7 +21,7 @@
 
 
 
-	{{ Form::submit('Edit the County!', array('class' => 'btn btn-primary')) }}
+	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

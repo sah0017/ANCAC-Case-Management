@@ -55,10 +55,7 @@
                                 </tbody>
                             </table>
                         </div>
-                            <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/allegedOffenders') }}">Edit</a>
-                                <a class="btn btn-small btn-info" href="{{ URL::to('allegedOffendes/' . $case->allegedAbuser_id . '/create') }}">Create</a>
-                            </div>
+                            
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">

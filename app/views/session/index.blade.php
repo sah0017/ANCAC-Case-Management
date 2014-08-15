@@ -8,6 +8,7 @@
 @section('content')
 
 <h1>All the Session</h1>
+<a class="btn btn-small btn-success" href="..">Back to Dashboard</a>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -17,26 +18,24 @@
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-                        <td>ID</td>
                         <td>Session Type</td>
 			<td>Date</td>
                         <td>Time Start</td>
                         <td>Time End</td>
                         <td>Status</td>
-			<td>MDT Worker</td>
+			<td>Interviewer</td>
                         <td>Discussed Abuse</td>
 		</tr>
 	</thead>
 	<tbody>
 	@foreach($session as $key => $value)
 		<tr>
-                        <td>{{ $value->id }}</td>
-                        <td>{{ $value->serviceType_id }}</td>
+                        <td>{{ $value->type->type }}</td>
 			<td>{{ $value->date }}</td>
                         <td>{{ $value->timeStart }}</td>
                         <td>{{ $value->timeEnd }}</td>
                         <td>{{ $value->status }}</td>
-			<td>{{ $value->worker_id }}</td>
+			<td>{{ $value->primaryWorker->name }}</td>
                         <td>{{ $value->discussedAbuse }}</td>
 
 			<!-- we will also add show, edit, and delete buttons -->

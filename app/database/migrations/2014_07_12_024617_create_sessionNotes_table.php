@@ -15,7 +15,6 @@ class CreateSessionNotesTable extends Migration {
 		Schema::create('sessionNotes', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->dateTime('dateTimeTaken');
 			$table->text('note');
 			$table->integer('worker_id')->unsigned();
 			$table->integer('session_id')->unsigned();

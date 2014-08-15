@@ -119,6 +119,13 @@ $(function() {
 		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
 		{{ Form::text('dob', Input::old('dob'), array('class' => 'form-control')) }}
 	</div>
+        
+        <div class="form-group">
+		{{ Form::label('gender', 'Gender') }}
+		{{ Form::select('gender', array('male' => 'Male',
+                            'female' => 'Female'), 
+                    Input::old('gender'), array('class' => 'form-control')) }}
+	</div>
 
 	<div class="form-group">
 		{{ Form::label('parentalHistory', 'Parental History') }}
@@ -145,9 +152,9 @@ $(function() {
 		{{ Form::text('schoolGrade', Input::old('schoolGrade'), array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
+        <div class="form-group">
 		{{ Form::label('school', 'School') }}
-		{{ Form::text('school', Input::old('school'), array('class' => 'form-control')) }}
+		{{ Form::select('school', School::all()->lists('id','name'),Input::old('school'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">

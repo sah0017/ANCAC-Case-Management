@@ -13,7 +13,8 @@ class PersonTableSeeder extends Seeder {
             'dob'=>'1991-06-17',
             'age'=>'12',
             'gender'=>'male',
-            'household_id' => 1
+            'household_id' => 1,
+            'address_id' => 1
             
         ));
        

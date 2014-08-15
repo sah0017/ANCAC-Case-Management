@@ -120,6 +120,13 @@ $(function() {
 		{{ Form::text('dob',$child->personalInfo->dob, array('class' => 'form-control')) }}
 	</div>
 
+        <div class="form-group">
+		{{ Form::label('gender', 'Gender') }}
+		{{ Form::select('gender', array('male' => 'Male',
+                            'female' => 'Female'), 
+                    Input::old('gender'), array('class' => 'form-control')) }}
+	</div>
+
 	<div class="form-group">
 		{{ Form::label('parentalHistory', 'Parental History') }}
 		{{ Form::text('parentalHistory', Input::old('parentalHistory'), array('class' => 'form-control')) }}
@@ -141,13 +148,13 @@ $(function() {
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('schoolGrade', 'school Grade') }}
-		{{ Form::text('schoolGrade', Input::old('schoolGrade'), array('class' => 'form-control')) }}
+		{{ Form::label('school', 'School') }}
+		{{ Form::select('school', School::all()->lists('name','id'),Input::old('school'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">
-		{{ Form::label('school', 'School') }}
-		{{ Form::text('school', Input::old('school'), array('class' => 'form-control')) }}
+		{{ Form::label('schoolGrade', 'school Grade') }}
+		{{ Form::text('schoolGrade', Input::old('schoolGrade'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">

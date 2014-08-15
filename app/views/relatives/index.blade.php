@@ -17,22 +17,20 @@
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-                        <td>ID</td>
-                        <td>Abuse Child ID</td>
-                        <td>Person ID</td>
+                        <td>Abuse Child</td>
+                        <td>Person</td>
 			<td>Type of relation</td>
 			<td>Custodian</td>
                         <td>Same House</td>
-			<td>Name of Related Person</td>
+			<td>Nickname of Related Person</td>
                         <td>Alleged Offender</td>
 		</tr>
 	</thead>
 	<tbody>
 	@foreach($relatives as $key => $value)
 		<tr>
-                        <td>{{ $value->id }}</td>
-                        <td>{{ $value->abusedChild_id }}</td>
-                        <td>{{ $value->person_id }}</td>
+                        <td>{{ $value->child->personalInfo->name }}</td>
+                        <td>{{ $value->personalInfo->name }}</td>
                         <td>{{ $value->relationType->type }}</td>
                         @if ($value->custodian)
 			<td>yes</td>

@@ -23,7 +23,7 @@
                         <td>Time Start</td>
                         <td>Time End</td>
                         <td>Status</td>
-			<td>MDT Worker</td>
+			<td>Interviewer</td>
                         <td>Discussed Abuse</td>
 		</tr>
 	</thead>

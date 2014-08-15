@@ -17,7 +17,7 @@
                         <strong>Time Start:</strong> {{ $session->timeStart }}<br>
                         <strong>Time End:</strong> {{ $session->timeEnd }}<br>
                         <strong>Status:</strong> {{ $session->status }}<br>
-			<strong>MDT Worker:</strong> {{ $session->Worker_id }}<br>
+			<strong>Interviewer:</strong> {{ $session->primaryWorker }}<br>
                         <strong>Discussed Abuse:</strong> {{ $session->discussedAbuse }}<br>
                         
 		</p>

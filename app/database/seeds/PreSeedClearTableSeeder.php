@@ -7,7 +7,7 @@ class PreSeedClearTableSeeder extends Seeder {
         DB::table('abusedChildren')->delete();
         DB::table('abusedchild_session')->delete();
         DB::table('abuses')->delete();
-        DB::table('abuseType')->delete();
+        DB::table('abuseTypes')->delete();
         DB::table('addresses')->delete();
         DB::table('allegedOffenders')->delete();
         DB::table('caseNotes')->delete();
@@ -16,7 +16,7 @@ class PreSeedClearTableSeeder extends Seeder {
         DB::table('counties')->delete();
         DB::table('DHRCases')->delete();
         DB::table('ethnicities')->delete();
-        DB::table('housholds')->delete();
+        DB::table('households')->delete();
         DB::table('persons')->delete();
         DB::table('relationships')->delete();
         DB::table('relationTypes')->delete();

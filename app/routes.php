@@ -177,5 +177,5 @@ Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id
                    ->with('relative',$person);
 });
 
-
+Route::resource('school', 'SchoolController');
 });//end of users

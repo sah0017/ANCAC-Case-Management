@@ -47,6 +47,7 @@ class AbusedChildController extends \BaseController {
                         $person->last = Input::get('last');
                         $person->age = Input::get('age');
                         $person->dob = Input::get('dob');
+                        $person->gender= Input::get('gender');
                         $person->originCountry = Input::get('originCountry');
                         $person->specialNeeds = Input::get('specialNeeds',"");
                         $person->language = Input::get('language');

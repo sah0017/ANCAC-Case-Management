@@ -45,7 +45,7 @@ class CaseController extends \BaseController {
 		$person->last = Input::get('childLast',"");
                 $person->age = Input::get('childAge',"");
                 $person->gender = Input::get('gender');
-                $preson->household_id = $household->id;
+                $person->household_id = $household->id;
                 $person->save();
             
                 $child = new AbusedChild;

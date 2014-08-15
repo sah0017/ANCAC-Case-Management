@@ -8,13 +8,13 @@ class AddressTableSeeder extends Seeder {
         DB::table('addresses')->delete();
 
         Address::create(array(
-            'id' => 0,
-            'line 1'=>'unknown',
+            'id' => 1,
+            'line1'=>'unknown',
             'city'=>'',
             'state'=>'',
             'zip'=>'',
             'phone'=>'',
-            'county_id'=>0
+            'county_id'=>1
             
         ));
        

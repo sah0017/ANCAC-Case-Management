@@ -7,12 +7,12 @@ class CountyTableSeeder extends Seeder {
         DB::table('counties')->delete();
 
         County::create(array(
-            'id'=>1,
+            'id'=>2,
             'name' => 'Montgomery'
         ));
         
         County::create(array(
-            'id'=>0,
+            'id'=>1,
             'name' => 'Unknown'
         ));
        

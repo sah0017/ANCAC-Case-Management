@@ -19,7 +19,7 @@ class Person extends \Eloquent {
         }
         
         public function address() {
-            return $this->belongsTo('Address');
+            return $this->belongsTo('Address', 'address_id');
         }
         
         public function household() {

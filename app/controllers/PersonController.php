@@ -63,17 +63,21 @@ class PersonController extends \BaseController {
                         $person->cellPhone  =Input::get('cellPhone');
                         $person->workPhone = input::get('workPhone');
                         
-                        $address = new Address;
-                        $address->line1               = Input::get('address1');
-                        $address->line2               = Input::get('address2');
-                        $address->city                = Input::get('city');
-                        $address->state               = Input::get('state');
-                        $address->zip                 = Input::get('zip');
-                        $address->county_id           = Input::get('county_id');
-                        $address->phone               =Input::get('phone');
-			$address->save();
-                        
-                        $person->address_id           = $address->id;
+                        if( Input::get('address_id') == 0 && Input::get('address1') != 'unknown'){
+                            $address = new Address;
+                            $address->line1               = Input::get('address1');
+                            $address->line2               = Input::get('address2');
+                            $address->city                = Input::get('city');
+                            $address->state               = Input::get('state');
+                            $address->zip                 = Input::get('zip');
+                            $address->county_id           = Input::get('county_id');
+                            $address->save();
+                            $person->address_id           = $address->id;
+                        } elseif( Input::get('address_id') != 0 ){
+                            $person->address_id = Input::get('address_id');
+                        } else {
+                            $person->address_id = 0;
+                        }
                         $person->save();
                         
                         
@@ -148,14 +152,21 @@ class PersonController extends \BaseController {
                         $person->ethnicity_id = Input::get('ethnicity_id');
                         $person->cellPhone = Input::get('cellPhone');
 			$person->workPhone = Input::get('workPhone');
-                        $address = Address::find($person->address_id);
-                        $address->line1               = Input::get('address1');
-                        $address->line2               = Input::get('address2');
-                        $address->city                = Input::get('city');
-                        $address->state               = Input::get('state');
-                        $address->zip                 = Input::get('zip');
-                        $address->county_id           = Input::get('county_id');
-			$address->save();
+                        if( Input::get('address_id') == 1 && Input::get('address1') != 'unknown'){
+                            $address = new Address;
+                            $address->line1               = Input::get('address1');
+                            $address->line2               = Input::get('address2');
+                            $address->city                = Input::get('city');
+                            $address->state               = Input::get('state');
+                            $address->zip                 = Input::get('zip');
+                            $address->county_id           = Input::get('county_id');
+                            $address->save();
+                            $person->address_id           = $address->id;
+                        } elseif( Input::get('address_id') != 1 ){
+                            $person->address_id = Input::get('address_id',1);
+                        } else {
+                            $person->address_id = 1;
+                        }
                         $person->save();
 
 			// redirect
@@ -182,10 +193,12 @@ class PersonController extends \BaseController {
 	}
         
         public function search() {
-            $people = Response::json(Person::where('last', 'LIKE', '%'.Input::get('last').'%')
-                    ->where('center_id', Auth::User()->center_id)->get());
-            
-            return $people;
+            if (strlen(Input::get('last')) >2){
+                $people = Response::json(Person::where('last', 'LIKE', '%'.Input::get('last').'%')
+                        ->where('center_id', Auth::User()->center_id)->get());
+                return $people;
+            }
+            return nul;
             //return Person::all();
         }
 

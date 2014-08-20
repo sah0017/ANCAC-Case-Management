@@ -28,7 +28,7 @@
 
 {{ Form::open(array('url' => 'cases')) }}
 
-
+<div class="form-inline">
         <div class="form-group">
 		{{ Form::label('caseNumber', 'Case Number') }}
 		{{ Form::text('caseNumber', Input::old('caseNumber'), array('class' => 'form-control')) }}
@@ -81,26 +81,6 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('custodyIssues', 'Are there custody issues?') }}
-		{{ Form::checkbox('custodyIssues', '1', Input::old('custodyIssues'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('IOReport', 'Incident Offense Rpt') }}
-		{{ Form::checkbox('IOReport', '1', Input::old('IOReport'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('domesticViolence', 'Is There Domestic Violence') }}
-		{{ Form::checkbox('domesticViolence', '1', Input::old('domesticViolence'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('prosecution', 'Was DV Prosecuted') }}
-		{{ Form::checkbox('prosecution', '1', Input::old('prosecution'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
 		{{ Form::label('reporter', 'Reporter') }}
 		{{ Form::text('reporter', Input::old('reporter'), array('class' => 'form-control')) }}
 	</div>
@@ -125,11 +105,6 @@
 		{{ Form::select('DHRDetermination', array('0' => 'Select a Determination', '1' => 'Indicated',
                             '2' => 'Not Indicated', '3' => 'Unknown'), 
                     Input::old('DHRDetermination'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('forensicEvaluation', 'Extended Forensic Interview') }}
-		{{ Form::checkbox('forensicEvaluation', '1', Input::old('forensicEvaluation'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
@@ -158,9 +133,63 @@
 		{{ Form::label('reportedDate', 'Reported Date') }}
 		{{ Form::text('reportedDate', Input::old('reportedDate'), array('class' => 'form-control')) }}
 	</div>
+</div>
+<div class="form-horizontal">
+<div class="checkbox">
+    <label>
+        
+           
+            {{ Form::checkbox('custodyIssues', '1', Input::old('custodyIssues')) }}
+            <b>Are there custody issues?</b>
+    </label>
+</div> 
+<div class="checkbox">
+    <label>
+       
+            
+            {{ Form::checkbox('IOReport', '1', Input::old('IOReport')) }}
+            <b>Incident Offense Rpt</b>
+    </label>
+</div>
 
+<div class="checkbox">
+    <label>
+        
+            
+            {{ Form::checkbox('domesticViolence', '1', Input::old('domesticViolence')) }}
+            <b>Is There Domestic Violence?</b>
+    </label>
+</div>  
+
+
+
+<div class="checkbox"> 
+    <label>
+        
+            
+            {{ Form::checkbox('prosecution', '1', Input::old('prosecution')) }}
+            <b>Was DV Prosecuted</b>
+    </label>
+</div>
+
+
+
+<div class="checkbox">
+    <label>
+        
+            
+            {{ Form::checkbox('forensicEvaluation', '1', Input::old('forensicEvaluation')) }}
+            <b>Extended Forensic Interview</b>
+    </label>
+</div>
+</div>
+
+
+<br>
         {{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
-
+    
 {{ Form::close() }}
+
+
 
 @stop

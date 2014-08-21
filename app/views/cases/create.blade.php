@@ -29,11 +29,21 @@
 {{ Form::open(array('url' => 'cases')) }}
 
 <div class="form-inline">
+    <div class="col-md-12">
         <div class="form-group">
 		{{ Form::label('caseNumber', 'Case Number') }}
 		{{ Form::text('caseNumber', Input::old('caseNumber'), array('class' => 'form-control')) }}
 	</div>
+    
+        <div class="form-group">
+		{{ Form::label('caseOpened', 'Case Opened') }}
+		{{ Form::text('caseOpened', date('Y-m-d'), array('class' => 'form-control')) }}
+	</div>
+    </div>
 
+    <br>
+   
+    <div class="col-md-12">
         <div class="form-group">
 		{{ Form::label('childFirst', 'Child\'s First Name') }}
 		{{ Form::text('childFirst', Input::old('childFirst'), array('class' => 'form-control')) }}
@@ -48,7 +58,11 @@
 		{{ Form::label('childLast', 'Last Name') }}
 		{{ Form::text('childLast', Input::old('childLast'), array('class' => 'form-control')) }}
 	</div>
+    </div>
 
+    <br>
+    
+    <div class="col-md-12">
         <div class="form-group">
 		{{ Form::label('childAge', 'Child\'s Age') }}
 		{{ Form::text('childAge', Input::old('childAge'), array('class' => 'form-control')) }}
@@ -59,25 +73,21 @@
 		{{ Form::select('gender', array('0' => 'Male', '1' => 'Female',), 
                     Input::old('gender'), array('class' => 'form-control')) }}
 	</div>
-
-        <div class="form-group">
-		{{ Form::label('worker_id', 'MDT Workers') }}
-		{{ Form::select('worker_id', Worker::all()->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
-	</div>
-	
-        <div class="form-group">
-		{{ Form::label('note', 'Note') }}
-		{{ Form::text('note', Input::old('note'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('caseOpened', 'Case Opened') }}
-		{{ Form::text('caseOpened', date('Y-m-d'), array('class' => 'form-control')) }}
-	</div>
-
+        
         <div class="form-group">
 		{{ Form::label('county_id', 'County') }}
 		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
+	</div>
+    
+        <div class="form-group">
+		{{ Form::label('worker_id', 'Workers') }}
+		{{ Form::select('worker_id', Worker::all()->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
+	</div>
+    </div>
+    
+        <div class="form-group">
+		{{ Form::label('note', 'Note') }}
+		{{ Form::text('note', Input::old('note'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

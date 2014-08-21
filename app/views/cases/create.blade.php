@@ -29,7 +29,9 @@
 {{ Form::open(array('url' => 'cases')) }}
 
 <div class="form-inline">
+    <table class='table'>
     <div class="col-md-12">
+        
         <div class="form-group">
 		{{ Form::label('caseNumber', 'Case Number') }}
 		{{ Form::text('caseNumber', Input::old('caseNumber'), array('class' => 'form-control')) }}
@@ -40,9 +42,11 @@
 		{{ Form::text('caseOpened', date('Y-m-d'), array('class' => 'form-control')) }}
 	</div>
     </div>
-
+   </table>
+    
     <br>
-   
+    
+   <table class='table'>
     <div class="col-md-12">
         <div class="form-group">
 		{{ Form::label('childFirst', 'Child\'s First Name') }}
@@ -59,7 +63,8 @@
 		{{ Form::text('childLast', Input::old('childLast'), array('class' => 'form-control')) }}
 	</div>
     </div>
-
+   </table>
+    
     <br>
     
     <div class="col-md-12">
@@ -143,6 +148,7 @@
 		{{ Form::label('reportedDate', 'Reported Date') }}
 		{{ Form::text('reportedDate', Input::old('reportedDate'), array('class' => 'form-control')) }}
 	</div>
+     
 </div>
 <div class="form-horizontal">
 <div class="checkbox">

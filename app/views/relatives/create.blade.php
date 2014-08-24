@@ -92,7 +92,7 @@ function clearForm(){
         @else
            <div class="form-group">
 		{{ Form::label('abusedChild_id', 'Abused Child') }}
-		{{ Form::select('abusedChild_id', AbusedChild::all()->lists('id','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
+		{{ Form::select('abusedChild_id', AbusedChild::where('center_id', Auth::User()->center_id)->lists('id','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
 	</div>
         @endif
 	

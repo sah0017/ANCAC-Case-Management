@@ -22,7 +22,7 @@
 
 	<div class="form-group">
 		{{ Form::label('serviceType_id', 'Service Type') }}
-		{{ Form::select('serviceType_id', ServiceType::all()->lists('type','id'), Input::old('serviceType_id'), array('class' => 'form-control')) }}
+		{{ Form::select('serviceType_id', ServiceType::where('center_id', Auth::User()->center_id)->orWhere('center_id', 99)->lists('type','id'), Input::old('serviceType_id'), array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
@@ -49,7 +49,7 @@
 
 	<div class="form-group">
 		{{ Form::label('worker_id', 'Interviewer') }}
-		{{ Form::select('worker_id', Worker::all()->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
+		{{ Form::select('worker_id', Worker::where('center_id', Auth::User()->center_id)->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">

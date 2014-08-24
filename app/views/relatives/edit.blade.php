@@ -30,7 +30,7 @@
 	</div>
          <div class="form-group">
 		{{ Form::label('relationType_id', 'Relation Type') }}
-		{{ Form::select('relationType_id', RelationType::all()->lists('type','id'), Input::old('relationType_id'), array('class' => 'form-control')) }}
+		{{ Form::select('relationType_id', RelationType::where('center_id', Auth::User()->center_id)->orWhere('center_id', 99)->lists('type','id'), Input::old('relationType_id'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">

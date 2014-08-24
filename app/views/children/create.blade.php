@@ -154,7 +154,7 @@ $(function() {
 
         <div class="form-group">
 		{{ Form::label('school', 'School') }}
-		{{ Form::select('school', School::all()->lists('id','name'),Input::old('school'), array('class' => 'form-control')) }}
+		{{ Form::select('school', School::where('center_id', Auth::User()->center_id)->lists('id','name'),Input::old('school'), array('class' => 'form-control')) }}
 	</div>
 
 	<div class="form-group">

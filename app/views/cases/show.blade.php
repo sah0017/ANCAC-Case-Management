@@ -202,7 +202,7 @@
 
 
 
-                                {{ Form::select('worker_id', Worker::all()->lists('name','id'), null, array('class' => 'form-control')) }}
+                                {{ Form::select('worker_id', Worker::where('center_id', Auth::User()->center_id)->where('id','!=',$case->worker_id)->lists('name','id'), null, array('class' => 'form-control')) }}
 
 
 

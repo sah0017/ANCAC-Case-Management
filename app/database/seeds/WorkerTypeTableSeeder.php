@@ -8,7 +8,7 @@ class WorkerTypeTableSeeder extends Seeder {
 
         WorkerType::create(array(
             'id' => 1,
-            'type' => 'Case Worker',
+            'type' => 'Center Worker',
             'center_id' => 99
         ));
        

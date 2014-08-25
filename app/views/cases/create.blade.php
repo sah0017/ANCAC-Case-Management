@@ -29,12 +29,12 @@
 {{ Form::open(array('url' => 'cases')) }}
 
 <div class="form-inline">
-    <table class='table'>
-    <div class="col-md-12">
+    
+    <div style= 'padding: 8px' class="col-md-12">
         
         <div class="form-group">
 		{{ Form::label('caseNumber', 'Case Number') }}
-		{{ Form::text('caseNumber', Input::old('caseNumber'), array('class' => 'form-control')) }}
+		{{ Form::text('caseNumber', Input::old('caseNumber'), array('class' => 'form-control','autofocus')) }}
 	</div>
     
         <div class="form-group">
@@ -42,12 +42,12 @@
 		{{ Form::text('caseOpened', date('Y-m-d'), array('class' => 'form-control')) }}
 	</div>
     </div>
-   </table>
+    
     
     <br>
     
-   <table class='table'>
-    <div class="col-md-12">
+   
+    <div style= 'padding: 8px' class="col-md-12">
         <div class="form-group">
 		{{ Form::label('childFirst', 'Child\'s First Name') }}
 		{{ Form::text('childFirst', Input::old('childFirst'), array('class' => 'form-control')) }}
@@ -63,11 +63,11 @@
 		{{ Form::text('childLast', Input::old('childLast'), array('class' => 'form-control')) }}
 	</div>
     </div>
-   </table>
+   
     
     <br>
     
-    <div class="col-md-12">
+    <div style= 'padding: 8px' class="col-md-12">
         <div class="form-group">
 		{{ Form::label('childAge', 'Child\'s Age') }}
 		{{ Form::text('childAge', Input::old('childAge'), array('class' => 'form-control')) }}
@@ -90,11 +90,29 @@
 	</div>
     </div>
     
+    <br>
+    
+    <div style= 'padding: 8px' class="col-md-12">
         <div class="form-group">
-		{{ Form::label('note', 'Note') }}
-		{{ Form::text('note', Input::old('note'), array('class' => 'form-control')) }}
+		{{ Form::label('referralReason', 'Reason for Referral') }}
+		{{ Form::text('referralReason', Input::old('referralReason'), array('class' => 'form-control')) }}
 	</div>
+    
+        <div class="form-group">
+		{{ Form::label('agencyReportedTo', 'Reporting Agency') }}
+		{{ Form::text('agencyReportedTo', Input::old('agencyReportedTo'), array('class' => 'form-control')) }}
+	</div>
+    
+        <div class="form-group">
+		{{ Form::label('reportedDate', 'Reported Date') }}
+		{{ Form::text('reportedDate', Input::old('reportedDate'), array('class' => 'form-control')) }}
+	</div>
+        
+    </div>
+    
+    <br>
 
+    <div style= 'padding: 8px' class="col-md-12">
         <div class="form-group">
 		{{ Form::label('reporter', 'Reporter') }}
 		{{ Form::text('reporter', Input::old('reporter'), array('class' => 'form-control')) }}
@@ -109,19 +127,32 @@
 		{{ Form::label('abuseLocation', 'Abuse Location') }}
 		{{ Form::text('abuseLocation', Input::old('abuseLocation'), array('class' => 'form-control')) }}
 	</div>
+    </div>
+    
+    <br>
 
+    <div style= 'padding: 8px' class="col-md-12">
         <div class="form-group">
-		{{ Form::label('referralReason', 'Reason for Referral') }}
-		{{ Form::text('referralReason', Input::old('referralReason'), array('class' => 'form-control')) }}
+		{{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuses.') }}
+		{{ Form::text('talkedToChild', Input::old('talkedToChild'), array('class' => 'form-control')) }}
 	</div>
-
+    
         <div class="form-group">
 		{{ Form::label('DHRDetermination', 'DHR Determination') }}
 		{{ Form::select('DHRDetermination', array('0' => 'Select a Determination', '1' => 'Indicated',
                             '2' => 'Not Indicated', '3' => 'Unknown'), 
                     Input::old('DHRDetermination'), array('class' => 'form-control')) }}
 	</div>
-
+    </div>
+    
+    <br>
+     
+    <div style= 'padding: 8px' class="col-md-12">
+        <div class="form-group">
+		{{ Form::label('chargesFiled', 'Charges Filed') }}
+		{{ Form::text('chargesFiled', Input::old('chargesFiled'), array('class' => 'form-control')) }}
+	</div>
+        
         <div class="form-group">
 		{{ Form::label('status', 'Status') }}
 		{{ Form::select('status', array('0' => 'Select Status', '1' => 'Open',
@@ -130,24 +161,15 @@
 	</div>
 
         <div class="form-group">
-		{{ Form::label('chargesFiled', 'Charges Filed') }}
-		{{ Form::text('chargesFiled', Input::old('chargesFiled'), array('class' => 'form-control')) }}
+		{{ Form::label('note', 'Note') }}
+		{{ Form::text('note', Input::old('note'), array('class' => 'form-control')) }}
 	</div>
+    </div>
+    
+    <br>
+       
 
-        <div class="form-group">
-		{{ Form::label('agencyReportedTo', 'Reporting Agency') }}
-		{{ Form::text('agencyReportedTo', Input::old('agencyReportedTo'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuses.') }}
-		{{ Form::text('talkedToChild', Input::old('talkedToChild'), array('class' => 'form-control')) }}
-	</div>
-
-        <div class="form-group">
-		{{ Form::label('reportedDate', 'Reported Date') }}
-		{{ Form::text('reportedDate', Input::old('reportedDate'), array('class' => 'form-control')) }}
-	</div>
+        
      
 </div>
 <div class="form-horizontal">

@@ -12,7 +12,8 @@ class UserTableSeeder extends Seeder {
             'password'  => Hash::make('admin'),
             'email'     => 'admin@localhost',
             'center_id' => 99,
-            'level'     => 3
+            'level'     => 3,
+            'worker_id' => 1
         ));
         User::create(array(
             'id'        => 'superviewer',
@@ -20,7 +21,8 @@ class UserTableSeeder extends Seeder {
             'password'  => Hash::make('view'),
             'email'     => 'sviewer@localhost',
             'center_id' => 99,
-            'level'     => 1
+            'level'     => 1,
+            'worker_id' => 2
         ));
         
         User::create(array(
@@ -29,7 +31,8 @@ class UserTableSeeder extends Seeder {
             'password'  => Hash::make('admin'),
             'email'     => 'cadmin@localhost',
             'center_id' => 1,
-            'level'     => 3
+            'level'     => 3,
+            'worker_id' => 3
         ));
         
         User::create(array(
@@ -38,7 +41,8 @@ class UserTableSeeder extends Seeder {
             'password'  => Hash::make('user'),
             'email'     => 'user@localhost',
             'center_id' => 1,
-            'level'     => 2
+            'level'     => 2,
+            'worker_id' => 4
         ));
         
         User::create(array(
@@ -47,7 +51,8 @@ class UserTableSeeder extends Seeder {
             'password'  => Hash::make('view'),
             'email'     => 'view@localhost',
             'center_id' => 1,
-            'level'     => 1
+            'level'     => 1,
+            'worker_id' => 5
         ));
     }
 }

@@ -28,8 +28,8 @@
 
 			<!-- we will also add show, edit, and delete buttons -->
 			<td>
-
-				<!-- delete the nerd (uses the destroy method DESTROY /workerType/{id} -->
+                                @if($value->center_id == Auth::User()->center_id)
+				<!-- delete the type (uses the destroy method DESTROY /workerType/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'workerType/' . $value->id, 'class' => 'pull-left')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
@@ -40,7 +40,9 @@
 
 				<!-- edit this nerd (uses the edit method found at GET /workerType/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('workerType/' . $value->id . '/edit') }}">Edit</a>
-
+                                @else
+                                <span class="label label-info">Global Type</span>
+                                @endif
 			</td>
 		</tr>
 	@endforeach

@@ -53,8 +53,17 @@ class UserController extends \BaseController {
 			$user->password = Hash::make(Input::get('password'));
 			$user->center_id = Input::get('center_id');
 			$user->level = Input::get('level');
+			
+                        $worker = new Worker;
+                        $worker->name = $user->fullname;
+                        $worker->workerType_id = Input::get('workerType_id',1);
+                        $worker->center_id = $user->center_id;
+                        $worker->save();
+                        
+                        $user->worker_id = $worker->id;
 			$user->save();
-			// redirect
+
+                        // redirect
 			Session::flash('message', 'Successfully stored User info!');
 			return Redirect::to('users');
 	}
@@ -110,6 +119,11 @@ class UserController extends \BaseController {
 			$user->center_id = Input::get('center_id');
 			$user->level = Input::get('level');
 			$user->save();
+                        
+                        $worker = Worker::find($user->worker_id);
+                        $worker->name = $user->fullname;
+                        $worker->workerType_id = Input::get('workerType_id',1);
+                        $worker->save();
 
 			// redirect
 			Session::flash('message', 'Successfully updated User info!');

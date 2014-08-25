@@ -28,7 +28,7 @@
 
 			<!-- we will also add show, edit, and delete buttons -->
 			<td>
-
+                                @if($value->center_id == Auth::User()->center_id)
 				<!-- delete the nerd (uses the destroy method DESTROY /serviceType/{id} -->
 				<!-- we will add this later since its a little more complicated than the other two buttons -->
                                 {{ Form::open(array('url' => 'serviceType/' . $value->id, 'class' => 'pull-left')) }}
@@ -40,6 +40,9 @@
 
 				<!-- edit this nerd (uses the edit method found at GET /serviceType/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('serviceType/' . $value->id . '/edit') }}">Edit</a>
+                                @else
+                                <span class="label label-info">Global Type</span>
+                                @endif
 
 			</td>
 		</tr>

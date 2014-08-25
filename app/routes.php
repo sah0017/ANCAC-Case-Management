@@ -20,7 +20,8 @@ Route::get('logout', 'AuthController@getLogout');
 Route::group(array('before' => 'auth'), function()
 {
     Route::get('/', function() {
-        return View::make('home');
+        $case = TrackedCase::where('worker_id', Auth::User()->worker_id)->get();
+        return View::make('home')->with('case', $case);
     });
     
     Route::resource('users', 'UserController');

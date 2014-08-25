@@ -86,7 +86,7 @@
     
         <div class="form-group">
 		{{ Form::label('worker_id', 'Workers') }}
-		{{ Form::select('worker_id', Worker::all()->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
+		{{ Form::select('worker_id', Worker::where('center_id', Auth::User()->center_id)->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>
     </div>
     

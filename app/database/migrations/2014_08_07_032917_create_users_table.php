@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
                 $table->string('fullname', 128);
                 $table->string('password', 64);
                 $table->string('email', 128)->nullable();
-                $table->integer('user_id')->unsigned();
+                $table->integer('worker_id')->unsigned();
                 $table->integer('center_id')->unsigned();
                 $table->integer('level')->default(1);
                 $table->timestamps();

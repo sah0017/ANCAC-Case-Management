@@ -130,24 +130,15 @@
     </div>
     
     <br>
-
-    <div style= 'padding: 8px' class="col-md-12">
-        <div class="form-group">
-		{{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuses.') }}
-		{{ Form::text('talkedToChild', Input::old('talkedToChild'), array('class' => 'form-control')) }}
-	</div>
     
+    <div style= 'padding: 8px' class="col-md-12">
         <div class="form-group">
 		{{ Form::label('DHRDetermination', 'DHR Determination') }}
 		{{ Form::select('DHRDetermination', array('0' => 'Select a Determination', '1' => 'Indicated',
                             '2' => 'Not Indicated', '3' => 'Unknown'), 
                     Input::old('DHRDetermination'), array('class' => 'form-control')) }}
 	</div>
-    </div>
-    
-    <br>
-     
-    <div style= 'padding: 8px' class="col-md-12">
+        
         <div class="form-group">
 		{{ Form::label('chargesFiled', 'Charges Filed') }}
 		{{ Form::text('chargesFiled', Input::old('chargesFiled'), array('class' => 'form-control')) }}
@@ -159,19 +150,30 @@
                             '2' => 'Closed'), 
                     Input::old('status'), array('class' => 'form-control')) }}
 	</div>
-
-        <div class="form-group">
-		{{ Form::label('note', 'Note') }}
-		{{ Form::text('note', Input::old('note'), array('class' => 'form-control')) }}
-	</div>
     </div>
     
     <br>
-       
-
+    
+    <div style= 'padding: 8px' class="col-md-6">
+        <div>
+		{{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuses.') }}
+                <br>
+		{{ Form::textarea('talkedToChild', Input::old('talkedToChild'), array('class' => 'form-control')) }}
+	</div>
+    </div>
         
-     
+    <br>
+    
+    <div style= 'padding: 8px' class="col-md-6">
+         <div>
+		{{ Form::label('note', 'Note') }}
+                <br>
+		{{ Form::textarea('note', Input::old('note'), array('class' => 'form-control')) }}
+	</div>
+    </div>
+          
 </div>
+
 <div class="form-horizontal">
 <div class="checkbox">
     <label>

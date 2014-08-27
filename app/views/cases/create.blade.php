@@ -161,7 +161,7 @@
             <b>Are there custody issues?</b>
         </label>
     </div> 
-    <div class="checkbox">
+    <div class="checkbox" class="col-md-6">
         <label>
 
 

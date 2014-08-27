@@ -14,6 +14,7 @@
 		<h2>{{ $relative->name }}</h2>
 		<p>
                         <strong>Name:</strong>{{$relative->personalInfo->name}}  <br>
+                        <strong>Name associated with Relative:</strong> {{ $relative->alias }}<br>
                         <strong>Type of Relation:</strong>{{$relative->relationType->type}}<br>
                         <strong>Custodian:</strong>
                         @if ($relative->custodian)
@@ -29,7 +30,6 @@
                          no
                         @endif
                         <br>
-			<strong>Name associated with Relative:</strong> {{ $relative->alias }}<br>
                         <strong>Is He/She an Alleged Offender:</strong> 
                         @if ($relative->allegedOffender)
                         Yes

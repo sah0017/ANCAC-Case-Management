@@ -7,6 +7,10 @@
 
 @section('content')
 
+<style>
+    #pad{padding: 8px}
+</style>
+
 <h1>Create a Abuse Type</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -14,7 +18,7 @@
 
 {{ Form::open(array('url' => 'abuseTypes')) }}
 
-	<div class="form-group">
+	<div id="pad" class="form-inline" class="form-group">
 		{{ Form::label('type', 'Type') }}
 		{{ Form::text('type', Input::old('type'), array('class' => 'form-control')) }}
 	</div>

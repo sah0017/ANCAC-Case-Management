@@ -7,6 +7,10 @@
 
 @section('content')
 
+<style>
+    #pad{padding: 8px}
+</style>
+
 <h1>Edit {{ $ethnicity->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -14,7 +18,7 @@
 
 {{ Form::model($ethnicity, array('route' => array('ethnicity.update', $ethnicity->id), 'method' => 'PUT')) }}
 
-	<div class="form-group">
+	<div id="pad" class="form-inline" class="form-group">
 		{{ Form::label('ethnicity', 'Ethnicity') }}
 		{{ Form::text('ethnicity', null, array('class' => 'form-control')) }}
 	</div>

@@ -190,6 +190,7 @@
     </div>
 
 </div>
+<br>
 
 	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 

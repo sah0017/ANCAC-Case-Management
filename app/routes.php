@@ -182,4 +182,5 @@ Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id
 
 Route::resource('school', 'SchoolController');
 Route::resource('countryOrigen', 'CountryOrigenController');
+Route::resource('session.sessionNotes', 'SessionNotesController');
 });//end of users

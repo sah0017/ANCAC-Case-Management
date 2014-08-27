@@ -7,6 +7,10 @@
 
 @section('content')
 
+<style>
+    #pad{padding: 8px}
+</style>
+
 <h1>Edit {{ $child->personalInfo->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -94,134 +98,145 @@ $(function() {
 
 
 {{ Form::model($child, array('route' => array('children.update', $child->id), 'method' => 'PUT')) }}
-
-	<div class="form-group">
+<div class="form-inline">
+	<div id="pad" class="form-group">
 		{{ Form::label('first', 'First Name') }}
 		{{ Form::text('first', $child->personalInfo->first, array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
+	<div id="pad" class="form-group">
 		{{ Form::label('middle', 'Middle Name') }}
 		{{ Form::text('middle', $child->personalInfo->middle, array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
+	<div id="pad" class="form-group">
 		{{ Form::label('last', 'Last Name') }}
 		{{ Form::text('last', $child->personalInfo->last, array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
+	<div id="pad" class="form-group">
 		{{ Form::label('age', 'Age') }}
 		{{ Form::text('age', $child->personalInfo->age, array('class' => 'form-control')) }}
 	</div>
         
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
 		{{ Form::text('dob',$child->personalInfo->dob, array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('gender', 'Gender') }}
 		{{ Form::select('gender', array('male' => 'Male',
                             'female' => 'Female'), 
                     Input::old('gender'), array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
-		{{ Form::label('parentalHistory', 'Parental History') }}
-		{{ Form::text('parentalHistory', Input::old('parentalHistory'), array('class' => 'form-control')) }}
+        <div id="pad" class="form-group">
+		{{ Form::label('ethnicity_id', 'Ethnicity') }}
+		{{ Form::select('ethnicity_id', Ethnicity::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
 	</div>
-
-	<div class="form-group">
-		{{ Form::label('parentStatus', 'Parent Status') }}
-		{{ Form::text('parentStatus', Input::old('parentStatus'), array('class' => 'form-control')) }}
-	</div>
-
-	<div class="form-group">
-		{{ Form::label('medicalCompleted', 'Is Medical Completed') }}
-		{{ Form::checkbox('medicalCompleted', '1', Input::old('medicalCompleted'), array('class' => 'form-control')) }}
-	</div>
-
-	<div class="form-group">
-		{{ Form::label('medicalLocation', 'Medical Location') }}
-		{{ Form::text('medicalLocation', Input::old('medicalLocation'), array('class' => 'form-control')) }}
-	</div>
-
-	<div class="form-group">
-		{{ Form::label('school', 'School') }}
-		{{ Form::select('school', School::where('center_id', Auth::User()->center_id)->lists('name','id'),Input::old('school'), array('class' => 'form-control')) }}
-	</div>
-
-	<div class="form-group">
-		{{ Form::label('schoolGrade', 'school Grade') }}
-		{{ Form::text('schoolGrade', Input::old('schoolGrade'), array('class' => 'form-control')) }}
-	</div>
-
-	<div class="form-group">
-		{{ Form::label('specialNeeds', 'Special Needs') }}
-		{{ Form::text('specialNeeds', Input::old('specialNeeds'), array('class' => 'form-control')) }}
-	</div>
-
-
-        <div class="form-group">
+    
+        <div id="pad" class="form-group">
 		{{ Form::label('language', 'Language') }}
 		{{ Form::text('language', Input::old('language'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
-		{{ Form::label('originCountry', 'Origin Country') }}
+        <div id="pad" class="form-group">
+		{{ Form::label('originCountry', 'Country Origin') }}
 		{{ Form::text('originCountry', Input::old('originCountry'), array('class' => 'form-control')) }}
         </div>
+    
+        <div id="pad" class="form-group">
+		{{ Form::label('school', 'School') }}
+		{{ Form::select('school', School::where('center_id', Auth::User()->center_id)->lists('name','id'),Input::old('school'), array('class' => 'form-control')) }}
+	</div>
 
-        <div class="form-group">
+	<div id="pad" class="form-group">
+		{{ Form::label('schoolGrade', 'school Grade') }}
+		{{ Form::text('schoolGrade', Input::old('schoolGrade'), array('class' => 'form-control')) }}
+	</div>
+
+	<div id="pad" class="form-group">
+		{{ Form::label('specialNeeds', 'Special Needs') }}
+		{{ Form::text('specialNeeds', Input::old('specialNeeds'), array('class' => 'form-control')) }}
+	</div>
+    
+        <div id="pad" class="form-group">
             
 		{{ Form::label('phone', 'Home Phone ') }}
 		{{ Form::text('phone', $child->personalInfo->address->phone, array('class' => 'form-control')) }}
 
 	</div>
+    
+	<div id="pad" class="form-group">
+		{{ Form::label('parentalHistory', 'Parental History') }}
+		{{ Form::text('parentalHistory', Input::old('parentalHistory'), array('class' => 'form-control')) }}
+	</div>
 
+	<div id="pad" class="form-group">
+		{{ Form::label('parentStatus', 'Parent Status') }}
+		{{ Form::text('parentStatus', Input::old('parentStatus'), array('class' => 'form-control')) }}
+	</div>
+    
+    <br>
 
-        <div id="addresses" class="alert alert-info" role="alert" style="display: none;">
-    <!-- For results -->
-</div>
-<button  type='button' onclick="clearForm()" class="btn btn-default">Clear Address</button><br>
+        <div id="pad" id="addresses" class="alert alert-info" role="alert" style="display: none;">
+        <!-- For results -->
+        </div>
+
+        <button  id="pad" type='button' onclick="clearForm()" class="btn btn-default">Clear Address</button><br>
 
         {{ Form::hidden('address_id' , 1, array('id' => 'address_id')) }}
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('address1', 'Address Line 1') }}
 		{{ Form::text('address1', $child->personalInfo->address->line1, array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('address2', 'Address Line 2') }}
 		{{ Form::text('address2', $child->personalInfo->address->line2, array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('city', 'City') }}
 		{{ Form::text('city', $child->personalInfo->address->city, array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('state', 'State') }}
 		{{ Form::text('state', $child->personalInfo->address->state, array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('zip', 'Zip Code') }}
 		{{ Form::text('zip', $child->personalInfo->address->zip, array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('county_id', 'County') }}
 		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
 	</div>
+        
+        <br>
+        
+	<div id="pad" class="form-group">
+		{{ Form::label('medicalLocation', 'Medical Location') }}
+		{{ Form::text('medicalLocation', Input::old('medicalLocation'), array('class' => 'form-control')) }}
+        </div>
+     
+</div>
 
-        <div class="form-group">
-		{{ Form::label('ethnicity_id', 'Ethnicity') }}
-		{{ Form::select('ethnicity_id', Ethnicity::all()->lists('ethnicity','id'), Input::old('ethnicity_id'), array('class' => 'form-control')) }}
-	</div>
+ <div class="form-horizontal">
+
+    <div class="checkbox">
+        <label>
+            {{ Form::checkbox('medicalCompleted', '1', Input::old('medicalCompleted'))}}
+            <b>Is Medical Completed</b>
+        </label>
+    </div>
+        
+</div>
         <br>
 
 	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}

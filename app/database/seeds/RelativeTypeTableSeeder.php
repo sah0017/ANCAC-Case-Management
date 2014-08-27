@@ -7,7 +7,8 @@ class RelativeTypeTableSeeder extends Seeder {
         DB::table('relationTypes')->delete();
 
         RelationType::create(array(
-            'type' => 'sisters sons uncles fiends brothers fathers third uncle twice removed'
+            'type' => 'sisters sons uncles fiends brothers fathers third uncle twice removed',
+            'center_id' => 99
         ));
        
     }

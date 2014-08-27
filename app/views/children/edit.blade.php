@@ -148,7 +148,7 @@ $(function() {
     
         <div id="pad" class="form-group">
 		{{ Form::label('school', 'School') }}
-		{{ Form::select('school', School::where('center_id', Auth::User()->center_id)->lists('name','id'),Input::old('school'), array('class' => 'form-control')) }}
+		{{ Form::select('school', School::where('center_id', Auth::User()->center_id)->orWhere('center_id', 99)->lists('name','id'),Input::old('school'), array('class' => 'form-control')) }}
 	</div>
 
 	<div id="pad" class="form-group">

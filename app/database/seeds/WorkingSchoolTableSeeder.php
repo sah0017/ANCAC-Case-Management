@@ -8,13 +8,13 @@ class WorkingSchoolTableSeeder extends Seeder {
 
         School::create(array(
             'id' => 1,
-            'name' => 'Alabama',
+            'name' => 'Unknown',
             'center_id' => 99
         ));
         
         School::create(array(
             'id' => 2,
-            'name' => 'Faulkner',
+            'name' => 'N/A',
             'center_id' => 99
         ));
        

@@ -39,8 +39,9 @@ class RelativeTypeController extends \BaseController {
 	public function store()
 	{
                         $relativeType = new RelationType;
-			$relativeType->id                  = Input::get('id');
+			//$relativeType->id                  = Input::get('id');
 			$relativeType->type                = Input::get('type');
+                        $relativeType->center_id           = Auth::User()->center_id;
 			$relativeType->save();
 			// redirect
 			Session::flash('message', 'Successfully stored relation type info!');
@@ -91,7 +92,7 @@ class RelativeTypeController extends \BaseController {
 	public function update($id)
 	{
                         $relativeType = RelationType::find($id);
-			$relativeType->id                  = Input::get('id');
+			//$relativeType->id                  = Input::get('id');
 			$relativeType->type                = Input::get('type');
 			$relativeType->save();
 			// redirect

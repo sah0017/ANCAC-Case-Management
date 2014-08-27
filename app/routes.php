@@ -183,4 +183,9 @@ Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id
 Route::resource('school', 'SchoolController');
 Route::resource('countryOrigen', 'CountryOrigenController');
 Route::resource('session.sessionNotes', 'SessionNotesController');
+
+Route::get('session/{id}/notes/create', function($id) {
+    Session::put('from','session/'.$id);
+		return View::make('session.sessionNotes.create')->with('session', $id);
+});
 });//end of users

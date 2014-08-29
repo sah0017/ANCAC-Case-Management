@@ -33,16 +33,9 @@
                         
 
 
-			<!-- we will also add show, edit, and delete buttons -->
+			<!-- we will also add Case Details button -->
 			<td>
-
-				<!-- delete the cases (uses the destroy method DESTROY /case/{id} -->
-				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                {{ Form::open(array('url' => 'cases/' . $value->id, 'class' => 'pull-left')) }}
-					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}
-                                
+				
 				<!-- show the cases (uses the show method found at GET /case/{id} -->
                                 &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $value->id) }}">Case Details</a>
 

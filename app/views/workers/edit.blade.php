@@ -21,7 +21,7 @@
 <div class="form-inline">
 	<div id="pad" class="form-group">
 		{{ Form::label('name', 'Name of the Worker') }}
-		{{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+		{{ Form::text('name', Input::old('name'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
         <div id="pad" class="form-group">

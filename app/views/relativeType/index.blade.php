@@ -26,18 +26,9 @@
 			<td>{{ $value->type }}</td>
 
 
-			<!-- we will also add show, edit, and delete buttons -->
+			<!-- we will also add edit button -->
 			<td>
-
-				<!-- delete the nerd (uses the destroy method DESTROY /relativeType/{id} -->
-				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                {{ Form::open(array('url' => 'relativeType/' . $value->id, 'class' => 'pull-left')) }}
-					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}
-				<!-- show the nerd (uses the show method found at GET /relativeType/{id} -->
-				&nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('relativeType/' . $value->id) }}">Show</a>
-
+				
 				<!-- edit this nerd (uses the edit method found at GET /relativeType/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('relativeType/' . $value->id . '/edit') }}">Edit</a>
 

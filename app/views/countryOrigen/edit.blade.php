@@ -19,7 +19,7 @@
 
         <div id="pad" class="form-inline" class="form-group">
 		{{ Form::label('name', 'Name') }}
-		{{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
+		{{ Form::text('name', Input::old('name'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
 

@@ -7,6 +7,10 @@
 
 @section('content')
 
+<style>
+    #pad{padding: 8px}
+</style>
+
 
 <h1>Create a DHRCases</h1>
 {{ HTML::script('js/jquery-ui/jquery-ui.js') }}
@@ -24,40 +28,40 @@
 
 {{ Form::model($DHRCases, array('route' => array('DHRCases.update', $DHRCases->id), 'method' => 'PUT')) }}
 
-
-        <div class="form-group">
+<div class="form-inline">
+        <div id="pad" class="form-group">
 		{{ Form::label('household_id', 'Household') }}
-		{{ Form::select('household_id', Household::all()->lists('id','id'),Input::old('household_id'), array('class' => 'form-control')) }}
+		{{ Form::select('household_id', Household::all()->lists('id','id'),Input::old('household_id'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('caseNumber', 'Case Number') }}
 		{{ Form::select('caseNumber', TrackedCase::all()->lists('id','id'),Input::old('caseNumber'), array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
+	<div id="pad" class="form-group">
 		{{ Form::label('status', 'Status') }}
 		{{ Form::select('status', array('0' => 'Select Status', '1' => 'Open',
                             '2' => 'Closed'), 
                     Input::old('status'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('type', 'Type') }}
 		{{ Form::text('type', Input::old('type'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('opened', 'Case Open Date') }}
 		{{ Form::text('opened', date('Y-m-d'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('closed', 'Case Closed Date') }}
 		{{ Form::text('closed', date('Y-m-d'), array('class' => 'form-control')) }}
 	</div>
-
-
+</div>
+<br>
 	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}

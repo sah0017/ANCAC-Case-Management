@@ -25,7 +25,7 @@
 {{ Form::model($session, array('route' => array('session.update', $session->id), 'method' => 'PUT')) }}
 <div class="form-inline">
 	<div id="pad" class="form-group">
-		{{ Form::label('serviceType_id', 'Service Type') }}
+		{{ Form::label('serviceType_id', 'Service Type','autofocus') }}
 		{{ Form::select('serviceType_id', ServiceType::where('center_id', Auth::User()->center_id)->orWhere('center_id', 99)->lists('type','id'), Input::old('serviceType_id'), array('class' => 'form-control')) }}
         </div>
 

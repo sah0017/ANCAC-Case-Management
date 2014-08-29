@@ -28,7 +28,7 @@
 
 {{ Form::model($DHRCases, array('route' => array('DHRCases.update', $DHRCases->id), 'method' => 'PUT')) }}
 
-
+<div class="form-inline">
         <div id="pad" class="form-group">
 		{{ Form::label('household_id', 'Household') }}
 		{{ Form::select('household_id', Household::all()->lists('id','id'),Input::old('household_id'), array('class' => 'form-control','autofocus')) }}
@@ -60,8 +60,8 @@
 		{{ Form::label('closed', 'Case Closed Date') }}
 		{{ Form::text('closed', date('Y-m-d'), array('class' => 'form-control')) }}
 	</div>
-
-
+</div>
+<br>
 	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}

@@ -180,8 +180,8 @@ $(function() {
 	</div>
         
         <div id="pad" class="form-group">
-		{{ Form::label('originCountry', 'Origin Country') }}
-		{{ Form::text('originCountry', Input::old('originCountry'), array('class' => 'form-control')) }}
+		{{ Form::label('countryOrigen_id', 'Country Origin') }}
+                {{ Form::select('countryOrigen_id', CountryOrigen::all()->lists('country','id'), Input::old('countryOrigen_id'), array('class' => 'form-control')) }}
         </div>
 
     <br>

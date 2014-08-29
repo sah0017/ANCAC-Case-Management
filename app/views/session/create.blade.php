@@ -7,6 +7,10 @@
 
 @section('content')
 
+<style>
+    #pad{padding: 8px}
+</style>
+
 <h1>Create a Session</h1>
 {{ HTML::script('js/jquery-ui/jquery-ui.js') }}
 {{ HTML::style('js/jquery-ui/jquery-ui.css') }}
@@ -20,49 +24,49 @@
 
 {{ Form::open(array('url' => 'session')) }}
 
-        		{{ Form::hidden('child_id', $child_id)}}
+{{ Form::hidden('child_id', $child_id)}}
 
 
-
-	<div class="form-group">
+<div class="form-inline">
+	<div id="pad" class="form-group">
 		{{ Form::label('serviceType_id', 'Service Type') }}
 		{{ Form::select('serviceType_id', ServiceType::where('center_id', Auth::User()->center_id)->orWhere('center_id', 99)->lists('type','id'), Input::old('serviceType_id'), array('class' => 'form-control')) }}
         </div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('date', 'Date') }}
 		{{ Form::text('date', Input::old('date'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('timeStart', 'Time Start') }}
 		{{ Form::text('timeStart', Input::old('timeStart'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('timeEnd', 'Time End') }}
 		{{ Form::text('timeEnd', Input::old('timeEnd'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('status', 'Status') }}
 		{{ Form::select('status', array('0' => 'Select a Status', '1' => 'scheduled',
                             '2' => 'no-show', '3' => 'cancled', '4' => 'attended', '5' => 'rescheduled'), 
                     Input::old('status'), array('class' => 'form-control')) }}
 	</div>
 
-	<div class="form-group">
+	<div id="pad" class="form-group">
 		{{ Form::label('worker_id', 'Interviewer') }}
 		{{ Form::select('worker_id', Worker::where('center_id', Auth::User()->center_id)->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
+        <div id="pad" class="form-group">
 		{{ Form::label('discussedAbuse', 'Disclosed Abuse') }}
 		{{ Form::select('discussedAbuse', array('0' => 'Select the one that applies', '1' => 'yes',
                             '2' => 'no', '3' => 'partial'), 
                     Input::old('discussedAbuse'), array('class' => 'form-control')) }}
 	</div>
-
+</div>
 	{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}

@@ -1,4 +1,4 @@
-@extends('sessionNotes.master')
+@extends('session.sessionNotes.master')
 
 @section('title')
 @parent
@@ -16,18 +16,15 @@
 
 	<div class="form-group">
 		{{ Form::label('note', 'Note') }}
-		{{ Form::text('note', Input::old('note'), array('class' => 'form-control')) }}
+		{{ Form::textarea('note', Input::old('note'), array('class' => 'form-control')) }}
 	</div>
 
         <div class="form-group">
 		{{ Form::label('worker_id', 'Worker') }}
-		{{ Form::select('worker_id', RelationType::all()->lists('name','id'), Input::old('worker_id'), array('class' => 'form-control')) }}
+		{{ Form::select('worker_id', Worker::Where('center_id',Auth::User()->center_id)->lists('name','id'), Auth::User()->worker_id, array('class' => 'form-control')) }}
 	</div>
 
-        <div class="form-group">
-		{{ Form::label('session_id', 'Session') }}
-		{{ Form::select('session_id', RelationType::all()->lists('id','id'), Input::old('session_id'), array('class' => 'form-control')) }}
-	</div>
+                {{ Form::hidden('session_id', $session) }}
 
 	{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 

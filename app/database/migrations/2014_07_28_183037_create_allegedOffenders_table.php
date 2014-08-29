@@ -18,6 +18,7 @@ class CreateAllegedOffendersTable extends Migration {
 			$table->integer('case_id')->unsigned();
 			$table->integer('person_id')->unsigned();
 			$table->integer('county_id')->unsigned();
+                        $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});
 	}

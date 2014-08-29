@@ -26,18 +26,10 @@
 			<td>{{ $value->type }}</td>
 
 
-			<!-- we will also add show, edit, and delete buttons -->
+			<!-- we will also add edit button -->
 			<td>
                                 @if($value->center_id == Auth::User()->center_id)
-				<!-- delete the type (uses the destroy method DESTROY /workerType/{id} -->
-				<!-- we will add this later since its a little more complicated than the other two buttons -->
-                                {{ Form::open(array('url' => 'workerType/' . $value->id, 'class' => 'pull-left')) }}
-					{{ Form::hidden('_method', 'DELETE') }}
-					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
-                                        {{ Form::close() }}
-				<!-- show the nerd (uses the show method found at GET /workerType/{id} -->
-                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('workerType/' . $value->id) }}">Show</a>
-
+				
 				<!-- edit this nerd (uses the edit method found at GET /workerType/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('workerType/' . $value->id . '/edit') }}">Edit</a>
                                 @else

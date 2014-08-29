@@ -16,5 +16,7 @@ class AbusedChild extends \Eloquent {
             return $this->belongsToMany('CaseSession','abusedchild_session','abusedChild_id','session_id');
         }
         
-        
+         public function school1() {
+            return $this->belongsTo('School','school');
+        }
 }

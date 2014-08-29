@@ -144,7 +144,6 @@ class CaseController extends \BaseController {
 		$case->agencyReportedTo     = Input::get('agencyReportedTo');
 		$case->talkedToChild        = Input::get('talkedToChild');
 		$case->reportedDate         = Input::get('reportedDate');
-                $person->gender = Input::get('gender');
 		$case->save();
 
 		// redirect

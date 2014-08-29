@@ -25,8 +25,8 @@
                         @endif
                         <br>
 			<strong>School Grade:</strong> {{ $child->schoolGrade }}<br>
-			<strong>School:</strong> {{ $child->school }}<br>
-                        <strong>Origin Country:</strong> {{ $child->personalInfo->originCountry }}<br>
+			<strong>School:</strong> {{ $child->school1->name }}<br>
+                        <strong>Origin Country:</strong> {{ $child->personalInfo->country->name }}<br>
                         <strong>Special Needs:</strong>
                         @if ($child->personalInfo->specialNeeds)
                          yes
@@ -42,9 +42,12 @@
                         @endif
                         <br>
 			<strong>Language:</strong> {{ $child->personalInfo->language }}<br>
-                        <strong>Address:</strong> {{ $child->personalInfo->address_id }}<br>
-                        <strong>Household:</strong> {{ $child->personalInfo->household_id }}<br>
-                        <strong>Ethnicity:</strong> {{ $child->personalInfo->ethnicity_id }}<br>
+                        <strong>Address:</strong> {{ $child->personalInfo->address->line1 }}<br>
+                        {{$child->personalInfo->address->line2 }}<br>
+                        {{$child->personalInfo->address->city }}<br>
+                        {{$child->personalInfo->address->state }}<br>
+                        {{$child->personalInfo->address->zip }}<br>
+                        <strong>Ethnicity:</strong> {{ $child->personalInfo->ethnicity->ethnicity }}<br>
 
 		</p>
 	</div>

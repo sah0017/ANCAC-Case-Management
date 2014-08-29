@@ -9,13 +9,16 @@ class Person extends \Eloquent {
             return "$this->first $this->middle $this->last";
         }
 
+        public function country() {
+            return $this->belongsTo('CountryOrigen','originCountry');
+        }
         
         public function relation() {
             return $this->hasMany('Relationship');
         }
         
         public function ethnicity() {
-            return $this-belongsTo('Ethnicity');
+            return $this->belongsTo('Ethnicity');
         }
         
         public function address() {
@@ -26,5 +29,5 @@ class Person extends \Eloquent {
             return $this->belongsTo('Household');
         }
         
-        
+                 
 }

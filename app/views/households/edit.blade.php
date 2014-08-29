@@ -18,9 +18,10 @@
 
 {{ Form::model($household, array('route' => array('households.update', $household->id), 'method' => 'PUT')) }}
 <div class="form-inline">
-	<div id="pad" class="form-group">
+	<div id="pad">
 		{{ Form::label('pets', 'Pets') }}
-		{{ Form::text('pets', Input::old('pets'), array('class' => 'form-control')) }}
+                <br>
+		{{ Form::textarea('pets', Input::old('pets'), array('class' => 'form-control')) }}
 	</div>
 </div>
 <div class="form-horizontal">
@@ -61,6 +62,7 @@
     </div>
             
 </div>
+<br>
 	{{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}

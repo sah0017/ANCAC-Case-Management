@@ -16,7 +16,7 @@
 
         <div class="form-group">
 		{{ Form::label('person_id', 'Person') }}
-		{{ Form::select('person_id', Person::all()->lists('name','id'), Input::old('person_id'), array('class' => 'form-control')) }}
+		{{ Form::select('person_id', Person::all()->lists('name','id'), Input::old('person_id'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
         <div class="form-group">

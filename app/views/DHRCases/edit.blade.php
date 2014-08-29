@@ -31,7 +31,7 @@
 
         <div id="pad" class="form-group">
 		{{ Form::label('household_id', 'Household') }}
-		{{ Form::select('household_id', Household::all()->lists('id','id'),Input::old('household_id'), array('class' => 'form-control')) }}
+		{{ Form::select('household_id', Household::all()->lists('id','id'),Input::old('household_id'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
         <div id="pad" class="form-group">

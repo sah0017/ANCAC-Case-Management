@@ -21,7 +21,7 @@
 	<div id="pad" >
 		{{ Form::label('note', 'Note') }}
                 <br>
-		{{ Form::textarea('note', Input::old('note'), array('class' => 'form-control')) }}
+		{{ Form::textarea('note', Input::old('note'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
         <div id="pad" class="form-group">

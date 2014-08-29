@@ -101,7 +101,7 @@ $(function() {
 <div id="pad" class="form-inline">
 	<div id="pad" class="form-group">
 		{{ Form::label('first', 'First Name') }}
-		{{ Form::text('first', Input::old('first'), array('class' => 'form-control')) }}
+		{{ Form::text('first', Input::old('first'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
 	<div id="pad" class="form-group">

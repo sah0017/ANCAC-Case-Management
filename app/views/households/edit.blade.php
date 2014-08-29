@@ -21,7 +21,7 @@
 	<div id="pad">
 		{{ Form::label('pets', 'Pets') }}
                 <br>
-		{{ Form::textarea('pets', Input::old('pets'), array('class' => 'form-control')) }}
+		{{ Form::textarea('pets', Input::old('pets'), array('class' => 'form-control','autofocus')) }}
 	</div>
 </div>
 <div class="form-horizontal">

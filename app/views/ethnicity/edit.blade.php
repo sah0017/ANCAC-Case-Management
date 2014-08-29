@@ -20,7 +20,7 @@
 
 	<div id="pad" class="form-inline" class="form-group">
 		{{ Form::label('ethnicity', 'Ethnicity') }}
-		{{ Form::text('ethnicity', null, array('class' => 'form-control')) }}
+		{{ Form::text('ethnicity', null, array('class' => 'form-control','autofocus')) }}
 	</div>
 
 

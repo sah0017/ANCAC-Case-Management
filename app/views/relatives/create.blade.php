@@ -28,37 +28,67 @@
 var people;
 $(document).ready(function(){
     
+    $('input#first').keyup(function() {
+        search();
+        searchOutside();
+        return false; // keeps the page from not refreshing 
+    });
     $('input#last').keyup(function() {
-        $.ajax({ // ajax call starts
-            url: '/people/search', // JQuery loads serverside.php
-            type: "POST",
-            data: 'last=' + $(this).val(), // Send value of the text
-            dataType: 'json', // Choosing a JSON datatype
-            success: function(data) // Variable data contains the data we get from serverside
-            {
-                people = data;
-                $('#people').html(''); // Clear div
-                if (jQuery.isEmptyObject(data)){
-                    document.getElementById('people').style.display = 'none';
-                }
-                else{
-                    document.getElementById('people').style.display = 'block';
-                    results = '<strong>Possible Matches:</strong><br/><table class="table" width=100%>'+
-                        '<colgroup>'+
-                        '<col class="col-xs-1">'+
-                        '<col class="col-xs-7">'+
-                        '</colgroup>';
-                    for (var i in data) {
-                        results += '<tr><td>'+data[i].first + ' ' + data[i].last+'</td>';
-                        results += '<td><button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button></td></tr>';
-                    }
-                    $('#people').append(results+'</table>');
-                }
-            }
-        });
+        search();
+        searchOutside();
         return false; // keeps the page from not refreshing 
     });
 });
+
+function search() {
+    $.ajax({// ajax call starts
+        url: '/people/search', // JQuery loads serverside.php
+        type: "POST",
+        data: {first: $(first).val(),middle: $(middle).val(),last: $(last).val()}, // Send value of the text
+        dataType: 'json', // Choosing a JSON datatype
+        success: function(data) // Variable data contains the data we get from serverside
+        {
+            people = data;
+            $('#people').html(''); // Clear div
+            if (jQuery.isEmptyObject(data)){
+                document.getElementById('people').style.display = 'none';
+            }
+            else{
+                document.getElementById('people').style.display = 'block';
+                results = '<strong>Possible Matches:</strong><br/><table class="table" width=100%>'+
+                    '<colgroup>'+
+                    '<col class="col-xs-1">'+
+                    '<col class="col-xs-7">'+
+                    '</colgroup>';
+                for (var i in data) {
+                    results += '<tr><td>'+data[i].first + ' ' + data[i].last+'</td>';
+                    results += '<td><button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button></td></tr>';
+                }
+                $('#people').append(results+'</table>');
+            }
+        }
+    })
+}
+function searchOutside() { 
+    $.ajax({// ajax call starts
+        url: '/people/searchOutside', // JQuery loads serverside.php
+        type: "POST",
+        data: {first: $(first).val(),middle: $(middle).val(),last: $(last).val()}, // Send value of the text
+        dataType: 'json', // Choosing a JSON datatype
+        success: function(data) // Variable data contains the data we get from serverside
+        {
+            people = data;
+            $('#outside').html(''); // Clear div
+            if (jQuery.isEmptyObject(data)){
+                document.getElementById('outside').style.display = 'none';
+            }
+            else{
+                document.getElementById('outside').style.display = 'block';
+                $('#outside').append(data.result);
+            }
+        }
+    })
+}
 
 function use(i) {
         document.getElementById('people').style.display = 'none'
@@ -106,7 +136,7 @@ function clearForm(){
         
         <div id="pad" class="form-group">
 		{{ Form::label('first', 'First Name') }}
-		{{ Form::text('first', Input::old('first'), array('class' => 'form-control')) }}
+		{{ Form::text('first', Input::old('first'), array('class' => 'form-control','autofocus')) }}
 	</div>
 
 	<div id="pad" class="form-group">

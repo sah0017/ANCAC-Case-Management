@@ -195,12 +195,64 @@ class PersonController extends \BaseController {
 	}
         
         public function search() {
+            $people = null;
             if (strlen(Input::get('last')) >2){
-                $people = Response::json(Person::where('last', 'LIKE', '%'.Input::get('last').'%')
-                        ->where('center_id', Auth::User()->center_id)->get());
-                return $people;
+                $people = Person::where('last', 'LIKE', '%'.Input::get('last').'%')
+                        ->where('center_id', Auth::User()->center_id)->get();
             }
-            return nul;
+            if (strlen(Input::get('first')) >2){
+                $people = $people->filter(function($person)
+                    {
+                        if($person->first == Input::get('first'))
+                        {return true;}
+                        else
+                        {return false;}
+                    });
+            }
+            if (strlen(Input::get('middle')) >2){
+                $people = $people->filter(function($person)
+                    {
+                        if($person->middle == Input::get('middle'))
+                        {return true;}
+                        else
+                        {return false;}
+                    });
+            }
+            return Response::json($people);
+            //return Person::all();
+        }
+        public function searchOutside() {
+            $people = null;
+            $result = new Illuminate\Database\Eloquent\Collection;
+            if (strlen(Input::get('last')) >2){
+                $people = Person::where('last', 'LIKE', '%'.Input::get('last').'%')
+                        ->where('center_id', Auth::User()->center_id)->get();
+            }
+            if (strlen(Input::get('first')) >2){
+                $people = $people->filter(function($person)
+                    {
+                        if($person->first == Input::get('first'))
+                        {return true;}
+                        else
+                        {return false;}
+                    });
+            }
+            if (strlen(Input::get('middle')) >2){
+                $people = $people->filter(function($person)
+                    {
+                        if($person->middle == Input::get('middle'))
+                        {return true;}
+                        else
+                        {return false;}
+                    });
+            }
+            if($people->count() > 0){
+                foreach ($people as $key => $person) {
+                    $result->put(1,Center::where('center',$person->center_id)->pluck('CenterName'));
+                }
+            }
+            
+            return Response::json($result);
             //return Person::all();
         }
 

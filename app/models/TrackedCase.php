@@ -4,10 +4,10 @@ class TrackedCase extends \Eloquent {
 	protected $table = 'cases';
 
 	public function abusedChild(){
-		return $this->belongsTo('abusedChild','abusedChild_id');
+		return $this->belongsTo('AbusedChild','abusedChild_id');
 	}
 	public function worker(){
-		return $this->hasOne('worker');
+		return $this->hasOne('Worker');
 	}
 	public function county(){
 		return $this->belongsTo('county');

@@ -5,7 +5,7 @@ class AbusedChild extends \Eloquent {
 	protected $fillable = [];
 	
         public function personalInfo(){
-            return $this->belongsTo('person', 'person_id');
+            return $this->belongsTo('Person', 'person_id');
 	}
         
         public function relations() {

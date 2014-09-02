@@ -3,13 +3,13 @@
 class Relationship extends \Eloquent {
 	protected $fillable = [];
         public function personalInfo(){
-            return $this->belongsTo('person', 'person_id');   
+            return $this->belongsTo('Person', 'person_id');   
 	}
         public function child(){
-            return $this->belongsTo('abusedChild','abusedChild_id');
+            return $this->belongsTo('AbusedChild','abusedChild_id');
 	}
         
         public function relationType(){
-            return $this->belongsTo('relationType', 'relationType_id');
+            return $this->belongsTo('RelationType', 'relationType_id');
 	}
 }

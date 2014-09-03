@@ -136,7 +136,7 @@
 
     <div id="pad" class="col-md-6">
         <div>
-            {{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuses.') }}
+            {{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuse.') }}
             <br>
             {{ Form::textarea('talkedToChild', Input::old('talkedToChild'), array('class' => 'form-control')) }}
         </div>

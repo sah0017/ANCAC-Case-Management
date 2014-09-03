@@ -22,7 +22,7 @@ class WorkerTableSeeder extends Seeder {
         
         Worker::create(array(
             'id' => 3,
-            'name' => 'Cender Admin',
+            'name' => 'Center Admin',
             'workerType_id' => 1,
             'center_id' => 1
         ));

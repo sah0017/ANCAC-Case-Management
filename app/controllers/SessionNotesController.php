@@ -33,7 +33,7 @@ class SessionNotesController extends \BaseController {
 	 */
 	public function store()
 	{
-                        $sessionNotes = new SessionNotes;
+                        $sessionNotes = new SessionNote;
 			$sessionNotes->id                  = Input::get('id');
 			$sessionNotes->note                = Input::get('note');
                         $sessionNotes->worker_id           = Input::get('worker_id');
@@ -41,7 +41,7 @@ class SessionNotesController extends \BaseController {
 			$sessionNotes->save();
 			// redirect
 			Session::flash('message', 'Successfully stored Session Notes info!');
-			return Redirect::to('sessionNotes');
+			return Redirect::to(Session::pull('from'));
 	}
 
 	/**
@@ -54,7 +54,7 @@ class SessionNotesController extends \BaseController {
 	public function show($id)
 	{
                 // get the sessionNotes
-		$sessionNotes = SessionNotes::find($id);
+		$sessionNotes = SessionNote::find($id);
 
 		// show the view and pass the nerd to it
 		return View::make('sessionNotes.show')
@@ -71,7 +71,7 @@ class SessionNotesController extends \BaseController {
 	public function edit($id)
 	{
                 // get the sessionNotes
-		$sessionNotes = RelationType::find($id);
+		$sessionNotes = SessionNote::find($id);
 
 		// show the view and pass the nerd to it
 		return View::make('sessionNotes.edit')
@@ -87,7 +87,7 @@ class SessionNotesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-                        $sessionNotes = RelationType::find($id);
+                        $sessionNotes = SessionNote::find($id);
 			$sessionNotes->id                  = Input::get('id');
 			$sessionNotes->note                = Input::get('note');
                         $sessionNotes->worker_id           = Input::get('worker_id');
@@ -108,7 +108,7 @@ class SessionNotesController extends \BaseController {
 	public function destroy($id)
 	{
 		// delete
-		$sessionNotes = SessionNotes::find($id);
+		$sessionNotes = SessionNote::find($id);
 		$sessionNotes->delete();
 
 		// redirect

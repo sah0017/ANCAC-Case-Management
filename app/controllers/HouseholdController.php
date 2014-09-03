@@ -99,7 +99,7 @@ class HouseholdController extends \BaseController {
 	public function update($id)
 	{
 		$household = Household::find($id);
-                $household->pets = Input::get('pets');
+                $household->pets = Input::get('pets','unknown');
                 $household->medicare = Input::get('medicare',false);
                 $household->allKids = Input::get('allKids',false);
                 $household->freeOrReducedLunch = Input::get('freeOrReducedLunch',false);

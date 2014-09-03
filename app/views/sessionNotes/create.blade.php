@@ -1,4 +1,4 @@
-@extends('session.sessionNotes.master')
+@extends('sessionNotes.master')
 
 @section('title')
 @parent

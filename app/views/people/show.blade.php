@@ -93,9 +93,13 @@
                         <br>
 			<strong>Language:</strong> {{ $person->language }}<br>
                         <strong>Marital Status:</strong> {{ $person->maritalStatus }}<br>
-                        <strong>Address</strong> {{ $person->address_id }}<br>
                         <strong>Household</strong> {{ $person->household_id }}<br>
                         <strong>Ethnicity</strong> {{ $person->ethnicity_id }}<br>
+                        <strong>Address:</strong> {{ $person->address->line1 }}<br>
+                        {{$person->address->line2 }}<br>
+                        {{$person->address->city }}<br>
+                        {{$person->address->state }}<br>
+                        {{$person->address->zip }}<br>
 
 		</p>
 	</div>

@@ -45,7 +45,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ URL::to('abuseTypes') }}">Abuse Types</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="{{ URL::to('countryOrigin') }}">Country of Origen</a></li>
+                                    <li><a href="{{ URL::to('countryOrigen') }}">Country of Origin</a></li>
                                     <li class="divider"></li>
                                     <li><a href="{{ URL::to('ethnicity') }}">Ethnicity</a></li>
                                     <li class="divider"></li>

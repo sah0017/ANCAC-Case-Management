@@ -91,7 +91,7 @@ function clearForm(){
     }
 
 $(function() {
-    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "mm-dd-yy" });
+    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
 });
   
 </script>

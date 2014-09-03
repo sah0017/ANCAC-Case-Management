@@ -20,6 +20,7 @@
 			<strong>Interviewer:</strong> {{ $session->primaryWorker->name }}<br>
                         <strong>Discussed Abuse:</strong> {{ $session->discussedAbuse }}<br>
                         
+                        
 		</p>
 	</div>
 

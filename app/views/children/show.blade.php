@@ -15,6 +15,7 @@
 		<p>
 			<strong>Name:</strong> {{ $child->personalInfo->name }}<br>
                         <strong>DOB:</strong> {{ $child->personalInfo->dob }}<br>
+                        <strong>Ethnicity:</strong> {{ $child->personalInfo->ethnicity->ethnicity }}<br>
 			<strong>Parental History:</strong> {{ $child->parentalHistory }}<br>
                         <strong>Parent Status:</strong> {{ $child->parentStatus }}<br>
                         <strong>Medical Completed:</strong>
@@ -47,7 +48,7 @@
                         {{$child->personalInfo->address->city }}<br>
                         {{$child->personalInfo->address->state }}<br>
                         {{$child->personalInfo->address->zip }}<br>
-                        <strong>Ethnicity:</strong> {{ $child->personalInfo->ethnicity->ethnicity }}<br>
+                        
 
 		</p>
 	</div>

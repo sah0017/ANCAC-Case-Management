@@ -15,7 +15,7 @@
 {{ HTML::style('js/jquery-ui/jquery-ui.css') }}
 <script>
  $(function() {
-    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "mm-dd-yy" });
   });
 </script>
 <!-- if there are creation errors, they will show here -->

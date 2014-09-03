@@ -16,7 +16,7 @@
 {{ HTML::style('js/jquery-ui/jquery-ui.css') }}
 <script> 
     $(function() {
-    $( "#date" ).datepicker({dateFormat: "yy-mm-dd" });
+    $( "#date" ).datepicker({dateFormat: "mm-dd-yy" });
   });
   </script>
 <!-- if there are creation errors, they will show here -->

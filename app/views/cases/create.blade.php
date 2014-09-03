@@ -16,13 +16,13 @@
 {{ HTML::style('js/jquery-ui/jquery-ui.css') }}
 <script> 
     $(function() {
-    $( "#caseOpened" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+    $( "#caseOpened" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "mm-dd-yy" });
   });
   $(function() {
-    $( "#abuseDate" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+    $( "#abuseDate" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "mm-dd-yy" });
   });
   $(function() {
-    $( "#reportedDate" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+    $( "#reportedDate" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "mm-dd-yy" });
   });
   
  </script>
@@ -136,7 +136,7 @@
 
     <div id="pad" class="col-md-6">
         <div>
-            {{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuses.') }}
+            {{ Form::label('talkedToChild', 'Who has the child spoken with regarding the abuse.') }}
             <br>
             {{ Form::textarea('talkedToChild', Input::old('talkedToChild'), array('class' => 'form-control')) }}
         </div>

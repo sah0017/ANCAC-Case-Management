@@ -18,7 +18,7 @@ class CaseSession extends \Eloquent {
         }
         
         public function notes() {
-            return $this->hasMany('Note');
+            return $this->hasMany('SessionNote','session_id');
         }
         
         

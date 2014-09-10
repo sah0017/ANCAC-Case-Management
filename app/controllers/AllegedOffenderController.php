@@ -120,7 +120,7 @@ class AllegedOffenderController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully deleted the allegedOffender entry!');
-		return Redirect::to('allegedOffenders');
+		return Redirect::back();
 	}
 
 }

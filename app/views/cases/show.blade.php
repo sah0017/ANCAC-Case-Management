@@ -47,7 +47,12 @@
 
                                         <!-- we will also add show, edit, and delete buttons -->
                                         <td>
-
+                                            <!-- delete the child (uses the destroy method DESTROY /children/{id} -->
+                                            <!-- we will add this later since its a little more complicated than the first two buttons -->
+                                            {{ Form::open(array('url' => 'allegedOffenders/'. $value->id)) }}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            {{ Form::submit('X', array('class' => 'btn btn-warning')) }}
+                                            {{ Form::close() }}
                                            
                                         </td>
                                     </tr>

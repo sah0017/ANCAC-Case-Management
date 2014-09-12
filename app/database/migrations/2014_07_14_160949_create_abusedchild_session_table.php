@@ -17,6 +17,7 @@ class CreateAbusedchildSessionTable extends Migration {
 			$table->increments('id');
 			$table->integer('abusedchild_id')->unsigned()->index();
 			$table->integer('session_id')->unsigned()->index();
+                        $table->integer('case_id')->unsigned()->index();
 			$table->timestamps();
 		});
 	}

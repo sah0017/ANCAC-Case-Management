@@ -3,7 +3,6 @@
 @section('nav')
 <li><a href="{{{ URL::to('cases') }}}">Cases</a></li>
 <li><a href="{{{ URL::to('users') }}}">Users</a></li>
-<li><a href="{{{ URL::to('admin') }}}">Admin only page</a></li>
 @stop
 
 @section('title')

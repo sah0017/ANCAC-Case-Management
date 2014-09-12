@@ -10,6 +10,14 @@ class RelativeTypeTableSeeder extends Seeder {
             'type' => 'sisters sons uncles fiends brothers fathers third uncle twice removed',
             'center_id' => 99
         ));
+        RelationType::create(array(
+            'type' => 'father',
+            'center_id' => 99
+        ));     
+        RelationType::create(array(
+            'type' => 'mother',
+            'center_id' => 99
+        ));
        
     }
 }

@@ -31,15 +31,15 @@ class CreatePersonsTable extends Migration {
 			$table->boolean('fullTime')->nullable();
 			$table->boolean('activeMilitary')->nullable();
 			$table->boolean('sexAbuseSurvivor')->nullable();
-			$table->string('originCountry')->nullable();
+			$table->integer('originCountry')->default(1);
 			$table->string('specialNeeds')->nullable();
 			$table->string('language')->nullable();
 			$table->enum('maritalStatus',array('married','single','divorced'))->nullable();
                         $table->string('cellPhone')->nullable();
                         $table->string('workPhone')->nullable();
 			$table->integer('address_id')->unsigned()->default(1);
-                        $table->integer('household_id')->unsigned()->nullable();
-			$table->integer('ethnicity_id')->unsigned()->nullable();
+                        $table->integer('household_id')->unsigned()->default(1);
+			$table->integer('ethnicity_id')->unsigned()->default(1);
                         $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});

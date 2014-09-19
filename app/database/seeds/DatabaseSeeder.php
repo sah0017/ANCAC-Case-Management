@@ -15,8 +15,7 @@ class DatabaseSeeder extends Seeder {
                 $this->call('UserTableSeeder');
                 $this->call('AbuseTypeTableSeeder');
                 $this->call('WorkerTypeTableSeeder');
-                $this->call('WorkerTableSeeder');
-                $this->call('CountyTableSeeder');
+                $this->call('WorkerTableSeeder'); 
                 $this->call('CountryTableSeeder');
                 $this->call('CaseTableSeeder');
                 $this->call('ChildTableSeeder');
@@ -27,6 +26,7 @@ class DatabaseSeeder extends Seeder {
                 $this->call('WorkingSchoolTableSeeder');
                 $this->call('EthnicityTableSeeder');
                 $this->call('ServiceTypeTableSeeder');
+                $this->call('CountyTableSeeder');
 
 	}
 

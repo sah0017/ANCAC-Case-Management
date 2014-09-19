@@ -59,7 +59,19 @@
             {{ Form::checkbox('sameHouse', '1', Input::old('sameHouse')) }}
             <b>Do they belong to the same house?</b>
         </label>
-    </div> 
+    </div>
+    
+        @if( isset($case_id) )
+ 
+    <div class="checkbox">
+        <label>
+            {{ Form::checkbox('allegedOffender', '1', Input::old('allegedOffender')) }}
+            <b>Is this person an alleged offender in this case?</b>
+             {{ Form::hidden('case_id', $case_id) }}
+             {{ Form::hidden('county_id', $county_id) }}
+        </label> 
+    </div> 	
+         @endif
         
 </div>
 <br>

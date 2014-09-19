@@ -193,4 +193,5 @@ Route::get('session/{id}/sessionNotes/create', function($id) {
 		return View::make('sessionNotes.create')
                         ->with('session', $id);
 });
+
 });//end of users

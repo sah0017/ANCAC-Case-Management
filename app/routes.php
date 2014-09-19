@@ -118,6 +118,16 @@ Route::get('cases/{id}/child/relations/create', function($id) {
                         ->with(array('id' => $child_id, 'case_id' => $id, 'county_id' => $county_id));
 });
 
+Route::get('cases/{id}/child/relations/{realtion_id}/edit',function($id, $relation_id){
+    $person = Relationship::find($relation_id);
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+    $county_id = TrackedCase::find($id)->county_id;
+    Session::put('from','cases/'.$id);
+		return View::make('relatives.edit')
+                        ->with(array('id' => $child_id, 'case_id' => $id, 
+                            'county_id' => $county_id, 'relative'=>$person));
+   
+});
 
 Route::post('people/search', 'PersonController@search');
 Route::post('people/searchOutside', 'PersonController@searchOutside');
@@ -165,12 +175,7 @@ Route::get('cases/{id}/child/relations/{realtion_id}/person/edit',function($id, 
     
 });
 
-Route::get('cases/{id}/child/relations/{realtion_id}/edit',function($id, $relation_id){
-    $person = Relationship::find($relation_id);
-    Session::put('from','cases/'.$id);
-           return View::make('relatives.edit')
-                   ->with('relative',$person);
-});
+
 
 Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id){
     $person = Relationship::find($relation_id);

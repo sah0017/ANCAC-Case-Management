@@ -197,10 +197,10 @@ Route::get('session/{id}/sessionNotes/create', function($id) {
 Route::resource('allegedOffenders','allegedOffenderController');
 
 Route::get('cases/{id}/allegedOffenders/create', function($id) {
-    $allegedOffenders = TrackedCase::find($id)->allegedOffenders;
+    $allegedOffender = TrackedCase::find($id)->allegedOffender;
     Session::put('from','cases/'.$id);
     return View::make('allegedOffenders.create')
-                    ->with('allegedOffenders', $allegedOffenders);
+                    ->with('allegedOffender', $allegedOffender);
 });
 
 });//end of users

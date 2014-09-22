@@ -118,7 +118,7 @@ function clearForm(){
 <button onclick="clearForm()" class="btn btn-default">Clear Form</button><br>
 
 
-{{ Form::open(array('url' => 'relatives', 'id' => 'form')) }}
+{{ Form::open(array('url' => 'allegedOffenders', 'id' => 'form')) }}
 <div class="form-inline"> 
         @if (intval($id) > 0)
            {{ Form::hidden('abusedChild_id',$id,array('id' => 'abusedChild_id')) }}

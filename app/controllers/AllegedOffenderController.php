@@ -46,6 +46,32 @@ class AllegedOffenderController extends \BaseController {
                         $allegedOffender->center_id         = Auth::User()->center_id;
 			$allegedOffender->save();
 
+
+			$allegedOffender->abusedChild_id    = Input::get('abusedChild_id');
+                        if (intval(Input::get('person_id')) == 0){
+                            $person = new Person;
+                            $person->first = Input::get('first');
+                            $person->middle = Input::get('middle');
+                            $person->last = Input::get('last');
+                            $person->dob = Input::get('dob');
+                            $person->gender = Input::get('gender');
+                            $person->save();
+                            $allegedOffender->person_id = $person->id;
+                        }else {
+                            $allegedOffender->person_id = Input::get('person_id');
+                        }
+			$relative->relationType_id   = Input::get('relationType_id');
+			$relative->custodian         = Input::get('custodian',false);
+                        $relative->sameHouse         = Input::get('sameHouse',false);
+                        $relative->alias             = Input::get('alias');
+                        $relative->center_id         = Auth::User()->center_id;
+			$relative->save();
+                        
+                       $allegedOffender->relative_id = $relitive->id;
+                        if ($allegedOffender->sameHouse){
+                            $person->household_id = $allegedOffender->child->personalInfo->household_id;
+                            $person->save();
+                        }
 			// redirect
 			Session::flash('message', 'Successfully stored alleged offender info!');
 			return Redirect::to('allegedOffenders');

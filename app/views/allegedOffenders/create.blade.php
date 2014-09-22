@@ -10,7 +10,7 @@
 <style>
     #pad{padding: 8px}
 </style>
-<h1>Create a Relation</h1>
+<h1>Create a Offender</h1>
 {{ HTML::script('js/jquery-ui/jquery-ui.js') }}
 {{ HTML::style('js/jquery-ui/jquery-ui.css') }}
 <script>
@@ -120,14 +120,12 @@ function clearForm(){
 
 {{ Form::open(array('url' => 'allegedOffenders', 'id' => 'form')) }}
 <div class="form-inline"> 
-        @if (intval($id) > 0)
-           {{ Form::hidden('abusedChild_id',$id,array('id' => 'abusedChild_id')) }}
-        @else
+       
            <div class="form-group">
 		{{ Form::label('abusedChild_id', 'Abused Child') }}
 		{{ Form::select('abusedChild_id', AbusedChild::where('center_id', Auth::User()->center_id)->lists('id','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
 	</div>
-        @endif
+      
 	
        
         <div id="pad" class="form-group">

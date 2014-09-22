@@ -61,7 +61,7 @@
                             </table>
                         </div>
                         <div class="panel-footer">
-                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id .'/allegedOffenders/create') }}">Create</a>                                
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/allegedOffenders/create') }}">Create</a>                                
                         </div> 
                         </div>
                         

@@ -120,12 +120,14 @@ function clearForm(){
 
 {{ Form::open(array('url' => 'allegedOffenders', 'id' => 'form')) }}
 <div class="form-inline"> 
-       
+        @if (intval($id) > 0)
+           {{ Form::hidden('abusedChild_id',$id,array('id' => 'abusedChild_id')) }}
+        @else
            <div class="form-group">
 		{{ Form::label('abusedChild_id', 'Abused Child') }}
 		{{ Form::select('abusedChild_id', AbusedChild::where('center_id', Auth::User()->center_id)->lists('id','id'),Input::old('abusedChild_id'), array('class' => 'form-control')) }}
 	</div>
-      
+      @endif
 	
        
         <div id="pad" class="form-group">
@@ -194,7 +196,8 @@ function clearForm(){
         </label>
     </div> 
         
-       
+             {{ Form::hidden('case_id', $case_id) }}
+             {{ Form::hidden('county_id', $county_id) }}
 </div>
 <br>
 

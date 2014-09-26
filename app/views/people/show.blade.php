@@ -8,7 +8,7 @@
 @section('content')
 
 <h1>Showing: {{ $person->name }}</h1><a class="btn btn-small btn-info" href="{{$_SERVER['REQUEST_URI']}}/edit">Edit</a> 
-
+<a class="btn btn-small btn-success" href="../../..">Back to Dashboard</a>
 	<div class="jumbotron text-left">
 		<p>
 			

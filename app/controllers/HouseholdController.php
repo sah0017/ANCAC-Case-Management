@@ -108,7 +108,7 @@ class HouseholdController extends \BaseController {
                 
                 // redirect
 			Session::flash('message', 'Successfully updated household info!');
-			return Redirect::to('households');
+			return Redirect::to(Session::get('from'));
 	}
 
 	/**

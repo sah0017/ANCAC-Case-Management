@@ -22,7 +22,7 @@
                                 Admin
                             @endif
                         <br>
-                        <strong>Center:</strong> {{ $user->center_id }}<br>
+                        <strong>Center:</strong> {{ $user->center->CenterName }}<br>
 			
 
 		</p>

@@ -30,7 +30,7 @@
 		<tr>
 			<td>{{ $value->id }}</td>
                         @if (Auth::User()->center_id == 99)
-                        <td>{{ $value->center_id }}</td>
+                        <td>{{ $value->center->CenterName }}</td>
                         @endif
                         <td>
                             @if ($value->level == 1)

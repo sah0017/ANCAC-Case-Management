@@ -42,10 +42,10 @@
 			<td>
 				
 				<!-- show the session (uses the show method found at GET /session/{id} -->
-                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $case . '/child/session/show') }}">Show</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $case . '/child/session/'.$value->id.'/show') }}">Show</a>
 
 				<!-- edit this session (uses the edit method found at GET /session/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('session/' . $value->id . '/edit') }}">Edit</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case . '/child/session/'.$value->id.'/edit') }}">Edit</a>
                                 
                                 <!-- create this session notes (uses the create method found at GET /sessionNotes/{id}/create -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('session/'. $value->id .'/sessionNotes/create') }}">Create a Session Note</a>

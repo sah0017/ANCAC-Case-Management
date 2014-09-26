@@ -34,7 +34,7 @@ Route::group(array('before' => 'auth'), function()
 
     });
 
-
+//<editor-fold desc="resorce routs">
 Route::resource('abuseTypes', 'AbuseTypeController');
 
 Route::resource('cases', 'CaseController');
@@ -53,6 +53,28 @@ Route::resource('session', 'SessionController');
 
 Route::resource('sessionNotes', 'SessionNotesController');
 
+Route::resource('workerType', 'WorkerTypeController');
+
+Route::resource('relativeType', 'RelativeTypeController');
+
+Route::resource('ethnicity', 'EthnicityController');
+
+Route::resource('allegedOffenders', 'AllegedOffenderController');
+
+Route::resource('county', 'CountyController');
+
+Route::resource('households','HouseholdController');
+
+Route::resource('DHRCases', 'DHRCasesController');
+
+Route::resource('school', 'SchoolController');
+
+Route::resource('countryOrigen', 'CountryOrigenController');
+
+Route::resource('sessionNotes', 'SessionNotesController');
+
+Route::resource('allegedOffenders','allegedOffenderController');
+//</editor-fold>
 Route::get('cases/{id}/child', function($id) {
     $child = TrackedCase::find($id)->abusedChild;
     return View::make('children.show')
@@ -66,17 +88,7 @@ Route::get('cases/{id}/child/edit', function($id) {
                     ->with('child', $child);
 });
 
-Route::resource('workerType', 'WorkerTypeController');
 
-Route::resource('relativeType', 'RelativeTypeController');
-
-Route::resource('ethnicity', 'EthnicityController');
-
-Route::resource('allegedOffenders', 'AllegedOffenderController');
-
-Route::resource('county', 'CountyController');
-
-Route::resource('households','HouseholdController');
 
 Route::get('cases/{id}/allegedOffenders', function($id) {
     $allegedOffender = TrackedCase::find($id)->allegedOffenders;
@@ -135,7 +147,7 @@ Route::post('people/searchOutside', 'PersonController@searchOutside');
 Route::post('address/search', 'AddressController@search');
 
 
-Route::resource('DHRCases', 'DHRCasesController');
+
 
 Route::get('cases/{id}/child/session', function($id) {
     $session = TrackedCase::find($id)->abusedChild->sessions;
@@ -148,11 +160,20 @@ Route::get('cases/{id}/child/session/create', function($id) {
     Session::put('from','cases/'.$id);
 		return View::make('session.create')->with('child_id', $child_id);
 });
-Route::get('cases/{id}/child/session/show', function($id) {
+Route::get('cases/{id}/child/session/{session_id}/show', function($id,$session_id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
+    $sessionid = CaseSession::find($session_id);
     Session::put('from','cases/'.$id);
 		return View::make('session.show')
-                        ->with(array('child_id'=> $child_id,'session'=>$id));
+                        ->with(array('child_id'=> $child_id,'case'=>$id,'session'=>$sessionid));
+});
+
+Route::get('cases/{id}/child/session/{session_id}/edit', function($id,$session_id) {
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+    $sessionid = CaseSession::find($session_id);
+    Session::put('from','cases/'.$id);
+		return View::make('session.edit')
+                        ->with(array('child_id'=> $child_id,'case'=>$id,'session'=>$sessionid));
 });
 
 Route::get('cases/{id}/child/household', function($id) {
@@ -163,6 +184,7 @@ Route::get('cases/{id}/child/household', function($id) {
 
 Route::get('cases/{id}/child/household/edit', function($id) {
     $house = TrackedCase::find($id)->abusedChild->personalInfo->household;
+    Session::put('from','cases/'.$id.'/child/houshold');
     return View::make('households.edit')
                     ->with('household', $house);
 });
@@ -188,9 +210,7 @@ Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id
                    ->with('relative',$person);
 });
 
-Route::resource('school', 'SchoolController');
-Route::resource('countryOrigen', 'CountryOrigenController');
-Route::resource('sessionNotes', 'SessionNotesController');
+
 
 Route::get('session/{id}/sessionNotes/create', function($id) {
     Session::put('from','session/'.$id);
@@ -205,7 +225,7 @@ Route::get('session/{id}/sessionNotes/{note_id}/edit', function($id,$note_id) {
 });
 
 
-Route::resource('allegedOffenders','allegedOffenderController');
+
 
 Route::get('cases/{id}/child/allegedOffenders/create', function($id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;

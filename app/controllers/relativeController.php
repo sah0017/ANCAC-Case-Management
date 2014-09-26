@@ -155,7 +155,7 @@ class relativeController extends \BaseController {
                         }
 			// redirect
 			Session::flash('message', 'Successfully updated Relationship info!');
-			return Redirect::to('relatives');
+			return Redirect::to(Session::get('from'));
 	}
 
 	/**

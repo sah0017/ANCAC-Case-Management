@@ -109,7 +109,7 @@ class SessionController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully updated session info!');
-		return Redirect::to('session');
+		return Redirect::to(Session::get('from'));
 	}
 
 	/**

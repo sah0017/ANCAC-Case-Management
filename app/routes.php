@@ -77,7 +77,7 @@ Route::get('cases/{id}/child', function($id) {
 
 Route::get('cases/{id}/child/edit', function($id) {
     $child = TrackedCase::find($id)->abusedChild;
-    Session::put('from','cases/'.$id);
+    Session::put('from','cases/'.$id.'/child');
     return View::make('children.edit')
                     ->with('child', $child);
 });
@@ -173,7 +173,7 @@ Route::get('cases/{id}/child/session/{session_id}/show', function($id,$session_i
 Route::get('cases/{id}/child/session/{session_id}/edit', function($id,$session_id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
     $sessionid = CaseSession::find($session_id);
-    Session::put('from','cases/'.$id);
+    Session::put('from','cases/'.$id.'/child/session');
 		return View::make('session.edit')
                         ->with(array('child_id'=> $child_id,'case'=>$id,'session'=>$sessionid));
 });
@@ -213,15 +213,14 @@ Route::get('cases/{id}/child/relations/{realtion_id}/person/edit',function($id, 
 //<editor-fold desc="Session Notes routs">
 Route::get('cases/{id}/child/session/{session_id}/sessionNotes/create', function($id,$session_id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
-    $sessionid = CaseSession::find($session_id);
-    Session::put('from','session/'.$id);
+    Session::put('from','cases/'.$id.'/child/session/'.$session_id.'/show');
 		return View::make('sessionNotes.create')
-                        ->with(array('child_id'=> $child_id,'case'=>$id,'session'=>$sessionid));
+                        ->with(array('child_id'=> $child_id,'case'=>$id,'session'=>$session_id));
 });
 Route::get('cases/{id}/child/session/{session_id}/sessionNotes/{note_id}/edit', function($id,$session_id,$note_id) { 
     $child_id = TrackedCase::find($id)->abusedChild_id;
     $sessionid = CaseSession::find($session_id);
-    Session::put('from','session/'.$id);
+    Session::put('from','cases/'.$id.'/child/session/'.$session_id.'/show');
     $note = SessionNote::find($note_id);
 		return View::make('sessionNotes.edit')
                         ->with(array('child_id'=> $child_id,'case'=>$id,'session'=>$sessionid, 'sessionNotes'=>$note));

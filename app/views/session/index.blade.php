@@ -48,7 +48,7 @@
 				<a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case . '/child/session/'.$value->id.'/edit') }}">Edit</a>
                                 
                                 <!-- create this session notes (uses the create method found at GET /sessionNotes/{id}/create -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('session/'. $value->id .'/sessionNotes/create') }}">Create a Session Note</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case . '/child/session/'.$value->id.'/sessionNotes/create') }}">Create a Session Note</a>
 
 			</td>
 		</tr>

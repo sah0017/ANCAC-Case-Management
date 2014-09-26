@@ -24,7 +24,7 @@ article{font-size:21px}
                         <strong>Notes:</strong><br>
                         @foreach($session->notes as $key => $value)
                         <strong>Worker: </strong>{{$value->worker->name}}
-                        <a class="btn btn-small btn-info" href="{{ URL::to('session/'. $session->id .'/sessionNotes/'. $value->id .'/edit') }}">Edit</a> 
+                        <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case . '/child/session/'.$session->id.'/sessionNotes/'. $value->id .'/edit') }}">Edit</a> 
                         {{ Form::open(array('url' => 'sessionNotes/' . $value->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('X', array('class' => 'btn btn-warning')) }}

@@ -127,8 +127,7 @@
 
     <div id="pad" class="form-group">
         {{ Form::label('status', 'Status') }}
-        {{ Form::select('status', array('0' => 'Select Status', '1' => 'Open',
-                            '2' => 'Closed'), 
+        {{ Form::select('status', array('1' => 'Open', '2' => 'Closed'), 
                     Input::old('status'), array('class' => 'form-control')) }}
     </div>
 

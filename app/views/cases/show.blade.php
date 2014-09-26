@@ -60,8 +60,11 @@
                                 </tbody>
                             </table>
                         </div>
-                            
+                        <div class="panel-footer">
+                                <a class="btn btn-small btn-info" href="{{ URL::to('cases/' . $case->id . '/child/allegedOffenders/create') }}">Create</a>                                
+                        </div> 
                         </div>
+                        
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-tittel">Abuses</h4>

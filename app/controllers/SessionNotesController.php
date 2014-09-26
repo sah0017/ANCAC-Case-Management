@@ -88,14 +88,14 @@ class SessionNotesController extends \BaseController {
 	public function update($id)
 	{
                         $sessionNotes = SessionNote::find($id);
-			$sessionNotes->id                  = Input::get('id');
+			//$sessionNotes->id                  = Input::get('id');
 			$sessionNotes->note                = Input::get('note');
                         $sessionNotes->worker_id           = Input::get('worker_id');
-                        $sessionNotes->session_id           = Input::get('session_id');
+                        //$sessionNotes->session_id           = Input::get('session_id');
 			$sessionNotes->save();
 			// redirect
 			Session::flash('message', 'Successfully stored session note info!');
-			return Redirect::to('sessionNotes');
+			return Redirect::to(Session::get('from'));
 	}
 
 	/**
@@ -113,7 +113,7 @@ class SessionNotesController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully deleted the session note entry!');
-		return Redirect::to('sessionNotes');
+		return Redirect::back();
 	}
 
 }

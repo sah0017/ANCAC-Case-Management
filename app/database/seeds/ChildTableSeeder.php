@@ -11,6 +11,11 @@ class ChildTableSeeder extends Seeder {
             'person_id'=>'1'
             
         ));
+        AbusedChild::create(array(
+            'id' => '2',
+            'person_id'=>'2'
+            
+        ));
        
     }
 }

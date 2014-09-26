@@ -118,6 +118,16 @@ Route::get('cases/{id}/child/relations/create', function($id) {
                         ->with(array('id' => $child_id, 'case_id' => $id, 'county_id' => $county_id));
 });
 
+Route::get('cases/{id}/child/relations/{realtion_id}/edit',function($id, $relation_id){
+    $person = Relationship::find($relation_id);
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+    $county_id = TrackedCase::find($id)->county_id;
+    Session::put('from','cases/'.$id);
+		return View::make('relatives.edit')
+                        ->with(array('id' => $child_id, 'case_id' => $id, 
+                            'county_id' => $county_id, 'relative'=>$person));
+   
+});
 
 Route::post('people/search', 'PersonController@search');
 Route::post('people/searchOutside', 'PersonController@searchOutside');
@@ -130,13 +140,19 @@ Route::resource('DHRCases', 'DHRCasesController');
 Route::get('cases/{id}/child/session', function($id) {
     $session = TrackedCase::find($id)->abusedChild->sessions;
     return View::make('session.index')
-                    ->with('session', $session);
+                    ->with(array('session'=> $session,'case'=>$id));
 });
 
 Route::get('cases/{id}/child/session/create', function($id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
     Session::put('from','cases/'.$id);
 		return View::make('session.create')->with('child_id', $child_id);
+});
+Route::get('cases/{id}/child/session/show', function($id) {
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+    Session::put('from','cases/'.$id);
+		return View::make('session.show')
+                        ->with(array('child_id'=> $child_id,'session'=>$id));
 });
 
 Route::get('cases/{id}/child/household', function($id) {
@@ -165,13 +181,6 @@ Route::get('cases/{id}/child/relations/{realtion_id}/person/edit',function($id, 
     
 });
 
-Route::get('cases/{id}/child/relations/{realtion_id}/edit',function($id, $relation_id){
-    $person = Relationship::find($relation_id);
-    Session::put('from','cases/'.$id);
-           return View::make('relatives.edit')
-                   ->with('relative',$person);
-});
-
 Route::get('cases/{id}/child/relations/{realtion_id}',function($id, $relation_id){
     $person = Relationship::find($relation_id);
     Session::put('from','cases/'.$id);
@@ -188,4 +197,22 @@ Route::get('session/{id}/sessionNotes/create', function($id) {
 		return View::make('sessionNotes.create')
                         ->with('session', $id);
 });
+Route::get('session/{id}/sessionNotes/{note_id}/edit', function($id,$note_id) { 
+    Session::put('from','session/'.$id);
+    $note = SessionNote::find($note_id);
+		return View::make('sessionNotes.edit')
+                        ->with(array('session'=> $id, 'sessionNotes'=>$note));
+});
+
+
+Route::resource('allegedOffenders','allegedOffenderController');
+
+Route::get('cases/{id}/child/allegedOffenders/create', function($id) {
+    $child_id = TrackedCase::find($id)->abusedChild_id;
+    $county_id = TrackedCase::find($id)->county_id;
+    Session::put('from','cases/'.$id);
+		return View::make('allegedOffenders.create')
+                        ->with(array('id' => $child_id, 'case_id' => $id, 'county_id' => $county_id));
+});
+
 });//end of users

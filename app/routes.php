@@ -36,45 +36,28 @@ Route::group(array('before' => 'auth'), function()
 
 //<editor-fold desc="resorce routs">
 Route::resource('abuseTypes', 'AbuseTypeController');
-
 Route::resource('cases', 'CaseController');
-
 Route::resource('children', 'AbusedChildController');
-
 Route::resource('relatives', 'relativeController');
-
 Route::resource('people', 'PersonController');
-
 Route::resource('workers', 'WorkersController');
-
 Route::resource('serviceType', 'ServiceTypeController');
-
 Route::resource('session', 'SessionController');
-
 Route::resource('sessionNotes', 'SessionNotesController');
-
 Route::resource('workerType', 'WorkerTypeController');
-
 Route::resource('relativeType', 'RelativeTypeController');
-
 Route::resource('ethnicity', 'EthnicityController');
-
 Route::resource('allegedOffenders', 'AllegedOffenderController');
-
 Route::resource('county', 'CountyController');
-
 Route::resource('households','HouseholdController');
-
 Route::resource('DHRCases', 'DHRCasesController');
-
 Route::resource('school', 'SchoolController');
-
 Route::resource('countryOrigen', 'CountryOrigenController');
-
 Route::resource('sessionNotes', 'SessionNotesController');
-
 Route::resource('allegedOffenders','allegedOffenderController');
 //</editor-fold>
+
+//<editor-fold desc="">
 Route::get('cases/{id}/child', function($id) {
     $child = TrackedCase::find($id)->abusedChild;
     return View::make('children.show')
@@ -184,7 +167,7 @@ Route::get('cases/{id}/child/household', function($id) {
 
 Route::get('cases/{id}/child/household/edit', function($id) {
     $house = TrackedCase::find($id)->abusedChild->personalInfo->household;
-    Session::put('from','cases/'.$id.'/child/houshold');
+    Session::put('from','cases/'.$id.'/child/household');
     return View::make('households.edit')
                     ->with('household', $house);
 });

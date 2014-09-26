@@ -216,7 +216,7 @@ $(function() {
 
         <div id="pad" class="form-group">
 		{{ Form::label('county_id', 'County') }}
-		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
+		{{ Form::select('county_id', County::all()->lists('name','id'), $child->personalInfo->address->county_id, array('class' => 'form-control')) }}
 	</div>
         
         <br>

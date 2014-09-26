@@ -19,7 +19,12 @@
                         <strong>Gender:</strong> {{ $child->personalInfo->gender }}<br>
                         <strong>Ethnicity:</strong> {{ $child->personalInfo->ethnicity->ethnicity }}<br>
                         <strong>Language:</strong> {{ $child->personalInfo->language }}<br>
-			<strong>Parental History:</strong> {{ $child->parentalHistory }}<br>
+			<strong>Origin Country:</strong> {{ $child->personalInfo->country->name }}<br>
+                        <strong>School:</strong> {{ $child->school1->name }}<br>
+                        <strong>School Grade:</strong> {{ $child->schoolGrade }}<br>
+                        <strong>Special Needs:</strong> {{$child->personalInfo->specialNeeds}}<br>
+                        <strong>Home Phone:</strong> {{ $child->personalInfo->address->phone }}<br>
+                        <strong>Parental History:</strong> {{ $child->parentalHistory }}<br>
                         <strong>Parent Status:</strong> {{ $child->parentStatus }}<br>
                         <strong>Medical Location:</strong> {{ $child->medicalLocation }}<br>
                         <strong>Medical Completed:</strong>
@@ -29,11 +34,9 @@
                          no
                         @endif
                         <br>
-			<strong>School Grade:</strong> {{ $child->schoolGrade }}<br>
-			<strong>School:</strong> {{ $child->school1->name }}<br>
-                        <strong>Origin Country:</strong> {{ $child->personalInfo->country->name }}<br>
-                        <strong>Special Needs:</strong> {{$child->personalInfo->specialNeeds}}<br>
-                        <strong>Address:</strong> {{ $child->personalInfo->address->line1 }}<br>
+                        
+                        <strong>Address:</strong><br>
+                        {{ $child->personalInfo->address->line1 }}<br>
                         {{$child->personalInfo->address->line2 }}<br>
                         {{$child->personalInfo->address->city }}<br>
                         {{$child->personalInfo->address->state }}<br>

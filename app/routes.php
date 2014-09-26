@@ -135,7 +135,7 @@ Route::get('cases/{id}/child/relations/{realtion_id}/edit',function($id, $relati
     $person = Relationship::find($relation_id);
     $child_id = TrackedCase::find($id)->abusedChild_id;
     $county_id = TrackedCase::find($id)->county_id;
-    Session::put('from','cases/'.$id);
+    Session::put('from','cases/'.$id.'/child/relations/'.$relation_id);
 		return View::make('relatives.edit')
                         ->with(array('id' => $child_id, 'case_id' => $id, 
                             'county_id' => $county_id, 'relative'=>$person));

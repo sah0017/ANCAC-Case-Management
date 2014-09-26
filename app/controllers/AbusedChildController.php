@@ -149,7 +149,7 @@ class AbusedChildController extends \BaseController {
                         $person->specialNeeds = Input::get('specialNeeds');
                         $person->language = Input::get('language');
                         $person->maritalStatus = Input::get('maritalStatus','single');
-                        $person->household_id = Input::get('household_id');
+                        //$person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
                         if( Input::get('address_id') == 1 && Input::get('address1') != 'unknown'){
                             $address = new Address;

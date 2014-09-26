@@ -28,20 +28,7 @@
 			<strong>School Grade:</strong> {{ $child->schoolGrade }}<br>
 			<strong>School:</strong> {{ $child->school1->name }}<br>
                         <strong>Origin Country:</strong> {{ $child->personalInfo->country->name }}<br>
-                        <strong>Special Needs:</strong>
-                        @if ($child->personalInfo->specialNeeds)
-                         yes
-                        @else
-                         no
-                        @endif
-                        <br>
-                        <strong>Disability:</strong>
-                        @if ($child->personalInfo->disability)
-                         yes
-                        @else
-                         no
-                        @endif
-                        <br>
+                        <strong>Special Needs:</strong> {{$child->personalInfo->specialNeeds}}<br>
 			<strong>Language:</strong> {{ $child->personalInfo->language }}<br>
                         <strong>Address:</strong> {{ $child->personalInfo->address->line1 }}<br>
                         {{$child->personalInfo->address->line2 }}<br>

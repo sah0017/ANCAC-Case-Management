@@ -160,7 +160,7 @@ Route::get('cases/{id}/child/session', function($id) {
 Route::get('cases/{id}/child/session/create', function($id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
     Session::put('from','cases/'.$id);
-		return View::make('session.create')->with('child_id', $child_id);
+		return View::make('session.create')->with(array('child_id'=>$child_id,'cases'=>id));
 });
 Route::get('cases/{id}/child/session/{session_id}/show', function($id,$session_id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
@@ -229,3 +229,5 @@ Route::get('cases/{id}/child/session/{session_id}/sessionNotes/{note_id}/edit', 
 //</editor-fold>
 
 });//end of users
+
+

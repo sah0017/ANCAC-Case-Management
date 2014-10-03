@@ -28,6 +28,7 @@
 
 
 <div class="form-inline">
+                {{ Form::hidden('case_id',$case_id) }}
 	<div id="pad" class="form-group">
 		{{ Form::label('serviceType_id', 'Service Type','autofocus') }}
 		{{ Form::select('serviceType_id', ServiceType::where('center_id', Auth::User()->center_id)->orWhere('center_id', 99)->lists('type','id'), Input::old('serviceType_id'), array('class' => 'form-control')) }}

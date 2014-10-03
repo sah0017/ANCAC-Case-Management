@@ -21,5 +21,8 @@ class TrackedCase extends \Eloquent {
         public function abuses(){
             return $this->belongsToMany('AbuseType','abuses','case_id','abuseType_id');
         }
+         public function sessions(){
+            return $this->belongsToMany('CaseSession','abusedChild_session','case_id','session_id');
+        }
 
 }

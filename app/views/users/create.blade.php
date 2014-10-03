@@ -29,8 +29,8 @@
 
         @if (Auth::User()->center_id == 99)
             <div class="form-group">
-                    {{ Form::label('center_id', 'center_id') }}
-                    {{ Form::text('center_id', Input::old('center_id'), array('class' => 'form-control')) }}
+                    {{ Form::label('center_id', 'Center') }}
+                    {{ Form::select('center_id', Center::where('center','>',0)->lists('CenterName','center'),Input::old('center_id'), array('class' => 'form-control')) }}
             </div>
         @else
             {{ Form::hidden('center_id', Auth::User()->center_id) }}

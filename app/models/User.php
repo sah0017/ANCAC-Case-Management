@@ -52,5 +52,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
        {
            return $this->email;
        }
+       
+       public function center() {
+           return $this->belongsTo('Center','center_id','center');
+       }
 
 }

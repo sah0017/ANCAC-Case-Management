@@ -147,12 +147,15 @@ class relativeController extends \BaseController {
                             $allegedOffender->save();
                             }
                         }else{
-                            AllegedOffender::where("person_id",$relative->person_id)->
-                                    where("case_id",Input::get("case_id"))->firstOrFail()->delete();
+                            $offender = AllegedOffender::where("person_id",$relative->person_id)->
+                                    where("case_id",Input::get("case_id"))->get();
+                            if(!$offender->isEmpty()){
+                                $offender->first()->delete();
+                            }
                         }
 			// redirect
 			Session::flash('message', 'Successfully updated Relationship info!');
-			return Redirect::to('relatives');
+			return Redirect::to(Session::get('from'));
 	}
 
 	/**

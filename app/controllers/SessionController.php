@@ -98,7 +98,6 @@ class SessionController extends \BaseController {
 	public function update($id)
 	{
 		$session = CaseSession::find($id);
-                $session->id                 =Input::get('id');
                 $session->serviceType_id     =Input::get('serviceType_id');
 		$session->date               =Input::get('date');
                 $session->timeStart         =Input::get('timeStart');
@@ -110,7 +109,7 @@ class SessionController extends \BaseController {
 
 		// redirect
 		Session::flash('message', 'Successfully updated session info!');
-		return Redirect::to('session');
+		return Redirect::to(Session::get('from'));
 	}
 
 	/**

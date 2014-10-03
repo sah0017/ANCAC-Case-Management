@@ -149,9 +149,14 @@ class AbusedChildController extends \BaseController {
                         $person->specialNeeds = Input::get('specialNeeds');
                         $person->language = Input::get('language');
                         $person->maritalStatus = Input::get('maritalStatus','single');
-                        $person->household_id = Input::get('household_id');
+                        //$person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
-                        if( Input::get('address_id') == 1 && Input::get('address1') != 'unknown'){
+                        if( Input::get('address_id')==0 && $person->address->line1 != 'unknown'){
+                            $address = $person->address;
+                            $address->phone = Input::get('phone');
+                            $address->county_id   = Input::get('county_id');
+                            $address->save();
+                        } elseif( Input::get('address_id') == 1 && Input::get('address1') != 'unknown'){
                             $address = new Address;
                             $address->line1               = Input::get('address1');
                             $address->line2               = Input::get('address2');
@@ -159,6 +164,7 @@ class AbusedChildController extends \BaseController {
                             $address->state               = Input::get('state');
                             $address->zip                 = Input::get('zip');
                             $address->county_id           = Input::get('county_id');
+                            $address->phone = Input::get('phone');
                             $address->save();
                             $person->address_id           = $address->id;
                         } elseif( Input::get('address_id') != 1 ){
@@ -172,6 +178,7 @@ class AbusedChildController extends \BaseController {
 			$child->person_id        = $person->id;
 			$child->parentalHistory  = Input::get('parentalHistory');
 			$child->parentStatus     = Input::get('parentStatus');
+                        $child->medicalLocation  = Input::get('medicalLocation');
                         $child->medicalCompleted = Input::get('medicalCompleted');
                         $child->schoolGrade      = Input::get('schoolGrade');
                         $child->school           = Input::get('school');

@@ -46,6 +46,7 @@ $(document).ready(function(){
                         results += '<td><button value='+i+' type="button" onclick="use('+i+')" class="btn btn-default">Use</button></td></tr>';
                     }
                     $('#addresses').append(results+'</table>');
+                    document.getElementById("address_id").value=1;
                 }
             }
         });
@@ -138,12 +139,12 @@ $(function() {
     
         <div id="pad" class="form-group">
 		{{ Form::label('language', 'Language') }}
-		{{ Form::text('language', Input::old('language'), array('class' => 'form-control')) }}
+		{{ Form::text('language', $child->personalInfo->language, array('class' => 'form-control')) }}
 	</div>
 
         <div id="pad" class="form-group">
 		{{ Form::label('originCountry', 'Country Origin') }}
-		{{ Form::select('originCountry', CountryOrigen::all()->lists('name','id'), Input::old('originCountry'),array('class' => 'form-control')) }}
+		{{ Form::select('originCountry', CountryOrigen::all()->lists('name','id'), $child->personalInfo->originCountry,array('class' => 'form-control')) }}
         </div>
     
         <div id="pad" class="form-group">
@@ -158,7 +159,7 @@ $(function() {
 
 	<div id="pad" class="form-group">
 		{{ Form::label('specialNeeds', 'Special Needs') }}
-		{{ Form::text('specialNeeds', Input::old('specialNeeds'), array('class' => 'form-control')) }}
+		{{ Form::text('specialNeeds', $child->personalInfo->specialNeeds, array('class' => 'form-control')) }}
 	</div>
     
         <div id="pad" class="form-group">
@@ -180,13 +181,13 @@ $(function() {
     
     <br>
 
-        <div id="pad" id="addresses" class="alert alert-info" role="alert" style="display: none;">
+        <div id="addresses" class="alert alert-info" role="alert" style="display: none;">
         <!-- For results -->
         </div>
 
         <button  id="pad" type='button' onclick="clearForm()" class="btn btn-default">Clear Address</button><br>
 
-        {{ Form::hidden('address_id' , 1, array('id' => 'address_id')) }}
+        {{ Form::hidden('address_id' , 0, array('id' => 'address_id')) }}
 
         <div id="pad" class="form-group">
 		{{ Form::label('address1', 'Address Line 1') }}
@@ -215,7 +216,7 @@ $(function() {
 
         <div id="pad" class="form-group">
 		{{ Form::label('county_id', 'County') }}
-		{{ Form::select('county_id', County::all()->lists('name','id'), Input::old('county_id'), array('class' => 'form-control')) }}
+		{{ Form::select('county_id', County::all()->lists('name','id'), $child->personalInfo->address->county_id, array('class' => 'form-control')) }}
 	</div>
         
         <br>

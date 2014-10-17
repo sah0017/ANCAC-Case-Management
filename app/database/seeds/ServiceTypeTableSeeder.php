@@ -8,12 +8,12 @@ class ServiceTypeTableSeeder extends Seeder {
 
         ServiceType::create(array(
             'id' => 1,
-            'type' => 'Intervier',
+            'type' => 'Forensic Interview',
             'center_id' => 99
         ));
         ServiceType::create(array(
             'id' => 2,
-            'type' => 'Law Enforcer',
+            'type' => 'Counseling',
             'center_id' => 99
         ));
        

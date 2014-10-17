@@ -19,22 +19,24 @@
 	<tbody>
 		@foreach($cases as $key => $value)
                 <tr>
-                        <td>{{$value->caseNumber}}</td>
-                        @if($value->allegedOffenders->count()==0)
+                        <td>{{$value->info->caseNumber}}</td>
+                        @if($value->info->allegedOffenders->count()==0)
                         <td>N/A</td>
                         @else
                         <td>
-                        @foreach($value->allegedOffenders as $key => $offender)
+                        @foreach($value->info->allegedOffenders as $key => $offender)
                         {{ $offender->personalInfo->name }}
-                         @if($value->allegedOffenders->count()>1)
+                         @if($value->info->allegedOffenders->count()>1)
                          {{", "}}
                          @endif
                          @endforeach
                         </td>
                         @endif
-                        <td>{{ $value->abusedChild->personalInfo->name }}</td>
-                        @foreach($value->sessions->where('serviceType_id',1) as $key => $session)
-			<td>{{$session->date }}</td>
+                        <td>{{ $value->info->abusedChild->personalInfo->name }}</td>
+                        @foreach($value->info->sessions as $key => $session)
+                            @if($session->serviceType_id == 1)
+                                <td>{{$session->date }}</td>
+                            @endif
                         @endforeach
 		</tr>
                 @endforeach

@@ -55,6 +55,7 @@ Route::resource('school', 'SchoolController');
 Route::resource('countryOrigen', 'CountryOrigenController');
 Route::resource('sessionNotes', 'SessionNotesController');
 Route::resource('allegedOffenders','allegedOffenderController');
+Route::resource('MDTReport','MDTMeetingController');
 //</editor-fold>
 
 //<editor-fold desc="Post routs">
@@ -160,7 +161,7 @@ Route::get('cases/{id}/child/session', function($id) {
 Route::get('cases/{id}/child/session/create', function($id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
     Session::put('from','cases/'.$id);
-		return View::make('session.create')->with(array('child_id'=>$child_id,'cases'=>$id));
+		return View::make('session.create')->with(array('child_id'=>$child_id,'case_id'=>$id));
 });
 Route::get('cases/{id}/child/session/{session_id}/show', function($id,$session_id) {
     $child_id = TrackedCase::find($id)->abusedChild_id;
@@ -228,10 +229,16 @@ Route::get('cases/{id}/child/session/{session_id}/sessionNotes/{note_id}/edit', 
 
 //</editor-fold>
 
+
+Route::get('MDTReport/{id}/caseNotes',function($id){
+    $meeting = MDTMeeting::find($id);
+    return View::make('MDTReport.caseNotes')->with(array('meeting'=> $meeting));
+});
+
+Route::get('MDTReport/{id}/summary',function($id){
+    $meeting = MDTMeeting::find($id);
+    return View::make('MDTReport.summary')->with(array('cases'=> $meeting->cases));
+});
+
 });//end of users
 
-Route::resource('MDTReport','MDTMeetingController');
-Route::get('MDTReport/Test',function(){
-    $cases = TrackedCase::all();
-    return View::make('MDTReport.create')->with('cases',$cases);
-});

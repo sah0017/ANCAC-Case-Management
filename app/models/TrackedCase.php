@@ -22,7 +22,7 @@ class TrackedCase extends \Eloquent {
             return $this->belongsToMany('AbuseType','abuses','case_id','abuseType_id');
         }
          public function sessions(){
-            return $this->belongsToMany('CaseSession','abusedChild_session','case_id','session_id');
+            return $this->belongsToMany('CaseSession','abusedchild_session','case_id','session_id');
         }
 
 }

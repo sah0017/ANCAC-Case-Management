@@ -10,7 +10,11 @@ class MDTMeetingController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+                $MDTReport = MDTMeeting::where('center_id', Auth::User()->center_id)->get();
+
+		// load the view and pass the casecntroller
+		return View::make('MDTReport.index')
+			->with('MDTReport', $MDTReport);
 	}
 
 	/**
@@ -21,7 +25,8 @@ class MDTMeetingController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$cases = TrackedCase::all();
+                return View::make('MDTReport.create')->with('cases',$cases);
 	}
 
 	/**
@@ -32,7 +37,21 @@ class MDTMeetingController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$MDTMeeting = new MDTMeeting;
+                $MDTMeeting ->date = Input::get('date');
+                $MDTMeeting ->location = Input::get('location');
+                $MDTMeeting ->center_id = Auth::User()->center_id;
+                $MDTMeeting->save();
+                $case = Input::get('case');
+                for($i=0;$i<count($case);$i++)
+                {
+                $MDTCase = new MDTCase;
+                $MDTCase->case_id = $case[$i];
+                $MDTCase->MDTMeeting_id = $MDTMeeting->id;
+                $MDTCase->recommendation = Input::get('recommendation')[$i];
+                $MDTCase->save();
+                }
+                
 	}
 
 	/**
@@ -44,7 +63,12 @@ class MDTMeetingController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		  // get the child
+		$MDTReport = MDTMeeting::find($id);
+
+		// show the view and pass the nerd to it
+		return View::make('MDTReport.show')
+			->with('MDTReport', $MDTReport);
 	}
 
 	/**

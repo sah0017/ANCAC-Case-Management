@@ -14,6 +14,7 @@ class CreateMDTCasesTable extends Migration {
 	{
 		Schema::create('MDTCases', function(Blueprint $table)
 		{
+                        $table->increments('id');
 			$table->integer('MDTMeeting_id')->unsigned();
                         $table->integer('case_id')->unsigned();
                         $table->text('recommendation');

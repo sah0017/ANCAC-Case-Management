@@ -34,7 +34,7 @@
 				
 				<!-- show the cases (uses the show method found at GET /case/{id} -->
                                 &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('MDTReport/' . $value->id) }}">Show</a>
-
+                                &nbsp;<a class="btn btn-small btn-info" href="{{ URL::to('MDTReport/' . $value->id . "/edit") }}">Edit</a>
 				<!-- edit this cases (uses the edit method found at GET /case/{id}/edit -->
 				
 

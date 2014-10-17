@@ -52,6 +52,7 @@ class MDTMeetingController extends \BaseController {
                 $MDTCase->save();
                 }
                 
+                return Redirect::to('MDTReport');
 	}
 
 	/**
@@ -80,7 +81,15 @@ class MDTMeetingController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$MDTReport = MDTMeeting::find($id);
+                $Mcases = new Illuminate\Database\Eloquent\Collection;
+                foreach( $MDTReport->cases as $MDTCases){
+                    $Mcases->add($MDTCases->info);
+                }
+                $cases = TrackedCase::whereNotIn('id',$Mcases->lists('id'))->where('center_id', Auth::User()->center_id)->get();
+		// show the view and pass the nerd to it
+		return View::make('MDTReport.edit')
+			->with(array('MDTReport'=> $MDTReport, 'cases'=> $cases));
 	}
 
 	/**
@@ -93,6 +102,27 @@ class MDTMeetingController extends \BaseController {
 	public function update($id)
 	{
 		//
+            $MDTMeeting = MDTMeeting::find($id);
+            $MDTMeeting ->date = Input::get('date');
+            $MDTMeeting ->location = Input::get('location');
+            $MDTMeeting ->center_id = Auth::User()->center_id;
+            $MDTMeeting->save();
+            $case = Input::get('case');
+            
+            foreach($MDTMeeting->cases as $OldCase){
+                    $OldCase->delete();
+                }
+            for($i=0;$i<count($case);$i++)
+            {
+                
+                $MDTCase = new MDTCase;
+                $MDTCase->case_id = $case[$i];
+                $MDTCase->MDTMeeting_id = $MDTMeeting->id;
+                $MDTCase->recommendation = Input::get('recommendation')[$i];
+                $MDTCase->save();
+            }
+
+            return Redirect::to('MDTReport');
 	}
 
 	/**

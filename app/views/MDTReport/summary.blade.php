@@ -7,6 +7,7 @@
 
 @section('content')
 
+@foreach($cases as $key => $value)
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
@@ -17,7 +18,6 @@
                 </tr>
 	</thead>
 	<tbody>
-		@foreach($cases as $key => $value)
                 <tr>
                         <td>{{$value->info->caseNumber}}</td>
                         @if($value->info->allegedOffenders->count()==0)
@@ -39,28 +39,27 @@
                             @endif
                         @endforeach
 		</tr>
-                @endforeach
 	</tbody>
 </table>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td>Law Enforcement Name</td>
-            <td>Law Enforcement Agency</td>
-            <td>DHR Name</td>
-            <td>DHR Agency</td>
-            <td>FI Interviewer Name</td>
+            <td>Worker</td>
+            <td>Type</td>
         </tr>
     </thead>
-    <tbody>
+     <tbody>
+   @foreach($value->info->workers as $worker)
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ $worker->name }}</td>
+            <td>{{ $worker->workerType->type }}</td>
         </tr>
+    @endforeach
+        
     </tbody>
 </table>
 
+<hr>
+
+@endforeach
 

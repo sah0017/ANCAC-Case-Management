@@ -6,11 +6,11 @@
 @stop
 
 @section('content')
+<h1>Case Notes Summary<small>{{ $meeting->date }} {{ $meeting->location }}</small></h1>
 
 @foreach($meeting->cases as $key => $case)
 
-<h1>Case Notes Summary</h1>
-insert meeting info here<br>
+
 <hr>
 <div class="container">
 
@@ -44,7 +44,7 @@ insert meeting info here<br>
                 @endforeach
             @endforeach
 </div>
-<hr>
 @endforeach
+<hr>
 
 @stop

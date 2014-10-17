@@ -46,7 +46,7 @@
                 <tr>
                         <td><div class="checkbox">
                         <label>
-                        {{ Form::checkbox('case[]', '1') }}
+                        {{ Form::checkbox('case[]', $value->id) }}
                         </label>
                         </div></td>
                         <td>{{$value->caseNumber}}</td>

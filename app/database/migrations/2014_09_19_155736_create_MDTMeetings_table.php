@@ -17,6 +17,7 @@ class CreateMDTMeetingsTable extends Migration {
 			$table->increments('id');
                         $table->date('date');
                         $table->text('location')->nullable();
+                        $table->integer('center_id')->unsigned();
 			$table->timestamps();
 		});
 	}

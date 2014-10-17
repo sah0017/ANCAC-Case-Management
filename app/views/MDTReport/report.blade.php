@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
     <head>
         <title>
             @section('title')
@@ -15,11 +16,18 @@
         {{ HTML::script('js/bootstrap.min.js') }}
         <style>
         @section('styles')
-            body {
-                padding-top: 60px;
+            .note {
+                padding-left: 12pt;
             }
         @show
         </style>
     </head>
 
     <body>
+        
+    <!-- Content -->
+    @yield('content')
+
+
+    </body>
+</html>

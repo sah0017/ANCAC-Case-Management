@@ -19,7 +19,7 @@
 		<tr>
                 <td>Date</td>
                 <td>Location</td>
-                <td>Cases</td>
+                <td>Cases Selected</td>
                 </tr>
 	</thead>
 	<tbody>
@@ -29,15 +29,11 @@
                         <td>{{ $value->location }}</td>
                         <td>{{ $value->cases->count() }}</td>
 
-
-                        
-
-
 			<!-- we will also add Case Details button -->
 			<td>
 				
 				<!-- show the cases (uses the show method found at GET /case/{id} -->
-                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('cases/' . $value->id) }}">Case Details</a>
+                                &nbsp;<a class="btn btn-small btn-success" href="{{ URL::to('MDTReport/' . $value->id) }}">Show</a>
 
 				<!-- edit this cases (uses the edit method found at GET /case/{id}/edit -->
 				

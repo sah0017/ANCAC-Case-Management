@@ -230,4 +230,8 @@ Route::get('cases/{id}/child/session/{session_id}/sessionNotes/{note_id}/edit', 
 
 });//end of users
 
-
+Route::resource('MDTReport','MDTMeetingController');
+Route::get('MDTReport/Test',function(){
+    $cases = TrackedCase::all();
+    return View::make('MDTReport.create')->with('cases',$cases);
+});

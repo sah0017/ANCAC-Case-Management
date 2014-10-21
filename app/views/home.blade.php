@@ -3,6 +3,7 @@
 @section('nav')
 <li><a href="{{{ URL::to('cases') }}}">Cases</a></li>
 <li><a href="{{{ URL::to('users') }}}">Users</a></li>
+<li><a href="{{{ URL::to('MDTReport') }}}">MDT Reports</a></li>
 @stop
 
 @section('title')

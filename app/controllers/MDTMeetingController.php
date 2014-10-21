@@ -52,7 +52,7 @@ class MDTMeetingController extends \BaseController {
                 $MDTCase->save();
                 }
                 
-                return Redirect::to('MDTReport');
+                return Redirect::to('MDTReport/'.$MDTMeeting->id);
 	}
 
 	/**

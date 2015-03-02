@@ -1,3 +1,7 @@
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for Abused Child, links AbusedChild model and children view */
+/* Provides index, create, store, show, edit, update and destroy functions. */
+/* store saves household, person, address, child information.     */
 <?php
 
 class AbusedChildController extends \BaseController {

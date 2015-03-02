@@ -1,3 +1,7 @@
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for Abuse Types, links AbuseType model and abuseTypes view */
+/* Provides index, create, store, show, edit, update and destroy functions. */
+
 <?php
 
 class AbuseTypeController extends \BaseController {

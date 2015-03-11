@@ -1,3 +1,7 @@
+/* created by Baggett, Egui, Murphey  summer 2014*/
+/* contains CRUD functions for MDT Meeting */
+
+
 <?php
 
 class MDTMeetingController extends \BaseController {

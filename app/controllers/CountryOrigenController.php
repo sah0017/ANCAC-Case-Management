@@ -1,3 +1,7 @@
+/* created by Bagget, Egui, Murphey in summer 2014 */
+/* contains CRUD functions for Country Origen */
+/* as well as index() show() and store() functions */
+
 <?php
 
 class CountryOrigenController extends \BaseController {

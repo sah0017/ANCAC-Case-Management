@@ -1,3 +1,6 @@
+/* created by Baggett, Egui, and Murphy summer 2014 */
+/* contains CRUD functions for County */
+
 <?php
 
 class CountyController extends \BaseController {

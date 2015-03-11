@@ -1,3 +1,6 @@
+/*created by Bagget, Egui, and murphy summer 2014*/
+/* this is the base controller that sets up the layout*/
+
 <?php
 
 class BaseController extends Controller {

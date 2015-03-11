@@ -1,3 +1,8 @@
+/* created by Bagget, Egui, and Murphy summer 2014 */
+/* the controller for the cases. include CRUD functions*/
+/* for cases as well as functions to index, show and store the case */
+/* also includes functions to add and remove workers and abuse types */
+
 <?php
 
 class CaseController extends \BaseController {

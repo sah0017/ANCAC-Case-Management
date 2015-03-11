@@ -1,3 +1,6 @@
+/* created by Baggett, Egui, and Murphey */
+/* contains CRUD functions for Ethnicity */
+
 <?php
 
 class EthnicityController extends \BaseController {

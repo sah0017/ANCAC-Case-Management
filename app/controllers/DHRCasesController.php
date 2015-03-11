@@ -1,3 +1,6 @@
+/* created by Baggett, Egui, Murphey summer 2014 */
+/* contains CRUD functions for DHR Cases */
+
 <?php
 
 class DHRCasesController extends \BaseController {

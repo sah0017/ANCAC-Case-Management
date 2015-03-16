@@ -11,7 +11,7 @@ article{font-size:21px}
 </style>
 <h1>Showing {{ $session->name }}</h1>
 <a class="btn btn-small btn-success" href="..">Back to Session</a>
-<a class="btn" btn-small btn-success onclick="print()">Print</a>
+<a class="btn btn-small btn-success" onclick="print()">Print</a>
 	<div class="jumbotron text-left">
 		<h2>{{ $session->name }}</h2>
                 <article>

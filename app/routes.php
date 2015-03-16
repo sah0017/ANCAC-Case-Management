@@ -54,7 +54,6 @@ Route::resource('DHRCases', 'DHRCasesController');
 Route::resource('school', 'SchoolController');
 Route::resource('countryOrigen', 'CountryOrigenController');
 Route::resource('sessionNotes', 'SessionNotesController');
-Route::resource('allegedOffenders','allegedOffenderController');
 Route::resource('MDTReport','MDTMeetingController');
 //</editor-fold>
 

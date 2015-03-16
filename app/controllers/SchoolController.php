@@ -1,3 +1,7 @@
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for School, links school view and BaseController. */
+/* Provides index, create, store, show, edit, update, and destroy functions. */
+/* stores, deletes, and saves school information.     */
 <?php
 
 class SchoolController extends \BaseController {

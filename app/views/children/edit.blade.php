@@ -153,7 +153,7 @@ $(function() {
 	</div>
 
 	<div id="pad" class="form-group">
-		{{ Form::label('schoolGrade', 'school Grade') }}
+		{{ Form::label('schoolGrade', 'School Grade') }}
 		{{ Form::text('schoolGrade', Input::old('schoolGrade'), array('class' => 'form-control')) }}
 	</div>
 

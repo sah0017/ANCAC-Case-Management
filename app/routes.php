@@ -14,7 +14,7 @@
 Route::get('login', 'AuthController@showLogin');
 Route::post('login', 'AuthController@postLogin');
 Route::get('logout', 'AuthController@getLogout');
-
+Route::get('MDTReportFtr','MDTMeetingController@create');
 
 // Secure-Routes
 Route::group(array('before' => 'auth'), function()

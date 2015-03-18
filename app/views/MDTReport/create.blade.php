@@ -13,10 +13,31 @@
 <script>
  $(function() {
     $( "#date" ).datepicker({ changeYear: true , yearRange: "c-0:c+60" , maxDate: "+1y",dateFormat: "yy-mm-dd" });
-  });
+    });
+    
+    $(function() {
+    $( "#frmDate" ).datepicker({ changeYear: true , yearRange: "c-0:c+60" , maxDate: "+1y",dateFormat: "yy-mm-dd" });
+    });
+    $(function() {
+    $( "#toDate" ).datepicker({ changeYear: true , yearRange: "c-0:c+60" , maxDate: "+1y",dateFormat: "yy-mm-dd" });
+    });
+    
 </script>
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
+    {{ Form::open(array('url' =>'MDTReportFtr', 'method'=>'get'))}}
+    <div class="form-group">
+        {{Form::label('allOpen','Open Cases Only')}}
+        {{Form::checkbox('selOpnCases',true)}}
+        {{Form::label('frmDate','From Date:')}}
+        {{Form::text('frmDate',date('Y-m-d'))}}
+        {{Form::label('toDate','To Date:')}}
+        {{Form::text('toDate',date('Y-m-d'))}}
+        
+    </div>
+    {{Form::submit('apply',array('class' =>'btn btn-small'))}}
+    {{Form::close()}}
+    
 
 {{ Form::open(array('url' => 'MDTReport')) }}
 <table class="table table-striped table-bordered">

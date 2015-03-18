@@ -1,11 +1,12 @@
-/* created by Baggett, Egui, Murphey  summer 2014*/
-/* contains CRUD functions for MDT Meeting */
+
 
 
 <?php
 
 class MDTMeetingController extends \BaseController {
 
+        /* created by Baggett, Egui, Murphey  summer 2014*/
+/* contains CRUD functions for MDT Meeting */
 	/**
 	 * Display a listing of the resource.
 	 * GET /mdtmeeting
@@ -29,7 +30,28 @@ class MDTMeetingController extends \BaseController {
 	 */
 	public function create()
 	{
-		$cases = TrackedCase::all();
+            
+		if(Input::get('selOpnCases')== true)
+                {
+                    $openCases = null;
+                    
+                    $allCases = TrackedCase::all();
+                    
+                    foreach($allCases as $rec)
+                    {
+                        if($rec->status == 'open')
+                        {
+                           $openCases[]=$rec;
+                        }
+                    }
+                    
+                   $cases = $openCases; 
+                }
+                else
+                {
+                    $cases = TrackedCase::all();
+                }
+                
                 return View::make('MDTReport.create')->with('cases',$cases);
 	}
 

@@ -1,3 +1,7 @@
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for Relative, links relativetype view and BaseController. */
+/* Provides index, create, store, show, edit, update, and destroy functions. */
+/* stores, deletes, and saves person information.     */
 <?php
 
 class RelativeTypeController extends \BaseController {

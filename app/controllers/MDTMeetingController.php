@@ -30,12 +30,20 @@ class MDTMeetingController extends \BaseController {
 	 */
 	public function create()
 	{
+            $openCases = null;
+            $allCases = TrackedCase::all();
+            $filteredCases = null;
+            $cases = null;
+            $frmDate = Input::get('frmDate');
+            $toDate = Input::get('toDate');
+
+            
             
 		if(Input::get('selOpnCases')== true)
                 {
-                    $openCases = null;
                     
-                    $allCases = TrackedCase::all();
+                    
+                   
                     
                     foreach($allCases as $rec)
                     {
@@ -44,13 +52,31 @@ class MDTMeetingController extends \BaseController {
                            $openCases[]=$rec;
                         }
                     }
+          
                     
-                   $cases = $openCases; 
+                   $filteredCases = $openCases; 
                 }
-                else
+                else 
                 {
-                    $cases = TrackedCase::all();
+                    $filteredCases = $allCases;
+
                 }
+                if(strlen($frmDate) > 2 && strlen($toDate) > 2)
+                {
+                    
+                    foreach($filteredCases as $rec)
+                    {
+                        if($rec->caseOpened > $frmDate && $rec->caseOpened < $toDate)
+                        {
+                            $cases[]=$rec;
+                        }
+                    }
+                 }
+                 else
+                 {
+                     $cases= $filteredCases;
+                 }
+                
                 
                 return View::make('MDTReport.create')->with('cases',$cases);
 	}

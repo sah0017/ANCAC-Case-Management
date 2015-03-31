@@ -22,6 +22,12 @@
     $( "#toDate" ).datepicker({ changeYear: true , yearRange: "c-0:c+60" , maxDate: "+1y",dateFormat: "yy-mm-dd" });
     });
     
+   
+        $('#select-all').click(function(){
+            $('container input[type="chekbox"]').prop('checked',this.checked);
+        });
+  
+    
 </script>
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
@@ -30,9 +36,9 @@
         {{Form::label('allOpen','Open Cases Only')}}
         {{Form::checkbox('selOpnCases',true)}}
         {{Form::label('frmDate','From Date:')}}
-        {{Form::text('frmDate',date('Y-m-d'))}}
+        {{Form::text('frmDate')}}
         {{Form::label('toDate','To Date:')}}
-        {{Form::text('toDate',date('Y-m-d'))}}
+        {{Form::text('toDate', date('Y-m-d'))}}
         
     </div>
     {{Form::submit('apply',array('class' =>'btn btn-small'))}}
@@ -49,6 +55,8 @@
                         
 		</tr>
 	</thead>
+        {{Form::label('select-all','Select All')}}
+        {{ Form::checkbox('select-all', true) }}
 	<tbody>
             
             <div id="pad" class="form-group">
@@ -60,7 +68,7 @@
 		{{ Form::label('location', 'Location') }}
 		{{ Form::text('location'," ", array('class' => 'form-control')) }}
             </div>
-            
+            @if(count($cases) > 1)
             @foreach($cases as $key => $value)
             
             
@@ -82,6 +90,7 @@
                     </td>
                 </tr>
 	@endforeach
+        @endif
 	</tbody>
 </table>
 {{ Form::submit('Create', array('class' => 'btn btn-primary')) }}

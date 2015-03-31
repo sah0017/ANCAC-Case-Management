@@ -15,7 +15,7 @@
         {{ HTML::script('js/jquery.min.js') }}
         {{ HTML::script('js/bootstrap.min.js') }}
         <style>
-        @section('styles')
+        @section{'style'}
             .note {
                 padding-left: 12pt;
             }

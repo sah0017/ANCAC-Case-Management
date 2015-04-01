@@ -15,6 +15,11 @@ Route::get('login', 'AuthController@showLogin');
 Route::post('login', 'AuthController@postLogin');
 Route::get('logout', 'AuthController@getLogout');
 Route::get('MDTReportFtr','MDTMeetingController@create');
+Route::get('remindPW','RemindersController@getRemind');
+Route::post('remindPW','RemindersController@postRemind');
+Route::get('resetPW','RemindersController@getReset');
+Route::post('resetPW','RemindersController@postReset');
+
 
 // Secure-Routes
 Route::group(array('before' => 'auth'), function()
@@ -55,6 +60,7 @@ Route::resource('school', 'SchoolController');
 Route::resource('countryOrigen', 'CountryOrigenController');
 Route::resource('sessionNotes', 'SessionNotesController');
 Route::resource('MDTReport','MDTMeetingController');
+Route::resource('remind','RemindersController');
 //</editor-fold>
 
 //<editor-fold desc="Post routs">

@@ -39,6 +39,8 @@
             {{ Form::submit('Login', array('class' => 'btn')) }}
         </div>
     </div>
-
+    
+    {{HTML::linkAction('RemindersController@getRemind','Forgot Password')}}
+   
 {{ Form::close() }}
 @stop

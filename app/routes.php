@@ -15,6 +15,7 @@ Route::get('login', 'AuthController@showLogin');
 Route::post('login', 'AuthController@postLogin');
 Route::get('logout', 'AuthController@getLogout');
 Route::get('MDTReportFtr','MDTMeetingController@create');
+Route::get('CasesFtr','CaseController@index');
 Route::get('remindPW','RemindersController@getRemind');
 Route::post('remindPW','RemindersController@postRemind');
 Route::get('resetPW','RemindersController@getReset');

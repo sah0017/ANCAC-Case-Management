@@ -16,7 +16,55 @@ class CaseController extends \BaseController {
 	 */
 	public function index()
 	{
-		$case = TrackedCase::where('center_id', Auth::User()->center_id)->get();
+            $openCases = null;
+            $allCases = TrackedCase::where('center_id', Auth::User()->center_id)->get();
+            $filteredCases = null;
+            $case = null;
+            $frmDate = Input::get('frmDate');
+            $toDate = Input::get('toDate');
+
+            
+            
+		if(Input::get('selOpnCases')== true)
+                {
+                    
+                    
+                   
+                    
+                    foreach($allCases as $rec)
+                    {
+                        if($rec->status == 'open')
+                        {
+                           $openCases[]=$rec;
+                        }
+                    }
+          
+                    
+                   $filteredCases = $openCases; 
+                }
+                else 
+                {
+                    $filteredCases = $allCases;
+
+                }
+                if(strlen($frmDate) > 2 && strlen($toDate) > 2)
+                {
+                    
+                    foreach($filteredCases as $rec)
+                    {
+                        if($rec->caseOpened > $frmDate && $rec->caseOpened < $toDate)
+                        {
+                            $case[]=$rec;
+                        }
+                    }
+                 }
+                 else
+                 {
+                     $case= $filteredCases;
+                 }
+                
+                
+                
 
 		// load the view and pass the casecntroller
 		return View::make('cases.index')

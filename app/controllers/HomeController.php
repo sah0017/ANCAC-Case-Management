@@ -1,9 +1,11 @@
-/* created by Baggett, Egui, and Murphey summeeer 2014 */
-/* contains showWelcome */
 
 <?php
 
 class HomeController extends BaseController {
+    
+    /* created by Baggett, Egui, and Murphey summeeer 2014 */
+/* contains showWelcome */
+
 
 	/*
 	|--------------------------------------------------------------------------

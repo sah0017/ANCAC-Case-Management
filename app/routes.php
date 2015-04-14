@@ -25,7 +25,8 @@ Route::post('resetPW','RemindersController@postReset');
 Route::group(array('before' => 'auth'), function()
 {
     Route::get('/', function() {
-        $case = TrackedCase::where('worker_id', Auth::User()->worker_id)->get();
+        $case = TrackedCase::where('worker_id', Auth::User()->worker_id)
+                ->where('status','=','open')->get();
         return View::make('home')->with('case', $case);
     });
     

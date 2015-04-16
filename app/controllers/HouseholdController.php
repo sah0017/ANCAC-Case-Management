@@ -1,7 +1,6 @@
+<?php
 /* Created by Baggett, Egui, Murphey summer 2014 */
 /* contains CRUD functions for household */
-
-<?php
 
 class HouseholdController extends \BaseController {
 

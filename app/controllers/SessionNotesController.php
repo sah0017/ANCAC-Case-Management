@@ -1,8 +1,8 @@
+<?php
 /* Created by Baggett, Egui, and Murphy - summer 2014 */
 /* Controller for Session Note, links sessionNotes view and BaseController. */
 /* Provides index, create, store, show, edit, update, and destroy functions. */
 /* stores, deletes, and saves session notes information.     */
-<?php
 
 class SessionNotesController extends \BaseController {
 

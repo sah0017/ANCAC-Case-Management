@@ -1,8 +1,8 @@
+<?php
 /* Created by Baggett, Egui, and Murphy - summer 2014 */
 /* Controller for Session, links session view and BaseController. */
 /* Provides index, create, store, show, edit, update, and destroy functions. */
 /* stores, deletes, and saves session information.     */
-<?php
 
 class SessionController extends \BaseController {
 

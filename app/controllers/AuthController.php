@@ -1,8 +1,7 @@
+<?php
 /* created by Bagget, Egui, and murphy summer 2014 */
 /* controller for authorization has function to show the login */
 /* to post the login and to get the logout info */
-
-<?php
 
 class AuthController extends BaseController {
 

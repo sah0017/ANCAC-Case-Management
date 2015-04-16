@@ -1,8 +1,8 @@
+<?php
 /* Created by Baggett, Egui, and Murphy - summer 2014 */
 /* Controller for Person, links people view and BaseController. */
 /* Provides index, create, store, show, edit, update, destroy, and search functions. */
 /* stores, deletes, and saves person information.     */
-<?php
 
 class PersonController extends \BaseController {
 

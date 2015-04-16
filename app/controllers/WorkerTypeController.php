@@ -1,4 +1,7 @@
 <?php
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for WorkerType, links WorkerType model and workerType view */
+/* Provides index, create, store, show, edit, update and destroy functions. */
 
 class WorkerTypeController extends \BaseController {
 

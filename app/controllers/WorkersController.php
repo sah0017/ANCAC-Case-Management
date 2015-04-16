@@ -1,4 +1,7 @@
 <?php
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for Workers, links Worker model and workers view */
+/* Provides index, create, store, show, edit, update and destroy functions. */
 
 class WorkersController extends \BaseController {
 

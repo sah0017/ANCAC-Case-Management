@@ -1,4 +1,8 @@
 <?php
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for relative, links Relationship model and relatives view */
+/* Provides index, create, store, show, edit, update and destroy functions. */
+/* store saves person, relative, and allegedOffender information. */
 
 class relativeController extends \BaseController {
 

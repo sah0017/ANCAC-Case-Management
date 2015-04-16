@@ -1,4 +1,8 @@
 <?php
+/* Created by Baggett, Egui, and Murphy - summer 2014 */
+/* Controller for User, links User model and users view */
+/* Provides index, create, store, show, edit, update and destroy functions. */
+/* store saves User and Worker information */
 
 class UserController extends \BaseController {
     

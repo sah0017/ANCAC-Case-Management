@@ -153,4 +153,8 @@ class UserController extends \BaseController {
 		return Redirect::to('users');
 	}
 
+        public static function getLevel()
+        {
+            return Auth::User()->level;
+        }
 }

@@ -28,10 +28,10 @@
 
 			<!-- we will also add edit button -->
 			<td>
-
+                            @if( UserController::getLevel() == 3 )
 				<!-- edit this nerd (uses the edit method found at GET /ethnicity/{id}/edit -->
 				<a class="btn btn-small btn-info" href="{{ URL::to('ethnicity/' . $value->id . '/edit') }}">Edit</a>
-
+                            @endif
 			</td>
 		</tr>
 	@endforeach

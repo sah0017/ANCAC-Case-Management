@@ -92,7 +92,7 @@ function clearForm(){
     }
 
 $(function() {
-    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "yy-mm-dd" });
+    $( "#dob" ).datepicker({ changeYear: true , yearRange: "c-60:c+60" , maxDate: "+0d",dateFormat: "mm-dd-yy" });
 });
   
 </script>
@@ -121,7 +121,7 @@ $(function() {
 	</div>
         
         <div id="pad" class="form-group">
-		{{ Form::label('dob', 'Date of Birth (YYYY-MM-DD)') }}
+		{{ Form::label('dob', 'Date of Birth (MM-DD-YYYY)') }}
 		{{ Form::text('dob',$child->personalInfo->dob, array('class' => 'form-control')) }}
 	</div>
 

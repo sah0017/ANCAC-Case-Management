@@ -34,7 +34,7 @@
     
         <div id="pad" class="form-group">
 		{{ Form::label('caseOpened', 'Case Opened') }}
-		{{ Form::text('caseOpened', date('Y-m-d'), array('class' => 'form-control','autofocus')) }}
+		{{ Form::text('caseOpened', $case->abusedChild->personalInfo->date, array('class' => 'form-control','autofocus')) }}
 	</div>
     <br>
     

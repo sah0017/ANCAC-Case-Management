@@ -33,7 +33,7 @@
 
 .icon-48-reportico
 {
-    background: url('../images/icon-reportico-48.png') no-repeat left;`I   
+    background: url('../images/icon-reportico-48.png') no-repeat left;   
 }
 
 .swPrpCritSel select
@@ -84,7 +84,7 @@
 }
 .swDateField { width: 100px !important; }
 
-.swPrpTextField { width: 100%; }
+.swPrpTextField 
 {
     margin: 0px 0px 0px 0px;
     padding: 2px 2px 2px 2px;
@@ -971,7 +971,7 @@ input.swAdminButton2
     padding-left: 10;
     font-size: 8pt;
     text-align: center;
-    vertical-align=text-bottom;
+    vertical-align:text-bottom;
 }
 
 .swMntUnexpandTextButton
@@ -991,7 +991,7 @@ input.swAdminButton2
 {
     border: groove thin;
     border-width: 2px;
-    vertical-align=text-top;
+    vertical-align:text-top;
     border-color : #DDFFDD;
     font-style: bold;
     font-size: 10pt;

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCountryOrigenTable extends Migration {
+class CreateCountryOriginTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateCountryOrigenTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('countryOrigen', function(Blueprint $table)
+		Schema::create('countryOrigin', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
@@ -28,7 +28,7 @@ class CreateCountryOrigenTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('countryOrigen');
+		Schema::drop('countryOrigin');
 	}
 
 }

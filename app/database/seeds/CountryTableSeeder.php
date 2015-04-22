@@ -4,14 +4,14 @@ class CountryTableSeeder extends Seeder {
     public function run()
     {
         // !!! All existing users are deleted !!!
-        DB::table('countryOrigen')->delete();
+        DB::table('countryOrigin')->delete();
 
-        CountryOrigen::create(array(
+        CountryOrigin::create(array(
             'id'=>2,
             'name' => 'USA'
         ));
         
-        CountryOrigen::create(array(
+        CountryOrigin::create(array(
             'id'=>1,
             'name' => 'Unknown'
         ));

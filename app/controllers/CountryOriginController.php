@@ -1,9 +1,9 @@
 <?php
 /* created by Bagget, Egui, Murphey in summer 2014 */
-/* contains CRUD functions for Country Origen */
+/* contains CRUD functions for Country Origin */
 /* as well as index() show() and store() functions */
 
-class CountryOrigenController extends \BaseController {
+class CountryOriginController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,10 +14,10 @@ class CountryOrigenController extends \BaseController {
 	public function index()
 	{
                 // get all the children
-		$countryOrigen = CountryOrigen::all();
+		$countryOrigin = CountryOrigin::all();
 		// load the view and pass the children
-		return View::make('countryOrigen.index')
-			->with('countryOrigen', $countryOrigen);
+		return View::make('countryOrigin.index')
+			->with('countryOrigin', $countryOrigin);
                 
                 
 	}
@@ -31,7 +31,7 @@ class CountryOrigenController extends \BaseController {
 	public function create()
 	{
                 // load the create form (app/views/children/create.blade.php)
-		return View::make('countryOrigen.create');
+		return View::make('countryOrigin.create');
 	}
 
 	/**
@@ -42,13 +42,13 @@ class CountryOrigenController extends \BaseController {
 	 */
 	public function store()
 	{
-                        $countryOrigen = new CountryOrigen;
-			$countryOrigen->id                  = Input::get('id');
-			$countryOrigen->name                = Input::get('name');
-			$countryOrigen->save();
+                        $countryOrigin = new CountryOrigin;
+			$countryOrigin->id                  = Input::get('id');
+			$countryOrigin->name                = Input::get('name');
+			$countryOrigin->save();
 			// redirect
-			Session::flash('message', 'Successfully stored Country of Origen info!');
-			return Redirect::to('countryOrigen');
+			Session::flash('message', 'Successfully stored Country of Origin info!');
+			return Redirect::to('countryOrigin');
 	}
 
 	/**
@@ -61,11 +61,11 @@ class CountryOrigenController extends \BaseController {
 	public function show($id)
 	{
                 // get the child
-		$countryOrigen = CountryOrigen::find($id);
+		$countryOrigin = CountryOrigin::find($id);
 
 		// show the view and pass the nerd to it
-		return View::make('countryOrigen.show')
-			->with('CountryOrigen', $countryOrigen);
+		return View::make('countryOrigin.show')
+			->with('CountryOrigin', $countryOrigin);
 	}
 
 	/**
@@ -78,11 +78,11 @@ class CountryOrigenController extends \BaseController {
 	public function edit($id)
 	{
                 // get the child
-		$countryOrigen = CountryOrigen::find($id);
+		$countryOrigin = CountryOrigin::find($id);
 
 		// show the view and pass the nerd to it
-		return View::make('countryOrigen.edit')
-			->with('countryOrigen', $countryOrigen);
+		return View::make('countryOrigin.edit')
+			->with('countryOrigin', $countryOrigin);
 	}
 
 	/**
@@ -94,13 +94,13 @@ class CountryOrigenController extends \BaseController {
 	 */
 	public function update($id)
 	{
-                        $countryOrigen = CountryOrigen::find($id);
-			$countryOrigen->id                  = Input::get('id');
-			$countryOrigen->name                = Input::get('name');
-			$countryOrigen->save();
+                        $countryOrigin = CountryOrigin::find($id);
+			$countryOrigin->id                  = Input::get('id');
+			$countryOrigin->name                = Input::get('name');
+			$countryOrigin->save();
 			// redirect
-			Session::flash('message', 'Successfully stored Country of Origen info!');
-			return Redirect::to('countryOrigen');
+			Session::flash('message', 'Successfully stored Country of Origin info!');
+			return Redirect::to('countryOrigin');
 	}
 
 	/**
@@ -113,12 +113,12 @@ class CountryOrigenController extends \BaseController {
 	public function destroy($id)
 	{
 		// delete
-		$countryOrigen = CountryOrigen::find($id);
-		$countryOrigen->delete();
+		$countryOrigin = CountryOrigin::find($id);
+		$countryOrigin->delete();
 
 		// redirect
 		Session::flash('message', 'Successfully deleted the worker Type entry!');
-		return Redirect::to('countryOrigen');
+		return Redirect::to('countryOrigin');
 	}
 
 }

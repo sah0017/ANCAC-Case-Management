@@ -1,13 +1,13 @@
-@extends('countryOrigen.master')
+@extends('countryOrigin.master')
 
 @section('title')
 @parent
-:: Create Country of Origen
+:: Create Country of Origin
 @stop
 
 @section('content')
 
-<h1>All Country of Origen</h1>
+<h1>All Country of Origin</h1>
 
 @if (Session::has('message'))
 	<div class="alert alert-info">{{ Session::get('message') }}</div>
@@ -20,7 +20,7 @@
 		</tr>
 	</thead>
 	<tbody>
-	@foreach($countryOrigen as $key => $value)
+	@foreach($countryOrigin as $key => $value)
 		<tr>
 			<td>{{ $value->name }}</td>
 
@@ -28,8 +28,8 @@
 			<!-- we will also add edit button -->
 			<td>
 			@if( UserController::getLevel() == 3 )	
-				<!-- edit this nerd (uses the edit method found at GET /countryOrigen/{id}/edit -->
-				<a class="btn btn-small btn-info" href="{{ URL::to('countryOrigen/' . $value->id . '/edit') }}">Edit</a>
+				<!-- edit this nerd (uses the edit method found at GET /countryOrigin/{id}/edit -->
+				<a class="btn btn-small btn-info" href="{{ URL::to('countryOrigin/' . $value->id . '/edit') }}">Edit</a>
                         @endif
 			</td>
 		</tr>

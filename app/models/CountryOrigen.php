@@ -1,6 +1,6 @@
 <?php
 
-class CountryOrigen extends \Eloquent {
-        protected $table = 'countryOrigen';
+class CountryOrigin extends \Eloquent {
+        protected $table = 'countryOrigin';
 	protected $fillable = [];
 }

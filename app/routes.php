@@ -59,7 +59,7 @@ Route::resource('county', 'CountyController');
 Route::resource('households','HouseholdController');
 Route::resource('DHRCases', 'DHRCasesController');
 Route::resource('school', 'SchoolController');
-Route::resource('countryOrigen', 'CountryOrigenController');
+Route::resource('countryOrigin', 'CountryOriginController');
 Route::resource('sessionNotes', 'SessionNotesController');
 Route::resource('MDTReport','MDTMeetingController');
 Route::resource('remind','RemindersController');

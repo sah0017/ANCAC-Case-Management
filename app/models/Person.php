@@ -10,7 +10,7 @@ class Person extends \Eloquent {
         }
 
         public function country() {
-            return $this->belongsTo('CountryOrigen','originCountry');
+            return $this->belongsTo('CountryOrigin','originCountry');
         }
         
         public function relation() {

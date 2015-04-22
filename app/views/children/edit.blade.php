@@ -144,7 +144,7 @@ $(function() {
 
         <div id="pad" class="form-group">
 		{{ Form::label('originCountry', 'Country Origin') }}
-		{{ Form::select('originCountry', CountryOrigen::all()->lists('name','id'), $child->personalInfo->originCountry,array('class' => 'form-control')) }}
+		{{ Form::select('originCountry', CountryOrigin::all()->lists('name','id'), $child->personalInfo->originCountry,array('class' => 'form-control')) }}
         </div>
     
         <div id="pad" class="form-group">

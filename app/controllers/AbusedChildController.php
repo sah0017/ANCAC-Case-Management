@@ -155,12 +155,15 @@ class AbusedChildController extends \BaseController {
                         $person->maritalStatus = Input::get('maritalStatus','single');
                         //$person->household_id = Input::get('household_id');
                         $person->ethnicity_id = Input::get('ethnicity_id');
+                        
                         if( Input::get('address_id')==0 && $person->address->line1 != 'unknown'){
+                	// if(the address has not changed && the address isn't the 'unknown')
                             $address = $person->address;
                             $address->phone = Input::get('phone');
                             $address->county_id   = Input::get('county_id');
                             $address->save();
                         } elseif( Input::get('address_id') == 1 && Input::get('address1') != 'unknown'){
+                	// elseif(the address is new)
                             $address = new Address;
                             $address->line1               = Input::get('address1');
                             $address->line2               = Input::get('address2');
@@ -172,8 +175,10 @@ class AbusedChildController extends \BaseController {
                             $address->save();
                             $person->address_id           = $address->id;
                         } elseif( Input::get('address_id') != 1 ){
+                	// elseif(the address is a different, existing address)
                             $person->address_id = Input::get('address_id',1);
                         } else {
+                	// else set address to 'unknown'
                             $person->address_id = 1;
                         }
                         $person->save();
